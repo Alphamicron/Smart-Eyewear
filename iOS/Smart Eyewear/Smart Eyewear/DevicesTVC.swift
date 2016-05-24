@@ -93,6 +93,11 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         {
             centralManager.connectPeripheral(foundDevices[indexPath.row], options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey: NSNumber(bool:true)])
         }
+        
+        ViewController.delayFor(1.5)
+        {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
