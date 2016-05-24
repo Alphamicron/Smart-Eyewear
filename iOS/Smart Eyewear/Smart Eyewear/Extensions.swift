@@ -27,3 +27,24 @@ extension CBPeripheralState
         }
     }
 }
+
+//MARK: CBPeripheralState Extension
+extension MBLConnectionState
+{
+    func getState()-> String
+    {
+        switch self
+        {
+        case .Connected:
+            return "Connected"
+        case .Connecting:
+            return "Connecting"
+        case .Disconnected:
+            return "Disconnected"
+        case .Disconnecting:
+            return "Disconnecting"
+        case .Discovery:
+            return "Discovery"
+        }
+    }
+}

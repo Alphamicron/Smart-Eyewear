@@ -20,8 +20,9 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
  {
 
     var centralManager: CBCentralManager = CBCentralManager()
-    var locationOfDeselectedCell: NSIndexPath = NSIndexPath()
-    var foundDevices: Array<CBPeripheral> = Array<CBPeripheral>()
+    
+    var foundDevices: Array<MBLMetaWear>?
+    var currentlySelectedDevice: MBLMetaWear = MBLMetaWear()
     
     override func viewWillAppear(animated: Bool)
     {
@@ -40,6 +41,8 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         {
             centralManager.stopScan()
         }
+        
+        MBLMetaWearManager.sharedManager().stopScanForMetaWears()
     }
     
     override func viewDidLoad()
@@ -47,6 +50,11 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        MBLMetaWearManager.sharedManager().startScanForMetaWearsAllowDuplicates(false, handler: { (array: [AnyObject]?) -> Void in
+            self.foundDevices = array as? [MBLMetaWear]
+            self.tableView.reloadData()
+        })
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -65,14 +73,17 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        // #warning Incomplete implementation, return the number of rows
-        return foundDevices.count
+        if let numberOfDiscoveredDevices = foundDevices?.count
+        {
+            return numberOfDiscoveredDevices
+        }
+        
+        return 0
     }
 
     
@@ -80,31 +91,35 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! DeviceTVCell
         
-        cell.deviceName.text = foundDevices[indexPath.row].name
-        cell.deviceUUID.text = foundDevices[indexPath.row].identifier.UUIDString
-        cell.deviceState.text = foundDevices[indexPath.row].state.getState()
+        if let currentDevice = foundDevices?[indexPath.row]
+        {
+            cell.deviceName.text = currentDevice.name
+            cell.deviceUUID.text = currentDevice.identifier.UUIDString
+            cell.deviceState.text = currentDevice.state.getState()
+        }
+        
+//        cell.deviceName.text = foundDevices[indexPath.row].name
+//        cell.deviceUUID.text = foundDevices[indexPath.row].identifier.UUIDString
+//        cell.deviceState.text = foundDevices[indexPath.row].state.getState()
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        if foundDevices[indexPath.row].state != .Connected
+        if let selectedDevice = foundDevices?[indexPath.row]
         {
-            centralManager.connectPeripheral(foundDevices[indexPath.row], options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey: NSNumber(bool:true)])
+//            let confirmationHUD = MBProgressHUD
         }
+//        if foundDevices[indexPath.row].state != .Connected
+//        {
+//            centralManager.connectPeripheral(foundDevices[indexPath.row], options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey: NSNumber(bool:true)])
+//        }
         
         ViewController.delayFor(1.5)
         {
             self.navigationController?.popViewControllerAnimated(true)
         }
-    }
-    
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        centralManager.cancelPeripheralConnection(foundDevices[indexPath.row])
-        locationOfDeselectedCell = indexPath
-        centralManager.scanForPeripheralsWithServices(nil, options: nil)
     }
     
     // MARK: Central Manager Delegate
@@ -143,16 +158,16 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         
     }
     
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
-    {
-        if !foundDevices.contains(peripheral) && peripheral.name != nil
-        {
-            print("Peripheral Details")
-            print(advertisementData)
-            foundDevices.append(peripheral)
-            tableView.reloadData()
-        }
-    }
+//    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
+//    {
+//        if foundDevices!.contains(peripheral) && peripheral.name != nil
+//        {
+//            print("Peripheral Details")
+//            print(advertisementData)
+//            foundDevices.append(peripheral)
+//            tableView.reloadData()
+//        }
+//    }
     
     func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
     {
@@ -160,7 +175,7 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         centralManager.stopScan()
         
         let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
-        selectedCell?.detailTextLabel?.text = foundDevices[tableView.indexPathForSelectedRow!.row].state.getState()
+        selectedCell?.detailTextLabel?.text = foundDevices![tableView.indexPathForSelectedRow!.row].state.getState()
     }
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
@@ -168,13 +183,13 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         promptErrorToUser("Connection Error", errorMessage: (error?.localizedDescription)!)
     }
     
-    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?)
-    {
-        print("Successfully Disconnected Device")
-        
-        let selectedCell = tableView.cellForRowAtIndexPath(locationOfDeselectedCell)
-        selectedCell?.detailTextLabel?.text = foundDevices[locationOfDeselectedCell.row].state.getState()
-    }
+//    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?)
+//    {
+//        print("Successfully Disconnected Device")
+//        
+//        let selectedCell = tableView.cellForRowAtIndexPath(locationOfDeselectedCell)
+//        selectedCell?.detailTextLabel?.text = foundDevices[locationOfDeselectedCell.row].state.getState()
+//    }
     
     func promptErrorToUser(errorTitle: String, errorMessage: String)
     {

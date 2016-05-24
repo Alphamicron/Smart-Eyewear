@@ -1,1250 +1,631 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>045E5677C33AD0131116BCF2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Smart Eyewear.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>09260AEE55B3E5A9D183D3CB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>ED94F0369D43A38F4A38BCCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0F96B939557307A4A9FD54AD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>ED94F0369D43A38F4A38BCCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>241BB3946A7E0A3DB54C15FC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>366D3FC9FD8B1963F6E9002D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Smart Eyewear.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4FC465BDBF47F56112E10C44</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>81C858C70E1A54E80CB641FB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>366D3FC9FD8B1963F6E9002D</string>
-				<string>045E5677C33AD0131116BCF2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE731CF49C8B003BD7FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B23DAE7E1CF49C8B003BD7FE</string>
-				<string>B23DAE931CF49C8B003BD7FE</string>
-				<string>B23DAE9E1CF49C8C003BD7FE</string>
-				<string>B23DAE7D1CF49C8B003BD7FE</string>
-				<string>81C858C70E1A54E80CB641FB</string>
-				<string>09260AEE55B3E5A9D183D3CB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE741CF49C8B003BD7FE</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Emil Shirima</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>B23DAE7B1CF49C8B003BD7FE</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-						<key>DevelopmentTeam</key>
-						<string>F5JF5HGSGV</string>
-					</dict>
-					<key>B23DAE8F1CF49C8B003BD7FE</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-						<key>DevelopmentTeam</key>
-						<string>F5JF5HGSGV</string>
-						<key>TestTargetID</key>
-						<string>B23DAE7B1CF49C8B003BD7FE</string>
-					</dict>
-					<key>B23DAE9A1CF49C8B003BD7FE</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-						<key>DevelopmentTeam</key>
-						<string>F5JF5HGSGV</string>
-						<key>TestTargetID</key>
-						<string>B23DAE7B1CF49C8B003BD7FE</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>B23DAE771CF49C8B003BD7FE</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>B23DAE731CF49C8B003BD7FE</string>
-			<key>productRefGroup</key>
-			<string>B23DAE7D1CF49C8B003BD7FE</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>B23DAE7B1CF49C8B003BD7FE</string>
-				<string>B23DAE8F1CF49C8B003BD7FE</string>
-				<string>B23DAE9A1CF49C8B003BD7FE</string>
-			</array>
-		</dict>
-		<key>B23DAE771CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>B23DAEA21CF49C8C003BD7FE</string>
-				<string>B23DAEA31CF49C8C003BD7FE</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>B23DAE781CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B23DAEB21CF4AE35003BD7FE</string>
-				<string>B23DAEB41CF4AE4E003BD7FE</string>
-				<string>B23DAE821CF49C8B003BD7FE</string>
-				<string>B23DAE801CF49C8B003BD7FE</string>
-				<string>B23DAEB01CF4AE1F003BD7FE</string>
-				<string>B23DAEAE1CF4ADFD003BD7FE</string>
-				<string>B23DAEB91CF4B62A003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE791CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0F96B939557307A4A9FD54AD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE7A1CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B23DAE8A1CF49C8B003BD7FE</string>
-				<string>B23DAE871CF49C8B003BD7FE</string>
-				<string>B23DAE851CF49C8B003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE7B1CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>B23DAEA41CF49C8C003BD7FE</string>
-			<key>buildPhases</key>
-			<array>
-				<string>4FC465BDBF47F56112E10C44</string>
-				<string>B23DAE781CF49C8B003BD7FE</string>
-				<string>B23DAE791CF49C8B003BD7FE</string>
-				<string>B23DAE7A1CF49C8B003BD7FE</string>
-				<string>241BB3946A7E0A3DB54C15FC</string>
-				<string>DCDFD5E882993060DA92CB77</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Smart Eyewear</string>
-			<key>productName</key>
-			<string>Smart Eyewear</string>
-			<key>productReference</key>
-			<string>B23DAE7C1CF49C8B003BD7FE</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>B23DAE7C1CF49C8B003BD7FE</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Smart Eyewear.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B23DAE7D1CF49C8B003BD7FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B23DAE7C1CF49C8B003BD7FE</string>
-				<string>B23DAE901CF49C8B003BD7FE</string>
-				<string>B23DAE9B1CF49C8B003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE7E1CF49C8B003BD7FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B23DAEB81CF4B62A003BD7FE</string>
-				<string>B23DAE7F1CF49C8B003BD7FE</string>
-				<string>B23DAEB51CF4AE57003BD7FE</string>
-				<string>B23DAE831CF49C8B003BD7FE</string>
-				<string>B23DAE861CF49C8B003BD7FE</string>
-				<string>B23DAE881CF49C8B003BD7FE</string>
-				<string>B23DAE8B1CF49C8B003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Smart Eyewear</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE7F1CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE801CF49C8B003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAE7F1CF49C8B003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAE811CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE821CF49C8B003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAE811CF49C8B003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAE831CF49C8B003BD7FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B23DAE841CF49C8B003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE841CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE851CF49C8B003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAE831CF49C8B003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAE861CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE871CF49C8B003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAE861CF49C8B003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAE881CF49C8B003BD7FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B23DAE891CF49C8B003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE891CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE8A1CF49C8B003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAE881CF49C8B003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAE8B1CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE8C1CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B23DAE951CF49C8B003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE8D1CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE8E1CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE8F1CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>B23DAEA71CF49C8C003BD7FE</string>
-			<key>buildPhases</key>
-			<array>
-				<string>B23DAE8C1CF49C8B003BD7FE</string>
-				<string>B23DAE8D1CF49C8B003BD7FE</string>
-				<string>B23DAE8E1CF49C8B003BD7FE</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>B23DAE921CF49C8B003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Smart EyewearTests</string>
-			<key>productName</key>
-			<string>Smart EyewearTests</string>
-			<key>productReference</key>
-			<string>B23DAE901CF49C8B003BD7FE</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>B23DAE901CF49C8B003BD7FE</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Smart EyewearTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B23DAE911CF49C8B003BD7FE</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>B23DAE741CF49C8B003BD7FE</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>B23DAE7B1CF49C8B003BD7FE</string>
-			<key>remoteInfo</key>
-			<string>Smart Eyewear</string>
-		</dict>
-		<key>B23DAE921CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>B23DAE7B1CF49C8B003BD7FE</string>
-			<key>targetProxy</key>
-			<string>B23DAE911CF49C8B003BD7FE</string>
-		</dict>
-		<key>B23DAE931CF49C8B003BD7FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B23DAE941CF49C8B003BD7FE</string>
-				<string>B23DAE961CF49C8B003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Smart EyewearTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE941CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Smart_EyewearTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE951CF49C8B003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAE941CF49C8B003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAE961CF49C8B003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE971CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B23DAEA01CF49C8C003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE981CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE991CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B23DAE9A1CF49C8B003BD7FE</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>B23DAEAA1CF49C8C003BD7FE</string>
-			<key>buildPhases</key>
-			<array>
-				<string>B23DAE971CF49C8B003BD7FE</string>
-				<string>B23DAE981CF49C8B003BD7FE</string>
-				<string>B23DAE991CF49C8B003BD7FE</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>B23DAE9D1CF49C8C003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Smart EyewearUITests</string>
-			<key>productName</key>
-			<string>Smart EyewearUITests</string>
-			<key>productReference</key>
-			<string>B23DAE9B1CF49C8B003BD7FE</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>B23DAE9B1CF49C8B003BD7FE</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Smart EyewearUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B23DAE9C1CF49C8C003BD7FE</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>B23DAE741CF49C8B003BD7FE</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>B23DAE7B1CF49C8B003BD7FE</string>
-			<key>remoteInfo</key>
-			<string>Smart Eyewear</string>
-		</dict>
-		<key>B23DAE9D1CF49C8C003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>B23DAE7B1CF49C8B003BD7FE</string>
-			<key>targetProxy</key>
-			<string>B23DAE9C1CF49C8C003BD7FE</string>
-		</dict>
-		<key>B23DAE9E1CF49C8C003BD7FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B23DAE9F1CF49C8C003BD7FE</string>
-				<string>B23DAEA11CF49C8C003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Smart EyewearUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAE9F1CF49C8C003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Smart_EyewearUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAEA01CF49C8C003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAE9F1CF49C8C003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAEA11CF49C8C003BD7FE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAEA21CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>B23DAEA31CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>B23DAEA41CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>B23DAEA51CF49C8C003BD7FE</string>
-				<string>B23DAEA61CF49C8C003BD7FE</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>B23DAEA51CF49C8C003BD7FE</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>366D3FC9FD8B1963F6E9002D</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Smart Eyewear/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>Emil-Shirima.Smart-Eyewear</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>B23DAEA61CF49C8C003BD7FE</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>045E5677C33AD0131116BCF2</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Smart Eyewear/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>Emil-Shirima.Smart-Eyewear</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>B23DAEA71CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>B23DAEA81CF49C8C003BD7FE</string>
-				<string>B23DAEA91CF49C8C003BD7FE</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>B23DAEA81CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Smart EyewearTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>Emil-Shirima.Smart-EyewearTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Smart Eyewear.app/Smart Eyewear</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>B23DAEA91CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Smart EyewearTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>Emil-Shirima.Smart-EyewearTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Smart Eyewear.app/Smart Eyewear</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>B23DAEAA1CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>B23DAEAB1CF49C8C003BD7FE</string>
-				<string>B23DAEAC1CF49C8C003BD7FE</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>B23DAEAB1CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>Smart EyewearUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>Emil-Shirima.Smart-EyewearUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Smart Eyewear</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>B23DAEAC1CF49C8C003BD7FE</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>Smart EyewearUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>Emil-Shirima.Smart-EyewearUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Smart Eyewear</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>B23DAEAD1CF4ADFD003BD7FE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ActivationVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAEAE1CF4ADFD003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAEAD1CF4ADFD003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAEAF1CF4AE1F003BD7FE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>RGBLedVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAEB01CF4AE1F003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAEAF1CF4AE1F003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAEB11CF4AE35003BD7FE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>BatteryLevelVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAEB21CF4AE35003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAEB11CF4AE35003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAEB31CF4AE4E003BD7FE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>DevicesTVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAEB41CF4AE4E003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAEB31CF4AE4E003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B23DAEB51CF4AE57003BD7FE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B23DAE811CF49C8B003BD7FE</string>
-				<string>B23DAEB31CF4AE4E003BD7FE</string>
-				<string>B23DAEB11CF4AE35003BD7FE</string>
-				<string>B23DAEAD1CF4ADFD003BD7FE</string>
-				<string>B23DAEAF1CF4AE1F003BD7FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Controllers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAEB81CF4B62A003BD7FE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Extensions.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B23DAEB91CF4B62A003BD7FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B23DAEB81CF4B62A003BD7FE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCDFD5E882993060DA92CB77</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>ED94F0369D43A38F4A38BCCC</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Smart_Eyewear.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>B23DAE741CF49C8B003BD7FE</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F96B939557307A4A9FD54AD /* Pods_Smart_Eyewear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED94F0369D43A38F4A38BCCC /* Pods_Smart_Eyewear.framework */; };
+		B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */; };
+		B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE811CF49C8B003BD7FE /* ViewController.swift */; };
+		B23DAE851CF49C8B003BD7FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE831CF49C8B003BD7FE /* Main.storyboard */; };
+		B23DAE871CF49C8B003BD7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE861CF49C8B003BD7FE /* Assets.xcassets */; };
+		B23DAE8A1CF49C8B003BD7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */; };
+		B23DAE951CF49C8B003BD7FE /* Smart_EyewearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE941CF49C8B003BD7FE /* Smart_EyewearTests.swift */; };
+		B23DAEA01CF49C8C003BD7FE /* Smart_EyewearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */; };
+		B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */; };
+		B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */; };
+		B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */; };
+		B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */; };
+		B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB81CF4B62A003BD7FE /* Extensions.swift */; };
+		B23DAEBD1CF4CD98003BD7FE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B23DAE911CF49C8B003BD7FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23DAE741CF49C8B003BD7FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23DAE7B1CF49C8B003BD7FE;
+			remoteInfo = "Smart Eyewear";
+		};
+		B23DAE9C1CF49C8C003BD7FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23DAE741CF49C8B003BD7FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23DAE7B1CF49C8B003BD7FE;
+			remoteInfo = "Smart Eyewear";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		045E5677C33AD0131116BCF2 /* Pods-Smart Eyewear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Eyewear.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.release.xcconfig"; sourceTree = "<group>"; };
+		366D3FC9FD8B1963F6E9002D /* Pods-Smart Eyewear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Eyewear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.debug.xcconfig"; sourceTree = "<group>"; };
+		B23DAE7C1CF49C8B003BD7FE /* Smart Eyewear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Eyewear.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B23DAE811CF49C8B003BD7FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B23DAE841CF49C8B003BD7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B23DAE861CF49C8B003BD7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B23DAE891CF49C8B003BD7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B23DAE8B1CF49C8B003BD7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DAE901CF49C8B003BD7FE /* Smart EyewearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart EyewearTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DAE941CF49C8B003BD7FE /* Smart_EyewearTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_EyewearTests.swift; sourceTree = "<group>"; };
+		B23DAE961CF49C8B003BD7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DAE9B1CF49C8B003BD7FE /* Smart EyewearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart EyewearUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_EyewearUITests.swift; sourceTree = "<group>"; };
+		B23DAEA11CF49C8C003BD7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationVC.swift; sourceTree = "<group>"; };
+		B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBLedVC.swift; sourceTree = "<group>"; };
+		B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryLevelVC.swift; sourceTree = "<group>"; };
+		B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesTVC.swift; sourceTree = "<group>"; };
+		B23DAEB81CF4B62A003BD7FE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B23DAEBA1CF4CD97003BD7FE /* Smart Eyewear-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smart Eyewear-Bridging-Header.h"; sourceTree = "<group>"; };
+		B23DAEBB1CF4CD98003BD7FE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		ED94F0369D43A38F4A38BCCC /* Pods_Smart_Eyewear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Eyewear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B23DAE791CF49C8B003BD7FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F96B939557307A4A9FD54AD /* Pods_Smart_Eyewear.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE8D1CF49C8B003BD7FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE981CF49C8B003BD7FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09260AEE55B3E5A9D183D3CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED94F0369D43A38F4A38BCCC /* Pods_Smart_Eyewear.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81C858C70E1A54E80CB641FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				366D3FC9FD8B1963F6E9002D /* Pods-Smart Eyewear.debug.xcconfig */,
+				045E5677C33AD0131116BCF2 /* Pods-Smart Eyewear.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B23DAE731CF49C8B003BD7FE = {
+			isa = PBXGroup;
+			children = (
+				B23DAE7E1CF49C8B003BD7FE /* Smart Eyewear */,
+				B23DAE931CF49C8B003BD7FE /* Smart EyewearTests */,
+				B23DAE9E1CF49C8C003BD7FE /* Smart EyewearUITests */,
+				B23DAE7D1CF49C8B003BD7FE /* Products */,
+				81C858C70E1A54E80CB641FB /* Pods */,
+				09260AEE55B3E5A9D183D3CB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B23DAE7D1CF49C8B003BD7FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE7C1CF49C8B003BD7FE /* Smart Eyewear.app */,
+				B23DAE901CF49C8B003BD7FE /* Smart EyewearTests.xctest */,
+				B23DAE9B1CF49C8B003BD7FE /* Smart EyewearUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B23DAE7E1CF49C8B003BD7FE /* Smart Eyewear */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAEBB1CF4CD98003BD7FE /* MBProgressHUD.h */,
+				B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */,
+				B23DAEB81CF4B62A003BD7FE /* Extensions.swift */,
+				B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */,
+				B23DAEB51CF4AE57003BD7FE /* Controllers */,
+				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
+				B23DAE861CF49C8B003BD7FE /* Assets.xcassets */,
+				B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */,
+				B23DAE8B1CF49C8B003BD7FE /* Info.plist */,
+				B23DAEBA1CF4CD97003BD7FE /* Smart Eyewear-Bridging-Header.h */,
+			);
+			path = "Smart Eyewear";
+			sourceTree = "<group>";
+		};
+		B23DAE931CF49C8B003BD7FE /* Smart EyewearTests */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE941CF49C8B003BD7FE /* Smart_EyewearTests.swift */,
+				B23DAE961CF49C8B003BD7FE /* Info.plist */,
+			);
+			path = "Smart EyewearTests";
+			sourceTree = "<group>";
+		};
+		B23DAE9E1CF49C8C003BD7FE /* Smart EyewearUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */,
+				B23DAEA11CF49C8C003BD7FE /* Info.plist */,
+			);
+			path = "Smart EyewearUITests";
+			sourceTree = "<group>";
+		};
+		B23DAEB51CF4AE57003BD7FE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE811CF49C8B003BD7FE /* ViewController.swift */,
+				B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */,
+				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
+				B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */,
+				B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B23DAE7B1CF49C8B003BD7FE /* Smart Eyewear */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DAEA41CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart Eyewear" */;
+			buildPhases = (
+				4FC465BDBF47F56112E10C44 /* Check Pods Manifest.lock */,
+				B23DAE781CF49C8B003BD7FE /* Sources */,
+				B23DAE791CF49C8B003BD7FE /* Frameworks */,
+				B23DAE7A1CF49C8B003BD7FE /* Resources */,
+				241BB3946A7E0A3DB54C15FC /* Embed Pods Frameworks */,
+				DCDFD5E882993060DA92CB77 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Smart Eyewear";
+			productName = "Smart Eyewear";
+			productReference = B23DAE7C1CF49C8B003BD7FE /* Smart Eyewear.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B23DAE8F1CF49C8B003BD7FE /* Smart EyewearTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DAEA71CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearTests" */;
+			buildPhases = (
+				B23DAE8C1CF49C8B003BD7FE /* Sources */,
+				B23DAE8D1CF49C8B003BD7FE /* Frameworks */,
+				B23DAE8E1CF49C8B003BD7FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23DAE921CF49C8B003BD7FE /* PBXTargetDependency */,
+			);
+			name = "Smart EyewearTests";
+			productName = "Smart EyewearTests";
+			productReference = B23DAE901CF49C8B003BD7FE /* Smart EyewearTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B23DAE9A1CF49C8B003BD7FE /* Smart EyewearUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DAEAA1CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearUITests" */;
+			buildPhases = (
+				B23DAE971CF49C8B003BD7FE /* Sources */,
+				B23DAE981CF49C8B003BD7FE /* Frameworks */,
+				B23DAE991CF49C8B003BD7FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23DAE9D1CF49C8C003BD7FE /* PBXTargetDependency */,
+			);
+			name = "Smart EyewearUITests";
+			productName = "Smart EyewearUITests";
+			productReference = B23DAE9B1CF49C8B003BD7FE /* Smart EyewearUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B23DAE741CF49C8B003BD7FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Emil Shirima";
+				TargetAttributes = {
+					B23DAE7B1CF49C8B003BD7FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F5JF5HGSGV;
+					};
+					B23DAE8F1CF49C8B003BD7FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F5JF5HGSGV;
+						TestTargetID = B23DAE7B1CF49C8B003BD7FE;
+					};
+					B23DAE9A1CF49C8B003BD7FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F5JF5HGSGV;
+						TestTargetID = B23DAE7B1CF49C8B003BD7FE;
+					};
+				};
+			};
+			buildConfigurationList = B23DAE771CF49C8B003BD7FE /* Build configuration list for PBXProject "Smart Eyewear" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B23DAE731CF49C8B003BD7FE;
+			productRefGroup = B23DAE7D1CF49C8B003BD7FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B23DAE7B1CF49C8B003BD7FE /* Smart Eyewear */,
+				B23DAE8F1CF49C8B003BD7FE /* Smart EyewearTests */,
+				B23DAE9A1CF49C8B003BD7FE /* Smart EyewearUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B23DAE7A1CF49C8B003BD7FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DAE8A1CF49C8B003BD7FE /* LaunchScreen.storyboard in Resources */,
+				B23DAE871CF49C8B003BD7FE /* Assets.xcassets in Resources */,
+				B23DAE851CF49C8B003BD7FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE8E1CF49C8B003BD7FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE991CF49C8B003BD7FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		241BB3946A7E0A3DB54C15FC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FC465BDBF47F56112E10C44 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DCDFD5E882993060DA92CB77 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B23DAE781CF49C8B003BD7FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */,
+				B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */,
+				B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */,
+				B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */,
+				B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */,
+				B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */,
+				B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */,
+				B23DAEBD1CF4CD98003BD7FE /* MBProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE8C1CF49C8B003BD7FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DAE951CF49C8B003BD7FE /* Smart_EyewearTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE971CF49C8B003BD7FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DAEA01CF49C8C003BD7FE /* Smart_EyewearUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B23DAE921CF49C8B003BD7FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23DAE7B1CF49C8B003BD7FE /* Smart Eyewear */;
+			targetProxy = B23DAE911CF49C8B003BD7FE /* PBXContainerItemProxy */;
+		};
+		B23DAE9D1CF49C8C003BD7FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23DAE7B1CF49C8B003BD7FE /* Smart Eyewear */;
+			targetProxy = B23DAE9C1CF49C8C003BD7FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B23DAE831CF49C8B003BD7FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23DAE841CF49C8B003BD7FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23DAE891CF49C8B003BD7FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B23DAEA21CF49C8C003BD7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B23DAEA31CF49C8C003BD7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B23DAEA51CF49C8C003BD7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 366D3FC9FD8B1963F6E9002D /* Pods-Smart Eyewear.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Smart Eyewear/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-Eyewear";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smart Eyewear/Smart Eyewear-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B23DAEA61CF49C8C003BD7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 045E5677C33AD0131116BCF2 /* Pods-Smart Eyewear.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Smart Eyewear/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-Eyewear";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smart Eyewear/Smart Eyewear-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		B23DAEA81CF49C8C003BD7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Smart EyewearTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-EyewearTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Eyewear.app/Smart Eyewear";
+			};
+			name = Debug;
+		};
+		B23DAEA91CF49C8C003BD7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Smart EyewearTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-EyewearTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Eyewear.app/Smart Eyewear";
+			};
+			name = Release;
+		};
+		B23DAEAB1CF49C8C003BD7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Smart EyewearUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-EyewearUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Smart Eyewear";
+			};
+			name = Debug;
+		};
+		B23DAEAC1CF49C8C003BD7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Smart EyewearUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-EyewearUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Smart Eyewear";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B23DAE771CF49C8B003BD7FE /* Build configuration list for PBXProject "Smart Eyewear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DAEA21CF49C8C003BD7FE /* Debug */,
+				B23DAEA31CF49C8C003BD7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DAEA41CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart Eyewear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DAEA51CF49C8C003BD7FE /* Debug */,
+				B23DAEA61CF49C8C003BD7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DAEA71CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DAEA81CF49C8C003BD7FE /* Debug */,
+				B23DAEA91CF49C8C003BD7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DAEAA1CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DAEAB1CF49C8C003BD7FE /* Debug */,
+				B23DAEAC1CF49C8C003BD7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B23DAE741CF49C8B003BD7FE /* Project object */;
+}
