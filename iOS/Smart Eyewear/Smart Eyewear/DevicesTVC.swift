@@ -23,7 +23,7 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
     var centralManager: CBCentralManager = CBCentralManager()
     
     var foundDevices: Array<MBLMetaWear>?
-    var currentlySelectedDevice: MBLMetaWear = MBLMetaWear()
+    static var currentlySelectedDevice: MBLMetaWear = MBLMetaWear()
     
     override func viewWillAppear(animated: Bool)
     {
@@ -98,10 +98,6 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
             cell.deviceUUID.text = currentDevice.identifier.UUIDString
             cell.deviceState.text = currentDevice.state.getState()
         }
-        
-//        cell.deviceName.text = foundDevices[indexPath.row].name
-//        cell.deviceUUID.text = foundDevices[indexPath.row].identifier.UUIDString
-//        cell.deviceState.text = foundDevices[indexPath.row].state.getState()
 
         return cell
     }
@@ -113,9 +109,9 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
             let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
             
             confirmationHUD.labelText = "Connecting to device..."
-            self.currentlySelectedDevice = selectedDevice
+            DevicesTVC.currentlySelectedDevice = selectedDevice
             
-            currentlySelectedDevice.connectWithTimeout(15, handler: { (error: NSError?) in
+            DevicesTVC.currentlySelectedDevice.connectWithTimeout(15, handler: { (error: NSError?) in
                 if let generatedError = error
                 {
                     confirmationHUD.labelText = generatedError.localizedDescription
@@ -124,14 +120,14 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
                 else
                 {
                     confirmationHUD.hide(true)
-                    self.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
+                    DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
                     
                     let confirmationAlert = UIAlertController(title: "Confirm Device", message: "Do you see a blinking green LED light?", preferredStyle: .Alert)
                     
                     confirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
                         print("The user confirmed the LED")
                         
-                        self.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+                        DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
                         
                         ViewController.delayFor(1.5)
                         {
@@ -142,8 +138,8 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
                     
                     confirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: { (action: UIAlertAction) in
                         print("The user did not confirm the LED")
-                        self.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
-                        self.currentlySelectedDevice.disconnectWithHandler(nil)
+                        DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+                        DevicesTVC.currentlySelectedDevice.disconnectWithHandler(nil)
                         self.viewDidLoad()
                     }))
                     
