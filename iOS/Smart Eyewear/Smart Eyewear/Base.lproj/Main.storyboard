@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main Menu-->
@@ -100,12 +102,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DPd-zg-jYG">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="90" id="DPd-zg-jYG">
+                                <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DPd-zg-jYG" id="AfD-gX-2NU">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MetaWear" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sz3-7g-lIj">
+                                            <rect key="frame" x="8" y="10" width="416" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="H0x-qG-skv"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B0480FD8-84E5-499C-1BF1-939605412C3F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs8-xY-teW">
+                                            <rect key="frame" x="8" y="44" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iws-dl-0DJ">
+                                            <rect key="frame" x="432" y="10" width="160" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="160" id="rUG-sx-csa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Sz3-7g-lIj" firstAttribute="leading" secondItem="AfD-gX-2NU" secondAttribute="leadingMargin" id="5gu-xa-TMo"/>
+                                        <constraint firstItem="Iws-dl-0DJ" firstAttribute="trailing" secondItem="fs8-xY-teW" secondAttribute="trailing" id="78q-sk-mWO"/>
+                                        <constraint firstItem="Iws-dl-0DJ" firstAttribute="leading" secondItem="Sz3-7g-lIj" secondAttribute="trailing" constant="8" symbolic="YES" id="7gZ-TQ-bXK"/>
+                                        <constraint firstItem="Sz3-7g-lIj" firstAttribute="top" secondItem="AfD-gX-2NU" secondAttribute="topMargin" constant="2" id="HNm-cw-PQf"/>
+                                        <constraint firstItem="Sz3-7g-lIj" firstAttribute="leading" secondItem="fs8-xY-teW" secondAttribute="leading" id="LQF-5I-5Zt"/>
+                                        <constraint firstItem="Sz3-7g-lIj" firstAttribute="firstBaseline" secondItem="Iws-dl-0DJ" secondAttribute="firstBaseline" id="Pvx-Cs-dGc"/>
+                                        <constraint firstItem="Iws-dl-0DJ" firstAttribute="trailing" secondItem="AfD-gX-2NU" secondAttribute="trailingMargin" id="RaN-US-WUw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fs8-xY-teW" secondAttribute="bottom" constant="16.5" id="a20-AP-rs8"/>
+                                        <constraint firstItem="fs8-xY-teW" firstAttribute="top" secondItem="Sz3-7g-lIj" secondAttribute="bottom" constant="13" id="d07-ra-VEW"/>
+                                        <constraint firstItem="Sz3-7g-lIj" firstAttribute="baseline" secondItem="Iws-dl-0DJ" secondAttribute="baseline" id="vNY-0Y-sVc"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

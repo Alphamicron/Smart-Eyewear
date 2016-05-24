@@ -8,6 +8,11 @@
 
 import UIKit
 
+class DeviceTVCell: UITableViewCell
+{
+    
+}
+
 class DevicesTVC: UITableViewController {
 
     override func viewDidLoad() {
