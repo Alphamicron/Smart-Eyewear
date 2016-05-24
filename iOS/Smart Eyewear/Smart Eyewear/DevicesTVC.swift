@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import CoreBluetooth
 
 class DeviceTVCell: UITableViewCell
@@ -109,15 +110,42 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
     {
         if let selectedDevice = foundDevices?[indexPath.row]
         {
-//            let confirmationHUD = MBProgressHUD
+            let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
+            
+            confirmationHUD.labelText = "Connecting to device..."
+            self.currentlySelectedDevice = selectedDevice
+            
+            currentlySelectedDevice.connectWithTimeout(15, handler: { (error: NSError?) in
+                if let generatedError = error
+                {
+                    confirmationHUD.labelText = generatedError.localizedDescription
+                    confirmationHUD.hide(true, afterDelay: 2.0)
+                }
+                else
+                {
+                    confirmationHUD.hide(true)
+                    self.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
+                    
+                    let confirmationAlert = UIAlertController(title: "Confirm Device", message: "Do you see a blinking green LED light?", preferredStyle: .Alert)
+                    
+                    confirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
+                        print("The user confirmed the LED")
+                    }))
+                    
+                    confirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: { (action: UIAlertAction) in
+                        print("The user did not confirm the LED")
+                        selectedDevice.disconnectWithHandler(nil)
+                        self.viewDidLoad()
+                    }))
+                    
+                    self.presentViewController(confirmationAlert, animated: true, completion: nil)
+                }
+            })
         }
-//        if foundDevices[indexPath.row].state != .Connected
-//        {
-//            centralManager.connectPeripheral(foundDevices[indexPath.row], options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey: NSNumber(bool:true)])
-//        }
         
-        ViewController.delayFor(1.5)
+        ViewController.delayFor(1.0)
         {
+            
             self.navigationController?.popViewControllerAnimated(true)
         }
     }
@@ -174,8 +202,14 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         print("Successfully Connected Device")
         centralManager.stopScan()
         
-        let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
-        selectedCell?.detailTextLabel?.text = foundDevices![tableView.indexPathForSelectedRow!.row].state.getState()
+        if let thisConnectedDevice = foundDevices?[(tableView.indexPathForSelectedRow?.row)!]
+        {
+            let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+            selectedCell?.detailTextLabel?.text = thisConnectedDevice.state.getState()
+        }
+        
+//        let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+//        selectedCell?.detailTextLabel?.text = foundDevices![tableView.indexPathForSelectedRow!.row].state.getState()
     }
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
