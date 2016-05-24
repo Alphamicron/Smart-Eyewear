@@ -18,6 +18,7 @@
 		B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */; };
 		B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */; };
 		B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */; };
+		B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB81CF4B62A003BD7FE /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBLedVC.swift; sourceTree = "<group>"; };
 		B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryLevelVC.swift; sourceTree = "<group>"; };
 		B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesTVC.swift; sourceTree = "<group>"; };
+		B23DAEB81CF4B62A003BD7FE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		B23DAE7E1CF49C8B003BD7FE /* Smart Eyewear */ = {
 			isa = PBXGroup;
 			children = (
+				B23DAEB81CF4B62A003BD7FE /* Extensions.swift */,
 				B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */,
 				B23DAEB51CF4AE57003BD7FE /* Controllers */,
 				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
@@ -285,6 +288,7 @@
 				B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */,
 				B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */,
 				B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */,
+				B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

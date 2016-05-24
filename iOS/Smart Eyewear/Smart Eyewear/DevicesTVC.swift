@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class DeviceTVCell: UITableViewCell
 {
@@ -15,9 +16,34 @@ class DeviceTVCell: UITableViewCell
     @IBOutlet weak var deviceUUID: UILabel!
 }
 
-class DevicesTVC: UITableViewController {
+class DevicesTVC: UITableViewController, CBCentralManagerDelegate
+ {
 
-    override func viewDidLoad() {
+    var centralManager: CBCentralManager = CBCentralManager()
+    var locationOfDeselectedCell: NSIndexPath = NSIndexPath()
+    var foundDevices: Array<CBPeripheral> = Array<CBPeripheral>()
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        print("Devices TVC view will appear was called")
+        centralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue())
+    }
+    
+    override func viewDidDisappear(animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        
+        print("Devices TVC view did disappear was called")
+        if centralManager.isScanning
+        {
+            centralManager.stopScan()
+        }
+    }
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -29,70 +55,131 @@ class DevicesTVC: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return foundDevices.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! DeviceTVCell
         
-        cell.deviceName.text = "Sample"
-        cell.deviceUUID.text = "1234567890326378899876556"
-        cell.deviceState.text = "Disconnected"
-
-        // Configure the cell...
+        cell.deviceName.text = foundDevices[indexPath.row].name
+        cell.deviceUUID.text = foundDevices[indexPath.row].identifier.UUIDString
+        cell.deviceState.text = foundDevices[indexPath.row].state.getState()
 
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if foundDevices[indexPath.row].state != .Connected
+        {
+            centralManager.connectPeripheral(foundDevices[indexPath.row], options: [CBConnectPeripheralOptionNotifyOnDisconnectionKey: NSNumber(bool:true)])
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        centralManager.cancelPeripheralConnection(foundDevices[indexPath.row])
+        locationOfDeselectedCell = indexPath
+        centralManager.scanForPeripheralsWithServices(nil, options: nil)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    // MARK: Central Manager Delegate
+    func centralManagerDidUpdateState(central: CBCentralManager)
+    {
+        switch central.state
+        {
+        case .PoweredOn:
+            print("BLE ON")
+            self.centralManager.scanForPeripheralsWithServices(nil, options: nil)
+            break
+            
+        case .PoweredOff:
+            print("BLE OFF")
+            promptErrorToUser("Error", errorMessage: "Please turn on your bluetooth")
+            break
+            
+        case .Resetting:
+            print("BLE Resetting")
+            break
+            
+        case .Unauthorized:
+            print("BLE Unauthorized")
+            promptErrorToUser("Error", errorMessage: "App requires access to BLE")
+            break
+            
+        case .Unknown:
+            print("BLE Unknown")
+            break
+            
+        case .Unsupported:
+            print("BLE Unsupported")
+            promptErrorToUser("Error", errorMessage: "Device does not support BLE")
+            break
+        }
+        
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
+    {
+        if !foundDevices.contains(peripheral) && peripheral.name != nil
+        {
+            print("Peripheral Details")
+            print(advertisementData)
+            foundDevices.append(peripheral)
+            tableView.reloadData()
+        }
     }
-    */
+    
+    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
+    {
+        print("Successfully Connected Device")
+        centralManager.stopScan()
+        
+        let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+        selectedCell?.detailTextLabel?.text = foundDevices[tableView.indexPathForSelectedRow!.row].state.getState()
+    }
+    
+    func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
+    {
+        promptErrorToUser("Connection Error", errorMessage: (error?.localizedDescription)!)
+    }
+    
+    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?)
+    {
+        print("Successfully Disconnected Device")
+        
+        let selectedCell = tableView.cellForRowAtIndexPath(locationOfDeselectedCell)
+        selectedCell?.detailTextLabel?.text = foundDevices[locationOfDeselectedCell.row].state.getState()
+    }
+    
+    func promptErrorToUser(errorTitle: String, errorMessage: String)
+    {
+        let alertController = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
