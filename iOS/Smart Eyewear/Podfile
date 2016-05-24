@@ -5,6 +5,7 @@
 
 target 'Smart Eyewear' do
 pod 'Metawear-iOSAPI'
+pod 'MBProgressHUD', '~> 0.9.2'
 end
 
 target 'Smart EyewearTests' do

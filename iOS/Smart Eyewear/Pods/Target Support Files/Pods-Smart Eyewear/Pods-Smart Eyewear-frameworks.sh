@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Smart Eyewear/Bolts.framework"
   install_framework "Pods-Smart Eyewear/FastCoding.framework"
+  install_framework "Pods-Smart Eyewear/MBProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Smart Eyewear/Bolts.framework"
   install_framework "Pods-Smart Eyewear/FastCoding.framework"
+  install_framework "Pods-Smart Eyewear/MBProgressHUD.framework"
 fi
