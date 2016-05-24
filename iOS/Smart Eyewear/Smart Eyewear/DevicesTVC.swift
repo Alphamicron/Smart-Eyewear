@@ -130,23 +130,26 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
                     
                     confirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
                         print("The user confirmed the LED")
+                        
+                        self.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+                        
+                        ViewController.delayFor(1.5)
+                        {
+                            
+                            self.navigationController?.popViewControllerAnimated(true)
+                        }
                     }))
                     
                     confirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: { (action: UIAlertAction) in
                         print("The user did not confirm the LED")
-                        selectedDevice.disconnectWithHandler(nil)
+                        self.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+                        self.currentlySelectedDevice.disconnectWithHandler(nil)
                         self.viewDidLoad()
                     }))
                     
                     self.presentViewController(confirmationAlert, animated: true, completion: nil)
                 }
             })
-        }
-        
-        ViewController.delayFor(1.0)
-        {
-            
-            self.navigationController?.popViewControllerAnimated(true)
         }
     }
     
@@ -162,25 +165,30 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
             
         case .PoweredOff:
             print("BLE OFF")
-            promptErrorToUser("Error", errorMessage: "Please turn on your bluetooth")
+            promptErrorToUser("Connection Error", errorMessage: "Please turn on your bluetooth.")
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
         case .Resetting:
             print("BLE Resetting")
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
         case .Unauthorized:
             print("BLE Unauthorized")
-            promptErrorToUser("Error", errorMessage: "App requires access to BLE")
+            promptErrorToUser("Authorisation Error", errorMessage: "Smart Eyewear requires access to BLE.")
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
         case .Unknown:
             print("BLE Unknown")
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
         case .Unsupported:
             print("BLE Unsupported")
-            promptErrorToUser("Error", errorMessage: "Device does not support BLE")
+            promptErrorToUser("Error", errorMessage: "Device does not support BLE.")
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
         }
         
@@ -197,20 +205,20 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
 //        }
 //    }
     
-    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
-    {
-        print("Successfully Connected Device")
-        centralManager.stopScan()
-        
-        if let thisConnectedDevice = foundDevices?[(tableView.indexPathForSelectedRow?.row)!]
-        {
-            let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
-            selectedCell?.detailTextLabel?.text = thisConnectedDevice.state.getState()
-        }
-        
-//        let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
-//        selectedCell?.detailTextLabel?.text = foundDevices![tableView.indexPathForSelectedRow!.row].state.getState()
-    }
+//    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
+//    {
+//        print("Successfully Connected Device")
+//        centralManager.stopScan()
+//        
+//        if let thisConnectedDevice = foundDevices?[(tableView.indexPathForSelectedRow?.row)!]
+//        {
+//            let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+//            selectedCell?.detailTextLabel?.text = thisConnectedDevice.state.getState()
+//        }
+//        
+////        let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+////        selectedCell?.detailTextLabel?.text = foundDevices![tableView.indexPathForSelectedRow!.row].state.getState()
+//    }
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
     {
