@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PNChartSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Smart Eyewear.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>21B37AA4D50329C326AE592115B9A666</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>50A790513C5191169FDD5EEBC495AF28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FF2742C9AD186F4E8FB6EE29F8EE088</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -38,11 +53,6 @@
 			<true/>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FF065FD5F27B8076598923F50F7A6CB9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

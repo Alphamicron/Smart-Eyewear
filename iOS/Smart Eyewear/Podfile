@@ -6,6 +6,7 @@
 target 'Smart Eyewear' do
 pod 'Metawear-iOSAPI'
 pod 'MBProgressHUD', '~> 0.9.2'
+pod 'PNChartSwift',:git => 'https://github.com/kevinzhow/PNChart-Swift.git'
 end
 
 target 'Smart EyewearTests' do
