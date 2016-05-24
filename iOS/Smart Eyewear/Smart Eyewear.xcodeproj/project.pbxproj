@@ -14,6 +14,10 @@
 		B23DAE8A1CF49C8B003BD7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */; };
 		B23DAE951CF49C8B003BD7FE /* Smart_EyewearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE941CF49C8B003BD7FE /* Smart_EyewearTests.swift */; };
 		B23DAEA01CF49C8C003BD7FE /* Smart_EyewearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */; };
+		B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */; };
+		B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */; };
+		B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */; };
+		B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		B23DAE9B1CF49C8B003BD7FE /* Smart EyewearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart EyewearUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_EyewearUITests.swift; sourceTree = "<group>"; };
 		B23DAEA11CF49C8C003BD7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationVC.swift; sourceTree = "<group>"; };
+		B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBLedVC.swift; sourceTree = "<group>"; };
+		B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryLevelVC.swift; sourceTree = "<group>"; };
+		B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */,
-				B23DAE811CF49C8B003BD7FE /* ViewController.swift */,
+				B23DAEB51CF4AE57003BD7FE /* Controllers */,
 				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
 				B23DAE861CF49C8B003BD7FE /* Assets.xcassets */,
 				B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */,
@@ -123,6 +131,18 @@
 				B23DAEA11CF49C8C003BD7FE /* Info.plist */,
 			);
 			path = "Smart EyewearUITests";
+			sourceTree = "<group>";
+		};
+		B23DAEB51CF4AE57003BD7FE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE811CF49C8B003BD7FE /* ViewController.swift */,
+				B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */,
+				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
+				B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */,
+				B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */,
+				B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */,
 				B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */,
 				B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */,
+				B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */,
+				B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
