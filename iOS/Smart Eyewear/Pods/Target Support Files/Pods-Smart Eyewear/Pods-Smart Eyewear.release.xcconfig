@@ -1,10 +1,8 @@
-EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Metawear-iOSAPI"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Metawear-iOSAPI"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FastCoding.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MBProgressHUD.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/PNChartSwift.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Metawear-iOSAPI"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "Bolts" -framework "CoreBluetooth" -framework "CoreData" -framework "FastCoding" -framework "MBProgressHUD" -framework "MetaWear" -framework "PNChartSwift"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FastCoding.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MBProgressHUD.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/PNChart.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/UICountingLabel.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Metawear-iOSAPI"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "Bolts" -framework "CoreBluetooth" -framework "CoreData" -framework "FastCoding" -framework "MBProgressHUD" -framework "MetaWear" -framework "PNChart" -framework "UICountingLabel"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Smart Eyewear
 PODS_ROOT = ${SRCROOT}/Pods

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '34004589F2EB795784E17513'
+               BlueprintIdentifier = 'BEC55A1E49B803D13151643F'
                BlueprintName = 'FastCoding'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'FastCoding.framework'>

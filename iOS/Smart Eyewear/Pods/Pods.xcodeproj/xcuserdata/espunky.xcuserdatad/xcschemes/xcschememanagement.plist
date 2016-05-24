@@ -19,7 +19,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PNChartSwift.xcscheme</key>
+		<key>PNChart.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,10 +29,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UICountingLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21B37AA4D50329C326AE592115B9A666</key>
+		<key>016D982990393D4CF14C8AE7998AEC65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6FF2742C9AD186F4E8FB6EE29F8EE088</key>
+		<key>579A77FC70791E204EDB97F21E8AD480</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C18C789438292FED01EB702705FC9AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
