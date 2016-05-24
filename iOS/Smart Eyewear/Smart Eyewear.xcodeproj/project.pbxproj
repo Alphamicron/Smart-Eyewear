@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */; };
+		B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE811CF49C8B003BD7FE /* ViewController.swift */; };
+		B23DAE851CF49C8B003BD7FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE831CF49C8B003BD7FE /* Main.storyboard */; };
+		B23DAE871CF49C8B003BD7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE861CF49C8B003BD7FE /* Assets.xcassets */; };
+		B23DAE8A1CF49C8B003BD7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */; };
+		B23DAE951CF49C8B003BD7FE /* Smart_EyewearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE941CF49C8B003BD7FE /* Smart_EyewearTests.swift */; };
+		B23DAEA01CF49C8C003BD7FE /* Smart_EyewearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B23DAE911CF49C8B003BD7FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23DAE741CF49C8B003BD7FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23DAE7B1CF49C8B003BD7FE;
+			remoteInfo = "Smart Eyewear";
+		};
+		B23DAE9C1CF49C8C003BD7FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B23DAE741CF49C8B003BD7FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B23DAE7B1CF49C8B003BD7FE;
+			remoteInfo = "Smart Eyewear";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B23DAE7C1CF49C8B003BD7FE /* Smart Eyewear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Eyewear.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B23DAE811CF49C8B003BD7FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B23DAE841CF49C8B003BD7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B23DAE861CF49C8B003BD7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B23DAE891CF49C8B003BD7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B23DAE8B1CF49C8B003BD7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DAE901CF49C8B003BD7FE /* Smart EyewearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart EyewearTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DAE941CF49C8B003BD7FE /* Smart_EyewearTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_EyewearTests.swift; sourceTree = "<group>"; };
+		B23DAE961CF49C8B003BD7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B23DAE9B1CF49C8B003BD7FE /* Smart EyewearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart EyewearUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_EyewearUITests.swift; sourceTree = "<group>"; };
+		B23DAEA11CF49C8C003BD7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B23DAE791CF49C8B003BD7FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE8D1CF49C8B003BD7FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE981CF49C8B003BD7FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B23DAE731CF49C8B003BD7FE = {
+			isa = PBXGroup;
+			children = (
+				B23DAE7E1CF49C8B003BD7FE /* Smart Eyewear */,
+				B23DAE931CF49C8B003BD7FE /* Smart EyewearTests */,
+				B23DAE9E1CF49C8C003BD7FE /* Smart EyewearUITests */,
+				B23DAE7D1CF49C8B003BD7FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B23DAE7D1CF49C8B003BD7FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE7C1CF49C8B003BD7FE /* Smart Eyewear.app */,
+				B23DAE901CF49C8B003BD7FE /* Smart EyewearTests.xctest */,
+				B23DAE9B1CF49C8B003BD7FE /* Smart EyewearUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B23DAE7E1CF49C8B003BD7FE /* Smart Eyewear */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */,
+				B23DAE811CF49C8B003BD7FE /* ViewController.swift */,
+				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
+				B23DAE861CF49C8B003BD7FE /* Assets.xcassets */,
+				B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */,
+				B23DAE8B1CF49C8B003BD7FE /* Info.plist */,
+			);
+			path = "Smart Eyewear";
+			sourceTree = "<group>";
+		};
+		B23DAE931CF49C8B003BD7FE /* Smart EyewearTests */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE941CF49C8B003BD7FE /* Smart_EyewearTests.swift */,
+				B23DAE961CF49C8B003BD7FE /* Info.plist */,
+			);
+			path = "Smart EyewearTests";
+			sourceTree = "<group>";
+		};
+		B23DAE9E1CF49C8C003BD7FE /* Smart EyewearUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */,
+				B23DAEA11CF49C8C003BD7FE /* Info.plist */,
+			);
+			path = "Smart EyewearUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B23DAE7B1CF49C8B003BD7FE /* Smart Eyewear */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DAEA41CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart Eyewear" */;
+			buildPhases = (
+				B23DAE781CF49C8B003BD7FE /* Sources */,
+				B23DAE791CF49C8B003BD7FE /* Frameworks */,
+				B23DAE7A1CF49C8B003BD7FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Smart Eyewear";
+			productName = "Smart Eyewear";
+			productReference = B23DAE7C1CF49C8B003BD7FE /* Smart Eyewear.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B23DAE8F1CF49C8B003BD7FE /* Smart EyewearTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DAEA71CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearTests" */;
+			buildPhases = (
+				B23DAE8C1CF49C8B003BD7FE /* Sources */,
+				B23DAE8D1CF49C8B003BD7FE /* Frameworks */,
+				B23DAE8E1CF49C8B003BD7FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23DAE921CF49C8B003BD7FE /* PBXTargetDependency */,
+			);
+			name = "Smart EyewearTests";
+			productName = "Smart EyewearTests";
+			productReference = B23DAE901CF49C8B003BD7FE /* Smart EyewearTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B23DAE9A1CF49C8B003BD7FE /* Smart EyewearUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23DAEAA1CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearUITests" */;
+			buildPhases = (
+				B23DAE971CF49C8B003BD7FE /* Sources */,
+				B23DAE981CF49C8B003BD7FE /* Frameworks */,
+				B23DAE991CF49C8B003BD7FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B23DAE9D1CF49C8C003BD7FE /* PBXTargetDependency */,
+			);
+			name = "Smart EyewearUITests";
+			productName = "Smart EyewearUITests";
+			productReference = B23DAE9B1CF49C8B003BD7FE /* Smart EyewearUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B23DAE741CF49C8B003BD7FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Emil Shirima";
+				TargetAttributes = {
+					B23DAE7B1CF49C8B003BD7FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F5JF5HGSGV;
+					};
+					B23DAE8F1CF49C8B003BD7FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F5JF5HGSGV;
+						TestTargetID = B23DAE7B1CF49C8B003BD7FE;
+					};
+					B23DAE9A1CF49C8B003BD7FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = F5JF5HGSGV;
+						TestTargetID = B23DAE7B1CF49C8B003BD7FE;
+					};
+				};
+			};
+			buildConfigurationList = B23DAE771CF49C8B003BD7FE /* Build configuration list for PBXProject "Smart Eyewear" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B23DAE731CF49C8B003BD7FE;
+			productRefGroup = B23DAE7D1CF49C8B003BD7FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B23DAE7B1CF49C8B003BD7FE /* Smart Eyewear */,
+				B23DAE8F1CF49C8B003BD7FE /* Smart EyewearTests */,
+				B23DAE9A1CF49C8B003BD7FE /* Smart EyewearUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B23DAE7A1CF49C8B003BD7FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DAE8A1CF49C8B003BD7FE /* LaunchScreen.storyboard in Resources */,
+				B23DAE871CF49C8B003BD7FE /* Assets.xcassets in Resources */,
+				B23DAE851CF49C8B003BD7FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE8E1CF49C8B003BD7FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE991CF49C8B003BD7FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B23DAE781CF49C8B003BD7FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */,
+				B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE8C1CF49C8B003BD7FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DAE951CF49C8B003BD7FE /* Smart_EyewearTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B23DAE971CF49C8B003BD7FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23DAEA01CF49C8C003BD7FE /* Smart_EyewearUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B23DAE921CF49C8B003BD7FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23DAE7B1CF49C8B003BD7FE /* Smart Eyewear */;
+			targetProxy = B23DAE911CF49C8B003BD7FE /* PBXContainerItemProxy */;
+		};
+		B23DAE9D1CF49C8C003BD7FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B23DAE7B1CF49C8B003BD7FE /* Smart Eyewear */;
+			targetProxy = B23DAE9C1CF49C8C003BD7FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B23DAE831CF49C8B003BD7FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23DAE841CF49C8B003BD7FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23DAE891CF49C8B003BD7FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B23DAEA21CF49C8C003BD7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B23DAEA31CF49C8C003BD7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B23DAEA51CF49C8C003BD7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Smart Eyewear/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-Eyewear";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B23DAEA61CF49C8C003BD7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Smart Eyewear/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-Eyewear";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B23DAEA81CF49C8C003BD7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Smart EyewearTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-EyewearTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Eyewear.app/Smart Eyewear";
+			};
+			name = Debug;
+		};
+		B23DAEA91CF49C8C003BD7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Smart EyewearTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-EyewearTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Eyewear.app/Smart Eyewear";
+			};
+			name = Release;
+		};
+		B23DAEAB1CF49C8C003BD7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Smart EyewearUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-EyewearUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Smart Eyewear";
+			};
+			name = Debug;
+		};
+		B23DAEAC1CF49C8C003BD7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Smart EyewearUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-EyewearUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Smart Eyewear";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B23DAE771CF49C8B003BD7FE /* Build configuration list for PBXProject "Smart Eyewear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DAEA21CF49C8C003BD7FE /* Debug */,
+				B23DAEA31CF49C8C003BD7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23DAEA41CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart Eyewear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DAEA51CF49C8C003BD7FE /* Debug */,
+				B23DAEA61CF49C8C003BD7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B23DAEA71CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DAEA81CF49C8C003BD7FE /* Debug */,
+				B23DAEA91CF49C8C003BD7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B23DAEAA1CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23DAEAB1CF49C8C003BD7FE /* Debug */,
+				B23DAEAC1CF49C8C003BD7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B23DAE741CF49C8B003BD7FE /* Project object */;
+}
