@@ -157,7 +157,6 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         case .PoweredOff:
             print("BLE OFF")
             presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: "Please turn on your bluetooth."), animated: true, completion: nil)
-//            promptErrorToUser("Connection Error", errorMessage: "Please turn on your bluetooth.")
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
@@ -169,7 +168,6 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         case .Unauthorized:
             print("BLE Unauthorized")
             presentViewController(Constants.defaultErrorAlert("Authorisation Error", errorMessage: "Smart Eyewear requires access to your Bluetooth."), animated: true, completion: nil)
-//            promptErrorToUser("Authorisation Error", errorMessage: "Smart Eyewear requires access to BLE.")
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
@@ -181,7 +179,6 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         case .Unsupported:
             print("BLE Unsupported")
             presentViewController(Constants.defaultErrorAlert("Error", errorMessage: "Device does not support Bluetooth Low Energy technology."), animated: true, completion: nil)
-//            promptErrorToUser("Error", errorMessage: "Device does not support BLE.")
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
         }
@@ -217,7 +214,6 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
     {
         presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
-//        promptErrorToUser("Connection Error", errorMessage: (error?.localizedDescription)!)
     }
     
 //    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?)
@@ -226,15 +222,6 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
 //        
 //        let selectedCell = tableView.cellForRowAtIndexPath(locationOfDeselectedCell)
 //        selectedCell?.detailTextLabel?.text = foundDevices[locationOfDeselectedCell.row].state.getState()
-//    }
-    
-//    func promptErrorToUser(errorTitle: String, errorMessage: String)
-//    {
-//        let alertController = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .Alert)
-//        
-//        alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-//        
-//        presentViewController(alertController, animated: true, completion: nil)
 //    }
     
 
