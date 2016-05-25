@@ -19,12 +19,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // POST: Delays any operation for 'delayTime' duration. Time is in seconds.
-    static func delayFor(delayTime: Double, closure:()->())
-    {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delayTime * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
-    }
 
 }
 

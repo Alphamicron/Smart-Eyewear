@@ -1,0 +1,6 @@
+framework module KHMColorWheelView {
+  umbrella header "KHMColorWheelView-umbrella.h"
+
+  export *
+  module * { export * }
+}

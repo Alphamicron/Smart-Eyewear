@@ -18,8 +18,8 @@ class DeviceTVCell: UITableViewCell
 }
 
 class DevicesTVC: UITableViewController, CBCentralManagerDelegate
- {
-
+{
+    
     var centralManager: CBCentralManager = CBCentralManager()
     
     var foundDevices: Array<MBLMetaWear>?
@@ -57,20 +57,20 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
             self.tableView.reloadData()
         })
     }
-
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if let numberOfDiscoveredDevices = foundDevices?.count
@@ -80,7 +80,7 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         
         return 0
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
@@ -92,7 +92,7 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
             cell.deviceUUID.text = currentDevice.identifier.UUIDString
             cell.deviceState.text = currentDevice.state.getState()
         }
-
+        
         return cell
     }
     
@@ -104,7 +104,7 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
             
             confirmationHUD.labelText = "Connecting to device..."
             DevicesTVC.currentlySelectedDevice = selectedDevice
-                        
+            
             DevicesTVC.currentlySelectedDevice.connectWithTimeout(Constants.defaultTimeOut, handler: { (error: NSError?) in
                 if let generatedError = error
                 {
@@ -123,7 +123,7 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
                         
                         DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
                         
-                        ViewController.delayFor(Constants.defaultDelayTime)
+                        Constants.delayFor(Constants.defaultDelayTime)
                         {
                             
                             self.navigationController?.popViewControllerAnimated(true)
@@ -185,54 +185,54 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         
     }
     
-//    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
-//    {
-//        if foundDevices!.contains(peripheral) && peripheral.name != nil
-//        {
-//            print("Peripheral Details")
-//            print(advertisementData)
-//            foundDevices.append(peripheral)
-//            tableView.reloadData()
-//        }
-//    }
+    //    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
+    //    {
+    //        if foundDevices!.contains(peripheral) && peripheral.name != nil
+    //        {
+    //            print("Peripheral Details")
+    //            print(advertisementData)
+    //            foundDevices.append(peripheral)
+    //            tableView.reloadData()
+    //        }
+    //    }
     
-//    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
-//    {
-//        print("Successfully Connected Device")
-//        centralManager.stopScan()
-//        
-//        if let thisConnectedDevice = foundDevices?[(tableView.indexPathForSelectedRow?.row)!]
-//        {
-//            let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
-//            selectedCell?.detailTextLabel?.text = thisConnectedDevice.state.getState()
-//        }
-//        
-////        let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
-////        selectedCell?.detailTextLabel?.text = foundDevices![tableView.indexPathForSelectedRow!.row].state.getState()
-//    }
+    //    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
+    //    {
+    //        print("Successfully Connected Device")
+    //        centralManager.stopScan()
+    //        
+    //        if let thisConnectedDevice = foundDevices?[(tableView.indexPathForSelectedRow?.row)!]
+    //        {
+    //            let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+    //            selectedCell?.detailTextLabel?.text = thisConnectedDevice.state.getState()
+    //        }
+    //        
+    ////        let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
+    ////        selectedCell?.detailTextLabel?.text = foundDevices![tableView.indexPathForSelectedRow!.row].state.getState()
+    //    }
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
     {
         presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
     }
     
-//    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?)
-//    {
-//        print("Successfully Disconnected Device")
-//        
-//        let selectedCell = tableView.cellForRowAtIndexPath(locationOfDeselectedCell)
-//        selectedCell?.detailTextLabel?.text = foundDevices[locationOfDeselectedCell.row].state.getState()
-//    }
+    //    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?)
+    //    {
+    //        print("Successfully Disconnected Device")
+    //        
+    //        let selectedCell = tableView.cellForRowAtIndexPath(locationOfDeselectedCell)
+    //        selectedCell?.detailTextLabel?.text = foundDevices[locationOfDeselectedCell.row].state.getState()
+    //    }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

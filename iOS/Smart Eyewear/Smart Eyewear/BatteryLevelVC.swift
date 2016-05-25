@@ -15,12 +15,8 @@ class BatteryLevelVC: UIViewController
     {
         super.viewDidLoad()
         
-        if DevicesTVC.currentlySelectedDevice.state != .Connected
+        if !Constants.isDeviceConnected()
         {
-//            let alertController = UIAlertController(title: "Device Error", message: "A device needs to be connected to see its battery life.", preferredStyle: .Alert)
-//            
-//            alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-            
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to see its battery life."), animated: true, completion: nil)
             
             drawCircleGraph(0)
@@ -30,7 +26,7 @@ class BatteryLevelVC: UIViewController
             DevicesTVC.currentlySelectedDevice.readBatteryLifeWithHandler({ (deviceChargeValue: NSNumber?, error: NSError?) in
                 if let batteryCheckError = error
                 {
-                    let alertController = UIAlertController(title: "Battery Check Error", message: error?.localizedDescription, preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: "Battery Check Error", message: batteryCheckError.localizedDescription, preferredStyle: .Alert)
                     
                     alertController.addAction(UIAlertAction(title: "Try Again", style: .Default, handler: { (action: UIAlertAction) in
                         self.viewDidLoad()
@@ -45,7 +41,7 @@ class BatteryLevelVC: UIViewController
             })
         }
     }
-
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -67,15 +63,15 @@ class BatteryLevelVC: UIViewController
         
         self.view.addSubview(circleChart)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
