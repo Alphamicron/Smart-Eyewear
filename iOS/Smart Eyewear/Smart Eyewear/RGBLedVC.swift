@@ -28,18 +28,15 @@ class RGBLedVC: UIViewController
         }
         else
         {
-            print("First Blink")
             DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor(red: 0.004, green: 0.098, blue: 0.200, alpha: 1.00), withIntensity: 1.0, numberOfFlashes: 3)
             
             Constants.delayFor(5, closure: {
                 
-                print("Second Blink")
                 DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor(red: 0.224, green: 0.071, blue: 0.122, alpha: 1.00), withIntensity: 1.0, numberOfFlashes: 5)
             })
             
             Constants.delayFor(10, closure: {
                 
-                print("Third Blink")
                 DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor(red: 0.847, green: 0.780, blue: 0.682, alpha: 1.00), withIntensity: 1.0, numberOfFlashes: 5)
             })
         }
