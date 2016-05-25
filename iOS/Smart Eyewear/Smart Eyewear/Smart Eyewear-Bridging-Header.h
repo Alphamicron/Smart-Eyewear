@@ -5,4 +5,3 @@
 #import <MetaWear/MetaWear.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <PNChart/PNChart.h>
-#import <KHMColorWheelView/KHMColorWheelView.h>
