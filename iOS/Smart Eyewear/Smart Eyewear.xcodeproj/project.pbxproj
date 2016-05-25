@@ -21,6 +21,7 @@
 		B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */; };
 		B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB81CF4B62A003BD7FE /* Extensions.swift */; };
 		B23DAEBD1CF4CD98003BD7FE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */; };
+		B2BBD5DE1CF5187E00D0EA32 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBD5DD1CF5187E00D0EA32 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		B23DAEBA1CF4CD97003BD7FE /* Smart Eyewear-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smart Eyewear-Bridging-Header.h"; sourceTree = "<group>"; };
 		B23DAEBB1CF4CD98003BD7FE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B2BBD5DD1CF5187E00D0EA32 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ED94F0369D43A38F4A38BCCC /* Pods_Smart_Eyewear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Eyewear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,7 +139,7 @@
 			children = (
 				B23DAEBB1CF4CD98003BD7FE /* MBProgressHUD.h */,
 				B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */,
-				B23DAEB81CF4B62A003BD7FE /* Extensions.swift */,
+				B2BBD5DF1CF5188600D0EA32 /* Extensions */,
 				B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */,
 				B23DAEB51CF4AE57003BD7FE /* Controllers */,
 				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
@@ -177,6 +179,15 @@
 				B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B2BBD5DF1CF5188600D0EA32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2BBD5DD1CF5187E00D0EA32 /* Constants.swift */,
+				B23DAEB81CF4B62A003BD7FE /* Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +383,7 @@
 				B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */,
 				B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */,
 				B23DAEBD1CF4CD98003BD7FE /* MBProgressHUD.m in Sources */,
+				B2BBD5DE1CF5187E00D0EA32 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,11 +17,11 @@ class BatteryLevelVC: UIViewController
         
         if DevicesTVC.currentlySelectedDevice.state != .Connected
         {
-            let alertController = UIAlertController(title: "Device Error", message: "A device needs to be connected to see its battery life.", preferredStyle: .Alert)
+//            let alertController = UIAlertController(title: "Device Error", message: "A device needs to be connected to see its battery life.", preferredStyle: .Alert)
+//            
+//            alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
             
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-            
-            presentViewController(alertController, animated: true, completion: nil)
+            presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to see its battery life."), animated: true, completion: nil)
             
             drawCircleGraph(0)
         }
@@ -57,7 +57,7 @@ class BatteryLevelVC: UIViewController
     {
         let circleFrame: CGRect = CGRect(x: self.view.bounds.size.width/2, y: self.view.bounds.size.width/5, width: self.view.bounds.size.width/65, height: self.view.bounds.size.height/2)
         
-        let circleChart = PNCircleChart(frame: circleFrame, total: 100, current: currentDeviceCharge, clockwise: true, shadow: true, shadowColor: UIColor.grayColor())
+        let circleChart = PNCircleChart(frame: circleFrame, total: Constants.deviceFullChargeValue, current: currentDeviceCharge, clockwise: true, shadow: true, shadowColor: UIColor.grayColor())
         
         circleChart.displayCountingLabel = true
         circleChart.lineWidth = 25
