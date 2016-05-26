@@ -48,3 +48,20 @@ extension MBLConnectionState
         }
     }
 }
+
+//MARK: UIColor Extension
+extension UIColor
+{
+    //POST: Given a colour, returns its repective hex value
+    func getHexValue()->String
+    {
+        let colourComponents = CGColorGetComponents(self.CGColor)
+        
+        let redComponent: Float = Float(colourComponents[0])
+        let greenComponent: Float = Float(colourComponents[1])
+        let blueComponent: Float = Float(colourComponents[2])
+        
+        // String format guide https://goo.gl/16mDzc
+        return String(format: "#%02lX%02lX%02lX", lroundf(redComponent * 255), lroundf(greenComponent * 255), lroundf(blueComponent * 255))
+    }
+}
