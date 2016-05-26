@@ -17,7 +17,7 @@ class DeviceTVCell: UITableViewCell
     @IBOutlet weak var deviceUUID: UILabel!
 }
 
-class DevicesTVC: UITableViewController, CBCentralManagerDelegate
+class DevicesTVC: UITableViewController
 {
     var foundDevices: Array<MBLMetaWear>?
     var centralManager: CBCentralManager = CBCentralManager()
@@ -140,8 +140,11 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
             })
         }
     }
-    
-    // MARK: Central Manager Delegate
+}
+
+// MARK: Central Manager Delegate
+extension DevicesTVC: CBCentralManagerDelegate
+{
     func centralManagerDidUpdateState(central: CBCentralManager)
     {
         switch central.state
@@ -183,6 +186,11 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
         
     }
     
+    func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
+    {
+        presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
+    }
+    
     //    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
     //    {
     //        if foundDevices!.contains(peripheral) && peripheral.name != nil
@@ -198,26 +206,22 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
     //    {
     //        print("Successfully Connected Device")
     //        centralManager.stopScan()
-    //        
+    //
     //        if let thisConnectedDevice = foundDevices?[(tableView.indexPathForSelectedRow?.row)!]
     //        {
     //            let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
     //            selectedCell?.detailTextLabel?.text = thisConnectedDevice.state.getState()
     //        }
-    //        
+    //
     ////        let selectedCell = tableView.cellForRowAtIndexPath(tableView.indexPathForSelectedRow!)
     ////        selectedCell?.detailTextLabel?.text = foundDevices![tableView.indexPathForSelectedRow!.row].state.getState()
     //    }
     
-    func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
-    {
-        presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
-    }
     
     //    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?)
     //    {
     //        print("Successfully Disconnected Device")
-    //        
+    //
     //        let selectedCell = tableView.cellForRowAtIndexPath(locationOfDeselectedCell)
     //        selectedCell?.detailTextLabel?.text = foundDevices[locationOfDeselectedCell.row].state.getState()
     //    }

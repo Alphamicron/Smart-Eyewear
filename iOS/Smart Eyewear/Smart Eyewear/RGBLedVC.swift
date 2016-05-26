@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RGBLedVC: UIViewController, ISColorWheelDelegate
+class RGBLedVC: UIViewController
 {
     var colorWheelView: ISColorWheel = ISColorWheel()
     
@@ -50,8 +50,11 @@ class RGBLedVC: UIViewController, ISColorWheelDelegate
         
         self.view.addSubview(colorWheelView)
     }
-    
-    // MARK: ISColorWheel Delegate
+}
+
+// MARK: ISColorWheel Delegate
+extension RGBLedVC: ISColorWheelDelegate
+{
     func colorWheelDidChangeColor(colorWheel: ISColorWheel!)
     {
         DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(colorWheel.currentColor, withIntensity: Constants.defaultLEDIntensity)
