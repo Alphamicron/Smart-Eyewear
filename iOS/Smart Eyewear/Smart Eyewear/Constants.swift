@@ -13,6 +13,7 @@ struct Constants
     static let deviceFullChargeValue: NSNumber = 100
     static let defaultTimeOut: NSTimeInterval = 15 // max waiting time for a device to be connected
     static let defaultDelayTime: NSTimeInterval = 2.0
+    static let defaultLEDIntensity: CGFloat = 1.0
     
     static func defaultErrorAlert(errorTitle: String, errorMessage: String)->UIAlertController
     {
@@ -36,5 +37,15 @@ struct Constants
             return false
         }
         return true
+    }
+    
+    static func turnOffAllLEDs()
+    {
+        DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+    }
+    
+    static func disconnectDevice()
+    {
+        DevicesTVC.currentlySelectedDevice.disconnectWithHandler(nil)
     }
 }

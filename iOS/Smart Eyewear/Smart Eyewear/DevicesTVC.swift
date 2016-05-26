@@ -19,10 +19,8 @@ class DeviceTVCell: UITableViewCell
 
 class DevicesTVC: UITableViewController, CBCentralManagerDelegate
 {
-    
-    var centralManager: CBCentralManager = CBCentralManager()
-    
     var foundDevices: Array<MBLMetaWear>?
+    var centralManager: CBCentralManager = CBCentralManager()
     static var currentlySelectedDevice: MBLMetaWear = MBLMetaWear()
     
     override func viewWillAppear(animated: Bool)
@@ -121,7 +119,7 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
                     confirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
                         print("The user confirmed the LED")
                         
-                        DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+                        Constants.turnOffAllLEDs()
                         
                         Constants.delayFor(Constants.defaultDelayTime)
                         {
@@ -132,8 +130,8 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
                     
                     confirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: { (action: UIAlertAction) in
                         print("The user did not confirm the LED")
-                        DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
-                        DevicesTVC.currentlySelectedDevice.disconnectWithHandler(nil)
+                        Constants.turnOffAllLEDs()
+                        Constants.disconnectDevice()
                         self.viewDidLoad()
                     }))
                     
@@ -223,16 +221,4 @@ class DevicesTVC: UITableViewController, CBCentralManagerDelegate
     //        let selectedCell = tableView.cellForRowAtIndexPath(locationOfDeselectedCell)
     //        selectedCell?.detailTextLabel?.text = foundDevices[locationOfDeselectedCell.row].state.getState()
     //    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
