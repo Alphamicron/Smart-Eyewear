@@ -40,11 +40,12 @@ class RGBLedVC: UIViewController, ISColorWheelDelegate
     // POST: A color wheel is added onto the loaded view
     func setupTheColorWheel()
     {
-        let viewSize: CGSize = self.view.bounds.size
-        let colorWheelSize: CGSize = CGSizeMake(viewSize.width * 0.9, viewSize.height * 0.5)
+        let colorWheelSize: CGSize = CGSizeMake(self.view.bounds.size.width * 0.9, self.view.bounds.size.height * 0.5)
         
-        colorWheelView = ISColorWheel(frame: CGRect(x: viewSize.width / 2 - colorWheelSize.width / 2, y: viewSize.height * 0.1, width: colorWheelSize.width, height: colorWheelSize.height))
+        colorWheelView = ISColorWheel(frame: CGRect(x: self.view.bounds.size.width / 2 - colorWheelSize.width / 2, y: self.view.bounds.size.height * 0.1, width: colorWheelSize.width, height: colorWheelSize.height))
         colorWheelView.delegate = self
+        // if true, a single tap and drag reflects colour changes
+        // if false, a user is required to drag and stop at a point for the colour to be changed
         colorWheelView.continuous = true
         
         self.view.addSubview(colorWheelView)
