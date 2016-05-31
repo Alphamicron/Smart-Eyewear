@@ -9,8 +9,7 @@
 import UIKit
 
 class ActivationVC: UIViewController
-{
-    
+{    
     override func viewDidLoad()
     {
         super.viewDidLoad()

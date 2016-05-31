@@ -310,8 +310,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Clouds" width="85" height="85"/>
-        <image name="CloudySunny" width="208" height="208"/>
-        <image name="Sunny" width="200" height="200"/>
+        <image name="Clouds" width="170" height="170"/>
+        <image name="CloudySunny" width="170" height="170"/>
+        <image name="Sunny" width="170" height="170"/>
     </resources>
 </document>
