@@ -14,6 +14,9 @@ struct Constants
     static let defaultTimeOut: NSTimeInterval = 15 // max waiting time for a device to be connected
     static let defaultDelayTime: NSTimeInterval = 2.0
     static let defaultLEDIntensity: CGFloat = 1.0
+    static let userThresholdMinimumValue: Float = Float() // min value for a valid photo sensor threshold
+    static let userThresholdMaximumValue: Float = 1024 // max value for a valid photo sensor threshold
+    
     
     static func defaultErrorAlert(errorTitle: String, errorMessage: String)->UIAlertController
     {
