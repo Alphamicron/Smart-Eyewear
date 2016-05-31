@@ -27,6 +27,8 @@ class ActivationVC: UIViewController
         }
         else
         {
+            let photoSensorPin = DevicesTVC.currentlySelectedDevice.gpio!.pins[1]
+            //            photoSensorPin.digitalValue
             // TODO: Photo sensor
             // Connect the LED first and try turning it on
             // Connect the photo sensor as well

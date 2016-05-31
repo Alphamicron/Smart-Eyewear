@@ -22,7 +22,6 @@
 		B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */; };
 		B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */; };
 		B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB81CF4B62A003BD7FE /* Extensions.swift */; };
-		B23DAEBD1CF4CD98003BD7FE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */; };
 		B2BBD5DE1CF5187E00D0EA32 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBD5DD1CF5187E00D0EA32 /* Constants.swift */; };
 		E5513063BD0244E919CC7CAA /* Pods_Smart_EyewearTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A9A2F296E4B0FF5E08576D /* Pods_Smart_EyewearTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,8 +72,6 @@
 		B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesTVC.swift; sourceTree = "<group>"; };
 		B23DAEB81CF4B62A003BD7FE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B23DAEBA1CF4CD97003BD7FE /* Smart Eyewear-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smart Eyewear-Bridging-Header.h"; sourceTree = "<group>"; };
-		B23DAEBB1CF4CD98003BD7FE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B2BBD5DD1CF5187E00D0EA32 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6A9A2F296E4B0FF5E08576D /* Pods_Smart_EyewearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05A581C5043448DE515A35A /* Pods-Smart EyewearUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart EyewearUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart EyewearUITests/Pods-Smart EyewearUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,8 +118,6 @@
 		302A63331CF74A5700109C02 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				B23DAEBB1CF4CD98003BD7FE /* MBProgressHUD.h */,
-				B23DAEBC1CF4CD98003BD7FE /* MBProgressHUD.m */,
 				302A63301CF74A4A00109C02 /* ISColorWheel.h */,
 				302A63311CF74A4A00109C02 /* ISColorWheel.m */,
 			);
@@ -492,7 +487,6 @@
 				B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */,
 				B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */,
 				B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */,
-				B23DAEBD1CF4CD98003BD7FE /* MBProgressHUD.m in Sources */,
 				B2BBD5DE1CF5187E00D0EA32 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
