@@ -15,15 +15,21 @@ class ActivationVC: UIViewController
     @IBOutlet weak var userThresholdLabel: UILabel!
     @IBOutlet weak var metaWearLabel: UILabel!
     
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         initiateSliderValues()
         
         if !Constants.isDeviceConnected()
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to change its LED colours"), animated: true, completion: nil)
+        }
+        else
+        {
+            // TODO: Photo sensor
+            // Connect the LED first and try turning it on
+            // Connect the photo sensor as well
         }
     }
     
