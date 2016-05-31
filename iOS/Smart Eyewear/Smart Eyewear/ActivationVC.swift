@@ -27,11 +27,17 @@ class ActivationVC: UIViewController
         }
         else
         {
-            let photoSensorPin = DevicesTVC.currentlySelectedDevice.gpio!.pins[1]
-            //            photoSensorPin.digitalValue
-            // TODO: Photo sensor
-            // Connect the LED first and try turning it on
-            // Connect the photo sensor as well
+            if let photoSensorGPIO = DevicesTVC.currentlySelectedDevice.gpio
+            {
+                let photoSensor: MBLGPIOPin = photoSensorGPIO.pins[2] as! MBLGPIOPin
+                photoSensor.analogAbsolute.readAsync().success({ (result: AnyObject) in
+                    print(result)
+                    let temp = result as! MBLNumericData
+                    print(temp)
+                    print(temp.value.floatValue)
+                })
+            }
+            
         }
     }
     
