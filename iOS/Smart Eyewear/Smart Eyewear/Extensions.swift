@@ -61,6 +61,10 @@ extension UIColor
         let greenComponent: Float = Float(colourComponents[1])
         let blueComponent: Float = Float(colourComponents[2])
         
+        print("Red Value: \(lroundf(redComponent * 255))")
+        print("Green Value: \(lroundf(greenComponent * 255))")
+        print("Blue Value: \(lroundf(blueComponent * 255))")
+        
         // String format guide https://goo.gl/16mDzc
         return String(format: "#%02lX%02lX%02lX", lroundf(redComponent * 255), lroundf(greenComponent * 255), lroundf(blueComponent * 255))
     }
