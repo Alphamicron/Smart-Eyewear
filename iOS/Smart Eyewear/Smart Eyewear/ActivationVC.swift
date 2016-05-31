@@ -20,6 +20,11 @@ class ActivationVC: UIViewController
     {
         super.viewDidLoad()
         initiateSliderValues()
+        
+        if !Constants.isDeviceConnected()
+        {
+            presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to change its LED colours"), animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning()
