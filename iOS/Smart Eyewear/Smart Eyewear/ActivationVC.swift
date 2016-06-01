@@ -15,12 +15,14 @@ class ActivationVC: UIViewController
     @IBOutlet weak var userThresholdLabel: UILabel!
     @IBOutlet weak var metaWearLabel: UILabel!
     @IBOutlet weak var turnOnSwitch: UISwitch!
+    @IBOutlet weak var manualBtn: UIButton!
+    @IBOutlet weak var automaticBtn: UIButton!
     
     var photoSensorVoltage: Float = Float()
+    var userTimer: NSTimer = NSTimer()
     
     override func viewDidLoad()
     {
-        print("VDL called")
         super.viewDidLoad()
         
         initiateUIValues()
@@ -33,28 +35,12 @@ class ActivationVC: UIViewController
     
     override func viewWillAppear(animated: Bool)
     {
-        super.viewWillAppear(animated)
-        
-        readVoltageFromPhotoSensor()
+        super.viewWillAppear(animated)        
     }
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func turnOnOffBtnAction(sender: UIButton)
-    {
-        if sender.currentTitle == "Turn On"
-        {
-            // TODO: Diconnect connection from the photo sensor
-            sender.setTitle("Turn Off", forState: .Normal)
-        }
-        else
-        {
-            // TODO: Initiate connection to the poto sensor
-            sender.setTitle("Turn On", forState: .Normal)
-        }
     }
     
     @IBAction func automaticBtnAction(sender: UIButton)
@@ -77,51 +63,31 @@ class ActivationVC: UIViewController
         userThresholdSlider.minimumValue = Constants.userThresholdMinimumValue
         userThresholdSlider.maximumValue = Constants.userThresholdMaximumValue
         
-        metaWearValueSlider.setValue(readPhotoSensorValueInitially(), animated: true)
         // MARK: Consider initiating the slider to some default value instead of random generation?
         userThresholdSlider.setValue(Float(arc4random_uniform(UInt32(Constants.userThresholdMaximumValue))), animated: true)
         
-        
-        metaWearLabel.text = String(Int(metaWearValueSlider.value))
+        metaWearValueSlider.hidden = true
+        metaWearLabel.hidden = true
         userThresholdLabel.text = String(Int(userThresholdSlider.value))
         
         // makes the switch vertical
         turnOnSwitch.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+        turnOnSwitch.onTintColor = UIColor(red: 0.208, green: 0.169, blue: 0.137, alpha: 1.00)
+        
+        manualBtn.setTitle("Manual OFF", forState: .Normal)
+        manualBtn.setTitle("Manual ON", forState: .Selected)
+        
+        automaticBtn.setTitle("Automatic OFF", forState: .Normal)
+        automaticBtn.setTitle("Automatic ON", forState: .Selected)
+        
+        manualBtn.addTarget(self, action: #selector(ActivationVC.manualButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        automaticBtn.addTarget(self, action: #selector(ActivationVC.automaticButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        
+        manualBtn.layer.cornerRadius = 10
+        automaticBtn.layer.cornerRadius = manualBtn.layer.cornerRadius
     }
     
-    // POST: Listens for any digital pin value changes, then reads the corrsponding analogue value
-    func readVoltageFromPhotoSensor()
-    {
-        if let photoSensorGPIO = DevicesTVC.currentlySelectedDevice.gpio
-        {
-            let photoSensor: MBLGPIOPin = photoSensorGPIO.pins[Constants.PinAssignments.pinTwo] as! MBLGPIOPin
-            // TODO: Probably just keep track of only falling pin values instead?
-            photoSensor.changeType = .Any
-            photoSensor.configuration = .Nopull
-            photoSensor.changeEvent.startNotificationsWithHandlerAsync({ (digitalResult: AnyObject?, error: NSError?) in
-                if error == nil
-                {
-                    let attainedValue = digitalResult as! MBLNumericData
-                    print("Digital Value: \(attainedValue.value.floatValue)")
-                    
-                    photoSensor.analogAbsolute.readAsync().success({ (analogueResult: AnyObject) in
-                        
-                        let readValue = analogueResult as! MBLNumericData
-                        //                        print(readValue.value.floatValue)
-                        self.photoSensorVoltage = readValue.value.floatValue
-                        print("Updated Value: \(self.photoSensorVoltage)")
-                        self.reflectChangesToMetaWearSlider(self.convertValueToSliderScale(self.photoSensorVoltage))
-                    })
-                }
-                else
-                {
-                    self.presentViewController(Constants.defaultErrorAlert("Value Change Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
-                }
-            })
-        }
-    }
-    
-    func readPhotoSensorValueInitially() -> Float
+    func readPhotoSensorValue()
     {
         var photoSensorVoltage: Float = Float()
         
@@ -133,11 +99,10 @@ class ActivationVC: UIViewController
                 
                 let attainedValue = analogueResult as! MBLNumericData
                 photoSensorVoltage = self.convertValueToSliderScale(attainedValue.value.floatValue)
+                self.reflectChangesToMetaWearSlider(photoSensorVoltage)
                 
             })
         }
-        
-        return photoSensorVoltage
     }
     
     // POST: Given a current voltage, converts it to the scale; Constants.userThresholdMinimumValue to Constants.userThresholdMaximumValue
@@ -150,5 +115,54 @@ class ActivationVC: UIViewController
     {
         metaWearValueSlider.setValue(newMetaWearValue, animated: true)
         metaWearLabel.text = String(Int(metaWearValueSlider.value))
+    }
+    
+    // POST: Repeats the said task every taskDuration seconds
+    func repeatThisTaskEvery(requiredTask: Selector, taskDuration: NSTimeInterval)
+    {
+        Constants.defaultTimer = NSTimer.scheduledTimerWithTimeInterval(taskDuration, target: self, selector: requiredTask, userInfo: nil, repeats: true)
+    }
+    
+    func manualButtonClicked(sender: UIButton)
+    {
+        sender.selected = !sender.selected
+        
+        if sender.selected
+        {
+            print("Button Clicked")
+        }
+        else
+        {
+            print("Button Deactivated")
+        }
+    }
+    
+    // POST: Hides manual switch and slider
+    func automaticButtonClicked(sender: UIButton)
+    {
+        sender.selected = !sender.selected
+        
+        // automatic mode selected
+        if sender.selected && Constants.isDeviceConnected()
+        {
+            // unhide metawear related stuff
+            metaWearLabel.hidden = false
+            metaWearValueSlider.hidden = false
+            
+            // hide manual stuff
+            userThresholdSlider.hidden = true
+            userThresholdLabel.hidden = true
+            turnOnSwitch.hidden = true
+            manualBtn.selected = false
+            
+            // update photo sensor value each second
+            repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: 1.0)
+        }
+        else
+        {
+            Constants.defaultTimer.invalidate()
+            metaWearLabel.hidden = true
+            metaWearValueSlider.hidden = true
+        }
     }
 }
