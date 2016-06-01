@@ -10,6 +10,8 @@ import UIKit
 
 class ActivationVC: UIViewController
 {
+    //TODO: Keep track of the real ratio as well
+    
     @IBOutlet weak var userThresholdSlider: UISlider!
     @IBOutlet weak var metaWearValueSlider: UISlider!
     @IBOutlet weak var userThresholdLabel: UILabel!
@@ -77,6 +79,7 @@ class ActivationVC: UIViewController
             turnLED(Constants.LEDState.Off)
         }
     }
+    
     // POST: Sets up the slider with default values upon a successful view load
     func initiateUIValues()
     {
@@ -105,6 +108,7 @@ class ActivationVC: UIViewController
         automaticBtn.layer.cornerRadius = manualBtn.layer.cornerRadius
     }
     
+    // POST: Get voltage of photo sensor pin and reflects it onto the metaWearSlider
     func readPhotoSensorValue()
     {
         var photoSensorVoltage: Float = Float()
@@ -115,8 +119,11 @@ class ActivationVC: UIViewController
             
             photoSensor.analogAbsolute.readAsync().success({ (analogueResult: AnyObject) in
                 
+                // cast the value to numeric value
                 let attainedValue = analogueResult as! MBLNumericData
+                // converts the voltage to a 0-1024 scale
                 photoSensorVoltage = self.convertValueToSliderScale(attainedValue.value.floatValue)
+                // displays the scaled up value onto the slider
                 self.reflectChangesToMetaWearSlider(photoSensorVoltage)
                 
             })

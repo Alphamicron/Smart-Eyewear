@@ -68,5 +68,4 @@ class BatteryLevelVC: UIViewController
         
         self.view.addSubview(circleChart)
     }
-    
 }
