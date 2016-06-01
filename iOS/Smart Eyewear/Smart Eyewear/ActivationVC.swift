@@ -43,11 +43,6 @@ class ActivationVC: UIViewController
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func automaticBtnAction(sender: UIButton)
-    {
-        print("Automatic Mode Activated")
-    }
-    
     // POST: Keeps track of the user's threshold changes
     @IBAction func userThresholdChange(sender: UISlider)
     {
