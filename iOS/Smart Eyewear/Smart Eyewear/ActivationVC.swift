@@ -14,6 +14,7 @@ class ActivationVC: UIViewController
     @IBOutlet weak var metaWearValueSlider: UISlider!
     @IBOutlet weak var userThresholdLabel: UILabel!
     @IBOutlet weak var metaWearLabel: UILabel!
+    @IBOutlet weak var turnOnSwitch: UISwitch!
     
     var photoSensorVoltage: Float = Float()
     
@@ -22,7 +23,7 @@ class ActivationVC: UIViewController
         print("VDL called")
         super.viewDidLoad()
         
-        initiateSliderValues()
+        initiateUIValues()
         
         if !Constants.isDeviceConnected()
         {
@@ -69,7 +70,7 @@ class ActivationVC: UIViewController
     }
     
     // POST: Sets up the slider with default values upon a successful view load
-    func initiateSliderValues()
+    func initiateUIValues()
     {
         metaWearValueSlider.minimumValue = Constants.userThresholdMinimumValue
         metaWearValueSlider.maximumValue = Constants.userThresholdMaximumValue
@@ -83,6 +84,9 @@ class ActivationVC: UIViewController
         
         metaWearLabel.text = String(Int(metaWearValueSlider.value))
         userThresholdLabel.text = String(Int(userThresholdSlider.value))
+        
+        // makes the switch vertical
+        turnOnSwitch.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
     }
     
     // POST: Listens for any digital pin value changes, then reads the corrsponding analogue value
