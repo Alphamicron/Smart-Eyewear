@@ -30,12 +30,26 @@ class ActivationVC: UIViewController
             if let photoSensorGPIO = DevicesTVC.currentlySelectedDevice.gpio
             {
                 let photoSensor: MBLGPIOPin = photoSensorGPIO.pins[2] as! MBLGPIOPin
-                photoSensor.analogAbsolute.readAsync().success({ (result: AnyObject) in
-                    print(result)
-                    let temp = result as! MBLNumericData
-                    print(temp)
-                    print(temp.value.floatValue)
+                // TODO: Probably just keep track of only falling pin values instead?
+                photoSensor.changeType = .Any
+                photoSensor.configuration = .Nopull
+                photoSensor.changeEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
+                    if error == nil
+                    {
+                        let newValue = result as! MBLNumericData
+                        print(newValue.value.floatValue)
+                    }
+                    else
+                    {
+                        self.presentViewController(Constants.defaultErrorAlert("Value Change Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
+                    }
                 })
+                //                photoSensor.analogAbsolute.readAsync().success({ (result: AnyObject) in
+                //                    print(result)
+                //                    let temp = result as! MBLNumericData
+                //                    print(temp)
+                //                    print(temp.value.floatValue)
+                //                })
             }
             
         }
