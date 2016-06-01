@@ -19,7 +19,6 @@ class ActivationVC: UIViewController
     @IBOutlet weak var automaticBtn: UIButton!
     
     var photoSensorVoltage: Float = Float()
-    var userTimer: NSTimer = NSTimer()
     
     override func viewDidLoad()
     {
@@ -38,6 +37,14 @@ class ActivationVC: UIViewController
         super.viewWillAppear(animated)        
     }
     
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+        // TODO: Is this really necessary?
+        turnLED(Constants.LEDState.Off)
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -46,8 +53,16 @@ class ActivationVC: UIViewController
     // POST: Keeps track of the user's threshold changes
     @IBAction func userThresholdChange(sender: UISlider)
     {
-        print("Current value: \(sender.value)")
-        userThresholdLabel.text = String(Int(sender.value))
+        if sender.value < metaWearValueSlider.value
+        {
+            turnLED(Constants.LEDState.On)
+        }
+        else
+        {
+            turnLED(Constants.LEDState.Off)
+        }
+        
+        userThresholdLabel.text = String(Int(userThresholdSlider.value))
     }
     
     // POST: Keeps track of when manual mode is ON/OFF
@@ -55,12 +70,11 @@ class ActivationVC: UIViewController
     {
         if sender.on
         {
-            // TODO: Do stuff when switch is ON
-            print("Switch turned ON")
+            turnLED(Constants.LEDState.On)
         }
         else
         {
-            print("Switch turned OFF")
+            turnLED(Constants.LEDState.Off)
         }
     }
     // POST: Sets up the slider with default values upon a successful view load
@@ -197,14 +211,26 @@ class ActivationVC: UIViewController
     // POST: Sets a random slider value at first then unhides corresponding stuff
     func unhideAllAutomaticOperationStuff()
     {
-        // TODO: Consider initiating the slider to some default value instead of random generation?
-        userThresholdSlider.setValue(Float(arc4random_uniform(UInt32(Constants.userThresholdMaximumValue))), animated: true)
-        userThresholdLabel.text = String(Int(userThresholdSlider.value))
-        
         metaWearValueSlider.hidden = false
         userThresholdSlider.hidden = false
         
         metaWearLabel.hidden = false
         userThresholdLabel.hidden = false
+    }
+    
+    func turnLED(ledState: Constants.LEDState)
+    {
+        if let metaWearGPIO = DevicesTVC.currentlySelectedDevice.gpio
+        {
+            let LEDPin = metaWearGPIO.pins[Constants.PinAssignments.pinOne] as! MBLGPIOPin
+            
+            switch ledState
+            {
+            case .On:
+                LEDPin.setToDigitalValueAsync(true)
+            case .Off:
+                LEDPin.setToDigitalValueAsync(false)
+            }
+        }
     }
 }

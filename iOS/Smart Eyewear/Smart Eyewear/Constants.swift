@@ -62,4 +62,10 @@ struct Constants
         static let pinThree: Int = 3 // DIO3/AIN3
         static let pinFour: Int = 4 // DIO4
     }
+    
+    enum LEDState
+    {
+        case On
+        case Off
+    }
 }
