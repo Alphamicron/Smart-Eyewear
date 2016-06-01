@@ -27,7 +27,6 @@ class DevicesTVC: UITableViewController
     {
         super.viewWillAppear(animated)
         
-        print("Devices TVC view will appear was called")
         centralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue())
     }
     
@@ -35,7 +34,6 @@ class DevicesTVC: UITableViewController
     {
         super.viewDidDisappear(animated)
         
-        print("Devices TVC view did disappear was called")
         if centralManager.isScanning
         {
             centralManager.stopScan()

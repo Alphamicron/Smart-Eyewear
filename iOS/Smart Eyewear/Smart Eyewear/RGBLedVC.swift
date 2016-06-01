@@ -58,6 +58,5 @@ extension RGBLedVC: ISColorWheelDelegate
     func colorWheelDidChangeColor(colorWheel: ISColorWheel!)
     {
         DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(colorWheel.currentColor, withIntensity: Constants.defaultLEDIntensity)
-        print(colorWheel.currentColor.getHexValue())
     }
 }
