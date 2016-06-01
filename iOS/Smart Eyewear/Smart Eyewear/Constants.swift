@@ -12,7 +12,7 @@ struct Constants
 {
     static let deviceFullChargeValue: NSNumber = 100
     static let defaultTimeOut: NSTimeInterval = 15 // max waiting time for a device to be connected
-    static let defaultDelayTime: NSTimeInterval = 2.0
+    static let defaultDelayTime: NSTimeInterval = 1.0
     static let defaultLEDIntensity: CGFloat = 1.0
     static var defaultTimer: NSTimer = NSTimer()
     static let userThresholdMinimumValue: Float = Float() // min value for a valid photo sensor threshold
@@ -43,7 +43,7 @@ struct Constants
         return true
     }
     
-    static func turnOffAllLEDs()
+    static func turnOffMetaWearLED()
     {
         DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
     }

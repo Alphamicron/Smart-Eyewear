@@ -16,7 +16,7 @@ class RGBLedVC: UIViewController
     {
         super.viewWillDisappear(animated)
         
-        Constants.turnOffAllLEDs()
+        Constants.turnOffMetaWearLED()
     }
     
     override func viewDidLoad()

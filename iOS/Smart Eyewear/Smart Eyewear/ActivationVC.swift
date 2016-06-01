@@ -182,7 +182,7 @@ class ActivationVC: UIViewController
                 hideAllManualOperationStuff()
                 
                 // update photo sensor value each second
-                repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: 1.0)
+                repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
             }
             else
             {

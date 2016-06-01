@@ -94,14 +94,19 @@ class DevicesTVC: UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        // get the device tapped on by user
         if let selectedDevice = foundDevices?[indexPath.row]
         {
+            // freeze UI while attempting to connect to device
             let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
-            
             confirmationHUD.labelText = "Connecting to device..."
+            
             DevicesTVC.currentlySelectedDevice = selectedDevice
             
+            // makes multiple connection attempts to metawear under Constants.defaultTimeOut time
             DevicesTVC.currentlySelectedDevice.connectWithTimeout(Constants.defaultTimeOut, handler: { (error: NSError?) in
+                
+                // a connection timeout error
                 if let generatedError = error
                 {
                     confirmationHUD.labelText = generatedError.localizedDescription
@@ -110,25 +115,32 @@ class DevicesTVC: UITableViewController
                 else
                 {
                     confirmationHUD.hide(true)
+                    
+                    // flash the Metawear LED Green just to confirm its the right device
                     DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
                     
                     let confirmationAlert = UIAlertController(title: "Confirm Device", message: "Do you see a blinking green LED light?", preferredStyle: .Alert)
                     
+                    // if yes, then simply turn off the LED and delay for Constants.defaultDelayTime before segueing back to the main view
                     confirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
                         print("The user confirmed the LED")
                         
-                        Constants.turnOffAllLEDs()
+                        Constants.turnOffMetaWearLED()
+                        
+                        // update device state to the user
+                        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! DeviceTVCell
+                        selectedCell.deviceState.text = selectedDevice.state.getState()
                         
                         Constants.delayFor(Constants.defaultDelayTime)
                         {
-                            
                             self.navigationController?.popViewControllerAnimated(true)
                         }
                     }))
                     
+                    // if not, disconnect the wrong device then continue scanning
                     confirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: { (action: UIAlertAction) in
                         print("The user did not confirm the LED")
-                        Constants.turnOffAllLEDs()
+                        Constants.turnOffMetaWearLED()
                         Constants.disconnectDevice()
                         self.viewDidLoad()
                     }))

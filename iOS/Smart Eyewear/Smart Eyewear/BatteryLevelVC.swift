@@ -24,16 +24,20 @@ class BatteryLevelVC: UIViewController
         else
         {
             DevicesTVC.currentlySelectedDevice.readBatteryLifeWithHandler({ (deviceChargeValue: NSNumber?, error: NSError?) in
+                
+                // Metawear error getting the current battery level
                 if let batteryCheckError = error
                 {
-                    // Metawear error getting the current battery level
-
+                    
+                    // explain to the user the error
                     let alertController = UIAlertController(title: "Battery Check Error", message: batteryCheckError.localizedDescription, preferredStyle: .Alert)
                     
+                    // if they choose to Try Again, then reload the view
                     alertController.addAction(UIAlertAction(title: "Try Again", style: .Default, handler: { (action: UIAlertAction) in
                         self.viewDidLoad()
                     }))
                     
+                    // else, just return to the blank white screen with no value to draw
                     alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
                     
                     self.presentViewController(alertController, animated: true, completion: nil)
