@@ -33,23 +33,23 @@ class ActivationVC: UIViewController
                 // TODO: Probably just keep track of only falling pin values instead?
                 photoSensor.changeType = .Any
                 photoSensor.configuration = .Nopull
-                photoSensor.changeEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
+                photoSensor.changeEvent.startNotificationsWithHandlerAsync({ (digitalResult: AnyObject?, error: NSError?) in
                     if error == nil
                     {
-                        let newValue = result as! MBLNumericData
-                        print(newValue.value.floatValue)
+                        let attainedValue = digitalResult as! MBLNumericData
+                        print("Digital Value: \(attainedValue.value.floatValue)")
+                        
+                        photoSensor.analogAbsolute.readAsync().success({ (analogResult: AnyObject) in
+                            
+                            let readValue = analogResult as! MBLNumericData
+                            print(readValue.value.floatValue)
+                        })
                     }
                     else
                     {
                         self.presentViewController(Constants.defaultErrorAlert("Value Change Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
                     }
                 })
-                //                photoSensor.analogAbsolute.readAsync().success({ (result: AnyObject) in
-                //                    print(result)
-                //                    let temp = result as! MBLNumericData
-                //                    print(temp)
-                //                    print(temp.value.floatValue)
-                //                })
             }
             
         }
@@ -86,7 +86,7 @@ class ActivationVC: UIViewController
         userThresholdLabel.text = String(Int(sender.value))
     }
     
-    
+    // POST: Sets up the slider with default values upon a successfully view load
     func initiateSliderValues()
     {
         userThresholdSlider.minimumValue = Constants.userThresholdMinimumValue
@@ -100,5 +100,10 @@ class ActivationVC: UIViewController
         
         metaWearLabel.text = String(Int(metaWearValueSlider.value))
         userThresholdLabel.text = String(Int(userThresholdSlider.value))
+    }
+    
+    func readFromPhotoSensor()-> Float
+    {
+        return Float()
     }
 }
