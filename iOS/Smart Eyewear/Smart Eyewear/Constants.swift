@@ -16,7 +16,7 @@ struct Constants
     static let defaultLEDIntensity: CGFloat = 1.0
     static let userThresholdMinimumValue: Float = Float() // min value for a valid photo sensor threshold
     static let userThresholdMaximumValue: Float = 1024 // max value for a valid photo sensor threshold
-    
+    static let maximumPinVoltage: Float = 3.0 // maximum voltage supplied by Pin 6 as of https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
     
     static func defaultErrorAlert(errorTitle: String, errorMessage: String)->UIAlertController
     {
@@ -50,5 +50,15 @@ struct Constants
     static func disconnectDevice()
     {
         DevicesTVC.currentlySelectedDevice.disconnectWithHandler(nil)
+    }
+    
+    // Refer https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
+    struct PinAssignments
+    {
+        static let pinZero: Int = Int() // DIO0/AIN0
+        static let pinOne: Int = 1 // DIO1/AIN1
+        static let pinTwo: Int = 2 // DIO2/AIN2
+        static let pinThree: Int = 3 // DIO3/AIN3
+        static let pinFour: Int = 4 // DIO4
     }
 }
