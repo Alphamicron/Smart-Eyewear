@@ -29,7 +29,7 @@ class ActivationVC: UIViewController
         
         if !Constants.isDeviceConnected()
         {
-            presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to change its LED colours"), animated: true, completion: nil)
+            presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to activate the photo sensor"), animated: true, completion: nil)
         }
     }
     
@@ -55,6 +55,19 @@ class ActivationVC: UIViewController
         userThresholdLabel.text = String(Int(sender.value))
     }
     
+    // POST: Keeps track of when manual mode is ON/OFF
+    @IBAction func userSwitchAction(sender: UISwitch)
+    {
+        if sender.on
+        {
+            // TODO: Do stuff when switch is ON
+            print("Switch turned ON")
+        }
+        else
+        {
+            print("Switch turned OFF")
+        }
+    }
     // POST: Sets up the slider with default values upon a successful view load
     func initiateUIValues()
     {
@@ -63,12 +76,8 @@ class ActivationVC: UIViewController
         userThresholdSlider.minimumValue = Constants.userThresholdMinimumValue
         userThresholdSlider.maximumValue = Constants.userThresholdMaximumValue
         
-        // MARK: Consider initiating the slider to some default value instead of random generation?
-        userThresholdSlider.setValue(Float(arc4random_uniform(UInt32(Constants.userThresholdMaximumValue))), animated: true)
-        
-        metaWearValueSlider.hidden = true
-        metaWearLabel.hidden = true
-        userThresholdLabel.text = String(Int(userThresholdSlider.value))
+        hideAllManualOperationStuff()
+        hideAllAutomaticOperationStuff()
         
         // makes the switch vertical
         turnOnSwitch.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
@@ -125,44 +134,82 @@ class ActivationVC: UIViewController
     
     func manualButtonClicked(sender: UIButton)
     {
-        sender.selected = !sender.selected
-        
-        if sender.selected
+        if !Constants.isDeviceConnected()
         {
-            print("Button Clicked")
+            presentViewController(Constants.defaultErrorAlert("Invalid Operation", errorMessage: "A device needs to be connected to continue"), animated: true, completion: nil)
         }
         else
         {
-            print("Button Deactivated")
+            sender.selected = !sender.selected
+            
+            // manual mode selected
+            if sender.selected
+            {
+                hideAllAutomaticOperationStuff()
+                turnOnSwitch.hidden = false
+            }
+            else
+            {
+                turnOnSwitch.hidden = true
+            }
         }
     }
     
-    // POST: Hides manual switch and slider
     func automaticButtonClicked(sender: UIButton)
     {
-        sender.selected = !sender.selected
-        
-        // automatic mode selected
-        if sender.selected && Constants.isDeviceConnected()
+        if !Constants.isDeviceConnected()
         {
-            // unhide metawear related stuff
-            metaWearLabel.hidden = false
-            metaWearValueSlider.hidden = false
-            
-            // hide manual stuff
-            userThresholdSlider.hidden = true
-            userThresholdLabel.hidden = true
-            turnOnSwitch.hidden = true
-            manualBtn.selected = false
-            
-            // update photo sensor value each second
-            repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: 1.0)
+            presentViewController(Constants.defaultErrorAlert("Invalid Operation", errorMessage: "A device needs to be connected to continue"), animated: true, completion: nil)
         }
         else
         {
-            Constants.defaultTimer.invalidate()
-            metaWearLabel.hidden = true
-            metaWearValueSlider.hidden = true
+            sender.selected = !sender.selected
+            
+            // automatic mode selected
+            if sender.selected
+            {
+                unhideAllAutomaticOperationStuff()
+                
+                hideAllManualOperationStuff()
+                
+                // update photo sensor value each second
+                repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: 1.0)
+            }
+            else
+            {
+                Constants.defaultTimer.invalidate()
+                hideAllAutomaticOperationStuff()
+            }
         }
+    }
+    
+    func hideAllManualOperationStuff()
+    {
+        turnOnSwitch.on = false
+        turnOnSwitch.hidden = true
+        manualBtn.selected = false
+    }
+    
+    func hideAllAutomaticOperationStuff()
+    {
+        metaWearLabel.hidden = true
+        metaWearValueSlider.hidden = true
+        userThresholdSlider.hidden = true
+        userThresholdLabel.hidden = true
+        automaticBtn.selected = false
+    }
+    
+    // POST: Sets a random slider value at first then unhides corresponding stuff
+    func unhideAllAutomaticOperationStuff()
+    {
+        // TODO: Consider initiating the slider to some default value instead of random generation?
+        userThresholdSlider.setValue(Float(arc4random_uniform(UInt32(Constants.userThresholdMaximumValue))), animated: true)
+        userThresholdLabel.text = String(Int(userThresholdSlider.value))
+        
+        metaWearValueSlider.hidden = false
+        userThresholdSlider.hidden = false
+        
+        metaWearLabel.hidden = false
+        userThresholdLabel.hidden = false
     }
 }
