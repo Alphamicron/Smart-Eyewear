@@ -39,13 +39,16 @@ class RGBLedVC: UIViewController
         if !Constants.isDeviceConnected()
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to change its LED colours"), animated: true, completion: nil)
+            
+            Constants.displayNoDeviceBackgroundOn(self.view)
         }
-        
-        setupTheColorWheel()
-        
-        createTheColourTitleLabels()
-        createColourSliders()
-        createColourValueLabels()
+        else
+        {
+            setupTheColorWheel()
+            createTheColourTitleLabels()
+            createColourSliders()
+            createColourValueLabels()
+        }
     }
     
     override func didReceiveMemoryWarning()

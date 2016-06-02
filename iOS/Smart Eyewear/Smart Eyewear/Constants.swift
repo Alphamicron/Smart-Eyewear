@@ -54,6 +54,26 @@ struct Constants
         DevicesTVC.currentlySelectedDevice.disconnectWithHandler(nil)
     }
     
+    static func displayNoDeviceBackgroundOn(currentView: UIView)
+    {
+        // if any subviews exist, just delete them
+        if currentView.subviews.count != Int()
+        {
+            for thisSubview in currentView.subviews
+            {
+                thisSubview.removeFromSuperview()
+            }
+        }
+        
+        let errorImageView: UIImageView = UIImageView(frame: CGRect(x: currentView.frame.origin.x, y: currentView.frame.origin.y, width: currentView.frame.width, height: currentView.frame.height))
+        errorImageView.center = CGPointMake(currentView.bounds.size.width/2, currentView.bounds.size.height/2)
+        errorImageView.contentMode = .ScaleAspectFill
+        errorImageView.image = UIImage(named: "NoDevice")
+        errorImageView.backgroundColor = UIColor.whiteColor()
+        
+        currentView.addSubview(errorImageView)
+    }
+    
     // Refer https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
     struct PinAssignments
     {

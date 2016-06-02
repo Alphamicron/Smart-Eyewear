@@ -26,17 +26,16 @@ class ActivationVC: UIViewController
     {
         super.viewDidLoad()
         
-        initiateUIValues()
-        
         if !Constants.isDeviceConnected()
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to activate the photo sensor"), animated: true, completion: nil)
+            
+            Constants.displayNoDeviceBackgroundOn(self.view)
         }
-    }
-    
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated)        
+        else
+        {
+            initiateUIValues()
+        }
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -51,7 +50,6 @@ class ActivationVC: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
-    
     
     // POST: Keeps track of the photo sensor's threshold changes
     @IBAction func metaWearThresholdChange(sender: UISlider)
