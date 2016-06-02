@@ -169,6 +169,7 @@ extension DevicesTVC: CBCentralManagerDelegate
             print("BLE OFF")
             presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: "Please turn on your bluetooth."), animated: true, completion: nil)
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoBLEConnection)
             break
             
         case .Resetting:
@@ -193,7 +194,6 @@ extension DevicesTVC: CBCentralManagerDelegate
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
         }
-        
     }
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)

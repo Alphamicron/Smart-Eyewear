@@ -40,11 +40,11 @@ class RGBLedVC: UIViewController
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to change its LED colours"), animated: true, completion: nil)
             
-            Constants.displayNoDeviceBackgroundOn(self.view)
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
         }
         else
         {
-            setupTheColorWheel()
+            createTheColorWheel()
             createTheColourTitleLabels()
             createColourSliders()
             createColourValueLabels()
@@ -58,7 +58,7 @@ class RGBLedVC: UIViewController
     
     // PRE: View needs to be loaded
     // POST: A color wheel is added onto the loaded view
-    func setupTheColorWheel()
+    func createTheColorWheel()
     {
         let colorWheelSize: CGSize = CGSizeMake(self.view.bounds.size.width * 0.9, self.view.bounds.size.height * 0.5)
         
@@ -151,20 +151,29 @@ class RGBLedVC: UIViewController
     
     func redSliderTapped(sender: UISlider)
     {
-        // TODO: Light the MetaWear LED
-        print("Red Slider Tapped")
+        redValueLabel.text = String(Int(sender.value))
+        
+        let userDesiredColor: UIColor = UIColor(red: CGFloat(sender.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        
+        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
     
     func greenSliderTapped(sender: UISlider)
     {
-        // TODO: Light the MetaWear LED
-        print("Green Slider Tapped")
+        greenValueLabel.text = String(Int(sender.value))
+        
+        let userDesiredColor: UIColor = UIColor(red: CGFloat(sender.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        
+        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
     
     func blueSliderTapped(sender: UISlider)
     {
-        // TODO: Light the MetaWear LED
-        print("Blue Slider Tapped")
+        blueValueLabel.text = String(Int(sender.value))
+        
+        let userDesiredColor: UIColor = UIColor(red: CGFloat(sender.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        
+        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
 }
 

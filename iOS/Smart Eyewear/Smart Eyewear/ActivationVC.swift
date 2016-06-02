@@ -30,7 +30,7 @@ class ActivationVC: UIViewController
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to activate the photo sensor"), animated: true, completion: nil)
             
-            Constants.displayNoDeviceBackgroundOn(self.view)
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
         }
         else
         {
