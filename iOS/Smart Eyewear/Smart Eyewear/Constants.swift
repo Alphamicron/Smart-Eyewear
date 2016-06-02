@@ -18,6 +18,7 @@ struct Constants
     static let userThresholdMinimumValue: Float = Float() // min value for a valid photo sensor threshold
     static let userThresholdMaximumValue: Float = 1024 // max value for a valid photo sensor threshold
     static let maximumPinVoltage: Float = 3.0 // maximum voltage supplied by Pin 6 as of https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
+    static let defaultFont: UIFont = UIFont(name: "AvenirNext-Regular", size: 20)!
     
     static func defaultErrorAlert(errorTitle: String, errorMessage: String)->UIAlertController
     {

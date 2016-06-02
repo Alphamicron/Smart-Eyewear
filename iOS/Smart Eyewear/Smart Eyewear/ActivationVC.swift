@@ -52,6 +52,16 @@ class ActivationVC: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    
+    // POST: Keeps track of the photo sensor's threshold changes
+    @IBAction func metaWearThresholdChange(sender: UISlider)
+    {
+        if sender.value < userThresholdSlider.value
+        {
+            turnLED(Constants.LEDState.On)
+        }
+    }
+    
     // POST: Keeps track of the user's threshold changes
     @IBAction func userThresholdChange(sender: UISlider)
     {

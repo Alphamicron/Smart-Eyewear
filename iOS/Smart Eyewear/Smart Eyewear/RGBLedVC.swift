@@ -29,6 +29,8 @@ class RGBLedVC: UIViewController
         }
         
         setupTheColorWheel()
+        
+        setupTheRGBLabels()
     }
     
     override func didReceiveMemoryWarning()
@@ -49,6 +51,58 @@ class RGBLedVC: UIViewController
         colorWheelView.continuous = true
         
         self.view.addSubview(colorWheelView)
+    }
+    
+    func setupTheRGBLabels()
+    {
+        // Create the colour labels
+        let redLabel: UILabel = UILabel(frame: CGRect(x: 15, y: 425, width: 35, height: 20))
+        let greenLabel: UILabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: redLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
+        let blueLabel: UILabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: greenLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
+        
+        // Create the colour sliders
+        let redSlider: UISlider = UISlider(frame: CGRect(x: redLabel.frame.width + 5, y: 420 + redLabel.frame.height/2, width: 250, height: 10))
+        let greenSlider: UISlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 479 + greenLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
+        let blueSlider: UISlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 538 + blueLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
+        
+        let redValueLabel: UILabel = UILabel(frame: CGRect(x: redSlider.frame.width + 50, y: redSlider.frame.origin.y - 15, width: 35, height: 35))
+        let greenValueLabel: UILabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: greenSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
+        let blueValueLabel: UILabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: blueSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
+        
+        // Initialize their respective values
+        redSlider.minimumValue = 0
+        redSlider.maximumValue = 255
+        greenSlider.minimumValue = redSlider.minimumValue
+        greenSlider.maximumValue = redSlider.maximumValue
+        blueSlider.minimumValue = redSlider.minimumValue
+        blueSlider.maximumValue = redSlider.maximumValue
+        
+        // Setup the label fonts and sizes
+        redLabel.font = Constants.defaultFont
+        greenLabel.font = Constants.defaultFont
+        blueLabel.font = Constants.defaultFont
+        redValueLabel.font = Constants.defaultFont
+        greenValueLabel.font = Constants.defaultFont
+        blueValueLabel.font = Constants.defaultFont
+        
+        // Assign texts to them pretty much
+        redLabel.text = "R"
+        greenLabel.text = "G"
+        blueLabel.text = "B"
+        // TODO: Remove these values after being updated
+        redValueLabel.text = "248"
+        greenValueLabel.text = "248"
+        blueValueLabel.text = "248"
+        
+        self.view.addSubview(redLabel)
+        self.view.addSubview(greenLabel)
+        self.view.addSubview(blueLabel)
+        self.view.addSubview(redSlider)
+        self.view.addSubview(greenSlider)
+        self.view.addSubview(blueSlider)
+        self.view.addSubview(redValueLabel)
+        self.view.addSubview(greenValueLabel)
+        self.view.addSubview(blueValueLabel)
     }
 }
 
