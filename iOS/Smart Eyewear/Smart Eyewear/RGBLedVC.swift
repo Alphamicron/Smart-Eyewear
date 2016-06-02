@@ -12,6 +12,10 @@ class RGBLedVC: UIViewController
 {
     var colorWheelView: ISColorWheel = ISColorWheel()
     
+    var redLabel: UILabel = UILabel()
+    var greenLabel: UILabel = UILabel()
+    var blueLabel: UILabel = UILabel()
+    
     var redSlider: UISlider = UISlider()
     var greenSlider: UISlider = UISlider()
     var blueSlider: UISlider = UISlider()
@@ -31,6 +35,7 @@ class RGBLedVC: UIViewController
     {
         super.viewDidLoad()
         
+        // TODO: Add an image in the background showing their is no device?
         if !Constants.isDeviceConnected()
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to change its LED colours"), animated: true, completion: nil)
@@ -38,7 +43,9 @@ class RGBLedVC: UIViewController
         
         setupTheColorWheel()
         
-        setupTheRGBLabels()
+        createTheColourTitleLabels()
+        createColourSliders()
+        createColourValueLabels()
     }
     
     override func didReceiveMemoryWarning()
@@ -61,61 +68,100 @@ class RGBLedVC: UIViewController
         self.view.addSubview(colorWheelView)
     }
     
-    func setupTheRGBLabels()
+    func createTheColourTitleLabels()
     {
-        // Create the colour labels
-        let redLabel: UILabel = UILabel(frame: CGRect(x: 15, y: 425, width: 35, height: 20))
-        let greenLabel: UILabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: redLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
-        let blueLabel: UILabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: greenLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
+        // create labels
+        redLabel = UILabel(frame: CGRect(x: 15, y: 425, width: 35, height: 20))
+        greenLabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: redLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
+        blueLabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: greenLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
         
-        // Create the colour sliders
+        // set their titles respectively
+        redLabel.text = "R"
+        greenLabel.text = "G"
+        blueLabel.text = "B"
+        
+        // set the text font
+        redLabel.font = Constants.defaultFont
+        greenLabel.font = Constants.defaultFont
+        blueLabel.font = Constants.defaultFont
+        
+        // add them to the main view
+        self.view.addSubview(redLabel)
+        self.view.addSubview(greenLabel)
+        self.view.addSubview(blueLabel)
+    }
+    
+    func createColourSliders()
+    {
+        // create sliders
         redSlider = UISlider(frame: CGRect(x: redLabel.frame.width + 5, y: 420 + redLabel.frame.height/2, width: 250, height: 10))
         greenSlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 479 + greenLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
         blueSlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 538 + blueLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
         
-        redValueLabel = UILabel(frame: CGRect(x: redSlider.frame.width + 50, y: redSlider.frame.origin.y - 15, width: 35, height: 35))
-        greenValueLabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: greenSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
-        blueValueLabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: blueSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
-        
-        // Initialize their respective values
-        redSlider.minimumValue = 0
+        // declare their properties
+        redSlider.minimumValue = Float()
         redSlider.maximumValue = 255
         greenSlider.minimumValue = redSlider.minimumValue
         greenSlider.maximumValue = redSlider.maximumValue
         blueSlider.minimumValue = redSlider.minimumValue
         blueSlider.maximumValue = redSlider.maximumValue
         
-        // Setup the label fonts and sizes
-        redLabel.font = Constants.defaultFont
-        greenLabel.font = Constants.defaultFont
-        blueLabel.font = Constants.defaultFont
-        redValueLabel.font = Constants.defaultFont
-        greenValueLabel.font = Constants.defaultFont
-        blueValueLabel.font = Constants.defaultFont
-        
-        // Pretty much assigning texts to the labels
-        redLabel.text = "R"
-        greenLabel.text = "G"
-        blueLabel.text = "B"
-        
-        // Update the slider values initially
+        // initialize with a value first
         redSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.red)!, animated: true)
         greenSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.green)!, animated: true)
         blueSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.blue)!, animated: true)
         
+        // add actions to the sliders
+        redSlider.addTarget(self, action: #selector(RGBLedVC.redSliderTapped(_:)), forControlEvents: .ValueChanged)
+        greenSlider.addTarget(self, action: #selector(RGBLedVC.greenSliderTapped(_:)), forControlEvents: .ValueChanged)
+        blueSlider.addTarget(self, action: #selector(RGBLedVC.blueSliderTapped(_:)), forControlEvents: .ValueChanged)
+        
+        // add them to the main view
+        self.view.addSubview(redSlider)
+        self.view.addSubview(greenSlider)
+        self.view.addSubview(blueSlider)
+    }
+    
+    func createColourValueLabels()
+    {
+        // create the labels
+        redValueLabel = UILabel(frame: CGRect(x: redSlider.frame.width + 50, y: redSlider.frame.origin.y - 15, width: 35, height: 35))
+        greenValueLabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: greenSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
+        blueValueLabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: blueSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
+        
+        
+        // asssign fonts
+        redValueLabel.font = Constants.defaultFont
+        greenValueLabel.font = Constants.defaultFont
+        blueValueLabel.font = Constants.defaultFont
+        
+        // initialise them with the current colour wheel's colour value
         redValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.red)!))
         greenValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.green)!))
         blueValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.blue)!))
         
-        self.view.addSubview(redLabel)
-        self.view.addSubview(greenLabel)
-        self.view.addSubview(blueLabel)
-        self.view.addSubview(redSlider)
-        self.view.addSubview(greenSlider)
-        self.view.addSubview(blueSlider)
+        // add them to the main view
         self.view.addSubview(redValueLabel)
         self.view.addSubview(greenValueLabel)
         self.view.addSubview(blueValueLabel)
+    }
+    
+    func redSliderTapped(sender: UISlider)
+    {
+        // TODO: Light the MetaWear LED
+        print("Red Slider Tapped")
+    }
+    
+    func greenSliderTapped(sender: UISlider)
+    {
+        // TODO: Light the MetaWear LED
+        print("Green Slider Tapped")
+    }
+    
+    func blueSliderTapped(sender: UISlider)
+    {
+        // TODO: Light the MetaWear LED
+        print("Blue Slider Tapped")
     }
 }
 
