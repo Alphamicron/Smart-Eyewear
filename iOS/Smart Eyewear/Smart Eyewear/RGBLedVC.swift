@@ -12,6 +12,14 @@ class RGBLedVC: UIViewController
 {
     var colorWheelView: ISColorWheel = ISColorWheel()
     
+    var redSlider: UISlider = UISlider()
+    var greenSlider: UISlider = UISlider()
+    var blueSlider: UISlider = UISlider()
+    
+    var redValueLabel: UILabel = UILabel()
+    var greenValueLabel: UILabel = UILabel()
+    var blueValueLabel: UILabel = UILabel()
+    
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
@@ -61,13 +69,13 @@ class RGBLedVC: UIViewController
         let blueLabel: UILabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: greenLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
         
         // Create the colour sliders
-        let redSlider: UISlider = UISlider(frame: CGRect(x: redLabel.frame.width + 5, y: 420 + redLabel.frame.height/2, width: 250, height: 10))
-        let greenSlider: UISlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 479 + greenLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
-        let blueSlider: UISlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 538 + blueLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
+        redSlider = UISlider(frame: CGRect(x: redLabel.frame.width + 5, y: 420 + redLabel.frame.height/2, width: 250, height: 10))
+        greenSlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 479 + greenLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
+        blueSlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 538 + blueLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
         
-        let redValueLabel: UILabel = UILabel(frame: CGRect(x: redSlider.frame.width + 50, y: redSlider.frame.origin.y - 15, width: 35, height: 35))
-        let greenValueLabel: UILabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: greenSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
-        let blueValueLabel: UILabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: blueSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
+        redValueLabel = UILabel(frame: CGRect(x: redSlider.frame.width + 50, y: redSlider.frame.origin.y - 15, width: 35, height: 35))
+        greenValueLabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: greenSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
+        blueValueLabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: blueSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
         
         // Initialize their respective values
         redSlider.minimumValue = 0
@@ -85,14 +93,14 @@ class RGBLedVC: UIViewController
         greenValueLabel.font = Constants.defaultFont
         blueValueLabel.font = Constants.defaultFont
         
-        // Assign texts to them pretty much
+        // Pretty much assigning texts to the labels
         redLabel.text = "R"
         greenLabel.text = "G"
         blueLabel.text = "B"
         // TODO: Remove these values after being updated
-        redValueLabel.text = "248"
-        greenValueLabel.text = "248"
-        blueValueLabel.text = "248"
+        redValueLabel.text = "0"
+        greenValueLabel.text = "0"
+        blueValueLabel.text = "0"
         
         self.view.addSubview(redLabel)
         self.view.addSubview(greenLabel)
@@ -112,5 +120,15 @@ extension RGBLedVC: ISColorWheelDelegate
     func colorWheelDidChangeColor(colorWheel: ISColorWheel!)
     {
         DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(colorWheel.currentColor, withIntensity: Constants.defaultLEDIntensity)
+        
+        // TODO: Is this update really necessary
+        // update the sliders to reflect the current colour being hovered over by the wheel
+        redSlider.setValue((colorWheel.currentColor.getRGBAValue()?.red)!, animated: true)
+        greenSlider.setValue((colorWheel.currentColor.getRGBAValue()?.green)!, animated: true)
+        blueSlider.setValue((colorWheel.currentColor.getRGBAValue()?.blue)!, animated: true)
+        
+        redValueLabel.text = String((colorWheel.currentColor.getRGBAValue()?.red)!)
+        greenValueLabel.text = String((colorWheel.currentColor.getRGBAValue()?.green)!)
+        blueValueLabel.text = String((colorWheel.currentColor.getRGBAValue()?.blue)!)
     }
 }

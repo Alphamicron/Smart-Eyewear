@@ -68,4 +68,22 @@ extension UIColor
         // String format guide https://goo.gl/16mDzc
         return String(format: "#%02lX%02lX%02lX", lroundf(redComponent * 255), lroundf(greenComponent * 255), lroundf(blueComponent * 255))
     }
+    
+    // POST: Given a colour, returns its RGBA value
+    func getRGBAValue()-> (red:Float, green:Float, blue:Float, alpha:Float)?
+    {
+        var floatRed: CGFloat = CGFloat()
+        var floatGreen: CGFloat = CGFloat()
+        var floatBlue: CGFloat = CGFloat()
+        var floatAlpha: CGFloat = CGFloat()
+        
+        if self.getRed(&floatRed, green: &floatGreen, blue: &floatBlue, alpha: &floatAlpha)
+        {
+            return(red: Float(floatRed * 255), green: Float(floatGreen * 255), blue: Float(floatBlue * 255), alpha: Float(floatAlpha * 255))
+        }
+        else // could not extract the RGBA components
+        {
+            return nil
+        }
+    }
 }
