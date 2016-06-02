@@ -97,10 +97,15 @@ class RGBLedVC: UIViewController
         redLabel.text = "R"
         greenLabel.text = "G"
         blueLabel.text = "B"
-        // TODO: Remove these values after being updated
-        redValueLabel.text = "0"
-        greenValueLabel.text = "0"
-        blueValueLabel.text = "0"
+        
+        // Update the slider values initially
+        redSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.red)!, animated: true)
+        greenSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.green)!, animated: true)
+        blueSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.blue)!, animated: true)
+        
+        redValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.red)!))
+        greenValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.green)!))
+        blueValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.blue)!))
         
         self.view.addSubview(redLabel)
         self.view.addSubview(greenLabel)
@@ -127,8 +132,8 @@ extension RGBLedVC: ISColorWheelDelegate
         greenSlider.setValue((colorWheel.currentColor.getRGBAValue()?.green)!, animated: true)
         blueSlider.setValue((colorWheel.currentColor.getRGBAValue()?.blue)!, animated: true)
         
-        redValueLabel.text = String((colorWheel.currentColor.getRGBAValue()?.red)!)
-        greenValueLabel.text = String((colorWheel.currentColor.getRGBAValue()?.green)!)
-        blueValueLabel.text = String((colorWheel.currentColor.getRGBAValue()?.blue)!)
+        redValueLabel.text = String(Int((colorWheel.currentColor.getRGBAValue()?.red)!))
+        greenValueLabel.text = String(Int((colorWheel.currentColor.getRGBAValue()?.green)!))
+        blueValueLabel.text = String(Int((colorWheel.currentColor.getRGBAValue()?.blue)!))
     }
 }
