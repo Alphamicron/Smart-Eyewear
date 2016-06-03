@@ -153,7 +153,7 @@ class RGBLedVC: UIViewController
     {
         redValueLabel.text = String(Int(sender.value))
         
-        let userDesiredColor: UIColor = UIColor(red: CGFloat(sender.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        let userDesiredColor: UIColor = UIColor(red: CGFloat(sender.value/255.0), green: CGFloat(greenSlider.value/255.0), blue: CGFloat(blueSlider.value/255.0), alpha: 1)
         
         DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
@@ -162,7 +162,7 @@ class RGBLedVC: UIViewController
     {
         greenValueLabel.text = String(Int(sender.value))
         
-        let userDesiredColor: UIColor = UIColor(red: CGFloat(sender.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        let userDesiredColor: UIColor = UIColor(red: CGFloat(redSlider.value/255.0), green: CGFloat(sender.value/255.0), blue: CGFloat(blueSlider.value/255.0), alpha: 1)
         
         DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
@@ -171,7 +171,7 @@ class RGBLedVC: UIViewController
     {
         blueValueLabel.text = String(Int(sender.value))
         
-        let userDesiredColor: UIColor = UIColor(red: CGFloat(sender.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        let userDesiredColor: UIColor = UIColor(red: CGFloat(redSlider.value/255.0), green: CGFloat(greenSlider.value/255.0), blue: CGFloat(sender.value/255.0), alpha: 1)
         
         DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
