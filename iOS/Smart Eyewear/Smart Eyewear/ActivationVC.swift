@@ -43,7 +43,7 @@ class ActivationVC: UIViewController
         super.viewWillDisappear(animated)
         
         // TODO: Is this really necessary?
-        turnLED(Constants.LEDState.Off)
+        ActivationVC.turnLED(Constants.LEDState.Off)
     }
     
     override func didReceiveMemoryWarning()
@@ -56,7 +56,7 @@ class ActivationVC: UIViewController
     {
         if sender.value < userThresholdSlider.value
         {
-            turnLED(Constants.LEDState.On)
+            ActivationVC.turnLED(Constants.LEDState.On)
         }
     }
     
@@ -65,11 +65,11 @@ class ActivationVC: UIViewController
     {
         if sender.value < metaWearValueSlider.value
         {
-            turnLED(Constants.LEDState.On)
+            ActivationVC.turnLED(Constants.LEDState.On)
         }
         else
         {
-            turnLED(Constants.LEDState.Off)
+            ActivationVC.turnLED(Constants.LEDState.Off)
         }
         
         userThresholdLabel.text = String(Int(userThresholdSlider.value))
@@ -80,11 +80,11 @@ class ActivationVC: UIViewController
     {
         if sender.on
         {
-            turnLED(Constants.LEDState.On)
+            ActivationVC.turnLED(Constants.LEDState.On)
         }
         else
         {
-            turnLED(Constants.LEDState.Off)
+            ActivationVC.turnLED(Constants.LEDState.Off)
         }
     }
     
@@ -233,7 +233,7 @@ class ActivationVC: UIViewController
         userThresholdLabel.hidden = false
     }
     
-    func turnLED(ledState: Constants.LEDState)
+    static func turnLED(ledState: Constants.LEDState)
     {
         if let metaWearGPIO = DevicesTVC.currentlySelectedDevice.gpio
         {

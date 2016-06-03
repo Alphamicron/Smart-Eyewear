@@ -10,6 +10,7 @@ import Foundation
 
 struct Constants
 {
+    static var numberOfButtonTaps: Int = Int()
     static let deviceFullChargeValue: NSNumber = 100
     static let defaultTimeOut: NSTimeInterval = 15 // max waiting time for a device to be connected
     static let defaultDelayTime: NSTimeInterval = 1.0
@@ -102,7 +103,55 @@ struct Constants
         
         DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.programCommandsToRunOnEventAsync({
             
-            DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.redColor(), withIntensity: 1.0, numberOfFlashes: 3)
+            //            ActivationVC.turnLED(Constants.LEDState.Off)
+            
+            //            print(Constants.numberOfButtonTaps)
+            //            
+            //            if Constants.numberOfButtonTaps % 2 == 0
+            //            {
+            //                ActivationVC.turnLED(Constants.LEDState.Off)
+            //            }
+            //            else
+            //            {
+            //                ActivationVC.turnLED(Constants.LEDState.On)
+            //            }
+            
+            //            ActivationVC.turnLED(Constants.LEDState.Off)
+            
+            //            DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.redColor(), withIntensity: 1.0, numberOfFlashes: 3)
+            
+            //            else
+            //            {
+            //                ActivationVC.turnLED(Constants.LEDState.On)
+            //            }
+            
+            
+            if let metaWearGPIO = DevicesTVC.currentlySelectedDevice.gpio
+            {
+                let LEDPin = metaWearGPIO.pins[Constants.PinAssignments.pinOne] as! MBLGPIOPin
+                
+                //                LEDPin.setToDigitalValueAsync(true)
+                
+                print("LEDPin Stuff: \(LEDPin)")
+                print("LEDPin Data: \(LEDPin.digitalValue)")
+                
+                LEDPin.digitalValue.readAsync().success({ (result: AnyObject) in
+                    
+                    let pinValue: MBLNumericData = result as! MBLNumericData
+                    
+                    if pinValue.value.boolValue
+                    {
+                        print("LED is ON")
+                        LEDPin.setToDigitalValueAsync(false)
+                    }
+                    else
+                    {
+                        print("LED is OFF")
+                        LEDPin.setToDigitalValueAsync(true)
+                    }
+                })
+            }
+            
             
             //            DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
             //                if error == nil
