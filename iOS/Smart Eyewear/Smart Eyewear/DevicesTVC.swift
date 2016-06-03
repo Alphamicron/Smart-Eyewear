@@ -77,7 +77,6 @@ class DevicesTVC: UITableViewController
         return 0
     }
     
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! DeviceTVCell
@@ -127,6 +126,8 @@ class DevicesTVC: UITableViewController
                         
                         Constants.turnOffMetaWearLED()
                         
+                        Constants.setButtonToFlashLED()
+                        
                         // update device state to the user
                         let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! DeviceTVCell
                         selectedCell.deviceState.text = selectedDevice.state.getState()
@@ -135,6 +136,7 @@ class DevicesTVC: UITableViewController
                         {
                             self.navigationController?.popViewControllerAnimated(true)
                         }
+                        
                     }))
                     
                     // if not, disconnect the wrong device then continue scanning

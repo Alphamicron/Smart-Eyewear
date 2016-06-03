@@ -83,6 +83,52 @@ struct Constants
         currentView.addSubview(errorImageView)
     }
     
+    static func setButtonToFlashLED()
+    {
+        // erase any existing commands before assigning new ones
+        if let deviceHasButtonPrograms = DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands()
+        {
+            print(deviceHasButtonPrograms)
+            
+            if deviceHasButtonPrograms
+            {
+                DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
+                
+            }
+            
+            print(DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
+            
+        }
+        
+        DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.programCommandsToRunOnEventAsync({
+            
+            DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.redColor(), withIntensity: 1.0, numberOfFlashes: 3)
+            
+            //            DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
+            //                if error == nil
+            //                {
+            //                    let switchState: MBLNumericData = result as! MBLNumericData
+            //                    
+            //                    if switchState.value.boolValue
+            //                    {
+            //                        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(UIColor.redColor(), withIntensity: 1.0)
+            //                    }
+            //                    else
+            //                    {
+            //                        DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+            //                    }
+            //                    
+            //                    print("Switch value: \(switchState.value.boolValue)")
+            //                }
+            //                else
+            //                {
+            //                    print("Error getting switch state")
+            //                    print(error?.localizedDescription)
+            //                }
+            //            })
+        })
+    }
+    
     // Refer https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
     struct PinAssignments
     {
