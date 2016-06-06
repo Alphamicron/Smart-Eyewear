@@ -126,8 +126,6 @@ class DevicesTVC: UITableViewController
                         
                         Constants.turnOffMetaWearLED()
                         
-                        Constants.setButtonToFlashLED()
-                        
                         // update device state to the user
                         let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! DeviceTVCell
                         selectedCell.deviceState.text = selectedDevice.state.getState()

@@ -101,81 +101,34 @@ struct Constants
             
         }
         
-        DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.programCommandsToRunOnEventAsync({
-            
-            //            ActivationVC.turnLED(Constants.LEDState.Off)
-            
-            //            print(Constants.numberOfButtonTaps)
-            //            
-            //            if Constants.numberOfButtonTaps % 2 == 0
-            //            {
-            //                ActivationVC.turnLED(Constants.LEDState.Off)
-            //            }
-            //            else
-            //            {
-            //                ActivationVC.turnLED(Constants.LEDState.On)
-            //            }
-            
-            //            ActivationVC.turnLED(Constants.LEDState.Off)
-            
-            //            DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.redColor(), withIntensity: 1.0, numberOfFlashes: 3)
-            
-            //            else
-            //            {
-            //                ActivationVC.turnLED(Constants.LEDState.On)
-            //            }
-            
-            
-            if let metaWearGPIO = DevicesTVC.currentlySelectedDevice.gpio
-            {
-                let LEDPin = metaWearGPIO.pins[Constants.PinAssignments.pinOne] as! MBLGPIOPin
-                
-                //                LEDPin.setToDigitalValueAsync(true)
-                
-                print("LEDPin Stuff: \(LEDPin)")
-                print("LEDPin Data: \(LEDPin.digitalValue)")
-                
-                LEDPin.digitalValue.readAsync().success({ (result: AnyObject) in
-                    
-                    let pinValue: MBLNumericData = result as! MBLNumericData
-                    
-                    if pinValue.value.boolValue
-                    {
-                        print("LED is ON")
-                        LEDPin.setToDigitalValueAsync(false)
-                    }
-                    else
-                    {
-                        print("LED is OFF")
-                        LEDPin.setToDigitalValueAsync(true)
-                    }
-                })
-            }
-            
-            
-            //            DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
-            //                if error == nil
-            //                {
-            //                    let switchState: MBLNumericData = result as! MBLNumericData
-            //                    
-            //                    if switchState.value.boolValue
-            //                    {
-            //                        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(UIColor.redColor(), withIntensity: 1.0)
-            //                    }
-            //                    else
-            //                    {
-            //                        DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
-            //                    }
-            //                    
-            //                    print("Switch value: \(switchState.value.boolValue)")
-            //                }
-            //                else
-            //                {
-            //                    print("Error getting switch state")
-            //                    print(error?.localizedDescription)
-            //                }
-            //            })
-        })
+        //        DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.programCommandsToRunOnEventAsync({
+        //            
+        //            if let metaWearGPIO = DevicesTVC.currentlySelectedDevice.gpio
+        //            {
+        //                let LEDPin = metaWearGPIO.pins[Constants.PinAssignments.pinOne] as! MBLGPIOPin
+        //                
+        //                //                LEDPin.setToDigitalValueAsync(true)
+        //                
+        //                print("LEDPin Stuff: \(LEDPin)")
+        //                print("LEDPin Data: \(LEDPin.digitalValue)")
+        //                
+        //                LEDPin.digitalValue.readAsync().success({ (result: AnyObject) in
+        //                    
+        //                    let pinValue: MBLNumericData = result as! MBLNumericData
+        //                    
+        //                    if pinValue.value.boolValue
+        //                    {
+        //                        print("LED is ON")
+        //                        LEDPin.setToDigitalValueAsync(false)
+        //                    }
+        //                    else
+        //                    {
+        //                        print("LED is OFF")
+        //                        LEDPin.setToDigitalValueAsync(true)
+        //                    }
+        //                })
+        //            }
+        //        })
     }
     
     // Refer https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
