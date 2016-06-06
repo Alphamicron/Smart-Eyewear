@@ -52,11 +52,16 @@ class ActivationVC: UIViewController
     }
     
     // POST: Keeps track of the photo sensor's threshold changes
-    @IBAction func metaWearThresholdChange(sender: UISlider)
+    func metawearThresholdChanged(sender: UISlider)
     {
-        if sender.value < userThresholdSlider.value
+        print("Photo sensor value: \(sender.value)")
+        if sender.value > userThresholdSlider.value
         {
             ActivationVC.turnLED(Constants.LEDState.On)
+        }
+        else
+        {
+            ActivationVC.turnLED(Constants.LEDState.Off)
         }
     }
     
@@ -148,6 +153,8 @@ class ActivationVC: UIViewController
     {
         metaWearValueSlider.setValue(newMetaWearValue, animated: true)
         metaWearLabel.text = String(Int(metaWearValueSlider.value))
+        
+        metawearThresholdChanged(metaWearValueSlider)
     }
     
     // POST: Repeats the said task every taskDuration seconds

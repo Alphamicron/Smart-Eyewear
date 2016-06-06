@@ -267,9 +267,6 @@
                             </button>
                             <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mls-PD-rct">
                                 <rect key="frame" x="18" y="412" width="494" height="31"/>
-                                <connections>
-                                    <action selector="metaWearThresholdChange:" destination="lwX-Ke-ms8" eventType="valueChanged" id="v6F-8Q-J0e"/>
-                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.1764705882352941" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
