@@ -176,11 +176,13 @@ class ActivationVC: UIViewController
             // manual mode selected
             if sender.selected
             {
+                ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from the auto mode
                 hideAllAutomaticOperationStuff()
                 turnOnSwitch.hidden = false
             }
             else
             {
+                ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from manual mode 
                 turnOnSwitch.hidden = true
             }
         }
