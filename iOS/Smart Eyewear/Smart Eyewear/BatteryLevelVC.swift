@@ -28,7 +28,6 @@ class BatteryLevelVC: UIViewController
                 // Metawear error getting the current battery level
                 if let batteryCheckError = error
                 {
-                    
                     // explain to the user the error
                     let alertController = UIAlertController(title: "Battery Check Error", message: batteryCheckError.localizedDescription, preferredStyle: .Alert)
                     

@@ -66,7 +66,7 @@ class RGBLedVC: UIViewController
         colorWheelView.delegate = self
         // if true, a single tap and drag reflects colour changes
         // if false, a user is required to drag and stop at a point for the colour to be changed
-        colorWheelView.continuous = true
+        colorWheelView.continuous = false
         
         self.view.addSubview(colorWheelView)
     }
