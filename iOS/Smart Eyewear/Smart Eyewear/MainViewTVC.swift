@@ -65,16 +65,27 @@ class MainViewTVC: UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        print("Cell \(indexPath.row) selected")
         // grab the currently selected cell
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
         
         selectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[1] // change its icon original image to its corresponding white one
         selectedCell.serviceTitle.textColor = UIColor.whiteColor() // change text colour to white
         selectedCell.accessoryView = UIImageView(image: UIImage(named: "ArrowWhite")!) // change the arrow to a white-coloured one
+        
+        //        switch indexPath.row
+        //        {
+        //        case 0:
+        //            
+        //        default:
+        //            return
+        //        }
+        
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
     {
+        print("Cell \(indexPath.row) de-selected")
         // grab the formerly selected cell
         let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
         
@@ -83,14 +94,23 @@ class MainViewTVC: UITableViewController
         deSelectedCell.accessoryView = UIImageView(image: UIImage(named: "Arrow")!) // change its arrow image back to the default red one
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let selectedCell: Int = (tableView.indexPathForSelectedRow?.row)!
+        
+        if segue.identifier == "segueToRespectiveView"
+        {
+            switch selectedCell
+            {
+            case 0:
+                let destinationVC = segue.destinationViewController as! BatteryLevelVC
+            default:
+                return
+            }
+        }
+    }
     
 }
