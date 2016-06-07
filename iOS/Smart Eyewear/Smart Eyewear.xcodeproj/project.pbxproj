@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C382CC59FEDE12332381F2D /* Pods_Smart_EyewearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035A6D54EC4B10F5F69FFAEF /* Pods_Smart_EyewearUITests.framework */; };
 		1FE6FD5492DA30CE0C44BD6C /* Pods_Smart_Eyewear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDF5163926418102CCAE0C2 /* Pods_Smart_Eyewear.framework */; };
+		301811881D0724CD00E4941C /* MainViewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811871D0724CD00E4941C /* MainViewTVC.swift */; };
+		3018118A1D0729D400E4941C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811891D0729D400E4941C /* Modal.swift */; };
 		302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 302A63311CF74A4A00109C02 /* ISColorWheel.m */; };
 		B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */; };
 		B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE811CF49C8B003BD7FE /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		035A6D54EC4B10F5F69FFAEF /* Pods_Smart_EyewearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E70B8B72465E29E7B5132F8 /* Pods-Smart EyewearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart EyewearTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart EyewearTests/Pods-Smart EyewearTests.debug.xcconfig"; sourceTree = "<group>"; };
+		301811871D0724CD00E4941C /* MainViewTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewTVC.swift; sourceTree = "<group>"; };
+		301811891D0729D400E4941C /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		302A63301CF74A4A00109C02 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		302A63311CF74A4A00109C02 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
 		3192B10E27AE59F74D527FE6 /* Pods-Smart Eyewear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Eyewear.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +117,14 @@
 				035A6D54EC4B10F5F69FFAEF /* Pods_Smart_EyewearUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3018118B1D0729E500E4941C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				301811891D0729D400E4941C /* Modal.swift */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 		302A63331CF74A5700109C02 /* Libraries */ = {
@@ -201,6 +213,7 @@
 				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
 				B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */,
 				B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */,
+				301811871D0724CD00E4941C /* MainViewTVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -208,6 +221,7 @@
 		B2BBD5DF1CF5188600D0EA32 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3018118B1D0729E500E4941C /* Modal */,
 				B2BBD5DD1CF5187E00D0EA32 /* Constants.swift */,
 				B23DAEB81CF4B62A003BD7FE /* Extensions.swift */,
 			);
@@ -479,9 +493,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3018118A1D0729D400E4941C /* Modal.swift in Sources */,
 				B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */,
 				B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */,
 				B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */,
+				301811881D0724CD00E4941C /* MainViewTVC.swift in Sources */,
 				302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */,
 				B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */,
 				B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */,
@@ -642,6 +658,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart Eyewear/Smart Eyewear-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -659,6 +676,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart Eyewear/Smart Eyewear-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
