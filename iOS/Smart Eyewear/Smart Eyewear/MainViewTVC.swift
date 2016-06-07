@@ -22,6 +22,8 @@ class MainViewTVC: UITableViewController
     {
         super.viewDidLoad()
         
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
         allServices = Services.getServices()
     }
     
@@ -41,7 +43,6 @@ class MainViewTVC: UITableViewController
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        // #warning Incomplete implementation, return the number of rows
         return allServices.count
     }
     
@@ -51,46 +52,36 @@ class MainViewTVC: UITableViewController
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! MainViewCell
         
         cell.serviceTitle.text = allServices[indexPath.row].serviceName
-        cell.serviceIcon.image = allServices[indexPath.row].serviceIcon
+        cell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0]
+        
         cell.accessoryView = UIImageView(image: UIImage(named: "Arrow"))
+        
+        let selectedBackground = UIView()
+        selectedBackground.backgroundColor = Constants.themeRedColour
+        cell.selectedBackgroundView = selectedBackground
         
         return cell
     }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        // grab the currently selected cell
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
+        
+        selectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[1] // change its icon original image to its corresponding white one
+        selectedCell.serviceTitle.textColor = UIColor.whiteColor() // change text colour to white
+        selectedCell.accessoryView = UIImageView(image: UIImage(named: "ArrowWhite")!) // change the arrow to a white-coloured one
+    }
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }    
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        // grab the formerly selected cell
+        let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
+        
+        deSelectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0] // change its icon back its original image
+        deSelectedCell.serviceTitle.textColor = Constants.themeRedColour // change text colour to default red
+        deSelectedCell.accessoryView = UIImageView(image: UIImage(named: "Arrow")!) // change its arrow image back to the default red one
+    }
     
     /*
      // MARK: - Navigation

@@ -10,7 +10,6 @@ import Foundation
 
 struct Constants
 {
-    static var numberOfButtonTaps: Int = Int()
     static let deviceFullChargeValue: NSNumber = 100
     static let defaultTimeOut: NSTimeInterval = 15 // max waiting time for a device to be connected
     static let defaultDelayTime: NSTimeInterval = 1.0
@@ -20,6 +19,7 @@ struct Constants
     static let userThresholdMaximumValue: Float = 1024 // max value for a valid photo sensor threshold
     static let maximumPinVoltage: Float = 3.0 // maximum voltage supplied by Pin 6 as of https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
     static let defaultFont: UIFont = UIFont(name: "AvenirNext-Regular", size: 20)!
+    static let themeRedColour: UIColor = UIColor(red: 0.925, green: 0.114, blue: 0.141, alpha: 1.00)
     
     static func defaultErrorAlert(errorTitle: String, errorMessage: String)->UIAlertController
     {
@@ -100,35 +100,6 @@ struct Constants
             print(DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
             
         }
-        
-        //        DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.programCommandsToRunOnEventAsync({
-        //            
-        //            if let metaWearGPIO = DevicesTVC.currentlySelectedDevice.gpio
-        //            {
-        //                let LEDPin = metaWearGPIO.pins[Constants.PinAssignments.pinOne] as! MBLGPIOPin
-        //                
-        //                //                LEDPin.setToDigitalValueAsync(true)
-        //                
-        //                print("LEDPin Stuff: \(LEDPin)")
-        //                print("LEDPin Data: \(LEDPin.digitalValue)")
-        //                
-        //                LEDPin.digitalValue.readAsync().success({ (result: AnyObject) in
-        //                    
-        //                    let pinValue: MBLNumericData = result as! MBLNumericData
-        //                    
-        //                    if pinValue.value.boolValue
-        //                    {
-        //                        print("LED is ON")
-        //                        LEDPin.setToDigitalValueAsync(false)
-        //                    }
-        //                    else
-        //                    {
-        //                        print("LED is OFF")
-        //                        LEDPin.setToDigitalValueAsync(true)
-        //                    }
-        //                })
-        //            }
-        //        })
     }
     
     // Refer https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
