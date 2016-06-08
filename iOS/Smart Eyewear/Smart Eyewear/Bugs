@@ -1,4 +1,0 @@
-Photo sensor activation mode:
-When selecting auto mode, then either segeuing back or selecting manual, results into some weird flickering
-Main View TVC:
-Select a cell, then perform segue works just fine. But returning back to the TV results into cells info being erased.

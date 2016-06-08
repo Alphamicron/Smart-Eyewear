@@ -12,7 +12,6 @@
 		301811881D0724CD00E4941C /* MainViewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811871D0724CD00E4941C /* MainViewTVC.swift */; };
 		3018118A1D0729D400E4941C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811891D0729D400E4941C /* Modal.swift */; };
 		302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 302A63311CF74A4A00109C02 /* ISColorWheel.m */; };
-		3082B5F01D088DEB008DC314 /* Bugs in Resources */ = {isa = PBXBuildFile; fileRef = 3082B5EF1D088DEB008DC314 /* Bugs */; };
 		30A9209A1D08802B00F0EA5D /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A920991D08802B00F0EA5D /* ConnectionVC.swift */; };
 		B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */; };
 		B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE811CF49C8B003BD7FE /* ViewController.swift */; };
@@ -54,7 +53,6 @@
 		301811891D0729D400E4941C /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		302A63301CF74A4A00109C02 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		302A63311CF74A4A00109C02 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
-		3082B5EF1D088DEB008DC314 /* Bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bugs; sourceTree = "<group>"; };
 		30A920991D08802B00F0EA5D /* ConnectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
 		3192B10E27AE59F74D527FE6 /* Pods-Smart Eyewear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Eyewear.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.release.xcconfig"; sourceTree = "<group>"; };
 		3EDF5163926418102CCAE0C2 /* Pods_Smart_Eyewear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Eyewear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,7 +181,6 @@
 				B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */,
 				B23DAEB51CF4AE57003BD7FE /* Controllers */,
 				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
-				3082B5EF1D088DEB008DC314 /* Bugs */,
 				B23DAE861CF49C8B003BD7FE /* Assets.xcassets */,
 				B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */,
 				B23DAE8B1CF49C8B003BD7FE /* Info.plist */,
@@ -350,7 +347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B23DAE8A1CF49C8B003BD7FE /* LaunchScreen.storyboard in Resources */,
-				3082B5F01D088DEB008DC314 /* Bugs in Resources */,
 				B23DAE871CF49C8B003BD7FE /* Assets.xcassets in Resources */,
 				B23DAE851CF49C8B003BD7FE /* Main.storyboard in Resources */,
 			);
