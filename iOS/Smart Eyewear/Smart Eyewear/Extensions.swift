@@ -87,3 +87,46 @@ extension UIColor
         }
     }
 }
+
+// MARK: UILabel Extension
+// POST: Adds character spacing to assigned text
+// Credit: Andrew Schreiber http://stackoverflow.com/a/34757069
+extension UILabel
+{
+    @IBInspectable var kerning: Float
+        {
+        get
+        {
+            var range = NSMakeRange(0, (text ?? "").characters.count)
+            guard let kern = attributedText?.attribute(NSKernAttributeName, atIndex: 0, effectiveRange: &range),
+                value = kern as? NSNumber
+                
+                else
+            {
+                return 0
+            }
+            return value.floatValue
+        }
+        set
+        {
+            var attText:NSMutableAttributedString?
+            
+            if let attributedText = attributedText
+            {
+                attText = NSMutableAttributedString(attributedString: attributedText)
+            }
+            else if let text = text
+            {
+                attText = NSMutableAttributedString(string: text)
+            }
+            else
+            {
+                attText = NSMutableAttributedString(string: "")
+            }
+            
+            let range = NSMakeRange(0, attText!.length)
+            attText!.addAttribute(NSKernAttributeName, value: NSNumber(float: newValue), range: range)
+            self.attributedText = attText
+        }
+    }
+}

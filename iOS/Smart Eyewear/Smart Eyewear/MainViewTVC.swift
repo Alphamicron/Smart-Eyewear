@@ -73,44 +73,31 @@ class MainViewTVC: UITableViewController
         selectedCell.serviceTitle.textColor = UIColor.whiteColor() // change text colour to white
         selectedCell.accessoryView = UIImageView(image: UIImage(named: "ArrowWhite")!) // change the arrow to a white-coloured one
         
-        //        switch indexPath.row
-        //        {
-        //        case 0:
-        //            
-        //        default:
-        //            return
-        //        }
-        
+        switch indexPath.row
+        {
+        case 0:
+            performSegueWithIdentifier("segueToBTConnection", sender: self)
+        default:
+            return
+        }
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        print("Cell \(indexPath.row) de-selected")
-        // grab the formerly selected cell
-        let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
-        
-        deSelectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0] // change its icon back its original image
-        deSelectedCell.serviceTitle.textColor = Constants.themeRedColour // change text colour to default red
-        deSelectedCell.accessoryView = UIImageView(image: UIImage(named: "Arrow")!) // change its arrow image back to the default red one
-    }
+    //    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
+    //    {
+    //        print("Cell \(indexPath.row) de-selected")
+    //        // grab the formerly selected cell
+    //        let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
+    //        
+    //        deSelectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0] // change its icon back its original image
+    //        deSelectedCell.serviceTitle.textColor = Constants.themeRedColour // change text colour to default red
+    //        deSelectedCell.accessoryView = UIImageView(image: UIImage(named: "Arrow")!) // change its arrow image back to the default red one
+    //    }
     
     
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        let selectedCell: Int = (tableView.indexPathForSelectedRow?.row)!
-        
-        if segue.identifier == "segueToRespectiveView"
-        {
-            switch selectedCell
-            {
-            case 0:
-                let destinationVC = segue.destinationViewController as! BatteryLevelVC
-            default:
-                return
-            }
-        }
     }
     
 }
