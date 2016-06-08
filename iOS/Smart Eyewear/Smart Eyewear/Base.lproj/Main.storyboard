@@ -28,9 +28,6 @@
                                 <state key="normal" title="Scan Device">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="rZj-s1-km9" kind="show" id="4Ct-UZ-Xev"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOe-qk-K3o">
                                 <rect key="frame" x="234" y="162" width="133" height="30"/>
@@ -42,9 +39,6 @@
                                 <state key="normal" title="RGB LED (M1)">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="5te-ZI-q77" kind="show" id="QDN-A1-bWQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-Vl-Soj">
                                 <rect key="frame" x="198" y="231" width="205" height="35"/>
@@ -56,9 +50,6 @@
                                 <state key="normal" title="Activation Mode (M3)">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="lwX-Ke-ms8" kind="show" id="88R-FU-nyc"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9n-Xk-hgF">
                                 <rect key="frame" x="239" y="300" width="122" height="35"/>
@@ -70,9 +61,6 @@
                                 <state key="normal" title="Battery Level">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="mcf-eH-agu" kind="show" id="PZ3-Im-Fyn"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.1764705882" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,7 +86,7 @@
             <objects>
                 <tableViewController title="List of Devices" id="rZj-s1-km9" customClass="DevicesTVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="DJu-vs-hyv">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -180,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RpR-oz-D4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671" y="938"/>
+            <point key="canvasLocation" x="2046" y="-863"/>
         </scene>
         <!--Activation Mode-->
         <scene sceneID="JWe-f5-Zay">
@@ -314,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTd-NP-WLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="938"/>
+            <point key="canvasLocation" x="1634" y="-491"/>
         </scene>
         <!--Main View-->
         <scene sceneID="KRr-2G-Qwa">
@@ -371,6 +359,8 @@
                     <connections>
                         <segue destination="G0t-W8-jyp" kind="show" identifier="segueToBTConnection" id="adV-C3-cnU"/>
                         <segue destination="5te-ZI-q77" kind="show" identifier="segueToRGBLed" id="r2D-OB-pCo"/>
+                        <segue destination="mcf-eH-agu" kind="show" identifier="segueToBatteryLevel" id="Ais-a5-DGK"/>
+                        <segue destination="lwX-Ke-ms8" kind="show" identifier="segueToActivation" id="XLw-A4-jVH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72w-CA-gfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toy-yZ-qcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1598" y="-2007"/>
+            <point key="canvasLocation" x="2046" y="-1527"/>
         </scene>
         <!--Battery Level II-->
         <scene sceneID="h6A-jn-p9u">
@@ -540,36 +530,6 @@
             </objects>
             <point key="canvasLocation" x="4213" y="-1174"/>
         </scene>
-        <!--Activation2-->
-        <scene sceneID="aV9-DW-8Y4">
-            <objects>
-                <viewController title="Activation2" id="CLn-oO-62D" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bH2-He-pwL"/>
-                        <viewControllerLayoutGuide type="bottom" id="Nkv-NI-E5y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GQs-mJ-SAZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation II" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaV-ui-uQv">
-                                <rect key="frame" x="256" y="289" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="vaV-ui-uQv" firstAttribute="centerY" secondItem="GQs-mJ-SAZ" secondAttribute="centerY" id="BOB-Or-LLW"/>
-                            <constraint firstItem="vaV-ui-uQv" firstAttribute="centerX" secondItem="GQs-mJ-SAZ" secondAttribute="centerX" id="wUe-TG-mxH"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VFI-Ey-HIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2091" y="-1204"/>
-        </scene>
         <!--RGB LED-->
         <scene sceneID="nXG-Tv-AFR">
             <objects>
@@ -586,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jds-mL-ccG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329" y="-484"/>
+            <point key="canvasLocation" x="1030" y="-491"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dk1-PE-38M">
@@ -656,7 +616,4 @@
         <image name="LogoGrey" width="61" height="61"/>
         <image name="Sunny" width="170" height="170"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="r2D-OB-pCo"/>
-    </inferredMetricsTieBreakers>
 </document>

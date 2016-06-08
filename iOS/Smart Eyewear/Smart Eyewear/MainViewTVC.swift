@@ -79,6 +79,12 @@ class MainViewTVC: UITableViewController
             performSegueWithIdentifier("segueToBTConnection", sender: self)
         case 1:
             performSegueWithIdentifier("segueToRGBLed", sender: self)
+        case 2:
+            performSegueWithIdentifier("segueToActivation", sender: self)
+        case 3:
+            performSegueWithIdentifier("segueToBatteryLevel", sender: self)
+        case 4:
+            return
         default:
             return
         }
