@@ -100,10 +100,10 @@ class DevicesTVC: UITableViewController
             let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
             confirmationHUD.labelText = "Connecting to device..."
             
-            DevicesTVC.currentlySelectedDevice = selectedDevice
+            ConnectionVC.currentlySelectedDevice = selectedDevice
             
             // makes multiple connection attempts to metawear under Constants.defaultTimeOut time
-            DevicesTVC.currentlySelectedDevice.connectWithTimeout(Constants.defaultTimeOut, handler: { (error: NSError?) in
+            ConnectionVC.currentlySelectedDevice.connectWithTimeout(Constants.defaultTimeOut, handler: { (error: NSError?) in
                 
                 // a connection timeout error
                 if let generatedError = error
@@ -116,7 +116,7 @@ class DevicesTVC: UITableViewController
                     confirmationHUD.hide(true)
                     
                     // flash the Metawear LED Green just to confirm its the right device
-                    DevicesTVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
+                    ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
                     
                     let confirmationAlert = UIAlertController(title: "Confirm Device", message: "Do you see a blinking green LED light?", preferredStyle: .Alert)
                     

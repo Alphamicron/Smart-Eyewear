@@ -125,7 +125,7 @@ class ActivationVC: UIViewController
     {
         var photoSensorVoltage: Float = Float()
         
-        if let photoSensorGPIO = DevicesTVC.currentlySelectedDevice.gpio
+        if let photoSensorGPIO = ConnectionVC.currentlySelectedDevice.gpio
         {
             let photoSensor: MBLGPIOPin = photoSensorGPIO.pins[Constants.PinAssignments.pinTwo] as! MBLGPIOPin
             
@@ -244,7 +244,7 @@ class ActivationVC: UIViewController
     
     static func turnLED(ledState: Constants.LEDState)
     {
-        if let metaWearGPIO = DevicesTVC.currentlySelectedDevice.gpio
+        if let metaWearGPIO = ConnectionVC.currentlySelectedDevice.gpio
         {
             let LEDPin = metaWearGPIO.pins[Constants.PinAssignments.pinOne] as! MBLGPIOPin
             

@@ -155,7 +155,7 @@ class RGBLedVC: UIViewController
         
         let userDesiredColor: UIColor = UIColor(red: CGFloat(sender.value/255.0), green: CGFloat(greenSlider.value/255.0), blue: CGFloat(blueSlider.value/255.0), alpha: 1)
         
-        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
+        ConnectionVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
     
     func greenSliderTapped(sender: UISlider)
@@ -164,7 +164,7 @@ class RGBLedVC: UIViewController
         
         let userDesiredColor: UIColor = UIColor(red: CGFloat(redSlider.value/255.0), green: CGFloat(sender.value/255.0), blue: CGFloat(blueSlider.value/255.0), alpha: 1)
         
-        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
+        ConnectionVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
     
     func blueSliderTapped(sender: UISlider)
@@ -173,7 +173,7 @@ class RGBLedVC: UIViewController
         
         let userDesiredColor: UIColor = UIColor(red: CGFloat(redSlider.value/255.0), green: CGFloat(greenSlider.value/255.0), blue: CGFloat(sender.value/255.0), alpha: 1)
         
-        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
+        ConnectionVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
 }
 
@@ -182,7 +182,7 @@ extension RGBLedVC: ISColorWheelDelegate
 {
     func colorWheelDidChangeColor(colorWheel: ISColorWheel!)
     {
-        DevicesTVC.currentlySelectedDevice.led?.setLEDColorAsync(colorWheel.currentColor, withIntensity: Constants.defaultLEDIntensity)
+        ConnectionVC.currentlySelectedDevice.led?.setLEDColorAsync(colorWheel.currentColor, withIntensity: Constants.defaultLEDIntensity)
         
         // TODO: Is this update really necessary
         // update the sliders to reflect the current colour being hovered over by the wheel

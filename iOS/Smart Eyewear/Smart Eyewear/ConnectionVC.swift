@@ -7,29 +7,270 @@
 //
 
 import UIKit
+import CoreBluetooth
+import MBProgressHUD
 
-class ConnectionVC: UIViewController {
-
-    override func viewDidLoad() {
+class ConnectionVC: UIViewController
+{
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var tapToConnectLabel: UILabel!
+    @IBOutlet weak var noDeviceDetectedLabel: UILabel!
+    @IBOutlet weak var neutralLabel: UILabel!
+    
+    var foundDevices: Array<MBLMetaWear>?
+    var scanOptions = [CBCentralManagerScanOptionAllowDuplicatesKey : Int(false)]
+    var centralManager: CBCentralManager = CBCentralManager()
+    static var currentlySelectedDevice: MBLMetaWear = MBLMetaWear()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        print("VDL called")
+        
+        MBLMetaWearManager.sharedManager().startScanForMetaWearsAllowDuplicates(false, handler: { (array: [AnyObject]?) -> Void in
+            self.foundDevices = array as? [MBLMetaWear]
+        })
     }
-
-    override func didReceiveMemoryWarning() {
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        print("VWA called")
+        
+        setupTheViewInitially()
+        
+        centralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue())
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(true)
+        
+        // if the device is already connected, just continue with the animation
+        if Constants.isDeviceConnected()
+        {
+            self.logoImageView.hidden = false
+            self.logoImageView.image = UIImage(named: "LogoRed")
+            self.animateConnectionLogo()
+            
+            neutralLabel.hidden = false
+            neutralLabel.text = ConnectionVC.currentlySelectedDevice.state.getState().lowercaseString
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        
+        if centralManager.isScanning
+        {
+            centralManager.stopScan()
+        }
+        
+        MBLMetaWearManager.sharedManager().stopScanForMetaWears()
+        
+        view.layer.removeAllAnimations()
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func animateConnectionLogo()
+    {
+        print(view.layer.animationKeys())
+        
+        if view.layer.animationKeys() == nil
+        {
+            UIView.animateWithDuration(1.0, animations: {
+                self.logoImageView.alpha = 0
+            }) { (completed: Bool) in
+                UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations: {
+                    self.logoImageView.alpha = 1.0
+                    }, completion: { (completed: Bool) in
+                        self.animateConnectionLogo()
+                })
+            }
+        }
+        //        
+        //        // start an animation only when there isn't one running
+        //        if let animationKeysValue = view.layer.animationKeys()
+        //        {
+        //            print("animation key values: \(animationKeysValue)")
+        //            if animationKeysValue.isEmpty
+        //            {
+        //
+        //            }
+        //        }
+        
     }
-    */
+    
+    // POST: hides connection-dependent outlets
+    func setupTheViewInitially()
+    {
+        neutralLabel.hidden = true
+        logoImageView.hidden = true
+        tapToConnectLabel.hidden = true
+        noDeviceDetectedLabel.hidden = true
+        logoImageView.image = UIImage(named: "LogoGrey")
+        
+        let imageTapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ConnectionVC.connectToMetaWear(_:)))
+        imageTapRecognizer.delegate = self
+        
+        logoImageView.addGestureRecognizer(imageTapRecognizer)
+    }
+    
+    func connectToMetaWear(sender: UITapGestureRecognizer)
+    {
+        // get the discovered metawear
+        if let selectedDevice = foundDevices?[0]
+        {
+            // disconnect the device
+            if Constants.isDeviceConnected()
+            {
+                let disconnectConfirmationAlert: UIAlertController = UIAlertController(title: "Confirm", message: "Are you sure you want to disconnect device?", preferredStyle: .Alert)
+                
+                disconnectConfirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+                
+                disconnectConfirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
+                    print("user wants to disconnect device")
+                    
+                    Constants.disconnectDevice()
+                    self.view.layer.removeAllAnimations()
+                    self.viewWillAppear(true)
+                }))
+                
+                presentViewController(disconnectConfirmationAlert, animated: true, completion: nil)
+            }
+            else
+            {
+                // freeze UI while attempting to connect to device
+                let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
+                confirmationHUD.labelText = "Connecting to device..."
+                
+                ConnectionVC.currentlySelectedDevice = selectedDevice
+                
+                // makes multiple connection attempts to metawear under Constants.defaultTimeOut time
+                ConnectionVC.currentlySelectedDevice.connectWithTimeout(Constants.defaultTimeOut, handler: { (error: NSError?) in
+                    
+                    // a connection timeout error
+                    if let generatedError = error
+                    {
+                        confirmationHUD.labelText = generatedError.localizedDescription
+                        confirmationHUD.hide(true, afterDelay: Constants.defaultDelayTime)
+                        self.noDeviceDetectedLabel.hidden = false
+                        self.noDeviceDetectedLabel.text = "connection error"
+                        self.neutralLabel.hidden = false
+                        self.neutralLabel.text = "try again"
+                    }
+                    else
+                    {
+                        confirmationHUD.hide(true)
+                        
+                        // flash the Metawear LED Green just to confirm its the right device
+                        ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
+                        
+                        let confirmationAlert = UIAlertController(title: "Confirm Device", message: "Do you see a blinking green LED light?", preferredStyle: .Alert)
+                        
+                        // if yes, then simply turn off the LED and delay for Constants.defaultDelayTime before segueing back to the main view
+                        confirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
+                            print("The user confirmed the LED")
+                            
+                            Constants.turnOffMetaWearLED()
+                            
+                            self.neutralLabel.hidden = false
+                            self.neutralLabel.text = selectedDevice.state.getState().lowercaseString
+                            
+                            self.logoImageView.image = UIImage(named: "LogoRed")
+                            self.animateConnectionLogo()
+                            
+                        }))
+                        
+                        // if not, disconnect the wrong device then continue scanning
+                        confirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: { (action: UIAlertAction) in
+                            print("The user did not confirm the LED")
+                            Constants.turnOffMetaWearLED()
+                            Constants.disconnectDevice()
+                            self.viewWillAppear(true)
+                        }))
+                        
+                        self.presentViewController(confirmationAlert, animated: true, completion: nil)
+                    }
+                })
+            }
+        }
+    }
+}
 
+// MARK: Central Manager Delegate
+extension ConnectionVC: CBCentralManagerDelegate
+{
+    func centralManagerDidUpdateState(central: CBCentralManager)
+    {
+        switch central.state
+        {
+        case .PoweredOn:
+            print("BLE ON")
+            self.centralManager.scanForPeripheralsWithServices(nil, options: nil)
+            //            self.viewDidLoad()
+            break
+            
+        case .PoweredOff:
+            print("BLE OFF")
+            presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: "Please turn on your bluetooth."), animated: true, completion: nil)
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoBLEConnection)
+            break
+            
+        case .Resetting:
+            print("BLE Resetting")
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
+            break
+            
+        case .Unauthorized:
+            print("BLE Unauthorized")
+            presentViewController(Constants.defaultErrorAlert("Authorisation Error", errorMessage: "Smart Eyewear requires access to your Bluetooth."), animated: true, completion: nil)
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
+            break
+            
+        case .Unknown:
+            print("BLE Unknown")
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
+            break
+            
+        case .Unsupported:
+            print("BLE Unsupported")
+            presentViewController(Constants.defaultErrorAlert("Error", errorMessage: "Device does not support Bluetooth Low Energy technology."), animated: true, completion: nil)
+            MBLMetaWearManager.sharedManager().stopScanForMetaWears()
+            break
+        }
+    }
+    
+    func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
+    {
+        presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
+    }
+    
+    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
+    {
+        // just discover this particular metawear device
+        if peripheral.identifier.UUIDString == Constants.metaWearUUID
+        {
+            logoImageView.hidden = false
+            tapToConnectLabel.hidden = false
+        }
+    }
+    
+    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral)
+    {
+        print("CBManager connection established")
+    }
+}
+
+extension ConnectionVC: UIGestureRecognizerDelegate
+{
+    
 }

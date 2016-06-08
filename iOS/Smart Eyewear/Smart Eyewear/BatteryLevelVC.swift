@@ -23,7 +23,7 @@ class BatteryLevelVC: UIViewController
         }
         else
         {
-            DevicesTVC.currentlySelectedDevice.readBatteryLifeWithHandler({ (deviceChargeValue: NSNumber?, error: NSError?) in
+            ConnectionVC.currentlySelectedDevice.readBatteryLifeWithHandler({ (deviceChargeValue: NSNumber?, error: NSError?) in
                 
                 // Metawear error getting the current battery level
                 if let batteryCheckError = error

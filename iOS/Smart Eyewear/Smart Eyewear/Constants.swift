@@ -20,6 +20,7 @@ struct Constants
     static let maximumPinVoltage: Float = 3.0 // maximum voltage supplied by Pin 6 as of https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
     static let defaultFont: UIFont = UIFont(name: "AvenirNext-Regular", size: 20)!
     static let themeRedColour: UIColor = UIColor(red: 0.925, green: 0.114, blue: 0.141, alpha: 1.00)
+    static let metaWearUUID: String = "B0480FD8-84E5-499C-1BF1-939605412C3F"
     
     static func defaultErrorAlert(errorTitle: String, errorMessage: String)->UIAlertController
     {
@@ -38,7 +39,7 @@ struct Constants
     
     static func isDeviceConnected()->Bool
     {
-        if DevicesTVC.currentlySelectedDevice.state != .Connected
+        if ConnectionVC.currentlySelectedDevice.state != .Connected
         {
             return false
         }
@@ -47,28 +48,29 @@ struct Constants
     
     static func turnOffMetaWearLED()
     {
-        DevicesTVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+        ConnectionVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
     }
     
     static func disconnectDevice()
     {
-        DevicesTVC.currentlySelectedDevice.disconnectWithHandler(nil)
+        ConnectionVC.currentlySelectedDevice.disconnectWithHandler(nil)
     }
     
     static func displayBackgroundImageOnError(currentView: UIView, typeOfError: ErrorState)
     {
         // if any subviews exist, just delete them
-        if currentView.subviews.count != Int()
-        {
-            for thisSubview in currentView.subviews
-            {
-                thisSubview.removeFromSuperview()
-            }
-        }
+        //        if currentView.subviews.count != Int()
+        //        {
+        //            for thisSubview in currentView.subviews
+        //            {
+        //                thisSubview.removeFromSuperview()
+        //            }
+        //        }
         
         let errorImageView: UIImageView = UIImageView(frame: CGRect(x: currentView.frame.origin.x, y: currentView.frame.origin.y, width: currentView.frame.width, height: currentView.frame.height))
+        errorImageView.backgroundColor = UIColor.whiteColor()
         errorImageView.center = CGPointMake(currentView.bounds.size.width/2, currentView.bounds.size.height/2)
-        errorImageView.contentMode = .ScaleAspectFill
+        errorImageView.contentMode = .ScaleAspectFit
         
         switch typeOfError
         {
@@ -84,20 +86,21 @@ struct Constants
         currentView.addSubview(errorImageView)
     }
     
+    // TODO: Use this to write commands to the pins
     static func setButtonToFlashLED()
     {
         // erase any existing commands before assigning new ones
-        if let deviceHasButtonPrograms = DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands()
+        if let deviceHasButtonPrograms = ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands()
         {
             print(deviceHasButtonPrograms)
             
             if deviceHasButtonPrograms
             {
-                DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
+                ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
                 
             }
             
-            print(DevicesTVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
+            print(ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
             
         }
     }

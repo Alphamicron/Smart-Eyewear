@@ -27,6 +27,29 @@ class MainViewTVC: UITableViewController
         allServices = Services.getServices()
     }
     
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        print(tableView.indexPathForSelectedRow)
+        
+        if let indexPath = tableView.indexPathForSelectedRow
+        {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }            
+    }
+    
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        print("VWD called")
+        
+        if let indexPath = tableView.indexPathForSelectedRow
+        {
+            tableView(tableView, didDeselectRowAtIndexPath: indexPath)
+        }
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -77,6 +100,7 @@ class MainViewTVC: UITableViewController
         {
         case 0:
             performSegueWithIdentifier("segueToBTConnection", sender: self)
+            print("\(1+1)")
         case 1:
             performSegueWithIdentifier("segueToRGBLed", sender: self)
         case 2:
@@ -90,16 +114,16 @@ class MainViewTVC: UITableViewController
         }
     }
     
-    //    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
-    //    {
-    //        print("Cell \(indexPath.row) de-selected")
-    //        // grab the formerly selected cell
-    //        let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
-    //        
-    //        deSelectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0] // change its icon back its original image
-    //        deSelectedCell.serviceTitle.textColor = Constants.themeRedColour // change text colour to default red
-    //        deSelectedCell.accessoryView = UIImageView(image: UIImage(named: "Arrow")!) // change its arrow image back to the default red one
-    //    }
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        print("Cell \(indexPath.row) de-selected")
+        // grab the formerly selected cell
+        let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
+        
+        deSelectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0] // change its icon back its original image
+        deSelectedCell.serviceTitle.textColor = Constants.themeRedColour // change text colour to default red
+        deSelectedCell.accessoryView = UIImageView(image: UIImage(named: "Arrow")!) // change its arrow image back to the default red one
+    }
     
     
     // MARK: - Navigation
