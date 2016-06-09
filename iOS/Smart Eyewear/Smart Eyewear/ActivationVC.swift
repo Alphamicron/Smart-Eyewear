@@ -14,8 +14,8 @@ class ActivationVC: UIViewController
     
     @IBOutlet weak var userThresholdSlider: UISlider!
     @IBOutlet weak var metaWearValueSlider: UISlider!
-    @IBOutlet weak var userThresholdLabel: UILabel!
-    @IBOutlet weak var metaWearLabel: UILabel!
+    //    @IBOutlet weak var userThresholdLabel: UILabel!
+    //    @IBOutlet weak var metaWearLabel: UILabel!
     @IBOutlet weak var turnOnSwitch: UISwitch!
     @IBOutlet weak var manualBtn: UIButton!
     @IBOutlet weak var automaticBtn: UIButton!
@@ -76,7 +76,7 @@ class ActivationVC: UIViewController
             ActivationVC.turnLED(Constants.LEDState.Off)
         }
         
-        userThresholdLabel.text = String(Int(userThresholdSlider.value))
+        //        userThresholdLabel.text = String(Int(userThresholdSlider.value))
     }
     
     // POST: Keeps track of when manual mode is ON/OFF
@@ -103,10 +103,6 @@ class ActivationVC: UIViewController
         hideAllManualOperationStuff()
         hideAllAutomaticOperationStuff()
         
-        // makes the switch vertical
-        turnOnSwitch.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-        turnOnSwitch.onTintColor = UIColor(red: 0.208, green: 0.169, blue: 0.137, alpha: 1.00)
-        
         manualBtn.setTitle("Manual OFF", forState: .Normal)
         manualBtn.setTitle("Manual ON", forState: .Selected)
         
@@ -115,9 +111,6 @@ class ActivationVC: UIViewController
         
         manualBtn.addTarget(self, action: #selector(ActivationVC.manualButtonClicked(_:)), forControlEvents: .TouchUpInside)
         automaticBtn.addTarget(self, action: #selector(ActivationVC.automaticButtonClicked(_:)), forControlEvents: .TouchUpInside)
-        
-        manualBtn.layer.cornerRadius = 10
-        automaticBtn.layer.cornerRadius = manualBtn.layer.cornerRadius
     }
     
     // POST: Get voltage of photo sensor pin and reflects it onto the metaWearSlider
@@ -151,7 +144,7 @@ class ActivationVC: UIViewController
     func reflectChangesToMetaWearSlider(newMetaWearValue: Float)
     {
         metaWearValueSlider.setValue(newMetaWearValue, animated: true)
-        metaWearLabel.text = String(Int(metaWearValueSlider.value))
+        //        metaWearLabel.text = String(Int(metaWearValueSlider.value))
         
         // check to see if the photo sensor value change requires the LED to be turned on
         metawearThresholdChanged(metaWearValueSlider)
@@ -225,10 +218,10 @@ class ActivationVC: UIViewController
     
     func hideAllAutomaticOperationStuff()
     {
-        metaWearLabel.hidden = true
+        //        metaWearLabel.hidden = true
         metaWearValueSlider.hidden = true
         userThresholdSlider.hidden = true
-        userThresholdLabel.hidden = true
+        //        userThresholdLabel.hidden = true
         automaticBtn.selected = false
     }
     
@@ -238,8 +231,8 @@ class ActivationVC: UIViewController
         metaWearValueSlider.hidden = false
         userThresholdSlider.hidden = false
         
-        metaWearLabel.hidden = false
-        userThresholdLabel.hidden = false
+        //        metaWearLabel.hidden = false
+        //        userThresholdLabel.hidden = false
     }
     
     static func turnLED(ledState: Constants.LEDState)
