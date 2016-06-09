@@ -88,6 +88,9 @@
                                 <rect key="frame" x="253" y="110" width="51" height="31"/>
                                 <color key="onTintColor" red="0.2901960784" green="0.83921568629999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" red="0.20784313725490194" green="0.16862745098039217" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="automaticSwitchAction:" destination="lwX-Ke-ms8" eventType="valueChanged" id="TP4-KG-p31"/>
+                                </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DxL-8G-AIX">
                                 <rect key="frame" x="18" y="316" width="339" height="31"/>

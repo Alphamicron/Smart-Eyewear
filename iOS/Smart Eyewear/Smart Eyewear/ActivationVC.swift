@@ -84,23 +84,38 @@ class ActivationVC: UIViewController
     // POST: tracks when manual mode is activated
     @IBAction func manualSwitchAction(sender: UISwitch)
     {
-        print("manual switch state \(sender.on)")
         if sender.on
         {
-            print("manual button before press state: \(manualBtn.state)")
             automaticSwitch.setOn(false, animated: true)
+            automaticSwitch.sendActionsForControlEvents(.ValueChanged)
             manualBtn.backgroundColor = Constants.themeRedColour
             manualBtn.userInteractionEnabled = true
-            //            ActivationVC.turnLED(Constants.LEDState.On)
         }
         else
         {
             manualBtn.setTitle("OFF", forState: .Normal)
-            manualBtn.backgroundColor = UIColor(red: 0.208, green: 0.169, blue: 0.137, alpha: 1.00)
+            manualBtn.backgroundColor = Constants.themeInactiveStateColour
             manualBtn.userInteractionEnabled = false
-            //            ActivationVC.turnLED(Constants.LEDState.Off)
         }
     }
+    
+    @IBAction func automaticSwitchAction(sender: UISwitch)
+    {
+        if sender.on
+        {
+            manualSwitch.setOn(false, animated: true)
+            manualSwitch.sendActionsForControlEvents(.ValueChanged)
+            automaticBtn.backgroundColor = Constants.themeRedColour
+            automaticBtn.userInteractionEnabled = true
+        }
+        else
+        {
+            automaticBtn.setTitle("OFF", forState: .Normal)
+            automaticBtn.backgroundColor = Constants.themeInactiveStateColour
+            automaticBtn.userInteractionEnabled = false
+        }
+    }
+    
     
     @IBAction func manualBtnAction(sender: UIButton)
     {
@@ -141,9 +156,6 @@ class ActivationVC: UIViewController
         userThresholdSlider.minimumValue = Constants.userThresholdMinimumValue
         userThresholdSlider.maximumValue = Constants.userThresholdMaximumValue
         
-        //        hideAllManualOperationStuff()
-        //        hideAllAutomaticOperationStuff()
-        
         userThresholdSlider.userInteractionEnabled = false
         
         helpBtn.hidden = true
@@ -151,12 +163,6 @@ class ActivationVC: UIViewController
         
         manualBtn.setTitle("OFF", forState: .Normal)
         automaticBtn.setTitle("OFF", forState: .Normal)
-        
-        //        manualBtn.setTitle("ON", forState: .Selected)
-        //        automaticBtn.setTitle("SET", forState: .Selected)
-        
-        //        manualBtn.addTarget(self, action: #selector(ActivationVC.manualButtonClicked(_:)), forControlEvents: .TouchUpInside)
-        //        automaticBtn.addTarget(self, action: #selector(ActivationVC.automaticButtonClicked(_:)), forControlEvents: .TouchUpInside)
     }
     
     // POST: Get voltage of photo sensor pin and reflects it onto the metaWearSlider
@@ -200,31 +206,6 @@ class ActivationVC: UIViewController
     func repeatThisTaskEvery(requiredTask: Selector, taskDuration: NSTimeInterval)
     {
         Constants.defaultTimer = NSTimer.scheduledTimerWithTimeInterval(taskDuration, target: self, selector: requiredTask, userInfo: nil, repeats: true)
-    }
-    
-    func manualButtonClicked(sender: UIButton)
-    {
-        //        if !Constants.isDeviceConnected()
-        //        {
-        //            presentViewController(Constants.defaultErrorAlert("Invalid Operation", errorMessage: "A device needs to be connected to continue"), animated: true, completion: nil)
-        //        }
-        //        else
-        //        {
-        //            sender.selected = !sender.selected
-        //            
-        //            // manual mode selected
-        //            if sender.selected
-        //            {
-        //                ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from the auto mode
-        //                hideAllAutomaticOperationStuff()
-        //                manualSwitch.hidden = false
-        //            }
-        //            else
-        //            {
-        //                ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from manual mode 
-        //                manualSwitch.hidden = true
-        //            }
-        //        }
     }
     
     func automaticButtonClicked(sender: UIButton)
