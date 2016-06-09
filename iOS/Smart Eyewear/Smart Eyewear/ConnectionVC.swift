@@ -78,39 +78,28 @@ class ConnectionVC: UIViewController
     
     func animateConnectionLogo()
     {
-        if view.layer.animationKeys() == nil
-        {
-            UIView.animateWithDuration(1.0, animations: {
-                self.logoImageView.alpha = 0
-            }) { (completed: Bool) in
-                UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations: {
-                    self.logoImageView.alpha = 1.0
-                    }, completion: { (completed: Bool) in
-                        self.animateConnectionLogo()
-                })
-            }
+        UIView.animateWithDuration(1.0, animations: {
+            self.logoImageView.alpha = 0
+        }) { (completed: Bool) in
+            UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations: {
+                self.logoImageView.alpha = 1.0
+                }, completion: { (completed: Bool) in
+                    self.animateConnectionLogo()
+            })
         }
-        //        
-        //        // start an animation only when there isn't one running
-        //        if let animationKeysValue = view.layer.animationKeys()
-        //        {
-        //            print("animation key values: \(animationKeysValue)")
-        //            if animationKeysValue.isEmpty
-        //            {
-        //
-        //            }
-        //        }
-        
     }
     
     // POST: hides connection-dependent outlets
     func setupTheViewInitially()
     {
-        neutralLabel.hidden = true
+        neutralLabel.hidden = false
         logoImageView.hidden = true
         tapToConnectLabel.hidden = true
         noDeviceDetectedLabel.hidden = true
         logoImageView.image = UIImage(named: "LogoGrey")
+        
+        //        neutralLabel.hidden = false
+        neutralLabel.text = "scanning..."
         
         let imageTapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ConnectionVC.connectToMetaWear(_:)))
         imageTapRecognizer.delegate = self
@@ -123,28 +112,34 @@ class ConnectionVC: UIViewController
         // get the discovered metawear
         if let selectedDevice = foundDevices?[0]
         {
+            neutralLabel.hidden = false
             // disconnect the device
             if Constants.isDeviceConnected()
             {
-                let disconnectConfirmationAlert: UIAlertController = UIAlertController(title: "Confirm", message: "Are you sure you want to disconnect device?", preferredStyle: .Alert)
+                // TODO: Uncomment this to disconnect the device
                 
-                disconnectConfirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
-                
-                disconnectConfirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
-                    print("user wants to disconnect device")
-                    
-                    Constants.disconnectDevice()
-                    self.view.layer.removeAllAnimations()
-                    self.viewWillAppear(true)
-                }))
-                
-                presentViewController(disconnectConfirmationAlert, animated: true, completion: nil)
+                //                let disconnectConfirmationAlert: UIAlertController = UIAlertController(title: "Confirm", message: "Are you sure you want to disconnect device?", preferredStyle: .Alert)
+                //                
+                //                disconnectConfirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+                //                
+                //                disconnectConfirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
+                //                    print("user wants to disconnect device")
+                //                    
+                //                    Constants.disconnectDevice()
+                //                    self.view.layer.removeAllAnimations()
+                //                    self.viewWillAppear(true)
+                //                }))
+                //                
+                //                presentViewController(disconnectConfirmationAlert, animated: true, completion: nil)
             }
             else
             {
-                // freeze UI while attempting to connect to device
-                let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
-                confirmationHUD.labelText = "Connecting to device..."
+                //                // freeze UI while attempting to connect to device
+                //                let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
+                //                confirmationHUD.labelText = "Connecting to device..."
+                
+                animateConnectionLogo()
+                neutralLabel.text = "connecting..."
                 
                 ConnectionVC.currentlySelectedDevice = selectedDevice
                 
@@ -154,8 +149,9 @@ class ConnectionVC: UIViewController
                     // a connection timeout error
                     if let generatedError = error
                     {
-                        confirmationHUD.labelText = generatedError.localizedDescription
-                        confirmationHUD.hide(true, afterDelay: Constants.defaultDelayTime)
+                        //                        confirmationHUD.labelText = generatedError.localizedDescription
+                        //                        confirmationHUD.hide(true, afterDelay: Constants.defaultDelayTime)
+                        self.view.layer.removeAllAnimations()
                         self.noDeviceDetectedLabel.hidden = false
                         self.noDeviceDetectedLabel.text = "connection error"
                         self.neutralLabel.hidden = false
@@ -163,7 +159,7 @@ class ConnectionVC: UIViewController
                     }
                     else
                     {
-                        confirmationHUD.hide(true)
+                        //                        confirmationHUD.hide(true)
                         
                         // flash the Metawear LED Green just to confirm its the right device
                         ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
@@ -176,11 +172,13 @@ class ConnectionVC: UIViewController
                             
                             Constants.turnOffMetaWearLED()
                             
+                            self.view.layer.removeAllAnimations()
+                            
                             self.neutralLabel.hidden = false
                             self.neutralLabel.text = selectedDevice.state.getState().lowercaseString
                             
                             self.logoImageView.image = UIImage(named: "LogoRed")
-                            self.animateConnectionLogo()
+                            //                            self.animateConnectionLogo()
                             
                         }))
                         
@@ -256,6 +254,7 @@ extension ConnectionVC: CBCentralManagerDelegate
         {
             logoImageView.hidden = false
             tapToConnectLabel.hidden = false
+            neutralLabel.text = "device found"
         }
     }
     
