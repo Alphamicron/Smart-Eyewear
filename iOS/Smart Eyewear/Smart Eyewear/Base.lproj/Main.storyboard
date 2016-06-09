@@ -53,13 +53,6 @@
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sunny" translatesAutoresizingMaskIntoConstraints="NO" id="YXf-HP-3hN">
                                 <rect key="frame" x="305" y="243" width="50" height="50"/>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="68R-Qx-j38">
-                                <rect key="frame" x="253" y="8" width="51" height="31"/>
-                                <color key="onTintColor" red="0.29019607843137252" green="0.83921568627450982" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="userSwitchAction:" destination="lwX-Ke-ms8" eventType="valueChanged" id="1YM-HC-Ln8"/>
-                                </connections>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgY-yq-agC">
                                 <rect key="frame" x="110" y="149" width="155" height="45"/>
                                 <color key="backgroundColor" red="0.20784313725490194" green="0.16862745098039217" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,11 +83,13 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bWv-gI-4bP">
                                 <rect key="frame" x="253" y="110" width="51" height="31"/>
+                                <color key="onTintColor" red="0.2901960784" green="0.83921568629999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.20784313725490194" green="0.16862745098039217" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DxL-8G-AIX">
                                 <rect key="frame" x="18" y="316" width="339" height="31"/>
                                 <color key="minimumTrackTintColor" red="0.92549019607843142" green="0.11372549019607843" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="maximumTrackTintColor" red="0.92549019610000005" green="0.1137254902" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="userThresholdChange:" destination="lwX-Ke-ms8" eventType="valueChanged" id="6TN-dr-LKu"/>
                                 </connections>
@@ -102,7 +97,7 @@
                             <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mls-PD-rct">
                                 <rect key="frame" x="18" y="402" width="339" height="31"/>
                                 <color key="minimumTrackTintColor" red="0.92549019610000005" green="0.1137254902" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="maximumTrackTintColor" red="0.92549019610000005" green="0.1137254902" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" red="0.92549019610000005" green="0.1137254902" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cK-l4-HFF">
@@ -111,6 +106,9 @@
                                 <state key="normal" title="help">
                                     <color key="titleColor" red="0.42352941176470588" green="0.43137254901960786" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="helpBtnAction:" destination="lwX-Ke-ms8" eventType="touchUpInside" id="Wgo-fy-3Oa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="set threshold slider above the reading slider if CTRL gets activated under brighter lighting conditions, otherwise set it below" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6i-8x-wfI">
                                 <rect key="frame" x="20" y="529" width="288" height="59"/>
@@ -148,15 +146,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="68R-Qx-j38">
+                                <rect key="frame" x="253" y="8" width="51" height="31"/>
+                                <color key="onTintColor" red="0.29019607843137252" green="0.83921568627450982" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.20784313725490194" green="0.16862745098039217" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="userSwitchAction:" destination="lwX-Ke-ms8" eventType="valueChanged" id="1YM-HC-Ln8"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="automaticBtn" destination="kgY-yq-agC" id="Y7O-IA-Yj7"/>
+                        <outlet property="automaticSwitch" destination="bWv-gI-4bP" id="07U-Rm-hJB"/>
+                        <outlet property="helpBtn" destination="6cK-l4-HFF" id="shT-0b-mAo"/>
+                        <outlet property="helpTextLabel" destination="w6i-8x-wfI" id="eS3-tg-Gga"/>
                         <outlet property="manualBtn" destination="UrF-bf-LQd" id="WFU-mi-lxM"/>
+                        <outlet property="manualSwitch" destination="68R-Qx-j38" id="cqK-kb-Icr"/>
                         <outlet property="metaWearValueSlider" destination="mls-PD-rct" id="0kR-ni-fiM"/>
-                        <outlet property="turnOnSwitch" destination="68R-Qx-j38" id="KjL-Yg-n5w"/>
                         <outlet property="userThresholdSlider" destination="DxL-8G-AIX" id="UZq-lN-g7a"/>
                     </connections>
                 </viewController>

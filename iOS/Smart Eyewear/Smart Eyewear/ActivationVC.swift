@@ -10,16 +10,18 @@ import UIKit
 
 class ActivationVC: UIViewController
 {
-    //TODO: Keep track of the real ratio as well
-    
     @IBOutlet weak var userThresholdSlider: UISlider!
     @IBOutlet weak var metaWearValueSlider: UISlider!
     //    @IBOutlet weak var userThresholdLabel: UILabel!
     //    @IBOutlet weak var metaWearLabel: UILabel!
-    @IBOutlet weak var turnOnSwitch: UISwitch!
+    @IBOutlet weak var manualSwitch: UISwitch!
+    
+    @IBOutlet weak var automaticSwitch: UISwitch!
+    
     @IBOutlet weak var manualBtn: UIButton!
     @IBOutlet weak var automaticBtn: UIButton!
-    
+    @IBOutlet weak var helpBtn: UIButton!
+    @IBOutlet weak var helpTextLabel: UILabel!
     var photoSensorVoltage: Float = Float()
     
     override func viewDidLoad()
@@ -100,17 +102,38 @@ class ActivationVC: UIViewController
         userThresholdSlider.minimumValue = Constants.userThresholdMinimumValue
         userThresholdSlider.maximumValue = Constants.userThresholdMaximumValue
         
-        hideAllManualOperationStuff()
-        hideAllAutomaticOperationStuff()
+        //        hideAllManualOperationStuff()
+        //        hideAllAutomaticOperationStuff()
         
-        manualBtn.setTitle("Manual OFF", forState: .Normal)
-        manualBtn.setTitle("Manual ON", forState: .Selected)
+        userThresholdSlider.userInteractionEnabled = false
         
-        automaticBtn.setTitle("Automatic OFF", forState: .Normal)
-        automaticBtn.setTitle("Automatic ON", forState: .Selected)
+        manualBtn.userInteractionEnabled = false
+        automaticBtn.userInteractionEnabled = false
+        
+        helpBtn.hidden = true
+        helpTextLabel.hidden = true
+        
+        manualBtn.setTitle("OFF", forState: .Normal)
+        manualBtn.setTitle("ON", forState: .Selected)
+        
+        automaticBtn.setTitle("OFF", forState: .Normal)
+        automaticBtn.setTitle("SET", forState: .Selected)
         
         manualBtn.addTarget(self, action: #selector(ActivationVC.manualButtonClicked(_:)), forControlEvents: .TouchUpInside)
         automaticBtn.addTarget(self, action: #selector(ActivationVC.automaticButtonClicked(_:)), forControlEvents: .TouchUpInside)
+    }
+    
+    
+    @IBAction func helpBtnAction(sender: UIButton)
+    {
+        if helpTextLabel.hidden
+        {
+            helpTextLabel.hidden = false
+        }
+        else
+        {
+            helpTextLabel.hidden = true
+        }
     }
     
     // POST: Get voltage of photo sensor pin and reflects it onto the metaWearSlider
@@ -171,12 +194,12 @@ class ActivationVC: UIViewController
             {
                 ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from the auto mode
                 hideAllAutomaticOperationStuff()
-                turnOnSwitch.hidden = false
+                manualSwitch.hidden = false
             }
             else
             {
                 ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from manual mode 
-                turnOnSwitch.hidden = true
+                manualSwitch.hidden = true
             }
         }
     }
@@ -211,8 +234,8 @@ class ActivationVC: UIViewController
     
     func hideAllManualOperationStuff()
     {
-        turnOnSwitch.on = false
-        turnOnSwitch.hidden = true
+        manualSwitch.on = false
+        manualSwitch.hidden = true
         manualBtn.selected = false
     }
     
