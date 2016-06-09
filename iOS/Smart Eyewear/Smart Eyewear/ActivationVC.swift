@@ -88,6 +88,7 @@ class ActivationVC: UIViewController
         {
             automaticSwitch.setOn(false, animated: true)
             automaticSwitch.sendActionsForControlEvents(.ValueChanged)
+            helpTextLabel.hidden = true
             manualBtn.backgroundColor = Constants.themeRedColour
             manualBtn.userInteractionEnabled = true
         }
@@ -105,14 +106,19 @@ class ActivationVC: UIViewController
         {
             manualSwitch.setOn(false, animated: true)
             manualSwitch.sendActionsForControlEvents(.ValueChanged)
+            
             automaticBtn.backgroundColor = Constants.themeRedColour
             automaticBtn.userInteractionEnabled = true
+            automaticBtn.setTitle("OFF", forState: .Normal)
+            
+            helpBtn.hidden = false
         }
         else
         {
-            automaticBtn.setTitle("OFF", forState: .Normal)
+            automaticBtn.setTitle("OFF", forState: .Selected)
             automaticBtn.backgroundColor = Constants.themeInactiveStateColour
             automaticBtn.userInteractionEnabled = false
+            helpBtn.hidden = true
         }
     }
     
@@ -133,6 +139,37 @@ class ActivationVC: UIViewController
             sender.setTitle("ON", forState: .Normal)
             ActivationVC.turnLED(Constants.LEDState.On)
             sender.backgroundColor = Constants.themeGreenColour
+        }
+    }
+    
+    @IBAction func automaticBtnAction(sender: UIButton)
+    {
+        if !Constants.isDeviceConnected()
+        {
+            presentViewController(Constants.defaultErrorAlert("Invalid Operation", errorMessage: "A device needs to be connected to continue"), animated: true, completion: nil)
+        }
+        else
+        {
+            sender.selected = !sender.selected
+            
+            if sender.selected
+            {
+                print("button on")
+                sender.setTitle("ON", forState: .Selected)
+                sender.backgroundColor = Constants.themeGreenColour
+                
+                userThresholdSlider.userInteractionEnabled = true
+                
+                repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
+            }
+            else
+            {
+                print("button off")
+                Constants.defaultTimer.invalidate()
+                sender.setTitle("OFF", forState: .Normal)
+                sender.backgroundColor = Constants.themeRedColour
+                userThresholdSlider.userInteractionEnabled = false
+            }
         }
     }
     
