@@ -26,8 +26,6 @@ class ConnectionVC: UIViewController
     {
         super.viewDidLoad()
         
-        print("VDL called")
-        
         MBLMetaWearManager.sharedManager().startScanForMetaWearsAllowDuplicates(false, handler: { (array: [AnyObject]?) -> Void in
             self.foundDevices = array as? [MBLMetaWear]
         })
@@ -36,7 +34,6 @@ class ConnectionVC: UIViewController
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-        print("VWA called")
         
         setupTheViewInitially()
         
@@ -81,8 +78,6 @@ class ConnectionVC: UIViewController
     
     func animateConnectionLogo()
     {
-        print(view.layer.animationKeys())
-        
         if view.layer.animationKeys() == nil
         {
             UIView.animateWithDuration(1.0, animations: {

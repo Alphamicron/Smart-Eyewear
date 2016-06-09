@@ -31,8 +31,6 @@ class MainViewTVC: UITableViewController
     {
         super.viewWillAppear(animated)
         
-        print(tableView.indexPathForSelectedRow)
-        
         if let indexPath = tableView.indexPathForSelectedRow
         {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -42,7 +40,6 @@ class MainViewTVC: UITableViewController
     override func viewWillDisappear(animated: Bool)
     {
         super.viewDidAppear(animated)
-        print("VWD called")
         
         if let indexPath = tableView.indexPathForSelectedRow
         {
@@ -88,7 +85,6 @@ class MainViewTVC: UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        print("Cell \(indexPath.row) selected")
         // grab the currently selected cell
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
         
@@ -100,7 +96,6 @@ class MainViewTVC: UITableViewController
         {
         case 0:
             performSegueWithIdentifier("segueToBTConnection", sender: self)
-            print("\(1+1)")
         case 1:
             performSegueWithIdentifier("segueToRGBLed", sender: self)
         case 2:
@@ -116,7 +111,6 @@ class MainViewTVC: UITableViewController
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
     {
-        print("Cell \(indexPath.row) de-selected")
         // grab the formerly selected cell
         let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
         

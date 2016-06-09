@@ -81,16 +81,55 @@ class ActivationVC: UIViewController
         //        userThresholdLabel.text = String(Int(userThresholdSlider.value))
     }
     
-    // POST: Keeps track of when manual mode is ON/OFF
-    @IBAction func userSwitchAction(sender: UISwitch)
+    // POST: tracks when manual mode is activated
+    @IBAction func manualSwitchAction(sender: UISwitch)
     {
+        print("manual switch state \(sender.on)")
         if sender.on
         {
-            ActivationVC.turnLED(Constants.LEDState.On)
+            print("manual button before press state: \(manualBtn.state)")
+            automaticSwitch.setOn(false, animated: true)
+            manualBtn.backgroundColor = Constants.themeRedColour
+            manualBtn.userInteractionEnabled = true
+            //            ActivationVC.turnLED(Constants.LEDState.On)
         }
         else
         {
+            manualBtn.setTitle("OFF", forState: .Normal)
+            manualBtn.backgroundColor = UIColor(red: 0.208, green: 0.169, blue: 0.137, alpha: 1.00)
+            manualBtn.userInteractionEnabled = false
+            //            ActivationVC.turnLED(Constants.LEDState.Off)
+        }
+    }
+    
+    @IBAction func manualBtnAction(sender: UIButton)
+    {
+        sender.selected = !sender.selected // keeps track of button presses
+        
+        if sender.selected // button has already been pressed before
+        {
             ActivationVC.turnLED(Constants.LEDState.Off)
+            sender.setTitle("OFF", forState: .Selected)
+            sender.backgroundColor = Constants.themeRedColour
+            
+        }
+        else // not pressed before
+        {
+            sender.setTitle("ON", forState: .Normal)
+            ActivationVC.turnLED(Constants.LEDState.On)
+            sender.backgroundColor = Constants.themeGreenColour
+        }
+    }
+    
+    @IBAction func helpBtnAction(sender: UIButton)
+    {
+        if helpTextLabel.hidden
+        {
+            helpTextLabel.hidden = false
+        }
+        else
+        {
+            helpTextLabel.hidden = true
         }
     }
     
@@ -107,33 +146,17 @@ class ActivationVC: UIViewController
         
         userThresholdSlider.userInteractionEnabled = false
         
-        manualBtn.userInteractionEnabled = false
-        automaticBtn.userInteractionEnabled = false
-        
         helpBtn.hidden = true
         helpTextLabel.hidden = true
         
         manualBtn.setTitle("OFF", forState: .Normal)
-        manualBtn.setTitle("ON", forState: .Selected)
-        
         automaticBtn.setTitle("OFF", forState: .Normal)
-        automaticBtn.setTitle("SET", forState: .Selected)
         
-        manualBtn.addTarget(self, action: #selector(ActivationVC.manualButtonClicked(_:)), forControlEvents: .TouchUpInside)
-        automaticBtn.addTarget(self, action: #selector(ActivationVC.automaticButtonClicked(_:)), forControlEvents: .TouchUpInside)
-    }
-    
-    
-    @IBAction func helpBtnAction(sender: UIButton)
-    {
-        if helpTextLabel.hidden
-        {
-            helpTextLabel.hidden = false
-        }
-        else
-        {
-            helpTextLabel.hidden = true
-        }
+        //        manualBtn.setTitle("ON", forState: .Selected)
+        //        automaticBtn.setTitle("SET", forState: .Selected)
+        
+        //        manualBtn.addTarget(self, action: #selector(ActivationVC.manualButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        //        automaticBtn.addTarget(self, action: #selector(ActivationVC.automaticButtonClicked(_:)), forControlEvents: .TouchUpInside)
     }
     
     // POST: Get voltage of photo sensor pin and reflects it onto the metaWearSlider
@@ -181,27 +204,27 @@ class ActivationVC: UIViewController
     
     func manualButtonClicked(sender: UIButton)
     {
-        if !Constants.isDeviceConnected()
-        {
-            presentViewController(Constants.defaultErrorAlert("Invalid Operation", errorMessage: "A device needs to be connected to continue"), animated: true, completion: nil)
-        }
-        else
-        {
-            sender.selected = !sender.selected
-            
-            // manual mode selected
-            if sender.selected
-            {
-                ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from the auto mode
-                hideAllAutomaticOperationStuff()
-                manualSwitch.hidden = false
-            }
-            else
-            {
-                ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from manual mode 
-                manualSwitch.hidden = true
-            }
-        }
+        //        if !Constants.isDeviceConnected()
+        //        {
+        //            presentViewController(Constants.defaultErrorAlert("Invalid Operation", errorMessage: "A device needs to be connected to continue"), animated: true, completion: nil)
+        //        }
+        //        else
+        //        {
+        //            sender.selected = !sender.selected
+        //            
+        //            // manual mode selected
+        //            if sender.selected
+        //            {
+        //                ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from the auto mode
+        //                hideAllAutomaticOperationStuff()
+        //                manualSwitch.hidden = false
+        //            }
+        //            else
+        //            {
+        //                ActivationVC.turnLED(Constants.LEDState.Off) // clear everything from manual mode 
+        //                manualSwitch.hidden = true
+        //            }
+        //        }
     }
     
     func automaticButtonClicked(sender: UIButton)

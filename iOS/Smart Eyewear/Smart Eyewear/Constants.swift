@@ -20,6 +20,7 @@ struct Constants
     static let maximumPinVoltage: Float = 3.0 // maximum voltage supplied by Pin 6 as of https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
     static let defaultFont: UIFont = UIFont(name: "AvenirNext-Regular", size: 20)!
     static let themeRedColour: UIColor = UIColor(red: 0.925, green: 0.114, blue: 0.141, alpha: 1.00)
+    static let themeGreenColour: UIColor = UIColor(red: 0.290, green: 0.839, blue: 0.388, alpha: 1.00)
     static let metaWearUUID: String = "B0480FD8-84E5-499C-1BF1-939605412C3F"
     
     static func defaultErrorAlert(errorTitle: String, errorMessage: String)->UIAlertController
