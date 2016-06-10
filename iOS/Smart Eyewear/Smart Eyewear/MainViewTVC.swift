@@ -108,7 +108,7 @@ class MainViewTVC: UITableViewController
         case 3:
             performSegueWithIdentifier("segueToBatteryLevel", sender: self)
         case 4:
-            return
+            performSegueWithIdentifier("segueToOthers", sender: self)
         default:
             return
         }
