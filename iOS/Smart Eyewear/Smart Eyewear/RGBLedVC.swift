@@ -35,7 +35,9 @@ class RGBLedVC: UIViewController
     {
         super.viewDidLoad()
         
-        // TODO: Add an image in the background showing their is no device?
+        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavRGBWhite"))
+        
         if !Constants.isDeviceConnected()
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to change its LED colours"), animated: true, completion: nil)

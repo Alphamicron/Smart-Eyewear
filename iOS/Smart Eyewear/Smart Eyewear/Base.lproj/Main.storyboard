@@ -186,7 +186,7 @@
             </objects>
             <point key="canvasLocation" x="1633.5" y="-491.5"/>
         </scene>
-        <!--Main View-->
+        <!--Home-->
         <scene sceneID="KRr-2G-Qwa">
             <objects>
                 <tableViewController id="HcJ-az-eCn" customClass="MainViewTVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
@@ -208,6 +208,11 @@
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                             <color key="textColor" red="0.92549019607843142" green="0.11372549019607843" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="kerning">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jLP-8D-TPa">
                                             <rect key="frame" x="8" y="24" width="65" height="65"/>
@@ -237,7 +242,7 @@
                             <outlet property="delegate" destination="HcJ-az-eCn" id="faO-IR-uki"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Main View" id="AXY-cf-jQc"/>
+                    <navigationItem key="navigationItem" title="Home" id="AXY-cf-jQc"/>
                     <connections>
                         <segue destination="G0t-W8-jyp" kind="show" identifier="segueToBTConnection" id="adV-C3-cnU"/>
                         <segue destination="5te-ZI-q77" kind="show" identifier="segueToRGBLed" id="r2D-OB-pCo"/>

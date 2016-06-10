@@ -91,6 +91,9 @@ class ConnectionVC: UIViewController
     // POST: hides connection-dependent outlets
     func setupTheViewInitially()
     {
+        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavBluetoothWhite"))
+        
         neutralLabel.hidden = false
         logoImageView.hidden = true
         tapToConnectLabel.hidden = true

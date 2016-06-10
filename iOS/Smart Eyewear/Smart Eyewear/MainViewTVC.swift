@@ -22,7 +22,7 @@ class MainViewTVC: UITableViewController
     {
         super.viewDidLoad()
         
-        self.title = "test test"
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavLogo"))
         
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
@@ -33,10 +33,13 @@ class MainViewTVC: UITableViewController
     {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
+        //        self.navigationItem.titleView = UIImageView(image: UIImage(named: "Launch"))
+        
         if let indexPath = tableView.indexPathForSelectedRow
         {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        }            
+        }
     }
     
     override func viewWillDisappear(animated: Bool)
