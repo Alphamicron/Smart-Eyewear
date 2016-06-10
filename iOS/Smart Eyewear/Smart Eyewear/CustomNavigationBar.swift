@@ -15,7 +15,7 @@ import UIKit
 
 class CustomNavigationBar: UINavigationBar
 {
-    static let navigationBarHeight: CGFloat = 64 // 110
+    static let navigationBarHeight: CGFloat = 110 // 110
     
     // The difference between new height and default height
     static let heightIncrease:CGFloat = navigationBarHeight - 44
