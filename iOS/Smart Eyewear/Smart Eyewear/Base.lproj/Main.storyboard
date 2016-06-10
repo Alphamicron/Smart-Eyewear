@@ -567,7 +567,7 @@
     <resources>
         <image name="Clouds" width="78" height="46"/>
         <image name="CloudySunny" width="95" height="74"/>
-        <image name="LogoGrey" width="161" height="154"/>
+        <image name="LogoGrey" width="251" height="251"/>
         <image name="LogoRed" width="61" height="61"/>
         <image name="Sunny" width="74" height="74"/>
     </resources>
