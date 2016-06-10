@@ -63,6 +63,7 @@ class BatteryLevelVC: UIViewController
         circleChart.displayCountingLabel = true
         circleChart.countingLabel.font = Constants.defaultFont
         circleChart.countingLabel.font = circleChart.countingLabel.font.fontWithSize(40.0)
+        circleChart.countingLabel.kerning = 1.0 // increase character spacing
         circleChart.lineWidth = 28
         circleChart.strokeColor = getColourForCharge(currentDeviceCharge)
         

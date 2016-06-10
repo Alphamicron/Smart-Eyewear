@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MBProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>PNChart.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,17 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>92F5C2254752392769C2D64B94210420</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B272B33F162D6E5C3510BA50ECF2684B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E6085F0CA8EDF318E80174523080EF35</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 import CoreBluetooth
 
 class DeviceTVCell: UITableViewCell
@@ -97,8 +96,8 @@ class DevicesTVC: UITableViewController
         if let selectedDevice = foundDevices?[indexPath.row]
         {
             // freeze UI while attempting to connect to device
-            let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
-            confirmationHUD.labelText = "Connecting to device..."
+            //            let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
+            //            confirmationHUD.labelText = "Connecting to device..."
             
             ConnectionVC.currentlySelectedDevice = selectedDevice
             
@@ -108,12 +107,12 @@ class DevicesTVC: UITableViewController
                 // a connection timeout error
                 if let generatedError = error
                 {
-                    confirmationHUD.labelText = generatedError.localizedDescription
-                    confirmationHUD.hide(true, afterDelay: Constants.defaultDelayTime)
+                    //                    confirmationHUD.labelText = generatedError.localizedDescription
+                    //                    confirmationHUD.hide(true, afterDelay: Constants.defaultDelayTime)
                 }
                 else
                 {
-                    confirmationHUD.hide(true)
+                    //                    confirmationHUD.hide(true)
                     
                     // flash the Metawear LED Green just to confirm its the right device
                     ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)

@@ -7,107 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03F3AFF196E9E8A3F19BC91B5315961B /* PNChart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C91CFDFD900E9433E567C00B1561227D /* PNChart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03F3AFF196E9E8A3F19BC91B5315961B /* PNChart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 543DD0F1C0F45CD3DF68BE0B85AC85B6 /* PNChart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04546466F0033FBA31F45180477613B3 /* Pods-Smart EyewearUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E782188850466E4DF078ECAE869316 /* Pods-Smart EyewearUITests-dummy.m */; };
-		08672331D03D2FAE07F840C369F21B3E /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB35E84DECA2FD611F5D5BBB0032AE /* PNPieChart.m */; };
+		08672331D03D2FAE07F840C369F21B3E /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A987CFF2D5ABF091400F2880051A9F /* PNPieChart.m */; };
 		0D6EE0965E430AAFD2E7A800D9B1E948 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
-		0DACF61783A5911B7DBC35AB25E65393 /* PNScatterChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E5DC23C4BDEACBCDCBF22D388E5D2A /* PNScatterChart.m */; };
-		0E265E3E7205D2700890106A7824FC9C /* BFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 615CA8073624D7AF0619AD7C7FA488F9 /* BFTask.m */; };
+		0DACF61783A5911B7DBC35AB25E65393 /* PNScatterChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D20022E779398606A3FE761E89E051 /* PNScatterChart.m */; };
+		0E265E3E7205D2700890106A7824FC9C /* BFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 11606C58F4EE88456C19FDE10471889C /* BFTask.m */; };
 		0E328F3D9F2225ADCF3FB40D02E06385 /* Pods-Smart EyewearUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A26A666F1D7482203B535D3EB19CF0F0 /* Pods-Smart EyewearUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F16649A56FBD0296BE92E912E7EBABB /* BFExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 73F58113EA1FCBAAC288E7E4DEAF8C35 /* BFExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F6FCF15CC1F4F05C46539443FDA2AAB /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18A8E321FEEA5F2F238AAA3B507527CD /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1044BACAA0F2B00DF1419F89A82D91B1 /* FastCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE764363A67BE259D9974CDA3C491D2 /* FastCoder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1233196329D27B0B664DB087B2F9A86B /* PNBarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D63E500779F3F9B46D73526D47D0795 /* PNBarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A852E4E5E3DFDA8919F2980BC8664D5 /* UICountingLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C7AAF1B2A2D74D769442174BDD54E6 /* UICountingLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1CBE13FFAB5A46116FECBD96967ADA87 /* PNScatterChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF65F876F6AA04708E02535AC2AEA89 /* PNScatterChartData.m */; };
-		1E7623B9420C3E71FAE3287C0CECA040 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 47E613FFBF138508481F4DC0BFF34179 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F16649A56FBD0296BE92E912E7EBABB /* BFExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = FB5A46D81976A114AAB2ECF178C2028D /* BFExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1044BACAA0F2B00DF1419F89A82D91B1 /* FastCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CAE1001ECE0ABA32D2FDC5E2665D4D /* FastCoder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1233196329D27B0B664DB087B2F9A86B /* PNBarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 158B2B0C49BFAEC6C93F1D9317C41677 /* PNBarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A852E4E5E3DFDA8919F2980BC8664D5 /* UICountingLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A417DCB6533685C08C485C88233401E5 /* UICountingLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CBE13FFAB5A46116FECBD96967ADA87 /* PNScatterChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7E2C900F00B06F7BCF60EF01EB451D /* PNScatterChartData.m */; };
 		1EE85F95473596165EC40CEB3E04048A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
-		1FA524F788771A81EBFDCE9A8BC62596 /* PNCircleChart.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1CAAFA71BDB21A9E019B33949AE66A /* PNCircleChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2128CA0C6DE95E52DF780F8042E7E60C /* PNPieChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 47784ADC38C2531EA2D8C628CF61B93D /* PNPieChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23D731D7D2DEB047AED5F567FF57CAE0 /* FastCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F105AC38C5D2D57561896676F5135D19 /* FastCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2705BC03E01B384120D2D3ACAD26F8EB /* UICountingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBF04F8573AE3B69410D57FC7D709C2 /* UICountingLabel-dummy.m */; };
+		1FA524F788771A81EBFDCE9A8BC62596 /* PNCircleChart.h in Headers */ = {isa = PBXBuildFile; fileRef = B87BBB26E58D7FD839BA90A18649517C /* PNCircleChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2128CA0C6DE95E52DF780F8042E7E60C /* PNPieChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F7CFE65E65ED3EC05352C1600E8A91D /* PNPieChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23D731D7D2DEB047AED5F567FF57CAE0 /* FastCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4007C653047205DFAD31F85748DA2F9D /* FastCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2705BC03E01B384120D2D3ACAD26F8EB /* UICountingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F14183E69651B618EC7BF35BBDE6B44 /* UICountingLabel-dummy.m */; };
 		27FA4C560364ACF28061666AE5155D00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE6C79B18FACDA3BE0ECDB067E9EFA6 /* CoreGraphics.framework */; };
-		2AEE2A9BDB1A753BBC647871F79BE5B5 /* PNChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E61B7AFCF12002E81917D5A3D2D6A3 /* PNChart-dummy.m */; };
-		33D5FAE8252CAF41795E199056F65450 /* FastCoding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74D40BFF842043A9446A8F39F99929AB /* FastCoding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		35A2B651CF9001857F8EC53FC150E637 /* PNScatterChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F62A2F15AF2B53411C2F5E2EFC738CA /* PNScatterChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		391F3BF69DD1A445979DD34DA2808209 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
-		3CCB5E678B6CD6FDEE4DFEAA800BF53A /* Bolts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 66AE7218B75BB36601E192890E73D785 /* Bolts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E7416BF3B3BD74F97960609897A6A47 /* PNGenericChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C4D04E418335D8A432AF9391114745 /* PNGenericChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E80F19B9293BBAEA27BDFADA2D24281 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE6C79B18FACDA3BE0ECDB067E9EFA6 /* CoreGraphics.framework */; };
+		2AEE2A9BDB1A753BBC647871F79BE5B5 /* PNChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2E6D89172025ABE07079FE5A103A10 /* PNChart-dummy.m */; };
+		33D5FAE8252CAF41795E199056F65450 /* FastCoding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BE895B894FB00ECF156082E7D2E2815 /* FastCoding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35A2B651CF9001857F8EC53FC150E637 /* PNScatterChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = E3FDDEBE5CF5A688BF5AAFCCFB6EC708 /* PNScatterChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CCB5E678B6CD6FDEE4DFEAA800BF53A /* Bolts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F62660C1FB8AACC3EBE109D020197F /* Bolts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E7416BF3B3BD74F97960609897A6A47 /* PNGenericChart.h in Headers */ = {isa = PBXBuildFile; fileRef = F5A4BD5A8B369807961C83AEFC16C6A4 /* PNGenericChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		423AABFB884F74A7074308E0BE76AD9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
-		427C2DD344E0CDE18760C366D0B7249C /* Bolts.h in Headers */ = {isa = PBXBuildFile; fileRef = A380127A67215767FDD427E981A36CD2 /* Bolts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4445FD5A94FB258B834E9EC6C519437B /* PNRadarChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3024AD83C3A7CA530661D07F6A3A8591 /* PNRadarChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44503E62F0F804B46B1BFF93DC05EDF4 /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 82A697A6B92CC9C3164FAB51874AE862 /* BFCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44F06257F3862A43EEFE681411D36FB6 /* BFCancellationTokenRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 684E7B9DBCF67CF0CFE9A93C3FD5B5C7 /* BFCancellationTokenRegistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4686B7D44AADA84F725CDE0AA159499A /* PNBar.h in Headers */ = {isa = PBXBuildFile; fileRef = E051F98BB0B1E27829F778F6EBD3A3D4 /* PNBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46CA19C2B6537554FCA9A2E69D051012 /* PNScatterChartData.h in Headers */ = {isa = PBXBuildFile; fileRef = 245CEA0366600F8877094C46E118F193 /* PNScatterChartData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		527E58B2C10E408428F9059FD9EEE624 /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 016F8E4F0F284A8B2B07709AA6540B78 /* PNLineChart.m */; };
-		5343465689F54EB30F454AD1F903C309 /* BFExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C1DC0D2A24185BE8189F25806042D9 /* BFExecutor.m */; };
-		5538E17255A2C3CA864393F3419C6825 /* PNPieChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CCA8CA6E4707586287E7B834BF578A7 /* PNPieChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6440919F591FCAB877183C8AF8763650 /* FastCoding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A7574706A69C6D15273D967CE9BC34 /* FastCoding-dummy.m */; };
-		65A5C8E41CA62E0FBD38D71688678814 /* Pods-Smart Eyewear-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0000F4734BC2CC7094C9AC9FC0A17F2F /* Pods-Smart Eyewear-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A511F3E9E21F7FC4A63F4DCA1F1136D /* PNRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5762893F16B0464BE5BC0CCE4F8DC0EE /* PNRadarChartDataItem.m */; };
-		6F3BEDBDDA0CB23A2B9078CD45182997 /* PNRadarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 0563E99F37AEA74A850F0984FE97ACC6 /* PNRadarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		427C2DD344E0CDE18760C366D0B7249C /* Bolts.h in Headers */ = {isa = PBXBuildFile; fileRef = 1729714EA20512D239A5BB3C261BC278 /* Bolts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4445FD5A94FB258B834E9EC6C519437B /* PNRadarChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C5A2D31576EFDC0D7F350B99CAD05EA /* PNRadarChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44503E62F0F804B46B1BFF93DC05EDF4 /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CEFA0674E889D7887A5B7BED98882B6 /* BFCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44F06257F3862A43EEFE681411D36FB6 /* BFCancellationTokenRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB60FFC617594FA6E7293FEA402E9BC /* BFCancellationTokenRegistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4686B7D44AADA84F725CDE0AA159499A /* PNBar.h in Headers */ = {isa = PBXBuildFile; fileRef = E5863C42D05274CFFAE75DAE2835C7F7 /* PNBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46CA19C2B6537554FCA9A2E69D051012 /* PNScatterChartData.h in Headers */ = {isa = PBXBuildFile; fileRef = A28F666D73B88D0665342075C7225F3A /* PNScatterChartData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		527E58B2C10E408428F9059FD9EEE624 /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E02B3E7B9BEACF6BDC6F9F2B192B70 /* PNLineChart.m */; };
+		5343465689F54EB30F454AD1F903C309 /* BFExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A7341F2011EDA643658A927E5541C2 /* BFExecutor.m */; };
+		5538E17255A2C3CA864393F3419C6825 /* PNPieChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE16CA61D9E65388BAF7A77387F292C /* PNPieChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6440919F591FCAB877183C8AF8763650 /* FastCoding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AB62F3ECD7CC2C08E701F886D543A6 /* FastCoding-dummy.m */; };
+		6A511F3E9E21F7FC4A63F4DCA1F1136D /* PNRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8333D823A2F41448B2120B2B922547 /* PNRadarChartDataItem.m */; };
+		6F3BEDBDDA0CB23A2B9078CD45182997 /* PNRadarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = B308E59CD7083BFBAE7B5A1751696C67 /* PNRadarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73457B81D7A2C6D89AE96FF2DF2A8C58 /* UICountingLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9103AD49AA73F4AFAC5A6BD63F2B787 /* UICountingLabel.framework */; };
-		772A2D7A16396C92206C4F8C0BAB8BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
-		77AECFAD996EFE8C50387C78F2EBD235 /* PNColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B5022A0548179BD02C2B6456CF8D96D /* PNColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77E3A7EDAF04B067B82E20B976EE533B /* UICountingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = DA14E1069F105134907DF6BE483A3E99 /* UICountingLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79E3B45D90155453A244BFD7E428708E /* BFCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC22454BDA53F3F9292F0FF61D37FE9 /* BFCancellationTokenRegistration.m */; };
-		7EA1176A7BD46B6E4D0628C85D1EA0B4 /* BFTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A777457E91629979913F38DB80970899 /* BFTaskCompletionSource.m */; };
-		816327E3B5B4030A335B1954F78CBA9B /* BFCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 13AA03D60F64C131F51DD602DF552F94 /* BFCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77AECFAD996EFE8C50387C78F2EBD235 /* PNColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E3803661A09147F5E0A0F37849F35D7 /* PNColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77E3A7EDAF04B067B82E20B976EE533B /* UICountingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CB79BEDEE719BE603E2F51FB6AD94DA /* UICountingLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79E3B45D90155453A244BFD7E428708E /* BFCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = D006F41EB2E90F7A7DDED075E040ED35 /* BFCancellationTokenRegistration.m */; };
+		7EA1176A7BD46B6E4D0628C85D1EA0B4 /* BFTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 636494AA33D8720C33BE0B37E464C820 /* BFTaskCompletionSource.m */; };
+		816327E3B5B4030A335B1954F78CBA9B /* BFCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = E8F29A858D6B48BBF3D440D2F08BF68F /* BFCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		836CB7E83B915DD310FC17C0658CB9CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948CB810917EECC7BC8A89F9F56FA161 /* UIKit.framework */; };
 		865AB43D9552A0CA829D2B5659740EA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ED9483A09851FB9EBA2AD743060706 /* QuartzCore.framework */; };
-		880CDD0D520203697F779D34935E2130 /* PNGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AFEE5AB74F5FB7392A2EAF1108E6E5 /* PNGenericChart.m */; };
-		88DD09E622BEEE0AC27E18D034EDF826 /* PNLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 710FE12B8E2861A6F96126A9798FCDE0 /* PNLineChartData.m */; };
-		8A4CC5345CBFEC769D4C7781B733D6FC /* Pods-Smart Eyewear-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E27550F189E9927D86ED502524FCA743 /* Pods-Smart Eyewear-dummy.m */; };
+		880CDD0D520203697F779D34935E2130 /* PNGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B0FD0510F17F0EEC7E62FC7E1CC0A0 /* PNGenericChart.m */; };
+		88DD09E622BEEE0AC27E18D034EDF826 /* PNLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D55FF9895289736432108A76C3B848 /* PNLineChartData.m */; };
 		8E809B047E2877E0A241FCC5E5C4314D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
-		8F18C758F242CA1BAEEDB0B6906252CE /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89679CFE2269AE1ACE137416A6DD6471 /* PNPieChartDataItem.m */; };
-		94933B136DB3AE83353A8B8C7A5A1A15 /* PNLineChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 918670795D688DEAE72163A5AFD152FF /* PNLineChartDataItem.m */; };
-		9759466F486DB2D728C0BAF71A52469C /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FFD06C3553761A3036FD8C5CC87A4 /* UICountingLabel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9E17CC11959A1FE5566CE528047ACDC0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CC4028C923061AF743254F03FE902C /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A400B20AADF31528D0085AE05567EB71 /* Bolts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F498FF08AE29C772FD7FFBFB42A5A /* Bolts-dummy.m */; };
-		A81D6052693A96D2DCEB37728A2C9015 /* PNLineChart.h in Headers */ = {isa = PBXBuildFile; fileRef = F789DAE0E3ACFE018EE8DE757D285E40 /* PNLineChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA1468AFCEE75F6FAA49E33D589C9C16 /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315D8C5FF8E720CC4ED8E2860F3BCE3 /* PNColor.m */; };
-		AAFA95344509AA286425B73468E1BFD3 /* PNChartLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = F91D6A46B754F5F5EB521F6DDEB62022 /* PNChartLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B52731FAFDE1196E35D00724C612EA25 /* PNCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F60A89B59102591952C7E14586FD60 /* PNCircleChart.m */; };
-		BB010EE04BA829E196554A00A951AA7C /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A41D9B8147D719F7AC998A5F0251734 /* MBProgressHUD-dummy.m */; };
+		8F18C758F242CA1BAEEDB0B6906252CE /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FBB0BCCC7C02028CE727ADF59461A4 /* PNPieChartDataItem.m */; };
+		94933B136DB3AE83353A8B8C7A5A1A15 /* PNLineChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C0060537C7404C6EBEE1A6B4FCCBE /* PNLineChartDataItem.m */; };
+		9759466F486DB2D728C0BAF71A52469C /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632E163283377AACB1A7F6E707A1B69 /* UICountingLabel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9E79F1669B1FCB3A2EA0223A5EB13488 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		A400B20AADF31528D0085AE05567EB71 /* Bolts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 937CF24C504C04DB04EE65D2DD8ECD9A /* Bolts-dummy.m */; };
+		A81D6052693A96D2DCEB37728A2C9015 /* PNLineChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3037BB082DC82E8E21EAC337B6904777 /* PNLineChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA1468AFCEE75F6FAA49E33D589C9C16 /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3363D53746C9A0ED0D3BB95ABF12CC /* PNColor.m */; };
+		AAFA95344509AA286425B73468E1BFD3 /* PNChartLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C87942132DAD1EDCC765987753468B7 /* PNChartLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B52731FAFDE1196E35D00724C612EA25 /* PNCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 641F0301FB5DCC99E80DD586EA990D4F /* PNCircleChart.m */; };
 		BCAB5C1ED3CA194258944FA04B450912 /* Pods-Smart EyewearTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 776015DE9D036690C224D75B5BCD2590 /* Pods-Smart EyewearTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C28B8A54BD1679210221A151EF4ADD36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
-		C48EF1D77A443EE3378EF52E88583559 /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C64DE9F15F39F580E18BBF9354C6EBF5 /* PNBar.m */; };
-		C555D454E9BFA26AFDF851E0EDB38AAE /* PNLineChartData.h in Headers */ = {isa = PBXBuildFile; fileRef = 806E5E5CB90AE1D910B6B17E479DCEF6 /* PNLineChartData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C86CA8AC9710D6679F106D4C9BE89823 /* BFCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 402052C6CFE5434C4771E5D2F61EBC0F /* BFCancellationTokenSource.m */; };
-		D2D70B403A85C8C6C62013C538C9B0A8 /* BFCancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEBFB7246BEA35C1E4666D03C8DE1DA /* BFCancellationToken.m */; };
-		D7BC261597874B2DBE31E1B8D45D2718 /* BFTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 62662AA4CFBD1226092790128E637962 /* BFTaskCompletionSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D82F428D6D1B7822967480842D54C41E /* PNLineChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 98C50F92D6440353DFC987D2A694E8B3 /* PNLineChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3C5B37CEB62E6CAF96826462FD33ADC /* Pods-Smart Eyewear-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0000F4734BC2CC7094C9AC9FC0A17F2F /* Pods-Smart Eyewear-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C48EF1D77A443EE3378EF52E88583559 /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 972D2A2259BE1E30B3C803C9DC2B91AE /* PNBar.m */; };
+		C555D454E9BFA26AFDF851E0EDB38AAE /* PNLineChartData.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D3F610979928009EC50DD36F68818DD /* PNLineChartData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C86CA8AC9710D6679F106D4C9BE89823 /* BFCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F61C4B105FAC7B2B0B81290A05B9D858 /* BFCancellationTokenSource.m */; };
+		D2D70B403A85C8C6C62013C538C9B0A8 /* BFCancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA5F38196296170C1646CE1286FC54 /* BFCancellationToken.m */; };
+		D7BC261597874B2DBE31E1B8D45D2718 /* BFTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DB6AF933E7A8313FB01A59F88A4BFB /* BFTaskCompletionSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D82F428D6D1B7822967480842D54C41E /* PNLineChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D52EB93306B5EB395BAFEC0006021 /* PNLineChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD4C2E323E2052ADF508C30F57D5B15E /* Pods-Smart EyewearTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B48D6C8EC9BB5BB7590AF50414DBBA32 /* Pods-Smart EyewearTests-dummy.m */; };
-		E00FEA6FCC637111F44C5E2AF709B418 /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 543F8C7FE50C539E09E468C014A88984 /* PNBarChart.m */; };
-		E065A8BA46DC4B001E0FD81E770A7E0A /* PNChart.h in Headers */ = {isa = PBXBuildFile; fileRef = C94951975D548B8F4679E711117D7D37 /* PNChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E20B1756CC705A2376E5AC874191610B /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD3B7E1759EC434E1038EEB4F64C83 /* PNScatterChartDataItem.m */; };
-		E5C01C5192623F1A468530DFB94DBF2D /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C3452ECAFFACADDD0DE4DA6E7CD7E1 /* PNChartLabel.m */; };
-		E8CC9CA47448AF29C9EA1421D5605060 /* PNChartDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9423CEA2C04DF611C0F7B47EA83525B2 /* PNChartDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E00FEA6FCC637111F44C5E2AF709B418 /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE607F00453984D56C869A7319A28A /* PNBarChart.m */; };
+		E065A8BA46DC4B001E0FD81E770A7E0A /* PNChart.h in Headers */ = {isa = PBXBuildFile; fileRef = BCDCABE896326EC687303BFC2DD3BAAD /* PNChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E20B1756CC705A2376E5AC874191610B /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 830000F127420468967EFED76DC9E240 /* PNScatterChartDataItem.m */; };
+		E5C01C5192623F1A468530DFB94DBF2D /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3108937D18086FBAEB3DC389931086DB /* PNChartLabel.m */; };
+		E8CC9CA47448AF29C9EA1421D5605060 /* PNChartDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A785B32675089F268D63CEEC36C77C /* PNChartDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAC26A2AE72FEB9F5C15F601C12858EA /* Pods-Smart Eyewear-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E27550F189E9927D86ED502524FCA743 /* Pods-Smart Eyewear-dummy.m */; };
 		F0B5B035D67E322F004ED48D01C3510C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
-		F51D6E2E0C6803E73BE09464A04F3B9A /* PNRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9FE6D8EA0DA36A2CA0D53DE0AD45FE /* PNRadarChart.m */; };
-		F6D277FFA94AC18BEEEFC7C71B8A7A81 /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A508D5E45FA480D5743046D2089639D /* BFTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F99889703B01753C466CE3BB4B999AE0 /* Bolts.m in Sources */ = {isa = PBXBuildFile; fileRef = 19856963E40B2A65116AC7C5167AC29A /* Bolts.m */; };
-		FF64A823B87747F95068653BFD7A446C /* PNScatterChart.h in Headers */ = {isa = PBXBuildFile; fileRef = B47F34047DE4A16F3B741C496ED42E5C /* PNScatterChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F51D6E2E0C6803E73BE09464A04F3B9A /* PNRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA67C916B4C8D006097E5CE67B4B2EF /* PNRadarChart.m */; };
+		F6D277FFA94AC18BEEEFC7C71B8A7A81 /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = D8181F9D9FFA99CEC6A6E801ED791F6D /* BFTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F99889703B01753C466CE3BB4B999AE0 /* Bolts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AEFC81359A8BF5EEC7EFCA0469EBA /* Bolts.m */; };
+		FF64A823B87747F95068653BFD7A446C /* PNScatterChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 5224C3357F1166013442870D7F88AC6B /* PNScatterChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		77E2D17A48B13CBC8454B4E0B6D5BFD2 /* PBXContainerItemProxy */ = {
+		3055BA1DBE60A81175E9D4885BD8121E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B272B33F162D6E5C3510BA50ECF2684B;
 			remoteInfo = Bolts;
 		};
-		8FD5E618BAC0F3201BEF1A785AE70BB1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E61CE3B6DFA1FE6B3E296965C76C0E10;
-			remoteInfo = MBProgressHUD;
-		};
-		A3CCCE9B06FBD594B300DC66214890C0 /* PBXContainerItemProxy */ = {
+		3FC5D1150F30C7930C0A496916C0F851 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -121,152 +108,143 @@
 			remoteGlobalIDString = 6C18C789438292FED01EB702705FC9AA;
 			remoteInfo = UICountingLabel;
 		};
-		E0A91141392DD733DCA2F14498B7156E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6C18C789438292FED01EB702705FC9AA;
-			remoteInfo = UICountingLabel;
-		};
-		F850E7EB93F6E1D2B62E370AAC98F48A /* PBXContainerItemProxy */ = {
+		DDAE2710AB7DC06E48DBFFEF771FCA57 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 50A790513C5191169FDD5EEBC495AF28;
 			remoteInfo = FastCoding;
 		};
+		EC55DEB8662C19B3F000FB7DF428231E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C18C789438292FED01EB702705FC9AA;
+			remoteInfo = UICountingLabel;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0000F4734BC2CC7094C9AC9FC0A17F2F /* Pods-Smart Eyewear-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smart Eyewear-umbrella.h"; sourceTree = "<group>"; };
-		001706C9C2B2DFEE2EF93913B3B3D59B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		016F8E4F0F284A8B2B07709AA6540B78 /* PNLineChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChart.m; path = PNChart/PNLineChart.m; sourceTree = "<group>"; };
-		0563E99F37AEA74A850F0984FE97ACC6 /* PNRadarChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNRadarChart.h; path = PNChart/PNRadarChart.h; sourceTree = "<group>"; };
 		07B7B10F3571DABE9A5B7CD90049565C /* Pods-Smart EyewearTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart EyewearTests-resources.sh"; sourceTree = "<group>"; };
 		092884DCAF00BB19CA3148AE91252DB0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7076762C97CE515A20403947E06B3B /* Pods-Smart EyewearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart EyewearTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1315D8C5FF8E720CC4ED8E2860F3BCE3 /* PNColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNColor.m; path = PNChart/PNColor.m; sourceTree = "<group>"; };
-		13AA03D60F64C131F51DD602DF552F94 /* BFCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenSource.h; path = Bolts/Common/BFCancellationTokenSource.h; sourceTree = "<group>"; };
-		18A8E321FEEA5F2F238AAA3B507527CD /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
-		19856963E40B2A65116AC7C5167AC29A /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
-		203639ED30916A4C38683755D46E1A7E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21C4D04E418335D8A432AF9391114745 /* PNGenericChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNGenericChart.h; path = PNChart/PNGenericChart.h; sourceTree = "<group>"; };
-		245CEA0366600F8877094C46E118F193 /* PNScatterChartData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChartData.h; path = PNChart/PNScatterChartData.h; sourceTree = "<group>"; };
-		2D63E500779F3F9B46D73526D47D0795 /* PNBarChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNBarChart.h; path = PNChart/PNBarChart.h; sourceTree = "<group>"; };
+		0BF3F38C60CA45CC03629D99369889EF /* FastCoding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastCoding.xcconfig; sourceTree = "<group>"; };
+		11606C58F4EE88456C19FDE10471889C /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
+		12667D2A235EFC35F7C4F1A43D3A82E4 /* FastCoding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FastCoding.modulemap; sourceTree = "<group>"; };
+		13E02B3E7B9BEACF6BDC6F9F2B192B70 /* PNLineChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChart.m; path = PNChart/PNLineChart.m; sourceTree = "<group>"; };
+		158B2B0C49BFAEC6C93F1D9317C41677 /* PNBarChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNBarChart.h; path = PNChart/PNBarChart.h; sourceTree = "<group>"; };
+		1729714EA20512D239A5BB3C261BC278 /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
+		1BE16CA61D9E65388BAF7A77387F292C /* PNPieChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNPieChartDataItem.h; path = PNChart/PNPieChartDataItem.h; sourceTree = "<group>"; };
+		224CB965CD122EEE0567C29664D23291 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		237C0060537C7404C6EBEE1A6B4FCCBE /* PNLineChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChartDataItem.m; path = PNChart/PNLineChartDataItem.m; sourceTree = "<group>"; };
+		2D3F610979928009EC50DD36F68818DD /* PNLineChartData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChartData.h; path = PNChart/PNLineChartData.h; sourceTree = "<group>"; };
 		2D8B67A4EB33A8E53737A970548522F2 /* Pods-Smart EyewearTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Smart EyewearTests.modulemap"; sourceTree = "<group>"; };
-		3024AD83C3A7CA530661D07F6A3A8591 /* PNRadarChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNRadarChartDataItem.h; path = PNChart/PNRadarChartDataItem.h; sourceTree = "<group>"; };
+		301C9EB856D567FF2DD579870F561C6B /* FastCoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastCoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3037BB082DC82E8E21EAC337B6904777 /* PNLineChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChart.h; path = PNChart/PNLineChart.h; sourceTree = "<group>"; };
+		3108937D18086FBAEB3DC389931086DB /* PNChartLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNChartLabel.m; path = PNChart/PNChartLabel.m; sourceTree = "<group>"; };
 		335B26B479A432484E06B4852E213341 /* Pods-Smart EyewearUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart EyewearUITests-resources.sh"; sourceTree = "<group>"; };
 		3526943C746C4198C4F4B4AF01911B15 /* Pods-Smart EyewearUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smart EyewearUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3632E163283377AACB1A7F6E707A1B69 /* UICountingLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		3994EAB673F2E27FFF3AAECE2DEBD7E5 /* Pods-Smart EyewearUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Smart EyewearUITests.modulemap"; sourceTree = "<group>"; };
-		3C98F07A0E0C51C8BBEF57928FC6B1F9 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
-		3CB7310B6E974BA69FBEF642D6B6CFA4 /* FastCoding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastCoding-prefix.pch"; sourceTree = "<group>"; };
+		39A7341F2011EDA643658A927E5541C2 /* BFExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFExecutor.m; path = Bolts/Common/BFExecutor.m; sourceTree = "<group>"; };
+		3BE895B894FB00ECF156082E7D2E2815 /* FastCoding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastCoding-umbrella.h"; sourceTree = "<group>"; };
 		3DAE23C45F35BF4468219DF4FA81D36F /* Pods-Smart EyewearUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smart EyewearUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		402052C6CFE5434C4771E5D2F61EBC0F /* BFCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenSource.m; path = Bolts/Common/BFCancellationTokenSource.m; sourceTree = "<group>"; };
+		3F2AEFC81359A8BF5EEC7EFCA0469EBA /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
+		4007C653047205DFAD31F85748DA2F9D /* FastCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastCoder.h; path = FastCoder/FastCoder.h; sourceTree = "<group>"; };
+		4586A659BF7E49580E808BC4AD98B85E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46EEC1F7DBD6FC246D7BAF4B31026C7A /* Pods-Smart Eyewear-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart Eyewear-resources.sh"; sourceTree = "<group>"; };
-		47784ADC38C2531EA2D8C628CF61B93D /* PNPieChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNPieChart.h; path = PNChart/PNPieChart.h; sourceTree = "<group>"; };
-		47E613FFBF138508481F4DC0BFF34179 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4CB79BEDEE719BE603E2F51FB6AD94DA /* UICountingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		4CEFA0674E889D7887A5B7BED98882B6 /* BFCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationToken.h; path = Bolts/Common/BFCancellationToken.h; sourceTree = "<group>"; };
+		4D8460514AAEF2A3B1F4B8F6074D4C86 /* FastCoding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastCoding-prefix.pch"; sourceTree = "<group>"; };
 		4DFCD6564D1E0CE8E67F96D33399D492 /* Pods-Smart EyewearTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smart EyewearTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4F7CFE65E65ED3EC05352C1600E8A91D /* PNPieChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNPieChart.h; path = PNChart/PNPieChart.h; sourceTree = "<group>"; };
 		505F1E93245D146FC99D676E9D6C5186 /* Pods-Smart Eyewear.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Smart Eyewear.modulemap"; sourceTree = "<group>"; };
-		543F8C7FE50C539E09E468C014A88984 /* PNBarChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNBarChart.m; path = PNChart/PNBarChart.m; sourceTree = "<group>"; };
-		5762893F16B0464BE5BC0CCE4F8DC0EE /* PNRadarChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNRadarChartDataItem.m; path = PNChart/PNRadarChartDataItem.m; sourceTree = "<group>"; };
-		5A0CD103C3BE89E8AD56771BD77CC555 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BAD3B7E1759EC434E1038EEB4F64C83 /* PNScatterChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartDataItem.m; path = PNChart/PNScatterChartDataItem.m; sourceTree = "<group>"; };
-		5BCF3004E82259582D0058A247761A9A /* UICountingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UICountingLabel.xcconfig; sourceTree = "<group>"; };
-		5FEBFB26BC09B67A024FAD1D77386469 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		615CA8073624D7AF0619AD7C7FA488F9 /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
-		62662AA4CFBD1226092790128E637962 /* BFTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTaskCompletionSource.h; path = Bolts/Common/BFTaskCompletionSource.h; sourceTree = "<group>"; };
-		632BAA284A0B64113D6AEEADDDDBA4DE /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		5224C3357F1166013442870D7F88AC6B /* PNScatterChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChart.h; path = PNChart/PNScatterChart.h; sourceTree = "<group>"; };
+		543DD0F1C0F45CD3DF68BE0B85AC85B6 /* PNChart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PNChart-umbrella.h"; sourceTree = "<group>"; };
+		56A623D76B9BB99360474CF0FAE470E9 /* UICountingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UICountingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8333D823A2F41448B2120B2B922547 /* PNRadarChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNRadarChartDataItem.m; path = PNChart/PNRadarChartDataItem.m; sourceTree = "<group>"; };
+		5C87942132DAD1EDCC765987753468B7 /* PNChartLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChartLabel.h; path = PNChart/PNChartLabel.h; sourceTree = "<group>"; };
+		5CE0B8561102DAC1743B6768278CADC9 /* Pods_Smart_Eyewear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Eyewear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		636494AA33D8720C33BE0B37E464C820 /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
+		641F0301FB5DCC99E80DD586EA990D4F /* PNCircleChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNCircleChart.m; path = PNChart/PNCircleChart.m; sourceTree = "<group>"; };
+		64BE607F00453984D56C869A7319A28A /* PNBarChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNBarChart.m; path = PNChart/PNBarChart.m; sourceTree = "<group>"; };
 		651A6F66636286310C71FA415F5163FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		666F66C067032986611518CE16771665 /* Pods_Smart_Eyewear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Eyewear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66AE7218B75BB36601E192890E73D785 /* Bolts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-umbrella.h"; sourceTree = "<group>"; };
-		684E7B9DBCF67CF0CFE9A93C3FD5B5C7 /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
-		6A508D5E45FA480D5743046D2089639D /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
-		6AE764363A67BE259D9974CDA3C491D2 /* FastCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FastCoder.m; path = FastCoder/FastCoder.m; sourceTree = "<group>"; };
-		6AF65F876F6AA04708E02535AC2AEA89 /* PNScatterChartData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartData.m; path = PNChart/PNScatterChartData.m; sourceTree = "<group>"; };
-		6B5022A0548179BD02C2B6456CF8D96D /* PNColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNColor.h; path = PNChart/PNColor.h; sourceTree = "<group>"; };
-		6CCA8CA6E4707586287E7B834BF578A7 /* PNPieChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNPieChartDataItem.h; path = PNChart/PNPieChartDataItem.h; sourceTree = "<group>"; };
+		66D20022E779398606A3FE761E89E051 /* PNScatterChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChart.m; path = PNChart/PNScatterChart.m; sourceTree = "<group>"; };
 		6DF24450D389FAE6E0487C45B181ACCE /* Pods-Smart Eyewear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart Eyewear.release.xcconfig"; sourceTree = "<group>"; };
-		6F5B14BFE339F4101372D541E24A4C37 /* PNChart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PNChart.xcconfig; sourceTree = "<group>"; };
-		710FE12B8E2861A6F96126A9798FCDE0 /* PNLineChartData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChartData.m; path = PNChart/PNLineChartData.m; sourceTree = "<group>"; };
-		72E61B7AFCF12002E81917D5A3D2D6A3 /* PNChart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PNChart-dummy.m"; sourceTree = "<group>"; };
-		73277B2AA7BE05AD6A40A21E6F2C5663 /* PNChart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PNChart.modulemap; sourceTree = "<group>"; };
-		73F58113EA1FCBAAC288E7E4DEAF8C35 /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
-		74C47A309FD38990B8FBBB8B3A633D15 /* PNChart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PNChart-prefix.pch"; sourceTree = "<group>"; };
-		74D40BFF842043A9446A8F39F99929AB /* FastCoding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastCoding-umbrella.h"; sourceTree = "<group>"; };
+		6E3803661A09147F5E0A0F37849F35D7 /* PNColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNColor.h; path = PNChart/PNColor.h; sourceTree = "<group>"; };
 		776015DE9D036690C224D75B5BCD2590 /* Pods-Smart EyewearTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smart EyewearTests-umbrella.h"; sourceTree = "<group>"; };
-		780B7016FBE4234383A5A1E1D6C2CFC8 /* Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bolts.xcconfig; sourceTree = "<group>"; };
-		7A41D9B8147D719F7AC998A5F0251734 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		806E5E5CB90AE1D910B6B17E479DCEF6 /* PNLineChartData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChartData.h; path = PNChart/PNLineChartData.h; sourceTree = "<group>"; };
-		82A697A6B92CC9C3164FAB51874AE862 /* BFCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationToken.h; path = Bolts/Common/BFCancellationToken.h; sourceTree = "<group>"; };
-		859CBE4F271033F72BC5D5D8809BE939 /* Bolts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-prefix.pch"; sourceTree = "<group>"; };
-		87F60A89B59102591952C7E14586FD60 /* PNCircleChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNCircleChart.m; path = PNChart/PNCircleChart.m; sourceTree = "<group>"; };
-		88E5DC23C4BDEACBCDCBF22D388E5D2A /* PNScatterChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChart.m; path = PNChart/PNScatterChart.m; sourceTree = "<group>"; };
-		89455AACCE13D611187F03F07B8F7B38 /* FastCoding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastCoding.xcconfig; sourceTree = "<group>"; };
-		89679CFE2269AE1ACE137416A6DD6471 /* PNPieChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNPieChartDataItem.m; path = PNChart/PNPieChartDataItem.m; sourceTree = "<group>"; };
-		8A9F498FF08AE29C772FD7FFBFB42A5A /* Bolts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bolts-dummy.m"; sourceTree = "<group>"; };
-		8AD4ED6AF1616A317648EB50C03338EF /* FastCoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastCoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BA75E9539987A5265DC1BA21481099B /* Pods_Smart_EyewearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D5F04B73D63A6D64C22BDD416026020 /* Pods_Smart_EyewearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A3363D53746C9A0ED0D3BB95ABF12CC /* PNColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNColor.m; path = PNChart/PNColor.m; sourceTree = "<group>"; };
+		7C294BBA8A596E6B06A3866C83253F54 /* PNChart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PNChart.modulemap; sourceTree = "<group>"; };
+		7C5A2D31576EFDC0D7F350B99CAD05EA /* PNRadarChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNRadarChartDataItem.h; path = PNChart/PNRadarChartDataItem.h; sourceTree = "<group>"; };
+		7F14183E69651B618EC7BF35BBDE6B44 /* UICountingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICountingLabel-dummy.m"; sourceTree = "<group>"; };
+		830000F127420468967EFED76DC9E240 /* PNScatterChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartDataItem.m; path = PNChart/PNScatterChartDataItem.m; sourceTree = "<group>"; };
+		85FBB0BCCC7C02028CE727ADF59461A4 /* PNPieChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNPieChartDataItem.m; path = PNChart/PNPieChartDataItem.m; sourceTree = "<group>"; };
+		8E899BC291F8FEC3EFEB82E6FA6C9BCD /* Bolts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-prefix.pch"; sourceTree = "<group>"; };
+		8EA67C916B4C8D006097E5CE67B4B2EF /* PNRadarChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNRadarChart.m; path = PNChart/PNRadarChart.m; sourceTree = "<group>"; };
 		8F4A73917CB91E3863CBE1D3370683EB /* Pods-Smart EyewearUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart EyewearUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8F62A2F15AF2B53411C2F5E2EFC738CA /* PNScatterChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChartDataItem.h; path = PNChart/PNScatterChartDataItem.h; sourceTree = "<group>"; };
-		918670795D688DEAE72163A5AFD152FF /* PNLineChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChartDataItem.m; path = PNChart/PNLineChartDataItem.m; sourceTree = "<group>"; };
+		937CF24C504C04DB04EE65D2DD8ECD9A /* Bolts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bolts-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9423CEA2C04DF611C0F7B47EA83525B2 /* PNChartDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChartDelegate.h; path = PNChart/PNChartDelegate.h; sourceTree = "<group>"; };
 		948CB810917EECC7BC8A89F9F56FA161 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		95A6F4C75BF08A5E708E42A419F0E536 /* MetaWear.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MetaWear.framework; sourceTree = "<group>"; };
-		95C1DC0D2A24185BE8189F25806042D9 /* BFExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFExecutor.m; path = Bolts/Common/BFExecutor.m; sourceTree = "<group>"; };
-		98C50F92D6440353DFC987D2A694E8B3 /* PNLineChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChartDataItem.h; path = PNChart/PNLineChartDataItem.h; sourceTree = "<group>"; };
-		9CBF04F8573AE3B69410D57FC7D709C2 /* UICountingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICountingLabel-dummy.m"; sourceTree = "<group>"; };
-		A05FFD06C3553761A3036FD8C5CC87A4 /* UICountingLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
-		A0CC4028C923061AF743254F03FE902C /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		972D2A2259BE1E30B3C803C9DC2B91AE /* PNBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNBar.m; path = PNChart/PNBar.m; sourceTree = "<group>"; };
+		9911E329F977F6BD8907C17DABD26C76 /* Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bolts.xcconfig; sourceTree = "<group>"; };
+		9E37885F6CA7CF8E5AF5C25B2D2FB7C9 /* Pods_Smart_EyewearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3D31B2A4561CB23DD847F64C73BFB2 /* UICountingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UICountingLabel.modulemap; sourceTree = "<group>"; };
+		A1DB6AF933E7A8313FB01A59F88A4BFB /* BFTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTaskCompletionSource.h; path = Bolts/Common/BFTaskCompletionSource.h; sourceTree = "<group>"; };
 		A26A666F1D7482203B535D3EB19CF0F0 /* Pods-Smart EyewearUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smart EyewearUITests-umbrella.h"; sourceTree = "<group>"; };
-		A380127A67215767FDD427E981A36CD2 /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
-		A777457E91629979913F38DB80970899 /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
-		A8AFEE5AB74F5FB7392A2EAF1108E6E5 /* PNGenericChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNGenericChart.m; path = PNChart/PNGenericChart.m; sourceTree = "<group>"; };
+		A28F666D73B88D0665342075C7225F3A /* PNScatterChartData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChartData.h; path = PNChart/PNScatterChartData.h; sourceTree = "<group>"; };
+		A417DCB6533685C08C485C88233401E5 /* UICountingLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-umbrella.h"; sourceTree = "<group>"; };
 		A9ED9483A09851FB9EBA2AD743060706 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		AAED2296364925F3E12FEDA239698374 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD10D78A45347A5FDBD1355D7A1C3EC5 /* UICountingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-prefix.pch"; sourceTree = "<group>"; };
-		B47F34047DE4A16F3B741C496ED42E5C /* PNScatterChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChart.h; path = PNChart/PNScatterChart.h; sourceTree = "<group>"; };
+		ADBA5F38196296170C1646CE1286FC54 /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
+		B0A987CFF2D5ABF091400F2880051A9F /* PNPieChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNPieChart.m; path = PNChart/PNPieChart.m; sourceTree = "<group>"; };
+		B1E1A38F1207FDA0A64B07590B1002E4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2D55FF9895289736432108A76C3B848 /* PNLineChartData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChartData.m; path = PNChart/PNLineChartData.m; sourceTree = "<group>"; };
+		B308E59CD7083BFBAE7B5A1751696C67 /* PNRadarChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNRadarChart.h; path = PNChart/PNRadarChart.h; sourceTree = "<group>"; };
+		B3618F786EEEF882AD77E496272C7909 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F62660C1FB8AACC3EBE109D020197F /* Bolts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-umbrella.h"; sourceTree = "<group>"; };
 		B48D6C8EC9BB5BB7590AF50414DBBA32 /* Pods-Smart EyewearTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smart EyewearTests-dummy.m"; sourceTree = "<group>"; };
+		B87BBB26E58D7FD839BA90A18649517C /* PNCircleChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNCircleChart.h; path = PNChart/PNCircleChart.h; sourceTree = "<group>"; };
 		B9103AD49AA73F4AFAC5A6BD63F2B787 /* UICountingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UICountingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB201D1E3FC22966766BAB18636257CE /* Pods-Smart EyewearTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smart EyewearTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BB2E6D89172025ABE07079FE5A103A10 /* PNChart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PNChart-dummy.m"; sourceTree = "<group>"; };
 		BB39C52F19029932CCF22F00B8219156 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BBEBFB7246BEA35C1E4666D03C8DE1DA /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
-		C1484259DF80F844724DCC93B89E615C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4EF1E5BB05EBFD0456CA2F5CB341D0A /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bolts.modulemap; sourceTree = "<group>"; };
-		C64DE9F15F39F580E18BBF9354C6EBF5 /* PNBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNBar.m; path = PNChart/PNBar.m; sourceTree = "<group>"; };
-		C6BD0F56AA94AB03AF86CAFFE46BA7DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C91CFDFD900E9433E567C00B1561227D /* PNChart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PNChart-umbrella.h"; sourceTree = "<group>"; };
-		C94951975D548B8F4679E711117D7D37 /* PNChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChart.h; path = PNChart/PNChart.h; sourceTree = "<group>"; };
-		CA1CAAFA71BDB21A9E019B33949AE66A /* PNCircleChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNCircleChart.h; path = PNChart/PNCircleChart.h; sourceTree = "<group>"; };
+		BCDCABE896326EC687303BFC2DD3BAAD /* PNChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChart.h; path = PNChart/PNChart.h; sourceTree = "<group>"; };
+		C6AB62F3ECD7CC2C08E701F886D543A6 /* FastCoding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FastCoding-dummy.m"; sourceTree = "<group>"; };
+		C8F467FBD9B2C94228F79DA2AA2B3A0F /* UICountingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-prefix.pch"; sourceTree = "<group>"; };
+		CAB60FFC617594FA6E7293FEA402E9BC /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
 		CCE5452F7698390E1D8728DA8C10BCF4 /* Pods-Smart Eyewear-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smart Eyewear-acknowledgements.plist"; sourceTree = "<group>"; };
-		CD9FE6D8EA0DA36A2CA0D53DE0AD45FE /* PNRadarChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNRadarChart.m; path = PNChart/PNRadarChart.m; sourceTree = "<group>"; };
+		CF87BD529C760C583D5F9B38F04EC920 /* PNChart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PNChart-prefix.pch"; sourceTree = "<group>"; };
+		D006F41EB2E90F7A7DDED075E040ED35 /* BFCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenRegistration.m; path = Bolts/Common/BFCancellationTokenRegistration.m; sourceTree = "<group>"; };
 		D137F53F22CE1842CAF2481DDD7C5376 /* Pods-Smart Eyewear-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smart Eyewear-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D6C3452ECAFFACADDD0DE4DA6E7CD7E1 /* PNChartLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNChartLabel.m; path = PNChart/PNChartLabel.m; sourceTree = "<group>"; };
+		D3A46FFBA0BDA02B9D43D90F4881251D /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bolts.modulemap; sourceTree = "<group>"; };
+		D8181F9D9FFA99CEC6A6E801ED791F6D /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
 		D842BDB782E76FF736A5A631198A5554 /* Pods-Smart EyewearTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart EyewearTests.release.xcconfig"; sourceTree = "<group>"; };
-		DA14E1069F105134907DF6BE483A3E99 /* UICountingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
-		DEA8DC5D63D482342158A667F9086D5D /* FastCoding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FastCoding.modulemap; sourceTree = "<group>"; };
-		E051F98BB0B1E27829F778F6EBD3A3D4 /* PNBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNBar.h; path = PNChart/PNBar.h; sourceTree = "<group>"; };
+		D9B0FD0510F17F0EEC7E62FC7E1CC0A0 /* PNGenericChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNGenericChart.m; path = PNChart/PNGenericChart.m; sourceTree = "<group>"; };
+		DB6422C14AAF5721317348FA5C391C48 /* Pods_Smart_EyewearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC63028EDD1F503DD3F2CE3DD6AAAF94 /* PNChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PNChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E190D2C6770C87617960FB63A4EB1682 /* Pods-Smart EyewearTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart EyewearTests-frameworks.sh"; sourceTree = "<group>"; };
 		E27550F189E9927D86ED502524FCA743 /* Pods-Smart Eyewear-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smart Eyewear-dummy.m"; sourceTree = "<group>"; };
 		E2E782188850466E4DF078ECAE869316 /* Pods-Smart EyewearUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smart EyewearUITests-dummy.m"; sourceTree = "<group>"; };
-		E3C169BD42B5DB5D7FE1D90C2D6EFD50 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		E3FDDEBE5CF5A688BF5AAFCCFB6EC708 /* PNScatterChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChartDataItem.h; path = PNChart/PNScatterChartDataItem.h; sourceTree = "<group>"; };
+		E4A785B32675089F268D63CEEC36C77C /* PNChartDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChartDelegate.h; path = PNChart/PNChartDelegate.h; sourceTree = "<group>"; };
+		E5863C42D05274CFFAE75DAE2835C7F7 /* PNBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNBar.h; path = PNChart/PNBar.h; sourceTree = "<group>"; };
 		E6153A56D7484D800612B3A7D2F58EBF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7A7574706A69C6D15273D967CE9BC34 /* FastCoding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FastCoding-dummy.m"; sourceTree = "<group>"; };
-		E7DB35E84DECA2FD611F5D5BBB0032AE /* PNPieChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNPieChart.m; path = PNChart/PNPieChart.m; sourceTree = "<group>"; };
-		EA3CA4054E678D38F91FBE9BDF6C98F5 /* UICountingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UICountingLabel.modulemap; sourceTree = "<group>"; };
-		EFC22454BDA53F3F9292F0FF61D37FE9 /* BFCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenRegistration.m; path = Bolts/Common/BFCancellationTokenRegistration.m; sourceTree = "<group>"; };
-		F105AC38C5D2D57561896676F5135D19 /* FastCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastCoder.h; path = FastCoder/FastCoder.h; sourceTree = "<group>"; };
+		E8F29A858D6B48BBF3D440D2F08BF68F /* BFCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenSource.h; path = Bolts/Common/BFCancellationTokenSource.h; sourceTree = "<group>"; };
+		ED8D52EB93306B5EB395BAFEC0006021 /* PNLineChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChartDataItem.h; path = PNChart/PNLineChartDataItem.h; sourceTree = "<group>"; };
 		F344A1F1CF8349D7064B90A4281719C6 /* Pods-Smart EyewearUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart EyewearUITests-frameworks.sh"; sourceTree = "<group>"; };
 		F3530AD42E9B5C9625F2A75FB7B94670 /* Pods-Smart Eyewear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart Eyewear.debug.xcconfig"; sourceTree = "<group>"; };
+		F4CAE1001ECE0ABA32D2FDC5E2665D4D /* FastCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FastCoder.m; path = FastCoder/FastCoder.m; sourceTree = "<group>"; };
 		F4F363804BA4F5B06DF447F7D9D8517C /* Pods-Smart EyewearUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart EyewearUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F527F303688721D97BFFBC46D5FE2765 /* PNChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PNChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F789DAE0E3ACFE018EE8DE757D285E40 /* PNLineChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChart.h; path = PNChart/PNLineChart.h; sourceTree = "<group>"; };
-		F840A7F8D658E1FEEE993B8A3F4F2008 /* UICountingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UICountingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F91D6A46B754F5F5EB521F6DDEB62022 /* PNChartLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChartLabel.h; path = PNChart/PNChartLabel.h; sourceTree = "<group>"; };
-		F9C7AAF1B2A2D74D769442174BDD54E6 /* UICountingLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-umbrella.h"; sourceTree = "<group>"; };
+		F59AE565E6563FA4EF15CF26B35BF044 /* MetaWear.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MetaWear.framework; sourceTree = "<group>"; };
+		F5A4BD5A8B369807961C83AEFC16C6A4 /* PNGenericChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNGenericChart.h; path = PNChart/PNGenericChart.h; sourceTree = "<group>"; };
+		F5E381D779EEE38412DAC6EDB2BE1A8E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F61C4B105FAC7B2B0B81290A05B9D858 /* BFCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenSource.m; path = Bolts/Common/BFCancellationTokenSource.m; sourceTree = "<group>"; };
+		FB5A46D81976A114AAB2ECF178C2028D /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
+		FC5F0B15FAD8323A266AA191B777B614 /* UICountingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UICountingLabel.xcconfig; sourceTree = "<group>"; };
+		FD7E2C900F00B06F7BCF60EF01EB451D /* PNScatterChartData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartData.m; path = PNChart/PNScatterChartData.m; sourceTree = "<group>"; };
 		FEE6C79B18FACDA3BE0ECDB067E9EFA6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		FFE99BBC42F2520BEB93723F0F870058 /* Pods-Smart Eyewear-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart Eyewear-frameworks.sh"; sourceTree = "<group>"; };
+		FFF815A99E4DEFF8EAFE09788F71CD9E /* PNChart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PNChart.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,20 +288,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6488DB2C9BB99C53077D390CE673DD56 /* Frameworks */ = {
+		985070576EBCFABB9B331FDBA04819E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E80F19B9293BBAEA27BDFADA2D24281 /* CoreGraphics.framework in Frameworks */,
-				772A2D7A16396C92206C4F8C0BAB8BB8 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E26FAA448648409B8F2EA0CCAC414A3D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				391F3BF69DD1A445979DD34DA2808209 /* Foundation.framework in Frameworks */,
+				9E79F1669B1FCB3A2EA0223A5EB13488 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,82 +311,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		083BFA8FEF70F4F746F8E1610FA96BAA /* Support Files */ = {
+		00CE19316B02912D477041B21972A6F9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C6BD0F56AA94AB03AF86CAFFE46BA7DD /* Info.plist */,
-				EA3CA4054E678D38F91FBE9BDF6C98F5 /* UICountingLabel.modulemap */,
-				5BCF3004E82259582D0058A247761A9A /* UICountingLabel.xcconfig */,
-				9CBF04F8573AE3B69410D57FC7D709C2 /* UICountingLabel-dummy.m */,
-				AD10D78A45347A5FDBD1355D7A1C3EC5 /* UICountingLabel-prefix.pch */,
-				F9C7AAF1B2A2D74D769442174BDD54E6 /* UICountingLabel-umbrella.h */,
+				F5E381D779EEE38412DAC6EDB2BE1A8E /* Info.plist */,
+				9F3D31B2A4561CB23DD847F64C73BFB2 /* UICountingLabel.modulemap */,
+				FC5F0B15FAD8323A266AA191B777B614 /* UICountingLabel.xcconfig */,
+				7F14183E69651B618EC7BF35BBDE6B44 /* UICountingLabel-dummy.m */,
+				C8F467FBD9B2C94228F79DA2AA2B3A0F /* UICountingLabel-prefix.pch */,
+				A417DCB6533685C08C485C88233401E5 /* UICountingLabel-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/UICountingLabel";
 			sourceTree = "<group>";
 		};
-		0A3785E098793CFBFE7CD8B48DAD2FD0 /* Metawear-iOSAPI */ = {
+		02EC8D4F00319C057C7E46A19E062E0A /* UICountingLabel */ = {
 			isa = PBXGroup;
 			children = (
-				78FBBEAEE2C243D321BBD793740A88BC /* Frameworks */,
+				4CB79BEDEE719BE603E2F51FB6AD94DA /* UICountingLabel.h */,
+				3632E163283377AACB1A7F6E707A1B69 /* UICountingLabel.m */,
+				00CE19316B02912D477041B21972A6F9 /* Support Files */,
 			);
-			path = "Metawear-iOSAPI";
-			sourceTree = "<group>";
-		};
-		0B3253A20B8EDE4E2FFC0BC6F1114566 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C4EF1E5BB05EBFD0456CA2F5CB341D0A /* Bolts.modulemap */,
-				780B7016FBE4234383A5A1E1D6C2CFC8 /* Bolts.xcconfig */,
-				8A9F498FF08AE29C772FD7FFBFB42A5A /* Bolts-dummy.m */,
-				859CBE4F271033F72BC5D5D8809BE939 /* Bolts-prefix.pch */,
-				66AE7218B75BB36601E192890E73D785 /* Bolts-umbrella.h */,
-				5FEBFB26BC09B67A024FAD1D77386469 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Bolts";
-			sourceTree = "<group>";
-		};
-		0B8AE1AE478561EC71026C0AD5028E23 /* PNChart */ = {
-			isa = PBXGroup;
-			children = (
-				E051F98BB0B1E27829F778F6EBD3A3D4 /* PNBar.h */,
-				C64DE9F15F39F580E18BBF9354C6EBF5 /* PNBar.m */,
-				2D63E500779F3F9B46D73526D47D0795 /* PNBarChart.h */,
-				543F8C7FE50C539E09E468C014A88984 /* PNBarChart.m */,
-				C94951975D548B8F4679E711117D7D37 /* PNChart.h */,
-				9423CEA2C04DF611C0F7B47EA83525B2 /* PNChartDelegate.h */,
-				F91D6A46B754F5F5EB521F6DDEB62022 /* PNChartLabel.h */,
-				D6C3452ECAFFACADDD0DE4DA6E7CD7E1 /* PNChartLabel.m */,
-				CA1CAAFA71BDB21A9E019B33949AE66A /* PNCircleChart.h */,
-				87F60A89B59102591952C7E14586FD60 /* PNCircleChart.m */,
-				6B5022A0548179BD02C2B6456CF8D96D /* PNColor.h */,
-				1315D8C5FF8E720CC4ED8E2860F3BCE3 /* PNColor.m */,
-				21C4D04E418335D8A432AF9391114745 /* PNGenericChart.h */,
-				A8AFEE5AB74F5FB7392A2EAF1108E6E5 /* PNGenericChart.m */,
-				F789DAE0E3ACFE018EE8DE757D285E40 /* PNLineChart.h */,
-				016F8E4F0F284A8B2B07709AA6540B78 /* PNLineChart.m */,
-				806E5E5CB90AE1D910B6B17E479DCEF6 /* PNLineChartData.h */,
-				710FE12B8E2861A6F96126A9798FCDE0 /* PNLineChartData.m */,
-				98C50F92D6440353DFC987D2A694E8B3 /* PNLineChartDataItem.h */,
-				918670795D688DEAE72163A5AFD152FF /* PNLineChartDataItem.m */,
-				47784ADC38C2531EA2D8C628CF61B93D /* PNPieChart.h */,
-				E7DB35E84DECA2FD611F5D5BBB0032AE /* PNPieChart.m */,
-				6CCA8CA6E4707586287E7B834BF578A7 /* PNPieChartDataItem.h */,
-				89679CFE2269AE1ACE137416A6DD6471 /* PNPieChartDataItem.m */,
-				0563E99F37AEA74A850F0984FE97ACC6 /* PNRadarChart.h */,
-				CD9FE6D8EA0DA36A2CA0D53DE0AD45FE /* PNRadarChart.m */,
-				3024AD83C3A7CA530661D07F6A3A8591 /* PNRadarChartDataItem.h */,
-				5762893F16B0464BE5BC0CCE4F8DC0EE /* PNRadarChartDataItem.m */,
-				B47F34047DE4A16F3B741C496ED42E5C /* PNScatterChart.h */,
-				88E5DC23C4BDEACBCDCBF22D388E5D2A /* PNScatterChart.m */,
-				245CEA0366600F8877094C46E118F193 /* PNScatterChartData.h */,
-				6AF65F876F6AA04708E02535AC2AEA89 /* PNScatterChartData.m */,
-				8F62A2F15AF2B53411C2F5E2EFC738CA /* PNScatterChartDataItem.h */,
-				5BAD3B7E1759EC434E1038EEB4F64C83 /* PNScatterChartDataItem.m */,
-				835D31C2B5DBAD1E0F050F489356DC32 /* Support Files */,
-			);
-			path = PNChart;
+			path = UICountingLabel;
 			sourceTree = "<group>";
 		};
 		0D0B3EB075E8C174D300A37A91AFBE3B /* Pods-Smart Eyewear */ = {
@@ -438,13 +353,25 @@
 			path = "Target Support Files/Pods-Smart Eyewear";
 			sourceTree = "<group>";
 		};
-		1210511C635493DBE2C6DE23D346B2DF /* Bolts */ = {
+		0EF0E5DE8D94E8EFACA0D44B41E91135 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				0B3253A20B8EDE4E2FFC0BC6F1114566 /* Support Files */,
-				C8C7306F907865608CEAC99188BE2E7C /* Tasks */,
+				4CEFA0674E889D7887A5B7BED98882B6 /* BFCancellationToken.h */,
+				ADBA5F38196296170C1646CE1286FC54 /* BFCancellationToken.m */,
+				CAB60FFC617594FA6E7293FEA402E9BC /* BFCancellationTokenRegistration.h */,
+				D006F41EB2E90F7A7DDED075E040ED35 /* BFCancellationTokenRegistration.m */,
+				E8F29A858D6B48BBF3D440D2F08BF68F /* BFCancellationTokenSource.h */,
+				F61C4B105FAC7B2B0B81290A05B9D858 /* BFCancellationTokenSource.m */,
+				FB5A46D81976A114AAB2ECF178C2028D /* BFExecutor.h */,
+				39A7341F2011EDA643658A927E5541C2 /* BFExecutor.m */,
+				D8181F9D9FFA99CEC6A6E801ED791F6D /* BFTask.h */,
+				11606C58F4EE88456C19FDE10471889C /* BFTask.m */,
+				A1DB6AF933E7A8313FB01A59F88A4BFB /* BFTaskCompletionSource.h */,
+				636494AA33D8720C33BE0B37E464C820 /* BFTaskCompletionSource.m */,
+				1729714EA20512D239A5BB3C261BC278 /* Bolts.h */,
+				3F2AEFC81359A8BF5EEC7EFCA0469EBA /* Bolts.m */,
 			);
-			path = Bolts;
+			name = Tasks;
 			sourceTree = "<group>";
 		};
 		18A4C1C84E2379DC89B90DB3C61891A9 /* Pods-Smart EyewearUITests */ = {
@@ -465,6 +392,28 @@
 			path = "Target Support Files/Pods-Smart EyewearUITests";
 			sourceTree = "<group>";
 		};
+		21F85B643AA31E36E39E1B05C2C9B4BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3618F786EEEF882AD77E496272C7909 /* Bolts.framework */,
+				301C9EB856D567FF2DD579870F561C6B /* FastCoding.framework */,
+				DC63028EDD1F503DD3F2CE3DD6AAAF94 /* PNChart.framework */,
+				5CE0B8561102DAC1743B6768278CADC9 /* Pods_Smart_Eyewear.framework */,
+				DB6422C14AAF5721317348FA5C391C48 /* Pods_Smart_EyewearTests.framework */,
+				9E37885F6CA7CF8E5AF5C25B2D2FB7C9 /* Pods_Smart_EyewearUITests.framework */,
+				56A623D76B9BB99360474CF0FAE470E9 /* UICountingLabel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25DF52F4D37B82E0081AEF102DF27110 /* Metawear-iOSAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2D13BDE5795BF69D551F7C02D9E1D52B /* Frameworks */,
+			);
+			path = "Metawear-iOSAPI";
+			sourceTree = "<group>";
+		};
 		26FF0A66698AA694C23AFE192E8E5C47 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,71 +424,49 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4A2E91AE53263B5BB33F5806849BA093 /* UICountingLabel */ = {
+		2D13BDE5795BF69D551F7C02D9E1D52B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DA14E1069F105134907DF6BE483A3E99 /* UICountingLabel.h */,
-				A05FFD06C3553761A3036FD8C5CC87A4 /* UICountingLabel.m */,
-				083BFA8FEF70F4F746F8E1610FA96BAA /* Support Files */,
-			);
-			path = UICountingLabel;
-			sourceTree = "<group>";
-		};
-		4BE9873629C3087060E9429B13E8E59F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5A0CD103C3BE89E8AD56771BD77CC555 /* Bolts.framework */,
-				8AD4ED6AF1616A317648EB50C03338EF /* FastCoding.framework */,
-				001706C9C2B2DFEE2EF93913B3B3D59B /* MBProgressHUD.framework */,
-				F527F303688721D97BFFBC46D5FE2765 /* PNChart.framework */,
-				666F66C067032986611518CE16771665 /* Pods_Smart_Eyewear.framework */,
-				8D5F04B73D63A6D64C22BDD416026020 /* Pods_Smart_EyewearTests.framework */,
-				8BA75E9539987A5265DC1BA21481099B /* Pods_Smart_EyewearUITests.framework */,
-				F840A7F8D658E1FEEE993B8A3F4F2008 /* UICountingLabel.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4FDE2F3838BBDB95F4486E95076B0900 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				47E613FFBF138508481F4DC0BFF34179 /* MBProgressHUD.h */,
-				A0CC4028C923061AF743254F03FE902C /* MBProgressHUD.m */,
-				ABA6B1D83654ED8FE333D78FFC6670F5 /* Support Files */,
-			);
-			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		721A06B25496E7969A9A1F890061D18D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DEA8DC5D63D482342158A667F9086D5D /* FastCoding.modulemap */,
-				89455AACCE13D611187F03F07B8F7B38 /* FastCoding.xcconfig */,
-				E7A7574706A69C6D15273D967CE9BC34 /* FastCoding-dummy.m */,
-				3CB7310B6E974BA69FBEF642D6B6CFA4 /* FastCoding-prefix.pch */,
-				74D40BFF842043A9446A8F39F99929AB /* FastCoding-umbrella.h */,
-				C1484259DF80F844724DCC93B89E615C /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FastCoding";
-			sourceTree = "<group>";
-		};
-		78FBBEAEE2C243D321BBD793740A88BC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				95A6F4C75BF08A5E708E42A419F0E536 /* MetaWear.framework */,
+				F59AE565E6563FA4EF15CF26B35BF044 /* MetaWear.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7D415C334D08C4578AA99E985C98FDD5 /* FastCoding */ = {
+		5D017F5E899F496F02B5E9D4183A3CB3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F105AC38C5D2D57561896676F5135D19 /* FastCoder.h */,
-				6AE764363A67BE259D9974CDA3C491D2 /* FastCoder.m */,
-				721A06B25496E7969A9A1F890061D18D /* Support Files */,
+				D3A46FFBA0BDA02B9D43D90F4881251D /* Bolts.modulemap */,
+				9911E329F977F6BD8907C17DABD26C76 /* Bolts.xcconfig */,
+				937CF24C504C04DB04EE65D2DD8ECD9A /* Bolts-dummy.m */,
+				8E899BC291F8FEC3EFEB82E6FA6C9BCD /* Bolts-prefix.pch */,
+				B3F62660C1FB8AACC3EBE109D020197F /* Bolts-umbrella.h */,
+				224CB965CD122EEE0567C29664D23291 /* Info.plist */,
 			);
-			path = FastCoding;
+			name = "Support Files";
+			path = "../Target Support Files/Bolts";
+			sourceTree = "<group>";
+		};
+		60BB507E7B92E4352C0CD3C7527051A8 /* Bolts */ = {
+			isa = PBXGroup;
+			children = (
+				5D017F5E899F496F02B5E9D4183A3CB3 /* Support Files */,
+				0EF0E5DE8D94E8EFACA0D44B41E91135 /* Tasks */,
+			);
+			path = Bolts;
+			sourceTree = "<group>";
+		};
+		6E30F33A2AE35A3B4AD3AC1973CD2502 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4586A659BF7E49580E808BC4AD98B85E /* Info.plist */,
+				7C294BBA8A596E6B06A3866C83253F54 /* PNChart.modulemap */,
+				FFF815A99E4DEFF8EAFE09788F71CD9E /* PNChart.xcconfig */,
+				BB2E6D89172025ABE07079FE5A103A10 /* PNChart-dummy.m */,
+				CF87BD529C760C583D5F9B38F04EC920 /* PNChart-prefix.pch */,
+				543DD0F1C0F45CD3DF68BE0B85AC85B6 /* PNChart-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PNChart";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -547,24 +474,52 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				E7558378B05AD4CBD1053EABE1357F06 /* Frameworks */,
-				A2829987E18CAEC8A4F8ABFCA79C67F6 /* Pods */,
-				4BE9873629C3087060E9429B13E8E59F /* Products */,
+				EA6D3B1C76218CBD798A204C2E693690 /* Pods */,
+				21F85B643AA31E36E39E1B05C2C9B4BF /* Products */,
 				26FF0A66698AA694C23AFE192E8E5C47 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		835D31C2B5DBAD1E0F050F489356DC32 /* Support Files */ = {
+		8BC365A6972D6B6FE4B9EE075F3A976A /* PNChart */ = {
 			isa = PBXGroup;
 			children = (
-				AAED2296364925F3E12FEDA239698374 /* Info.plist */,
-				73277B2AA7BE05AD6A40A21E6F2C5663 /* PNChart.modulemap */,
-				6F5B14BFE339F4101372D541E24A4C37 /* PNChart.xcconfig */,
-				72E61B7AFCF12002E81917D5A3D2D6A3 /* PNChart-dummy.m */,
-				74C47A309FD38990B8FBBB8B3A633D15 /* PNChart-prefix.pch */,
-				C91CFDFD900E9433E567C00B1561227D /* PNChart-umbrella.h */,
+				E5863C42D05274CFFAE75DAE2835C7F7 /* PNBar.h */,
+				972D2A2259BE1E30B3C803C9DC2B91AE /* PNBar.m */,
+				158B2B0C49BFAEC6C93F1D9317C41677 /* PNBarChart.h */,
+				64BE607F00453984D56C869A7319A28A /* PNBarChart.m */,
+				BCDCABE896326EC687303BFC2DD3BAAD /* PNChart.h */,
+				E4A785B32675089F268D63CEEC36C77C /* PNChartDelegate.h */,
+				5C87942132DAD1EDCC765987753468B7 /* PNChartLabel.h */,
+				3108937D18086FBAEB3DC389931086DB /* PNChartLabel.m */,
+				B87BBB26E58D7FD839BA90A18649517C /* PNCircleChart.h */,
+				641F0301FB5DCC99E80DD586EA990D4F /* PNCircleChart.m */,
+				6E3803661A09147F5E0A0F37849F35D7 /* PNColor.h */,
+				7A3363D53746C9A0ED0D3BB95ABF12CC /* PNColor.m */,
+				F5A4BD5A8B369807961C83AEFC16C6A4 /* PNGenericChart.h */,
+				D9B0FD0510F17F0EEC7E62FC7E1CC0A0 /* PNGenericChart.m */,
+				3037BB082DC82E8E21EAC337B6904777 /* PNLineChart.h */,
+				13E02B3E7B9BEACF6BDC6F9F2B192B70 /* PNLineChart.m */,
+				2D3F610979928009EC50DD36F68818DD /* PNLineChartData.h */,
+				B2D55FF9895289736432108A76C3B848 /* PNLineChartData.m */,
+				ED8D52EB93306B5EB395BAFEC0006021 /* PNLineChartDataItem.h */,
+				237C0060537C7404C6EBEE1A6B4FCCBE /* PNLineChartDataItem.m */,
+				4F7CFE65E65ED3EC05352C1600E8A91D /* PNPieChart.h */,
+				B0A987CFF2D5ABF091400F2880051A9F /* PNPieChart.m */,
+				1BE16CA61D9E65388BAF7A77387F292C /* PNPieChartDataItem.h */,
+				85FBB0BCCC7C02028CE727ADF59461A4 /* PNPieChartDataItem.m */,
+				B308E59CD7083BFBAE7B5A1751696C67 /* PNRadarChart.h */,
+				8EA67C916B4C8D006097E5CE67B4B2EF /* PNRadarChart.m */,
+				7C5A2D31576EFDC0D7F350B99CAD05EA /* PNRadarChartDataItem.h */,
+				5B8333D823A2F41448B2120B2B922547 /* PNRadarChartDataItem.m */,
+				5224C3357F1166013442870D7F88AC6B /* PNScatterChart.h */,
+				66D20022E779398606A3FE761E89E051 /* PNScatterChart.m */,
+				A28F666D73B88D0665342075C7225F3A /* PNScatterChartData.h */,
+				FD7E2C900F00B06F7BCF60EF01EB451D /* PNScatterChartData.m */,
+				E3FDDEBE5CF5A688BF5AAFCCFB6EC708 /* PNScatterChartDataItem.h */,
+				830000F127420468967EFED76DC9E240 /* PNScatterChartDataItem.m */,
+				6E30F33A2AE35A3B4AD3AC1973CD2502 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/PNChart";
+			path = PNChart;
 			sourceTree = "<group>";
 		};
 		970AD0314E6DE1C47F48DA5A72DAC5BB /* Pods-Smart EyewearTests */ = {
@@ -596,52 +551,28 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A2829987E18CAEC8A4F8ABFCA79C67F6 /* Pods */ = {
+		A95A506B6D475CEC3E0415C7217A02AF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1210511C635493DBE2C6DE23D346B2DF /* Bolts */,
-				7D415C334D08C4578AA99E985C98FDD5 /* FastCoding */,
-				4FDE2F3838BBDB95F4486E95076B0900 /* MBProgressHUD */,
-				0A3785E098793CFBFE7CD8B48DAD2FD0 /* Metawear-iOSAPI */,
-				0B8AE1AE478561EC71026C0AD5028E23 /* PNChart */,
-				4A2E91AE53263B5BB33F5806849BA093 /* UICountingLabel */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		ABA6B1D83654ED8FE333D78FFC6670F5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				203639ED30916A4C38683755D46E1A7E /* Info.plist */,
-				632BAA284A0B64113D6AEEADDDDBA4DE /* MBProgressHUD.modulemap */,
-				3C98F07A0E0C51C8BBEF57928FC6B1F9 /* MBProgressHUD.xcconfig */,
-				7A41D9B8147D719F7AC998A5F0251734 /* MBProgressHUD-dummy.m */,
-				E3C169BD42B5DB5D7FE1D90C2D6EFD50 /* MBProgressHUD-prefix.pch */,
-				18A8E321FEEA5F2F238AAA3B507527CD /* MBProgressHUD-umbrella.h */,
+				12667D2A235EFC35F7C4F1A43D3A82E4 /* FastCoding.modulemap */,
+				0BF3F38C60CA45CC03629D99369889EF /* FastCoding.xcconfig */,
+				C6AB62F3ECD7CC2C08E701F886D543A6 /* FastCoding-dummy.m */,
+				4D8460514AAEF2A3B1F4B8F6074D4C86 /* FastCoding-prefix.pch */,
+				3BE895B894FB00ECF156082E7D2E2815 /* FastCoding-umbrella.h */,
+				B1E1A38F1207FDA0A64B07590B1002E4 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/MBProgressHUD";
+			path = "../Target Support Files/FastCoding";
 			sourceTree = "<group>";
 		};
-		C8C7306F907865608CEAC99188BE2E7C /* Tasks */ = {
+		D1EF87557C9CC0359233F51993989366 /* FastCoding */ = {
 			isa = PBXGroup;
 			children = (
-				82A697A6B92CC9C3164FAB51874AE862 /* BFCancellationToken.h */,
-				BBEBFB7246BEA35C1E4666D03C8DE1DA /* BFCancellationToken.m */,
-				684E7B9DBCF67CF0CFE9A93C3FD5B5C7 /* BFCancellationTokenRegistration.h */,
-				EFC22454BDA53F3F9292F0FF61D37FE9 /* BFCancellationTokenRegistration.m */,
-				13AA03D60F64C131F51DD602DF552F94 /* BFCancellationTokenSource.h */,
-				402052C6CFE5434C4771E5D2F61EBC0F /* BFCancellationTokenSource.m */,
-				73F58113EA1FCBAAC288E7E4DEAF8C35 /* BFExecutor.h */,
-				95C1DC0D2A24185BE8189F25806042D9 /* BFExecutor.m */,
-				6A508D5E45FA480D5743046D2089639D /* BFTask.h */,
-				615CA8073624D7AF0619AD7C7FA488F9 /* BFTask.m */,
-				62662AA4CFBD1226092790128E637962 /* BFTaskCompletionSource.h */,
-				A777457E91629979913F38DB80970899 /* BFTaskCompletionSource.m */,
-				A380127A67215767FDD427E981A36CD2 /* Bolts.h */,
-				19856963E40B2A65116AC7C5167AC29A /* Bolts.m */,
+				4007C653047205DFAD31F85748DA2F9D /* FastCoder.h */,
+				F4CAE1001ECE0ABA32D2FDC5E2665D4D /* FastCoder.m */,
+				A95A506B6D475CEC3E0415C7217A02AF /* Support Files */,
 			);
-			name = Tasks;
+			path = FastCoding;
 			sourceTree = "<group>";
 		};
 		E7558378B05AD4CBD1053EABE1357F06 /* Frameworks */ = {
@@ -651,6 +582,18 @@
 				976DBD55FB9FC4F43A6B6A4235743792 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA6D3B1C76218CBD798A204C2E693690 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60BB507E7B92E4352C0CD3C7527051A8 /* Bolts */,
+				D1EF87557C9CC0359233F51993989366 /* FastCoding */,
+				25DF52F4D37B82E0081AEF102DF27110 /* Metawear-iOSAPI */,
+				8BC365A6972D6B6FE4B9EE075F3A976A /* PNChart */,
+				02EC8D4F00319C057C7E46A19E062E0A /* UICountingLabel */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -699,14 +642,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93F84879611B9673A6CB814C45C474D8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65A5C8E41CA62E0FBD38D71688678814 /* Pods-Smart Eyewear-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		997292781BD1FEB3D001B9077415A8FD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -719,15 +654,6 @@
 				D7BC261597874B2DBE31E1B8D45D2718 /* BFTaskCompletionSource.h in Headers */,
 				3CCB5E678B6CD6FDEE4DFEAA800BF53A /* Bolts-umbrella.h in Headers */,
 				427C2DD344E0CDE18760C366D0B7249C /* Bolts.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9ECCB5570B7FBF8D348655FFA0FE9C90 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F6FCF15CC1F4F05C46539443FDA2AAB /* MBProgressHUD-umbrella.h in Headers */,
-				1E7623B9420C3E71FAE3287C0CECA040 /* MBProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,6 +671,14 @@
 			files = (
 				23D731D7D2DEB047AED5F567FF57CAE0 /* FastCoder.h in Headers */,
 				33D5FAE8252CAF41795E199056F65450 /* FastCoding-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6CF5E3EDEF36B995FE8AF4B61BB30D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C5B37CEB62E6CAF96826462FD33ADC /* Pods-Smart Eyewear-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,7 +700,7 @@
 			);
 			name = PNChart;
 			productName = PNChart;
-			productReference = F527F303688721D97BFFBC46D5FE2765 /* PNChart.framework */;
+			productReference = DC63028EDD1F503DD3F2CE3DD6AAAF94 /* PNChart.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		50A790513C5191169FDD5EEBC495AF28 /* FastCoding */ = {
@@ -783,7 +717,7 @@
 			);
 			name = FastCoding;
 			productName = FastCoding;
-			productReference = 8AD4ED6AF1616A317648EB50C03338EF /* FastCoding.framework */;
+			productReference = 301C9EB856D567FF2DD579870F561C6B /* FastCoding.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6C18C789438292FED01EB702705FC9AA /* UICountingLabel */ = {
@@ -800,7 +734,7 @@
 			);
 			name = UICountingLabel;
 			productName = UICountingLabel;
-			productReference = F840A7F8D658E1FEEE993B8A3F4F2008 /* UICountingLabel.framework */;
+			productReference = 56A623D76B9BB99360474CF0FAE470E9 /* UICountingLabel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		80B247A10EB35D5F4C1AB30928E44A8C /* Pods-Smart EyewearUITests */ = {
@@ -817,7 +751,7 @@
 			);
 			name = "Pods-Smart EyewearUITests";
 			productName = "Pods-Smart EyewearUITests";
-			productReference = 8BA75E9539987A5265DC1BA21481099B /* Pods_Smart_EyewearUITests.framework */;
+			productReference = 9E37885F6CA7CF8E5AF5C25B2D2FB7C9 /* Pods_Smart_EyewearUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		89C7B7B5111B04611FCCA838E8DA4809 /* Pods-Smart EyewearTests */ = {
@@ -834,7 +768,28 @@
 			);
 			name = "Pods-Smart EyewearTests";
 			productName = "Pods-Smart EyewearTests";
-			productReference = 8D5F04B73D63A6D64C22BDD416026020 /* Pods_Smart_EyewearTests.framework */;
+			productReference = DB6422C14AAF5721317348FA5C391C48 /* Pods_Smart_EyewearTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		92F5C2254752392769C2D64B94210420 /* Pods-Smart Eyewear */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3707E2FD3FC98DF7FCBF26D5A1DE3BC0 /* Build configuration list for PBXNativeTarget "Pods-Smart Eyewear" */;
+			buildPhases = (
+				7E077B20B2B89D59023CB4DCBF8A4A57 /* Sources */,
+				985070576EBCFABB9B331FDBA04819E4 /* Frameworks */,
+				B6CF5E3EDEF36B995FE8AF4B61BB30D6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F65A5DEB802230AF4A9A71A99E1A56B /* PBXTargetDependency */,
+				1DB455F13A3CA39C2098EC471901DED6 /* PBXTargetDependency */,
+				BB04B98A294758BB947F912898C5516A /* PBXTargetDependency */,
+				93F4D23232208A778DC8EB2AAFA56383 /* PBXTargetDependency */,
+			);
+			name = "Pods-Smart Eyewear";
+			productName = "Pods-Smart Eyewear";
+			productReference = 5CE0B8561102DAC1743B6768278CADC9 /* Pods_Smart_Eyewear.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B272B33F162D6E5C3510BA50ECF2684B /* Bolts */ = {
@@ -851,46 +806,7 @@
 			);
 			name = Bolts;
 			productName = Bolts;
-			productReference = 5A0CD103C3BE89E8AD56771BD77CC555 /* Bolts.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E6085F0CA8EDF318E80174523080EF35 /* Pods-Smart Eyewear */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 49C1EB43F3179A03241C2DDD71ECCBC6 /* Build configuration list for PBXNativeTarget "Pods-Smart Eyewear" */;
-			buildPhases = (
-				4049BD7A0F826A04F7054F93D179CC45 /* Sources */,
-				E26FAA448648409B8F2EA0CCAC414A3D /* Frameworks */,
-				93F84879611B9673A6CB814C45C474D8 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				90E6B923C750341D2C7A58153A6DA4B4 /* PBXTargetDependency */,
-				3E62BB953A65B975DA8B94E48FFDA624 /* PBXTargetDependency */,
-				E475041F9C426DD6C98F9CB460D74268 /* PBXTargetDependency */,
-				8EA0A52FDEE41D4278418DF326CCEB0E /* PBXTargetDependency */,
-				B054E0B53FEF78E43E0AE3561671C7C5 /* PBXTargetDependency */,
-			);
-			name = "Pods-Smart Eyewear";
-			productName = "Pods-Smart Eyewear";
-			productReference = 666F66C067032986611518CE16771665 /* Pods_Smart_Eyewear.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E61CE3B6DFA1FE6B3E296965C76C0E10 /* MBProgressHUD */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0ECAD3CE95CA19E5AFE91894C857527C /* Build configuration list for PBXNativeTarget "MBProgressHUD" */;
-			buildPhases = (
-				2DAFB06DF9D4B76E7F94DA2B8A63DD59 /* Sources */,
-				6488DB2C9BB99C53077D390CE673DD56 /* Frameworks */,
-				9ECCB5570B7FBF8D348655FFA0FE9C90 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MBProgressHUD;
-			productName = MBProgressHUD;
-			productReference = 001706C9C2B2DFEE2EF93913B3B3D59B /* MBProgressHUD.framework */;
+			productReference = B3618F786EEEF882AD77E496272C7909 /* Bolts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -910,15 +826,14 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4BE9873629C3087060E9429B13E8E59F /* Products */;
+			productRefGroup = 21F85B643AA31E36E39E1B05C2C9B4BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B272B33F162D6E5C3510BA50ECF2684B /* Bolts */,
 				50A790513C5191169FDD5EEBC495AF28 /* FastCoding */,
-				E61CE3B6DFA1FE6B3E296965C76C0E10 /* MBProgressHUD */,
 				016D982990393D4CF14C8AE7998AEC65 /* PNChart */,
-				E6085F0CA8EDF318E80174523080EF35 /* Pods-Smart Eyewear */,
+				92F5C2254752392769C2D64B94210420 /* Pods-Smart Eyewear */,
 				89C7B7B5111B04611FCCA838E8DA4809 /* Pods-Smart EyewearTests */,
 				80B247A10EB35D5F4C1AB30928E44A8C /* Pods-Smart EyewearUITests */,
 				6C18C789438292FED01EB702705FC9AA /* UICountingLabel */,
@@ -927,20 +842,11 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2DAFB06DF9D4B76E7F94DA2B8A63DD59 /* Sources */ = {
+		7E077B20B2B89D59023CB4DCBF8A4A57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB010EE04BA829E196554A00A951AA7C /* MBProgressHUD-dummy.m in Sources */,
-				9E17CC11959A1FE5566CE528047ACDC0 /* MBProgressHUD.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4049BD7A0F826A04F7054F93D179CC45 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A4CC5345CBFEC769D4C7781B733D6FC /* Pods-Smart Eyewear-dummy.m in Sources */,
+				EAC26A2AE72FEB9F5C15F601C12858EA /* Pods-Smart Eyewear-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,48 +926,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1DB455F13A3CA39C2098EC471901DED6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FastCoding;
+			target = 50A790513C5191169FDD5EEBC495AF28 /* FastCoding */;
+			targetProxy = DDAE2710AB7DC06E48DBFFEF771FCA57 /* PBXContainerItemProxy */;
+		};
 		279D49ADD48DCF4E2DC33F777F3FC3D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UICountingLabel;
 			target = 6C18C789438292FED01EB702705FC9AA /* UICountingLabel */;
 			targetProxy = BB8ADC1C804D69280ED1E9672BB4172F /* PBXContainerItemProxy */;
 		};
-		3E62BB953A65B975DA8B94E48FFDA624 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FastCoding;
-			target = 50A790513C5191169FDD5EEBC495AF28 /* FastCoding */;
-			targetProxy = F850E7EB93F6E1D2B62E370AAC98F48A /* PBXContainerItemProxy */;
-		};
-		8EA0A52FDEE41D4278418DF326CCEB0E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PNChart;
-			target = 016D982990393D4CF14C8AE7998AEC65 /* PNChart */;
-			targetProxy = A3CCCE9B06FBD594B300DC66214890C0 /* PBXContainerItemProxy */;
-		};
-		90E6B923C750341D2C7A58153A6DA4B4 /* PBXTargetDependency */ = {
+		6F65A5DEB802230AF4A9A71A99E1A56B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Bolts;
 			target = B272B33F162D6E5C3510BA50ECF2684B /* Bolts */;
-			targetProxy = 77E2D17A48B13CBC8454B4E0B6D5BFD2 /* PBXContainerItemProxy */;
+			targetProxy = 3055BA1DBE60A81175E9D4885BD8121E /* PBXContainerItemProxy */;
 		};
-		B054E0B53FEF78E43E0AE3561671C7C5 /* PBXTargetDependency */ = {
+		93F4D23232208A778DC8EB2AAFA56383 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UICountingLabel;
 			target = 6C18C789438292FED01EB702705FC9AA /* UICountingLabel */;
-			targetProxy = E0A91141392DD733DCA2F14498B7156E /* PBXContainerItemProxy */;
+			targetProxy = EC55DEB8662C19B3F000FB7DF428231E /* PBXContainerItemProxy */;
 		};
-		E475041F9C426DD6C98F9CB460D74268 /* PBXTargetDependency */ = {
+		BB04B98A294758BB947F912898C5516A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MBProgressHUD;
-			target = E61CE3B6DFA1FE6B3E296965C76C0E10 /* MBProgressHUD */;
-			targetProxy = 8FD5E618BAC0F3201BEF1A785AE70BB1 /* PBXContainerItemProxy */;
+			name = PNChart;
+			target = 016D982990393D4CF14C8AE7998AEC65 /* PNChart */;
+			targetProxy = 3FC5D1150F30C7930C0A496916C0F851 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1808FB459D7CF42C9AB46F60CA86B392 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F5B14BFE339F4101372D541E24A4C37 /* PNChart.xcconfig */;
+			baseConfigurationReference = FFF815A99E4DEFF8EAFE09788F71CD9E /* PNChart.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1088,36 +988,7 @@
 			};
 			name = Release;
 		};
-		2216DD48A2ED683B2B1237A381081AC0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C98F07A0E0C51C8BBEF57928FC6B1F9 /* MBProgressHUD.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MBProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		35FA8C856AA181D3239DF4A3DFE5D468 /* Release */ = {
+		25F8F74E0F138A7BDB88C46DFFD3CE87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DF24450D389FAE6E0487C45B181ACCE /* Pods-Smart Eyewear.release.xcconfig */;
 			buildSettings = {
@@ -1152,7 +1023,7 @@
 		};
 		3AB371869124ED223164CFDD3A8CB452 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 780B7016FBE4234383A5A1E1D6C2CFC8 /* Bolts.xcconfig */;
+			baseConfigurationReference = 9911E329F977F6BD8907C17DABD26C76 /* Bolts.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1171,6 +1042,39 @@
 				MODULEMAP_FILE = "Target Support Files/Bolts/Bolts.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Bolts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3B0E504B981FAACF6233362C61C08A24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3530AD42E9B5C9625F2A75FB7B94670 /* Pods-Smart Eyewear.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Smart Eyewear/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Smart_Eyewear;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1252,7 +1156,7 @@
 		};
 		4BB947481D14015737E23E96C5965E17 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F5B14BFE339F4101372D541E24A4C37 /* PNChart.xcconfig */;
+			baseConfigurationReference = FFF815A99E4DEFF8EAFE09788F71CD9E /* PNChart.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1323,7 +1227,7 @@
 		};
 		628D37DE43C26BD2D178AA2246615500 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BCF3004E82259582D0058A247761A9A /* UICountingLabel.xcconfig */;
+			baseConfigurationReference = FC5F0B15FAD8323A266AA191B777B614 /* UICountingLabel.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1352,7 +1256,7 @@
 		};
 		6BEC351D8A158871D66632D66CE08A74 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89455AACCE13D611187F03F07B8F7B38 /* FastCoding.xcconfig */;
+			baseConfigurationReference = 0BF3F38C60CA45CC03629D99369889EF /* FastCoding.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1414,7 +1318,7 @@
 		};
 		86950D5668DD022195CD182E09B819EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BCF3004E82259582D0058A247761A9A /* UICountingLabel.xcconfig */;
+			baseConfigurationReference = FC5F0B15FAD8323A266AA191B777B614 /* UICountingLabel.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1476,7 +1380,7 @@
 		};
 		9AA78787393C419BD4FD3B360DA0AA40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89455AACCE13D611187F03F07B8F7B38 /* FastCoding.xcconfig */;
+			baseConfigurationReference = 0BF3F38C60CA45CC03629D99369889EF /* FastCoding.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1503,38 +1407,9 @@
 			};
 			name = Debug;
 		};
-		9DD813B76D75B00D654FF48EBE312A81 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C98F07A0E0C51C8BBEF57928FC6B1F9 /* MBProgressHUD.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MBProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		A822FCFF8BABB91951AD524D55C2D97C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 780B7016FBE4234383A5A1E1D6C2CFC8 /* Bolts.xcconfig */;
+			baseConfigurationReference = 9911E329F977F6BD8907C17DABD26C76 /* Bolts.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1594,39 +1469,6 @@
 			};
 			name = Debug;
 		};
-		F83575BAF6CBA3C5E042E588242F3868 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3530AD42E9B5C9625F2A75FB7B94670 /* Pods-Smart Eyewear.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Smart Eyewear/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Smart_Eyewear;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1644,15 +1486,6 @@
 			buildConfigurations = (
 				86950D5668DD022195CD182E09B819EF /* Debug */,
 				628D37DE43C26BD2D178AA2246615500 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0ECAD3CE95CA19E5AFE91894C857527C /* Build configuration list for PBXNativeTarget "MBProgressHUD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2216DD48A2ED683B2B1237A381081AC0 /* Debug */,
-				9DD813B76D75B00D654FF48EBE312A81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1684,11 +1517,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49C1EB43F3179A03241C2DDD71ECCBC6 /* Build configuration list for PBXNativeTarget "Pods-Smart Eyewear" */ = {
+		3707E2FD3FC98DF7FCBF26D5A1DE3BC0 /* Build configuration list for PBXNativeTarget "Pods-Smart Eyewear" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F83575BAF6CBA3C5E042E588242F3868 /* Debug */,
-				35FA8C856AA181D3239DF4A3DFE5D468 /* Release */,
+				3B0E504B981FAACF6233362C61C08A24 /* Debug */,
+				25F8F74E0F138A7BDB88C46DFFD3CE87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
