@@ -76,14 +76,14 @@ class HomeTVC: UITableViewController
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! HomeViewCell
         
+        //        let selectedBackground = UIView()
+        //        selectedBackground.backgroundColor = Constants.themeRedColour
+        //        cell.selectedBackgroundView = selectedBackground
+        
         cell.serviceTitle.text = allServices[indexPath.row].serviceName
         cell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0]
         
         cell.accessoryView = UIImageView(image: UIImage(named: "Arrow"))
-        
-        let selectedBackground = UIView()
-        selectedBackground.backgroundColor = Constants.themeRedColour
-        cell.selectedBackgroundView = selectedBackground
         
         return cell
     }
@@ -98,21 +98,21 @@ class HomeTVC: UITableViewController
         selectedCell.serviceTitle.textColor = UIColor.whiteColor() // change text colour to white
         selectedCell.accessoryView = UIImageView(image: UIImage(named: "ArrowWhite")!) // change the arrow to a white-coloured one
         
-        //        switch indexPath.row
-        //        {
-        //        case 0:
-        //            performSegueWithIdentifier("segueToBTConnection", sender: self)
-        //        case 1:
-        //            performSegueWithIdentifier("segueToRGBLed", sender: self)
-        //        case 2:
-        //            performSegueWithIdentifier("segueToActivation", sender: self)
-        //        case 3:
-        //            performSegueWithIdentifier("segueToBatteryLevel", sender: self)
-        //        case 4:
-        //            performSegueWithIdentifier("segueToOthers", sender: self)
-        //        default:
-        //            return
-        //        }
+        switch indexPath.row
+        {
+        case 0:
+            performSegueWithIdentifier("segueToBTConnection", sender: self)
+        case 1:
+            performSegueWithIdentifier("segueToRGBLed", sender: self)
+        case 2:
+            performSegueWithIdentifier("segueToActivation", sender: self)
+        case 3:
+            performSegueWithIdentifier("segueToBatteryLevel", sender: self)
+        case 4:
+            performSegueWithIdentifier("segueToOthers", sender: self)
+        default:
+            return
+        }
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)

@@ -122,6 +122,7 @@ class ActivationVC: UIViewController
             automaticBtn.backgroundColor = Constants.themeInactiveStateColour
             automaticBtn.userInteractionEnabled = false
             helpBtn.hidden = true
+            helpTextLabel.hidden = true
         }
     }
     
