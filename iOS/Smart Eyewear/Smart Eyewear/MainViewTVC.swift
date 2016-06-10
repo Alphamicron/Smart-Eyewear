@@ -22,6 +22,8 @@ class MainViewTVC: UITableViewController
     {
         super.viewDidLoad()
         
+        self.title = "test test"
+        
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         allServices = Services.getServices()
