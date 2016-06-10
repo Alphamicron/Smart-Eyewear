@@ -22,6 +22,11 @@ class ActivationVC: UIViewController
     @IBOutlet weak var automaticBtn: UIButton!
     @IBOutlet weak var helpBtn: UIButton!
     @IBOutlet weak var helpTextLabel: UILabel!
+    
+    @IBOutlet weak var cloudyImageView: UIImageView!
+    @IBOutlet weak var cloudySunnyImageView: UIImageView!
+    @IBOutlet weak var sunnyImageView: UIImageView!
+    
     var photoSensorVoltage: Float = Float()
     
     override func viewDidLoad()
@@ -114,6 +119,16 @@ class ActivationVC: UIViewController
             automaticBtn.userInteractionEnabled = true
             automaticBtn.setTitle("OFF", forState: .Normal)
             
+            cloudyImageView.image = UIImage(named: "Clouds")
+            cloudySunnyImageView.image = UIImage(named: "CloudySunny")
+            sunnyImageView.image = UIImage(named: "Sunny")
+            
+            metaWearValueSlider.thumbTintColor = Constants.themeRedColour
+            userThresholdSlider.thumbTintColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
+            
+            userThresholdSlider.minimumTrackTintColor = Constants.themeRedColour
+            metaWearValueSlider.minimumTrackTintColor = Constants.themeRedColour
+            
             helpBtn.hidden = false
         }
         else
@@ -121,8 +136,19 @@ class ActivationVC: UIViewController
             automaticBtn.setTitle("OFF", forState: .Selected)
             automaticBtn.backgroundColor = Constants.themeInactiveStateColour
             automaticBtn.userInteractionEnabled = false
+            userThresholdSlider.userInteractionEnabled = false
             helpBtn.hidden = true
             helpTextLabel.hidden = true
+            
+            userThresholdSlider.thumbTintColor = Constants.themeInactiveStateColour
+            metaWearValueSlider.thumbTintColor = Constants.themeInactiveStateColour
+            
+            userThresholdSlider.minimumTrackTintColor = Constants.themeInactiveStateColour
+            metaWearValueSlider.minimumTrackTintColor = Constants.themeInactiveStateColour
+            
+            cloudyImageView.image = UIImage(named: "CloudsGray")
+            cloudySunnyImageView.image = UIImage(named: "CloudsSunnyGray")
+            sunnyImageView.image = UIImage(named: "SunnyGray")
         }
     }
     
@@ -201,10 +227,17 @@ class ActivationVC: UIViewController
         userThresholdSlider.minimumValue = Constants.userThresholdMinimumValue
         userThresholdSlider.maximumValue = Constants.userThresholdMaximumValue
         
+        userThresholdSlider.thumbTintColor = Constants.themeInactiveStateColour
+        metaWearValueSlider.thumbTintColor = Constants.themeInactiveStateColour
+        
         userThresholdSlider.userInteractionEnabled = false
         
         helpBtn.hidden = true
         helpTextLabel.hidden = true
+        
+        cloudyImageView.image = UIImage(named: "CloudsGray")
+        cloudySunnyImageView.image = UIImage(named: "CloudsSunnyGray")
+        sunnyImageView.image = UIImage(named: "SunnyGray")
         
         manualBtn.setTitle("OFF", forState: .Normal)
         automaticBtn.setTitle("OFF", forState: .Normal)
