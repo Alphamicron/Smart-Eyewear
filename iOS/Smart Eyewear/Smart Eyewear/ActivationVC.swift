@@ -192,6 +192,10 @@ class ActivationVC: UIViewController
     // POST: Sets up the slider with default values upon a successful view load
     func initiateUIValues()
     {
+        // resize the mode activating switches
+        manualSwitch.transform = CGAffineTransformMakeScale(1.25, 1.25)
+        automaticSwitch.transform = CGAffineTransformMakeScale(1.25, 1.25)
+        
         metaWearValueSlider.minimumValue = Constants.userThresholdMinimumValue
         metaWearValueSlider.maximumValue = Constants.userThresholdMaximumValue
         userThresholdSlider.minimumValue = Constants.userThresholdMinimumValue
