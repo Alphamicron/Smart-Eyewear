@@ -8,13 +8,13 @@
 
 import UIKit
 
-class MainViewCell: UITableViewCell
+class HomeViewCell: UITableViewCell
 {
     @IBOutlet weak var serviceIcon: UIImageView!
     @IBOutlet weak var serviceTitle: UILabel!
 }
 
-class MainViewTVC: UITableViewController
+class HomeTVC: UITableViewController
 {
     var allServices: [Services] = [Services]()
     
@@ -74,7 +74,7 @@ class MainViewTVC: UITableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! MainViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! HomeViewCell
         
         cell.serviceTitle.text = allServices[indexPath.row].serviceName
         cell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0]
@@ -92,7 +92,7 @@ class MainViewTVC: UITableViewController
     {
         print("cell \(indexPath.row) selected")
         // grab the currently selected cell
-        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! HomeViewCell
         
         selectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[1] // change its icon original image to its corresponding white one
         selectedCell.serviceTitle.textColor = UIColor.whiteColor() // change text colour to white
@@ -119,7 +119,7 @@ class MainViewTVC: UITableViewController
     {
         print("cell \(indexPath.row) de-selected")
         // grab the formerly selected cell
-        let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
+        let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! HomeViewCell
         
         deSelectedCell.serviceIcon.image = allServices[indexPath.row].serviceIcons[0] // change its icon back its original image
         deSelectedCell.serviceTitle.textColor = Constants.themeRedColour // change text colour to default red
