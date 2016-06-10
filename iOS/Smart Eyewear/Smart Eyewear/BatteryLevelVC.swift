@@ -55,16 +55,35 @@ class BatteryLevelVC: UIViewController
     // POST: Represents the device's charge in a circle graph
     func drawCircleGraph(currentDeviceCharge: NSNumber)
     {
-        let circleFrame: CGRect = CGRect(x: self.view.bounds.size.width/2, y: self.view.bounds.size.width/5, width: self.view.bounds.size.width/65, height: self.view.bounds.size.height/2)
         
-        let circleChart = PNCircleChart(frame: circleFrame, total: Constants.deviceFullChargeValue, current: currentDeviceCharge, clockwise: true, shadow: true, shadowColor: UIColor.grayColor())
+        let circleFrame: CGRect = CGRect(x: self.view.bounds.size.width/2.02, y: self.view.bounds.size.height/4, width: self.view.bounds.size.width/65, height: self.view.bounds.size.height/2)
+        
+        let circleChart = PNCircleChart(frame: circleFrame, total: Constants.deviceFullChargeValue, current: currentDeviceCharge, clockwise: true, shadow: true, shadowColor: Constants.themeInactiveStateColour)
         
         circleChart.displayCountingLabel = true
-        circleChart.lineWidth = 25
-        circleChart.backgroundColor = UIColor.clearColor()
-        circleChart.strokeColor = UIColor(red: 0.302, green: 0.769, blue: 0.478, alpha: 1.00)
+        circleChart.countingLabel.font = Constants.defaultFont
+        circleChart.countingLabel.font = circleChart.countingLabel.font.fontWithSize(40.0)
+        circleChart.lineWidth = 28
+        circleChart.strokeColor = getColourForCharge(currentDeviceCharge)
+        
         circleChart.strokeChart()
         
         self.view.addSubview(circleChart)
+    }
+    
+    func getColourForCharge(currentDeviceCharge: NSNumber)-> UIColor
+    {
+        if currentDeviceCharge.intValue > 50 // good charge if above half
+        {
+            return Constants.themeGreenColour
+        }
+        else if currentDeviceCharge.intValue <= 50 && currentDeviceCharge.intValue > 25 // medium charge if between (25-50]
+        {
+            return Constants.themeYellowColour
+        }
+        else // low charge if <=25
+        {
+            return Constants.themeRedColour
+        }
     }
 }

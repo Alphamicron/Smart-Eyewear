@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreBluetooth
-import MBProgressHUD
 
 class ConnectionVC: UIViewController
 {
@@ -138,6 +137,7 @@ class ConnectionVC: UIViewController
                 //                let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
                 //                confirmationHUD.labelText = "Connecting to device..."
                 
+                logoImageView.userInteractionEnabled = false
                 animateConnectionLogo()
                 neutralLabel.text = "connecting..."
                 
@@ -147,10 +147,8 @@ class ConnectionVC: UIViewController
                 ConnectionVC.currentlySelectedDevice.connectWithTimeout(Constants.defaultTimeOut, handler: { (error: NSError?) in
                     
                     // a connection timeout error
-                    if let generatedError = error
+                    if error != nil
                     {
-                        //                        confirmationHUD.labelText = generatedError.localizedDescription
-                        //                        confirmationHUD.hide(true, afterDelay: Constants.defaultDelayTime)
                         self.view.layer.removeAllAnimations()
                         self.noDeviceDetectedLabel.hidden = false
                         self.noDeviceDetectedLabel.text = "connection error"
@@ -159,38 +157,13 @@ class ConnectionVC: UIViewController
                     }
                     else
                     {
-                        //                        confirmationHUD.hide(true)
-                        
                         // flash the Metawear LED Green just to confirm its the right device
-                        ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0)
+                        ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(Constants.themeGreenColour, withIntensity: 1.0, numberOfFlashes: 3)
                         
-                        let confirmationAlert = UIAlertController(title: "Confirm Device", message: "Do you see a blinking green LED light?", preferredStyle: .Alert)
-                        
-                        // if yes, then simply turn off the LED and delay for Constants.defaultDelayTime before segueing back to the main view
-                        confirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
-                            print("The user confirmed the LED")
-                            
-                            Constants.turnOffMetaWearLED()
-                            
-                            self.view.layer.removeAllAnimations()
-                            
-                            self.neutralLabel.hidden = false
-                            self.neutralLabel.text = selectedDevice.state.getState().lowercaseString
-                            
-                            self.logoImageView.image = UIImage(named: "LogoRed")
-                            //                            self.animateConnectionLogo()
-                            
-                        }))
-                        
-                        // if not, disconnect the wrong device then continue scanning
-                        confirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: { (action: UIAlertAction) in
-                            print("The user did not confirm the LED")
-                            Constants.turnOffMetaWearLED()
-                            Constants.disconnectDevice()
-                            self.viewWillAppear(true)
-                        }))
-                        
-                        self.presentViewController(confirmationAlert, animated: true, completion: nil)
+                        self.neutralLabel.hidden = false
+                        self.neutralLabel.text = selectedDevice.state.getState().lowercaseString
+                        self.logoImageView.image = UIImage(named: "LogoRed")
+                        self.logoImageView.userInteractionEnabled = true
                     }
                 })
             }
