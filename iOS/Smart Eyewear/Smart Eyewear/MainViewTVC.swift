@@ -90,6 +90,7 @@ class MainViewTVC: UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        print("cell \(indexPath.row) selected")
         // grab the currently selected cell
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
         
@@ -97,25 +98,26 @@ class MainViewTVC: UITableViewController
         selectedCell.serviceTitle.textColor = UIColor.whiteColor() // change text colour to white
         selectedCell.accessoryView = UIImageView(image: UIImage(named: "ArrowWhite")!) // change the arrow to a white-coloured one
         
-        switch indexPath.row
-        {
-        case 0:
-            performSegueWithIdentifier("segueToBTConnection", sender: self)
-        case 1:
-            performSegueWithIdentifier("segueToRGBLed", sender: self)
-        case 2:
-            performSegueWithIdentifier("segueToActivation", sender: self)
-        case 3:
-            performSegueWithIdentifier("segueToBatteryLevel", sender: self)
-        case 4:
-            performSegueWithIdentifier("segueToOthers", sender: self)
-        default:
-            return
-        }
+        //        switch indexPath.row
+        //        {
+        //        case 0:
+        //            performSegueWithIdentifier("segueToBTConnection", sender: self)
+        //        case 1:
+        //            performSegueWithIdentifier("segueToRGBLed", sender: self)
+        //        case 2:
+        //            performSegueWithIdentifier("segueToActivation", sender: self)
+        //        case 3:
+        //            performSegueWithIdentifier("segueToBatteryLevel", sender: self)
+        //        case 4:
+        //            performSegueWithIdentifier("segueToOthers", sender: self)
+        //        default:
+        //            return
+        //        }
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
     {
+        print("cell \(indexPath.row) de-selected")
         // grab the formerly selected cell
         let deSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as! MainViewCell
         
@@ -126,7 +128,6 @@ class MainViewTVC: UITableViewController
     
     
     // MARK: - Navigation
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
     }
