@@ -137,7 +137,8 @@ class ConnectionVC: UIViewController
                 //                    print("user wants to disconnect device")
                 //                    
                 //                    Constants.disconnectDevice()
-                //                    self.view.layer.removeAllAnimations()
+                //                    self.tapToConnectLabel.hidden = false
+                //                    self.logoImageView.image = UIImage(named: "LogoGrey")
                 //                    self.viewWillAppear(true)
                 //                }))
                 //                
