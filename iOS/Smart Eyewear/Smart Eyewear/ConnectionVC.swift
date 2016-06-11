@@ -78,32 +78,26 @@ class ConnectionVC: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    // POST: animates only during the connection establishment phase
     func animateConnectionLogo()
     {
-        UIView.animateWithDuration(1.0, animations: { 
-            self.logoImageView.alpha = 0
-        }) { (completed: Bool) in
-            UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations: {
-                self.logoImageView.alpha = 1.0
-                }, completion: { (completed: Bool) in
-                    self.animateConnectionLogo()
-            })
+        if Constants.isDeviceConnected()
+        {
+            self.view.layer.removeAllAnimations()
         }
-        
-        //        UIView.animateWithDuration(1.0, animations:
-        //        {
-        //            self.logoImageView.alpha = 0
-        //        })
-        //        {
-        //            (completed: Bool) in
-        //            UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations:
-        //                {
-        //                self.logoImageView.alpha = 1.0
-        //                }, completion:
-        //                { (completed: Bool) in
-        //                    self.animateConnectionLogo()
-        //            })
-        //        }
+        else
+        {
+            UIView.animateWithDuration(1.0, animations: {
+                self.logoImageView.alpha = 0
+            }) { (completed: Bool) in
+                UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations: {
+                    self.logoImageView.alpha = 1.0
+                    }, completion: { (completed: Bool) in
+                        
+                        self.animateConnectionLogo()
+                })
+            }
+        }
     }
     
     // POST: hides connection-dependent outlets
