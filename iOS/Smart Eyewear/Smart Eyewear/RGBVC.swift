@@ -148,9 +148,9 @@ class RGBVC: UIViewController
         blueSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.blue)!, animated: true)
         
         // add actions to the sliders
-        redSlider.addTarget(self, action: #selector(RGBLedVC.redSliderTapped(_:)), forControlEvents: .ValueChanged)
-        greenSlider.addTarget(self, action: #selector(RGBLedVC.greenSliderTapped(_:)), forControlEvents: .ValueChanged)
-        blueSlider.addTarget(self, action: #selector(RGBLedVC.blueSliderTapped(_:)), forControlEvents: .ValueChanged)
+        redSlider.addTarget(self, action: #selector(RGBVC.redSliderTapped(_:)), forControlEvents: .ValueChanged)
+        greenSlider.addTarget(self, action: #selector(RGBVC.greenSliderTapped(_:)), forControlEvents: .ValueChanged)
+        blueSlider.addTarget(self, action: #selector(RGBVC.blueSliderTapped(_:)), forControlEvents: .ValueChanged)
         
         // add them to the main view
         self.view.addSubview(redSlider)

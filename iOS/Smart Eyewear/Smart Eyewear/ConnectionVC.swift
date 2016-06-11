@@ -172,6 +172,7 @@ class ConnectionVC: UIViewController
                         // flash the Metawear LED Green just to confirm its the right device
                         ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(Constants.themeGreenColour, withIntensity: 1.0, numberOfFlashes: 3)
                         
+                        self.tapToConnectLabel.hidden = true
                         self.neutralLabel.hidden = false
                         self.neutralLabel.text = selectedDevice.state.getState().lowercaseString
                         self.logoImageView.image = UIImage(named: "LogoRed")
