@@ -25,6 +25,8 @@ class ConnectionVC: UIViewController
     {
         super.viewDidLoad()
         
+        setupTheViewInitially()
+        
         MBLMetaWearManager.sharedManager().startScanForMetaWearsAllowDuplicates(false, handler: { (array: [AnyObject]?) -> Void in
             self.foundDevices = array as? [MBLMetaWear]
         })
@@ -34,7 +36,8 @@ class ConnectionVC: UIViewController
     {
         super.viewWillAppear(animated)
         
-        setupTheViewInitially()
+        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavBluetoothWhite"))
         
         centralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue())
     }
@@ -91,9 +94,6 @@ class ConnectionVC: UIViewController
     // POST: hides connection-dependent outlets
     func setupTheViewInitially()
     {
-        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavBluetoothWhite"))
-        
         neutralLabel.hidden = false
         logoImageView.hidden = true
         tapToConnectLabel.hidden = true

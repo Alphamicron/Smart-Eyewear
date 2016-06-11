@@ -24,19 +24,9 @@ class RGBLedVC: UIViewController
     var greenValueLabel: UILabel = UILabel()
     var blueValueLabel: UILabel = UILabel()
     
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        
-        Constants.turnOffMetaWearLED()
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavRGBWhite"))
         
         if !Constants.isDeviceConnected()
         {
@@ -51,6 +41,21 @@ class RGBLedVC: UIViewController
             createColourSliders()
             createColourValueLabels()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavRGBWhite"))
+    }
+    
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+        Constants.turnOffMetaWearLED()
     }
     
     override func didReceiveMemoryWarning()

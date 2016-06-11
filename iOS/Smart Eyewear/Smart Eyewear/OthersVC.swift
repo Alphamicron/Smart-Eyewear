@@ -13,6 +13,11 @@ class OthersVC: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavOthersWhite"))

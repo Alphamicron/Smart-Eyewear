@@ -15,9 +15,6 @@ class BatteryLevelVC: UIViewController
     {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavBatteryWhite"))
-        
         if !Constants.isDeviceConnected()
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to see its battery life."), animated: true, completion: nil)
@@ -48,6 +45,14 @@ class BatteryLevelVC: UIViewController
                 self.drawCircleGraph(deviceChargeValue!)
             })
         }
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavBatteryWhite"))
     }
     
     override func didReceiveMemoryWarning()
