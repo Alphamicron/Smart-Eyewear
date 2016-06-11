@@ -12,6 +12,7 @@
 		301811881D0724CD00E4941C /* HomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811871D0724CD00E4941C /* HomeTVC.swift */; };
 		3018118A1D0729D400E4941C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811891D0729D400E4941C /* Modal.swift */; };
 		302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 302A63311CF74A4A00109C02 /* ISColorWheel.m */; };
+		307B0D211D0CA3940095B2C2 /* RGBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B0D201D0CA3940095B2C2 /* RGBVC.swift */; };
 		30A9209A1D08802B00F0EA5D /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A920991D08802B00F0EA5D /* ConnectionVC.swift */; };
 		30D5E61C1D0B24B400681EC6 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5E61B1D0B24B400681EC6 /* CustomNavigationBar.swift */; };
 		30D5E61E1D0B366300681EC6 /* OthersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5E61D1D0B366300681EC6 /* OthersVC.swift */; };
@@ -24,7 +25,6 @@
 		B23DAE951CF49C8B003BD7FE /* Smart_EyewearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE941CF49C8B003BD7FE /* Smart_EyewearTests.swift */; };
 		B23DAEA01CF49C8C003BD7FE /* Smart_EyewearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */; };
 		B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */; };
-		B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */; };
 		B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */; };
 		B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */; };
 		B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAEB81CF4B62A003BD7FE /* Extensions.swift */; };
@@ -56,6 +56,7 @@
 		301811891D0729D400E4941C /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		302A63301CF74A4A00109C02 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		302A63311CF74A4A00109C02 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
+		307B0D201D0CA3940095B2C2 /* RGBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBVC.swift; sourceTree = "<group>"; };
 		30A920991D08802B00F0EA5D /* ConnectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
 		30D5E61B1D0B24B400681EC6 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		30D5E61D1D0B366300681EC6 /* OthersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthersVC.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		B23DAE9F1CF49C8C003BD7FE /* Smart_EyewearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_EyewearUITests.swift; sourceTree = "<group>"; };
 		B23DAEA11CF49C8C003BD7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationVC.swift; sourceTree = "<group>"; };
-		B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBLedVC.swift; sourceTree = "<group>"; };
 		B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryLevelVC.swift; sourceTree = "<group>"; };
 		B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesTVC.swift; sourceTree = "<group>"; };
 		B23DAEB81CF4B62A003BD7FE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -217,13 +217,13 @@
 		B23DAEB51CF4AE57003BD7FE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				307B0D201D0CA3940095B2C2 /* RGBVC.swift */,
 				30A920991D08802B00F0EA5D /* ConnectionVC.swift */,
 				B23DAE811CF49C8B003BD7FE /* ViewController.swift */,
 				B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */,
 				30D5E61D1D0B366300681EC6 /* OthersVC.swift */,
 				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
 				B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */,
-				B23DAEAF1CF4AE1F003BD7FE /* RGBLedVC.swift */,
 				301811871D0724CD00E4941C /* HomeTVC.swift */,
 				30D5E61F1D0B669A00681EC6 /* CustomUISlider.swift */,
 				30D5E61B1D0B24B400681EC6 /* CustomNavigationBar.swift */,
@@ -515,7 +515,7 @@
 				302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */,
 				B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */,
 				30D5E61E1D0B366300681EC6 /* OthersVC.swift in Sources */,
-				B23DAEB01CF4AE1F003BD7FE /* RGBLedVC.swift in Sources */,
+				307B0D211D0CA3940095B2C2 /* RGBVC.swift in Sources */,
 				B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */,
 				B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */,
 				B2BBD5DE1CF5187E00D0EA32 /* Constants.swift in Sources */,

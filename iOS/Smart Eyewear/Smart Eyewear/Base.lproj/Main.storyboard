@@ -275,10 +275,10 @@
                     <navigationItem key="navigationItem" title="Home" id="AXY-cf-jQc"/>
                     <connections>
                         <segue destination="G0t-W8-jyp" kind="show" identifier="segueToBTConnection" id="adV-C3-cnU"/>
-                        <segue destination="5te-ZI-q77" kind="show" identifier="segueToRGBLed" id="r2D-OB-pCo"/>
                         <segue destination="mcf-eH-agu" kind="show" identifier="segueToBatteryLevel" id="Ais-a5-DGK"/>
                         <segue destination="lwX-Ke-ms8" kind="show" identifier="segueToActivation" id="XLw-A4-jVH"/>
                         <segue destination="Wo5-L9-OaJ" kind="show" identifier="segueToOthers" id="5kh-a8-fJa"/>
+                        <segue destination="EMN-re-XCe" kind="show" identifier="segueToRGB" id="eYC-wV-yAQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72w-CA-gfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -507,22 +507,23 @@
             </objects>
             <point key="canvasLocation" x="4213" y="-1174"/>
         </scene>
-        <!--RGB LED-->
-        <scene sceneID="nXG-Tv-AFR">
+        <!--RGBVC-->
+        <scene sceneID="VIv-cx-2zC">
             <objects>
-                <viewController title="RGB LED" id="5te-ZI-q77" customClass="RGBLedVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EMN-re-XCe" customClass="RGBVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lev-3d-96Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="7gj-3c-Bzj"/>
+                        <viewControllerLayoutGuide type="top" id="Mn9-Hk-wu4"/>
+                        <viewControllerLayoutGuide type="bottom" id="WvH-ap-fhI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IOq-jG-LNA">
+                    <view key="view" contentMode="scaleToFill" id="yDM-9N-IJS">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jds-mL-ccG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kzS-e2-YMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="-491"/>
+            <point key="canvasLocation" x="960" y="-491"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gum-Wf-wC0">
