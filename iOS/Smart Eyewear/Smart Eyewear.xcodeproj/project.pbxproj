@@ -18,7 +18,6 @@
 		30D5E61E1D0B366300681EC6 /* OthersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5E61D1D0B366300681EC6 /* OthersVC.swift */; };
 		30D5E6201D0B669A00681EC6 /* CustomUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5E61F1D0B669A00681EC6 /* CustomUISlider.swift */; };
 		B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */; };
-		B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE811CF49C8B003BD7FE /* ViewController.swift */; };
 		B23DAE851CF49C8B003BD7FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE831CF49C8B003BD7FE /* Main.storyboard */; };
 		B23DAE871CF49C8B003BD7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE861CF49C8B003BD7FE /* Assets.xcassets */; };
 		B23DAE8A1CF49C8B003BD7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */; };
@@ -68,7 +67,6 @@
 		76A45C70DC0B3B123CE5D329 /* Pods-Smart Eyewear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Eyewear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.debug.xcconfig"; sourceTree = "<group>"; };
 		B23DAE7C1CF49C8B003BD7FE /* Smart Eyewear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Eyewear.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B23DAE811CF49C8B003BD7FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B23DAE841CF49C8B003BD7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B23DAE861CF49C8B003BD7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B23DAE891CF49C8B003BD7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 			children = (
 				307B0D201D0CA3940095B2C2 /* RGBVC.swift */,
 				30A920991D08802B00F0EA5D /* ConnectionVC.swift */,
-				B23DAE811CF49C8B003BD7FE /* ViewController.swift */,
 				B23DAEB31CF4AE4E003BD7FE /* DevicesTVC.swift */,
 				30D5E61D1D0B366300681EC6 /* OthersVC.swift */,
 				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
@@ -509,7 +506,6 @@
 				B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */,
 				30A9209A1D08802B00F0EA5D /* ConnectionVC.swift in Sources */,
 				B23DAEB41CF4AE4E003BD7FE /* DevicesTVC.swift in Sources */,
-				B23DAE821CF49C8B003BD7FE /* ViewController.swift in Sources */,
 				30D5E61C1D0B24B400681EC6 /* CustomNavigationBar.swift in Sources */,
 				301811881D0724CD00E4941C /* HomeTVC.swift in Sources */,
 				302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */,

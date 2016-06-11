@@ -93,9 +93,14 @@ class RGBVC: UIViewController
     // POST: A color wheel is added onto the loaded view
     func createTheColorWheel()
     {
-        let colorWheelSize: CGSize = CGSizeMake(self.view.bounds.size.width * 0.9, self.view.bounds.size.height * 0.5)
+        //        let colorWheelSize: CGSize = CGSizeMake(self.view.bounds.size.width * 0.9, self.view.bounds.size.height * 0.5)
+        //        
+        //        colorWheelView = ISColorWheel(frame: CGRect(x: self.view.bounds.size.width / 2 - colorWheelSize.width / 2, y: self.view.bounds.size.height * 0.1, width: colorWheelSize.width, height: colorWheelSize.height))
         
-        colorWheelView = ISColorWheel(frame: CGRect(x: self.view.bounds.size.width / 2 - colorWheelSize.width / 2, y: self.view.bounds.size.height * 0.1, width: colorWheelSize.width, height: colorWheelSize.height))
+        let colorWheelSize: CGSize = CGSizeMake(self.view.bounds.size.width * 0.8, self.view.bounds.size.height * 0.5)
+        
+        colorWheelView = ISColorWheel(frame: CGRect(x: self.view.bounds.size.width / 10, y: self.view.bounds.size.height / 1000, width: colorWheelSize.width, height: colorWheelSize.height))
+        
         colorWheelView.delegate = self
         // if true, a single tap and drag reflects colour changes
         // if false, a user is required to drag and stop at a point for the colour to be changed
@@ -107,19 +112,23 @@ class RGBVC: UIViewController
     func createTheColourTitleLabels()
     {
         // create labels
-        redLabel = UILabel(frame: CGRect(x: 15, y: 425, width: 35, height: 20))
+        redLabel = UILabel(frame: CGRect(x: 15, y: 347, width: 35, height: 25))
         greenLabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: redLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
         blueLabel = UILabel(frame: CGRect(x: redLabel.frame.origin.x, y: greenLabel.frame.origin.y + 60, width: redLabel.frame.width, height: redLabel.frame.height))
         
         // set their titles respectively
-        redLabel.text = "R"
-        greenLabel.text = "G"
-        blueLabel.text = "B"
+        redLabel.text = "r"
+        greenLabel.text = "g"
+        blueLabel.text = "b"
         
         // set the text font
         redLabel.font = Constants.defaultFont
         greenLabel.font = Constants.defaultFont
         blueLabel.font = Constants.defaultFont
+        
+        redLabel.textColor = Constants.themeTextColour
+        greenLabel.textColor = Constants.themeTextColour
+        blueLabel.textColor = Constants.themeTextColour
         
         // add them to the main view
         self.view.addSubview(redLabel)
@@ -130,9 +139,9 @@ class RGBVC: UIViewController
     func createColourSliders()
     {
         // create sliders
-        redSlider = UISlider(frame: CGRect(x: redLabel.frame.width + 5, y: 420 + redLabel.frame.height/2, width: 250, height: 10))
-        greenSlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 479 + greenLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
-        blueSlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 538 + blueLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
+        redSlider = UISlider(frame: CGRect(x: redLabel.frame.width + 5, y: 345 + redLabel.frame.height/2, width: 250, height: 10))
+        greenSlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 404 + greenLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
+        blueSlider = UISlider(frame: CGRect(x: redSlider.frame.origin.x, y: 463 + blueLabel.frame.height/2, width: redSlider.frame.width, height: redSlider.frame.height))
         
         // declare their properties
         redSlider.minimumValue = Float()
@@ -141,6 +150,21 @@ class RGBVC: UIViewController
         greenSlider.maximumValue = redSlider.maximumValue
         blueSlider.minimumValue = redSlider.minimumValue
         blueSlider.maximumValue = redSlider.maximumValue
+        
+        // set colour of left side of slider
+        redSlider.minimumTrackTintColor = Constants.themeRedColour
+        greenSlider.minimumTrackTintColor = Constants.themeGreenColour
+        blueSlider.minimumTrackTintColor = UIColor(red: 0.067, green: 0.329, blue: 0.757, alpha: 1.00)
+        
+        // set colour of right side of slider
+        redSlider.maximumTrackTintColor = Constants.themeInactiveStateColour
+        greenSlider.maximumTrackTintColor = Constants.themeInactiveStateColour
+        blueSlider.maximumTrackTintColor = Constants.themeInactiveStateColour
+        
+        // set colour of the thumb itself
+        redSlider.thumbTintColor = Constants.themeRedColour
+        greenSlider.thumbTintColor = Constants.themeGreenColour
+        blueSlider.thumbTintColor = UIColor(red: 0.067, green: 0.329, blue: 0.757, alpha: 1.00)
         
         // initialize with a value first
         redSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.red)!, animated: true)
@@ -165,11 +189,20 @@ class RGBVC: UIViewController
         greenValueLabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: greenSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
         blueValueLabel = UILabel(frame: CGRect(x: redValueLabel.frame.origin.x, y: blueSlider.frame.origin.y - 15, width: redValueLabel.frame.width, height: redValueLabel.frame.height))
         
-        
         // asssign fonts
         redValueLabel.font = Constants.defaultFont
         greenValueLabel.font = Constants.defaultFont
         blueValueLabel.font = Constants.defaultFont
+        
+        // increase character spacing
+        redValueLabel.kerning = 1.0
+        greenValueLabel.kerning = 1.0
+        blueValueLabel.kerning = 1.0
+        
+        // assign text colour
+        redValueLabel.textColor = Constants.themeTextColour
+        greenValueLabel.textColor = Constants.themeTextColour
+        blueValueLabel.textColor = Constants.themeTextColour
         
         // initialise them with the current colour wheel's colour value
         redValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.red)!))
