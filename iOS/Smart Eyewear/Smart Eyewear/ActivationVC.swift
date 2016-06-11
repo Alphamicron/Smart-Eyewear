@@ -33,9 +33,6 @@ class ActivationVC: UIViewController
     {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavGogglesWhite"))
-        
         if !Constants.isDeviceConnected()
         {
             presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to activate the photo sensor"), animated: true, completion: nil)
@@ -46,6 +43,14 @@ class ActivationVC: UIViewController
         {
             initiateUIValues()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavGogglesWhite"))
     }
     
     override func viewWillDisappear(animated: Bool)
