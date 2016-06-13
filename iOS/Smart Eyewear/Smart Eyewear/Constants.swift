@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSSAlertView
 
 struct Constants
 {
@@ -26,13 +27,14 @@ struct Constants
     static let themeTextColour: UIColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
     static let metaWearUUID: String = "B0480FD8-84E5-499C-1BF1-939605412C3F"
     
-    static func defaultErrorAlert(errorTitle: String, errorMessage: String)->UIAlertController
+    static func defaultErrorAlert(origin: UIViewController, errorTitle: String, errorMessage: String)
     {
-        let defaultAlertController = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .Alert)
+        let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "dismiss", color: Constants.themeRedColour, iconImage: UIImage(named: "AlertEagle"))
         
-        defaultAlertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-        
-        return defaultAlertController
+        userAlert.setTextTheme(.Light)
+        userAlert.setTitleFont("AvenirNext-Regular")
+        userAlert.setTextFont("AvenirNext-Regular")
+        userAlert.setButtonFont("AvenirNext-Regular")
     }
     
     // POST: Delays any operation for 'delayTime' duration. Time is in seconds.
@@ -62,15 +64,6 @@ struct Constants
     
     static func displayBackgroundImageOnError(currentView: UIView, typeOfError: ErrorState)
     {
-        // if any subviews exist, just delete them
-        //        if currentView.subviews.count != Int()
-        //        {
-        //            for thisSubview in currentView.subviews
-        //            {
-        //                thisSubview.removeFromSuperview()
-        //            }
-        //        }
-        
         let errorImageView: UIImageView = UIImageView(frame: CGRect(x: currentView.frame.origin.x, y: currentView.frame.origin.y, width: currentView.frame.width, height: currentView.frame.height))
         errorImageView.backgroundColor = UIColor.whiteColor()
         errorImageView.center = CGPointMake(currentView.bounds.size.width/2, currentView.bounds.size.height/2)

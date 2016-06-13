@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JSSAlertView
 import CoreBluetooth
 
 class ConnectionVC: UIViewController
@@ -146,10 +147,6 @@ class ConnectionVC: UIViewController
             }
             else
             {
-                //                // freeze UI while attempting to connect to device
-                //                let confirmationHUD: MBProgressHUD = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
-                //                confirmationHUD.labelText = "Connecting to device..."
-                
                 logoImageView.userInteractionEnabled = false
                 animateConnectionLogo()
                 neutralLabel.text = "connecting..."
@@ -202,7 +199,9 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .PoweredOff:
             print("BLE OFF")
-            presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: "Please turn on your bluetooth."), animated: true, completion: nil)
+            
+            Constants.defaultErrorAlert(self, errorTitle: "Bluetooth Error", errorMessage: "Please turn on your bluetooth to connect to the CTRL Eyewear")
+            
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoBLEConnection)
             break
@@ -214,7 +213,7 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .Unauthorized:
             print("BLE Unauthorized")
-            presentViewController(Constants.defaultErrorAlert("Authorisation Error", errorMessage: "Smart Eyewear requires access to your Bluetooth."), animated: true, completion: nil)
+            Constants.defaultErrorAlert(self, errorTitle: "Authorisation Error", errorMessage: "Smart Eyewear requires access to Bluetooth")
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
@@ -225,7 +224,7 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .Unsupported:
             print("BLE Unsupported")
-            presentViewController(Constants.defaultErrorAlert("Error", errorMessage: "Device does not support Bluetooth Low Energy technology."), animated: true, completion: nil)
+            Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Device does not support Bluetooth Low Energy technology")
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
         }
@@ -233,7 +232,7 @@ extension ConnectionVC: CBCentralManagerDelegate
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
     {
-        presentViewController(Constants.defaultErrorAlert("Connection Error", errorMessage: (error?.localizedDescription)!), animated: true, completion: nil)
+        Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: (error?.localizedDescription)!)
     }
     
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)

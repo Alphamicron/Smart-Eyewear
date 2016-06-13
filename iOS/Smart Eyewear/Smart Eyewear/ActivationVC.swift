@@ -35,7 +35,7 @@ class ActivationVC: UIViewController
         
         if !Constants.isDeviceConnected()
         {
-            presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to activate the photo sensor"), animated: true, completion: nil)
+            Constants.defaultErrorAlert(self, errorTitle: "Device Error", errorMessage: "A device needs to be connected to activate the photo sensor")
             
             Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
         }
@@ -188,7 +188,7 @@ class ActivationVC: UIViewController
     {
         if !Constants.isDeviceConnected()
         {
-            presentViewController(Constants.defaultErrorAlert("Invalid Operation", errorMessage: "A device needs to be connected to continue"), animated: true, completion: nil)
+            Constants.defaultErrorAlert(self, errorTitle: "Invalid Operation", errorMessage: "A device needs to be connected to continue")
         }
         else
         {
@@ -303,7 +303,7 @@ class ActivationVC: UIViewController
     {
         if !Constants.isDeviceConnected()
         {
-            presentViewController(Constants.defaultErrorAlert("Invalid Operation", errorMessage: "A device needs to be connected to continue"), animated: true, completion: nil)
+            Constants.defaultErrorAlert(self, errorTitle: "Invalid Operation", errorMessage: "A device needs to be connected to continue")
         }
         else
         {

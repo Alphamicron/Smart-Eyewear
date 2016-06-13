@@ -17,7 +17,7 @@ class BatteryLevelVC: UIViewController
         
         if !Constants.isDeviceConnected()
         {
-            presentViewController(Constants.defaultErrorAlert("Device Error", errorMessage: "A device needs to be connected to see its battery life."), animated: true, completion: nil)
+            Constants.defaultErrorAlert(self, errorTitle: "Device Error", errorMessage: "A device needs to be connected to see its battery life")
             
             Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
         }
