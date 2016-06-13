@@ -665,7 +665,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Smart Eyewear/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-Eyewear";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alphamicron.Smart-Eyewear";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart Eyewear/Smart Eyewear-Bridging-Header.h";
@@ -684,7 +684,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Smart Eyewear/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Emil-Shirima.Smart-Eyewear";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alphamicron.Smart-Eyewear";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart Eyewear/Smart Eyewear-Bridging-Header.h";
