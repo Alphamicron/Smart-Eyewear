@@ -51,13 +51,14 @@ class ActivationVC: UIViewController
         
         self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavGogglesWhite"))
+        
+        ActivationVC.turnLED(Constants.LEDState.Off)
     }
     
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
         
-        // TODO: Is this really necessary?
         ActivationVC.turnLED(Constants.LEDState.Off)
     }
     
@@ -110,6 +111,8 @@ class ActivationVC: UIViewController
             manualBtn.setTitle("OFF", forState: .Normal)
             manualBtn.backgroundColor = Constants.themeInactiveStateColour
             manualBtn.userInteractionEnabled = false
+            
+            ActivationVC.turnLED(Constants.LEDState.Off)
         }
     }
     
@@ -135,6 +138,8 @@ class ActivationVC: UIViewController
             metaWearValueSlider.minimumTrackTintColor = Constants.themeRedColour
             
             helpBtn.hidden = false
+            
+            ActivationVC.turnLED(Constants.LEDState.Off)
         }
         else
         {
@@ -154,6 +159,8 @@ class ActivationVC: UIViewController
             cloudyImageView.image = UIImage(named: "CloudsGray")
             cloudySunnyImageView.image = UIImage(named: "CloudsSunnyGray")
             sunnyImageView.image = UIImage(named: "SunnyGray")
+            
+            ActivationVC.turnLED(Constants.LEDState.Off)
         }
     }
     
