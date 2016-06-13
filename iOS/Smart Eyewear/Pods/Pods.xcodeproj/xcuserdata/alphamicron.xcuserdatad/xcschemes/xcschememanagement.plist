@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JSSAlertView-JSSAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSSAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>PNChart.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92F5C2254752392769C2D64B94210420</key>
+		<key>97790D00290CEF949578C95E8D88FFF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD323711AE430DFCADA96049B1EF6AD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B272B33F162D6E5C3510BA50ECF2684B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE7B09D7AABB33662D3B092926DCFF8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

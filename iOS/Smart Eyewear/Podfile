@@ -6,6 +6,7 @@ use_frameworks!
 target 'Smart Eyewear' do
     pod 'Metawear-iOSAPI'
     pod 'PNChart'
+    pod 'JSSAlertView'
 end
 
 target 'Smart EyewearTests' do
