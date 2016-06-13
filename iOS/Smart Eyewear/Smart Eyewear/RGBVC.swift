@@ -166,6 +166,11 @@ class RGBVC: UIViewController
         greenSlider.thumbTintColor = Constants.themeGreenColour
         blueSlider.thumbTintColor = UIColor(red: 0.067, green: 0.329, blue: 0.757, alpha: 1.00)
         
+        // non-continuous updates. Updates reflected after the slider has been released
+        redSlider.continuous = false
+        greenSlider.continuous = false
+        blueSlider.continuous = false
+        
         // initialize with a value first
         redSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.red)!, animated: true)
         greenSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.green)!, animated: true)
