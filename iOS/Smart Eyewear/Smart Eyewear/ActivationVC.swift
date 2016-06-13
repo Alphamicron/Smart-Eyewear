@@ -200,6 +200,7 @@ class ActivationVC: UIViewController
                 sender.setTitle("ON", forState: .Selected)
                 sender.backgroundColor = Constants.themeGreenColour
                 
+                userThresholdSlider.setValue(Constants.userThresholdMaximumValue/2, animated: true)
                 userThresholdSlider.userInteractionEnabled = true
                 
                 repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
