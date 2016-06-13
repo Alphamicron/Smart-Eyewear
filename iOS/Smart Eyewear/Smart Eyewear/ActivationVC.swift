@@ -188,7 +188,7 @@ class ActivationVC: UIViewController
     {
         if !Constants.isDeviceConnected()
         {
-            Constants.defaultErrorAlert(self, errorTitle: "Invalid Operation", errorMessage: "A device needs to be connected to continue", errorPriority: Constants.AlertPriority.Medium)
+            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to continue", errorPriority: Constants.AlertPriority.Medium)
         }
         else
         {
