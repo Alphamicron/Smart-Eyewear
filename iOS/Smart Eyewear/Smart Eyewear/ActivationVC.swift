@@ -35,7 +35,7 @@ class ActivationVC: UIViewController
         
         if !Constants.isDeviceConnected()
         {
-            Constants.defaultErrorAlert(self, errorTitle: "Device Error", errorMessage: "A device needs to be connected to activate the photo sensor")
+            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to activate the photo sensor", errorPriority: Constants.AlertPriority.Medium)
             
             Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
         }
@@ -188,7 +188,7 @@ class ActivationVC: UIViewController
     {
         if !Constants.isDeviceConnected()
         {
-            Constants.defaultErrorAlert(self, errorTitle: "Invalid Operation", errorMessage: "A device needs to be connected to continue")
+            Constants.defaultErrorAlert(self, errorTitle: "Invalid Operation", errorMessage: "A device needs to be connected to continue", errorPriority: Constants.AlertPriority.Medium)
         }
         else
         {
@@ -303,7 +303,7 @@ class ActivationVC: UIViewController
     {
         if !Constants.isDeviceConnected()
         {
-            Constants.defaultErrorAlert(self, errorTitle: "Invalid Operation", errorMessage: "A device needs to be connected to continue")
+            Constants.defaultErrorAlert(self, errorTitle: "Invalid Operation", errorMessage: "A device needs to be connected to continue", errorPriority: Constants.AlertPriority.Medium)
         }
         else
         {

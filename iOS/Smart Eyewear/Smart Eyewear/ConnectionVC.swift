@@ -200,7 +200,7 @@ extension ConnectionVC: CBCentralManagerDelegate
         case .PoweredOff:
             print("BLE OFF")
             
-            Constants.defaultErrorAlert(self, errorTitle: "Bluetooth Error", errorMessage: "Please turn on your bluetooth to connect to the CTRL Eyewear")
+            Constants.defaultErrorAlert(self, errorTitle: "Bluetooth Error", errorMessage: "Please turn on your bluetooth to connect to the CTRL Eyewear", errorPriority: Constants.AlertPriority.High)
             
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoBLEConnection)
@@ -213,7 +213,7 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .Unauthorized:
             print("BLE Unauthorized")
-            Constants.defaultErrorAlert(self, errorTitle: "Authorisation Error", errorMessage: "Smart Eyewear requires access to Bluetooth")
+            Constants.defaultErrorAlert(self, errorTitle: "Authorisation Error", errorMessage: "Smart Eyewear requires access to Bluetooth", errorPriority: Constants.AlertPriority.High)
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
@@ -224,7 +224,7 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .Unsupported:
             print("BLE Unsupported")
-            Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Device does not support Bluetooth Low Energy technology")
+            Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Device does not support Bluetooth Low Energy technology", errorPriority: Constants.AlertPriority.High)
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
         }
@@ -232,7 +232,7 @@ extension ConnectionVC: CBCentralManagerDelegate
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
     {
-        Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: (error?.localizedDescription)!)
+        Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: (error?.localizedDescription)!, errorPriority: Constants.AlertPriority.High)
     }
     
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)

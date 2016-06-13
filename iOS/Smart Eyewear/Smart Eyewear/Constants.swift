@@ -27,14 +27,37 @@ struct Constants
     static let themeTextColour: UIColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
     static let metaWearUUID: String = "B0480FD8-84E5-499C-1BF1-939605412C3F"
     
-    static func defaultErrorAlert(origin: UIViewController, errorTitle: String, errorMessage: String)
+    static func defaultErrorAlert(origin: UIViewController, errorTitle: String, errorMessage: String, errorPriority: AlertPriority)
     {
-        let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "dismiss", color: Constants.themeRedColour, iconImage: UIImage(named: "AlertEagle"))
         
-        userAlert.setTextTheme(.Light)
-        userAlert.setTitleFont("AvenirNext-Regular")
-        userAlert.setTextFont("AvenirNext-Regular")
-        userAlert.setButtonFont("AvenirNext-Regular")
+        switch errorPriority
+        {
+        case .High:
+            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "dismiss", color: Constants.themeRedColour, iconImage: UIImage(named: "AlertEagle"))
+            userAlert.setTextTheme(.Light)
+            userAlert.setTitleFont("AvenirNext-Regular")
+            userAlert.setTextFont("AvenirNext-Regular")
+            userAlert.setButtonFont("AvenirNext-Regular")
+        case .Medium:
+            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "okay", color: Constants.themeYellowColour, iconImage: UIImage(named: "AlertEagle"))
+            userAlert.setTextTheme(.Light)
+            userAlert.setTitleFont("AvenirNext-Regular")
+            userAlert.setTextFont("AvenirNext-Regular")
+            userAlert.setButtonFont("AvenirNext-Regular")
+        case .Low:
+            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "okay", color: Constants.themeGreenColour, iconImage: UIImage(named: "AlertEagle"))
+            userAlert.setTextTheme(.Light)
+            userAlert.setTitleFont("AvenirNext-Regular")
+            userAlert.setTextFont("AvenirNext-Regular")
+            userAlert.setButtonFont("AvenirNext-Regular")
+        }
+        
+        //        let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "dismiss", color: Constants.themeRedColour, iconImage: UIImage(named: "AlertEagle"))
+        //        
+        //        userAlert.setTextTheme(.Light)
+        //        userAlert.setTitleFont("AvenirNext-Regular")
+        //        userAlert.setTextFont("AvenirNext-Regular")
+        //        userAlert.setButtonFont("AvenirNext-Regular")
     }
     
     // POST: Delays any operation for 'delayTime' duration. Time is in seconds.
@@ -122,5 +145,12 @@ struct Constants
     {
         case NoMetaWear
         case NoBLEConnection
+    }
+    
+    enum AlertPriority
+    {
+        case Low
+        case Medium
+        case High
     }
 }
