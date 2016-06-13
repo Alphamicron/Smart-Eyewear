@@ -33,31 +33,32 @@ struct Constants
         switch errorPriority
         {
         case .High:
+            
             let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "dismiss", color: Constants.themeRedColour, iconImage: UIImage(named: "AlertEagle"))
+            
             userAlert.setTextTheme(.Light)
             userAlert.setTitleFont("AvenirNext-Regular")
             userAlert.setTextFont("AvenirNext-Regular")
             userAlert.setButtonFont("AvenirNext-Regular")
+            
         case .Medium:
-            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "okay", color: Constants.themeYellowColour, iconImage: UIImage(named: "AlertEagle"))
-            userAlert.setTextTheme(.Light)
+            
+            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "okay", color: Constants.themeYellowColour, iconImage: UIImage(named: "AlertEagleYellow"))
+            
+            userAlert.setTextTheme(.Dark)
             userAlert.setTitleFont("AvenirNext-Regular")
             userAlert.setTextFont("AvenirNext-Regular")
             userAlert.setButtonFont("AvenirNext-Regular")
+            
         case .Low:
-            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "okay", color: Constants.themeGreenColour, iconImage: UIImage(named: "AlertEagle"))
+            
+            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "okay", color: Constants.themeGreenColour, iconImage: UIImage(named: "AlertEagleGreen"))
+            
             userAlert.setTextTheme(.Light)
             userAlert.setTitleFont("AvenirNext-Regular")
             userAlert.setTextFont("AvenirNext-Regular")
             userAlert.setButtonFont("AvenirNext-Regular")
         }
-        
-        //        let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "dismiss", color: Constants.themeRedColour, iconImage: UIImage(named: "AlertEagle"))
-        //        
-        //        userAlert.setTextTheme(.Light)
-        //        userAlert.setTitleFont("AvenirNext-Regular")
-        //        userAlert.setTextFont("AvenirNext-Regular")
-        //        userAlert.setButtonFont("AvenirNext-Regular")
     }
     
     // POST: Delays any operation for 'delayTime' duration. Time is in seconds.
