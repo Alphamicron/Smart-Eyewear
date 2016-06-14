@@ -26,9 +26,9 @@ struct Services
         
         // the first image is the original one and the second one is used when the cell is selected
         totalServices.append(Services(newserviceName: "Connection", newServiceIcon: [UIImage(named: "Bluetooth")!, UIImage(named: "BluetoothWhite")!]))
-        totalServices.append(Services(newserviceName: "RGB LEDs", newServiceIcon: [UIImage(named: "RGBLed")!, UIImage(named: "RGBLedWhite")!]))
         totalServices.append(Services(newserviceName: "Activation", newServiceIcon: [UIImage(named: "Goggles")!, UIImage(named: "GogglesWhite")!]))
         totalServices.append(Services(newserviceName: "Battery Level", newServiceIcon: [UIImage(named: "Battery")!, UIImage(named: "BatteryWhite")!]))
+        totalServices.append(Services(newserviceName: "RGB LEDs", newServiceIcon: [UIImage(named: "RGBLed")!, UIImage(named: "RGBLedWhite")!]))
         totalServices.append(Services(newserviceName: "Others", newServiceIcon: [UIImage(named: "Other")!, UIImage(named: "OtherWhite")!]))
         
         return totalServices

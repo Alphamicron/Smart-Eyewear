@@ -103,11 +103,11 @@ class HomeTVC: UITableViewController
         case 0:
             performSegueWithIdentifier("segueToBTConnection", sender: self)
         case 1:
-            performSegueWithIdentifier("segueToRGB", sender: self)
-        case 2:
             performSegueWithIdentifier("segueToActivation", sender: self)
-        case 3:
+        case 2:
             performSegueWithIdentifier("segueToBatteryLevel", sender: self)
+        case 3:
+            performSegueWithIdentifier("segueToRGB", sender: self)
         case 4:
             performSegueWithIdentifier("segueToOthers", sender: self)
         default:
