@@ -25,7 +25,7 @@ struct Constants
     static let themeYellowColour: UIColor = UIColor(red: 0.941, green: 0.843, blue: 0.020, alpha: 1.00)
     static let themeInactiveStateColour: UIColor = UIColor(red: 0.208, green: 0.169, blue: 0.137, alpha: 1.00)
     static let themeTextColour: UIColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
-    static let metaWearUUID: String = "B0480FD8-84E5-499C-1BF1-939605412C3F"
+    static let metaWearName: String = "MetaWear"
     
     static func defaultErrorAlert(origin: UIViewController, errorTitle: String, errorMessage: String, errorPriority: AlertPriority)
     {

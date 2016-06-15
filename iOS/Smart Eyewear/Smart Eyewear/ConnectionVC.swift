@@ -238,7 +238,7 @@ extension ConnectionVC: CBCentralManagerDelegate
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
     {
         // just discover this particular metawear device
-        if peripheral.identifier.UUIDString == Constants.metaWearUUID
+        if peripheral.name == Constants.metaWearName
         {
             logoImageView.hidden = false
             tapToConnectLabel.hidden = false
