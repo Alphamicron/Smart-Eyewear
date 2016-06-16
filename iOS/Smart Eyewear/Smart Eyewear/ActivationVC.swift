@@ -123,13 +123,7 @@ class ActivationVC: UIViewController
             manualSwitch.setOn(false, animated: true)
             manualSwitch.sendActionsForControlEvents(.ValueChanged)
             
-            automaticBtn.backgroundColor = Constants.themeRedColour
-            automaticBtn.userInteractionEnabled = true
-            automaticBtn.setTitle("OFF", forState: .Normal)
-            
-            cloudyImageView.image = UIImage(named: "Clouds")
-            cloudySunnyImageView.image = UIImage(named: "CloudySunny")
-            sunnyImageView.image = UIImage(named: "Sunny")
+            setImagesForState(Constants.LEDState.On)
             
             metaWearValueSlider.thumbTintColor = Constants.themeRedColour
             userThresholdSlider.thumbTintColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
@@ -139,16 +133,20 @@ class ActivationVC: UIViewController
             
             helpBtn.hidden = false
             
-            ActivationVC.turnLED(Constants.LEDState.Off)
+            //            ActivationVC.turnLED(Constants.LEDState.On)
+            
+            userThresholdSlider.setValue(Constants.userThresholdMaximumValue/2, animated: true)
+            userThresholdSlider.userInteractionEnabled = true
+            
+            repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
         }
         else
         {
-            automaticBtn.setTitle("OFF", forState: .Selected)
-            automaticBtn.backgroundColor = Constants.themeInactiveStateColour
-            automaticBtn.userInteractionEnabled = false
-            userThresholdSlider.userInteractionEnabled = false
+            Constants.defaultTimer.invalidate()
+            
             helpBtn.hidden = true
             helpTextLabel.hidden = true
+            userThresholdSlider.userInteractionEnabled = false
             
             userThresholdSlider.thumbTintColor = Constants.themeInactiveStateColour
             metaWearValueSlider.thumbTintColor = Constants.themeInactiveStateColour
@@ -156,14 +154,11 @@ class ActivationVC: UIViewController
             userThresholdSlider.minimumTrackTintColor = Constants.themeInactiveStateColour
             metaWearValueSlider.minimumTrackTintColor = Constants.themeInactiveStateColour
             
-            cloudyImageView.image = UIImage(named: "CloudsGray")
-            cloudySunnyImageView.image = UIImage(named: "CloudsSunnyGray")
-            sunnyImageView.image = UIImage(named: "SunnyGray")
+            setImagesForState(Constants.LEDState.Off)
             
             ActivationVC.turnLED(Constants.LEDState.Off)
         }
     }
-    
     
     @IBAction func manualBtnAction(sender: UIButton)
     {
@@ -186,34 +181,34 @@ class ActivationVC: UIViewController
     
     @IBAction func automaticBtnAction(sender: UIButton)
     {
-        if !Constants.isDeviceConnected()
-        {
-            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to continue", errorPriority: Constants.AlertPriority.Medium)
-        }
-        else
-        {
-            sender.selected = !sender.selected
-            
-            if sender.selected
-            {
-                print("button on")
-                sender.setTitle("ON", forState: .Selected)
-                sender.backgroundColor = Constants.themeGreenColour
-                
-                userThresholdSlider.setValue(Constants.userThresholdMaximumValue/2, animated: true)
-                userThresholdSlider.userInteractionEnabled = true
-                
-                repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
-            }
-            else
-            {
-                print("button off")
-                Constants.defaultTimer.invalidate()
-                sender.setTitle("OFF", forState: .Normal)
-                sender.backgroundColor = Constants.themeRedColour
-                userThresholdSlider.userInteractionEnabled = false
-            }
-        }
+        //        if !Constants.isDeviceConnected()
+        //        {
+        //            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to continue", errorPriority: Constants.AlertPriority.Medium)
+        //        }
+        //        else
+        //        {
+        //            sender.selected = !sender.selected
+        //            
+        //            if sender.selected
+        //            {
+        //                print("button on")
+        //                sender.setTitle("ON", forState: .Selected)
+        //                sender.backgroundColor = Constants.themeGreenColour
+        //                
+        //                userThresholdSlider.setValue(Constants.userThresholdMaximumValue/2, animated: true)
+        //                userThresholdSlider.userInteractionEnabled = true
+        //                
+        //                repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
+        //            }
+        //            else
+        //            {
+        //                print("button off")
+        //                Constants.defaultTimer.invalidate()
+        //                sender.setTitle("OFF", forState: .Normal)
+        //                sender.backgroundColor = Constants.themeRedColour
+        //                userThresholdSlider.userInteractionEnabled = false
+        //            }
+        //        }
     }
     
     @IBAction func helpBtnAction(sender: UIButton)
@@ -225,6 +220,22 @@ class ActivationVC: UIViewController
         else
         {
             helpTextLabel.hidden = true
+        }
+    }
+    
+    func setImagesForState(ledState: Constants.LEDState)
+    {
+        switch ledState
+        {
+        case .On:
+            cloudyImageView.image = UIImage(named: "Clouds")
+            cloudySunnyImageView.image = UIImage(named: "CloudySunny")
+            sunnyImageView.image = UIImage(named: "Sunny")
+            
+        case .Off:
+            cloudyImageView.image = UIImage(named: "CloudsGray")
+            cloudySunnyImageView.image = UIImage(named: "CloudsSunnyGray")
+            sunnyImageView.image = UIImage(named: "SunnyGray")
         }
     }
     
