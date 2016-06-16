@@ -24,6 +24,8 @@ class RGBVC: UIViewController
     var greenValueLabel: UILabel = UILabel()
     var blueValueLabel: UILabel = UILabel()
     
+    @IBOutlet weak var colorView: UIView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -37,9 +39,9 @@ class RGBVC: UIViewController
         else
         {
             createTheColorWheel()
-            createTheColourTitleLabels()
-            createColourSliders()
-            createColourValueLabels()
+            //            createTheColourTitleLabels()
+            //            createColourSliders()
+            //            createColourValueLabels()
         }
     }
     
@@ -67,20 +69,26 @@ class RGBVC: UIViewController
     // POST: A color wheel is added onto the loaded view
     func createTheColorWheel()
     {
-        //        let colorWheelSize: CGSize = CGSizeMake(self.view.bounds.size.width * 0.9, self.view.bounds.size.height * 0.5)
+        // iPhone 6S best settings
+        //        let colorWheelSize: CGSize = CGSizeMake(colorView.bounds.size.width * 0.9, colorView.bounds.size.height * 0.9)
         //        
-        //        colorWheelView = ISColorWheel(frame: CGRect(x: self.view.bounds.size.width / 2 - colorWheelSize.width / 2, y: self.view.bounds.size.height * 0.1, width: colorWheelSize.width, height: colorWheelSize.height))
+        //        colorWheelView = ISColorWheel(frame: CGRect(x: colorWheelSize.width/14, y: 15, width: colorView.bounds.size.width/2, height: colorView.bounds.size.height))
         
-        let colorWheelSize: CGSize = CGSizeMake(self.view.bounds.size.width * 0.8, self.view.bounds.size.height * 0.5)
+        colorView.backgroundColor = UIColor.brownColor()
         
-        colorWheelView = ISColorWheel(frame: CGRect(x: self.view.bounds.size.width / 10, y: self.view.bounds.size.height / 1000, width: colorWheelSize.width, height: colorWheelSize.height))
+        colorWheelView = ISColorWheel(frame: CGRect(x: 0, y: 0, width: colorView.frame.size.width/5, height: colorView.frame.size.height/5))
+        
+        print(colorView.frame.size.height)
+        print(colorWheelView.frame.size.height)
+        
+        colorWheelView.backgroundColor = UIColor.blueColor()
         
         colorWheelView.delegate = self
         // if true, a single tap and drag reflects colour changes
         // if false, a user is required to drag and stop at a point for the colour to be changed
         colorWheelView.continuous = false
         
-        self.view.addSubview(colorWheelView)
+        colorView.addSubview(colorWheelView)
     }
     
     func createTheColourTitleLabels()
