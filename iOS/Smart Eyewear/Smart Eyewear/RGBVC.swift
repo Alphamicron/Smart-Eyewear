@@ -16,15 +16,25 @@ class RGBVC: UIViewController
     var greenLabel: UILabel = UILabel()
     var blueLabel: UILabel = UILabel()
     
-    var redSlider: UISlider = UISlider()
-    var greenSlider: UISlider = UISlider()
-    var blueSlider: UISlider = UISlider()
+    //    var redSlider: UISlider = UISlider()
+    //    var greenSlider: UISlider = UISlider()
+    //    var blueSlider: UISlider = UISlider()
     
-    var redValueLabel: UILabel = UILabel()
-    var greenValueLabel: UILabel = UILabel()
-    var blueValueLabel: UILabel = UILabel()
+    //    var redValueLabel: UILabel = UILabel()
+    //    var greenValueLabel: UILabel = UILabel()
+    //    var blueValueLabel: UILabel = UILabel()
+    
+    
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
+    
+    @IBOutlet weak var redValueLabel: UILabel!
+    @IBOutlet weak var greenValueLabel: UILabel!
+    @IBOutlet weak var blueValueLabel: UILabel!
     
     @IBOutlet weak var colorView: UIView!
+    
     
     override func viewDidLoad()
     {
@@ -202,7 +212,8 @@ class RGBVC: UIViewController
         self.view.addSubview(blueValueLabel)
     }
     
-    func redSliderTapped(sender: UISlider)
+    
+    @IBAction func redSliderTapped(sender: UISlider)
     {
         redValueLabel.text = String(Int(sender.value))
         
@@ -211,7 +222,7 @@ class RGBVC: UIViewController
         ConnectionVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
     
-    func greenSliderTapped(sender: UISlider)
+    @IBAction func greenSliderTapped(sender: UISlider)
     {
         greenValueLabel.text = String(Int(sender.value))
         
@@ -220,7 +231,7 @@ class RGBVC: UIViewController
         ConnectionVC.currentlySelectedDevice.led?.setLEDColorAsync(userDesiredColor, withIntensity: Constants.defaultLEDIntensity)
     }
     
-    func blueSliderTapped(sender: UISlider)
+    @IBAction func blueSliderTapped(sender: UISlider)
     {
         blueValueLabel.text = String(Int(sender.value))
         
