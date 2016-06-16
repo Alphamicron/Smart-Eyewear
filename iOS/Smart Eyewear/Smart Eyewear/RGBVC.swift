@@ -61,6 +61,18 @@ class RGBVC: UIViewController
         
         self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavRGBWhite"))
+        
+        // initialise with a value first
+        redSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.red)!, animated: true)
+        greenSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.green)!, animated: true)
+        blueSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.blue)!, animated: true)
+        
+        // initialise them with the current colour wheel's colour value
+        redValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.red)!))
+        greenValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.green)!))
+        blueValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.blue)!))
+        
+        
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -212,7 +224,6 @@ class RGBVC: UIViewController
         self.view.addSubview(blueValueLabel)
     }
     
-    
     @IBAction func redSliderTapped(sender: UISlider)
     {
         redValueLabel.text = String(Int(sender.value))
@@ -248,8 +259,6 @@ extension RGBVC: ISColorWheelDelegate
     {
         ConnectionVC.currentlySelectedDevice.led?.setLEDColorAsync(colorWheel.currentColor, withIntensity: Constants.defaultLEDIntensity)
         
-        // TODO: Is this update really necessary
-        // update the sliders to reflect the current colour being hovered over by the wheel
         redSlider.setValue((colorWheel.currentColor.getRGBAValue()?.red)!, animated: true)
         greenSlider.setValue((colorWheel.currentColor.getRGBAValue()?.green)!, animated: true)
         blueSlider.setValue((colorWheel.currentColor.getRGBAValue()?.blue)!, animated: true)
