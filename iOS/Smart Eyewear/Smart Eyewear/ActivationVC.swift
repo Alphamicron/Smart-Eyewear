@@ -84,6 +84,7 @@ class ActivationVC: UIViewController
     {
         if sender.value < metaWearValueSlider.value
         {
+            // TODO: Check if its already ON before actually turning it ON.
             ActivationVC.turnLED(Constants.LEDState.On)
         }
         else
@@ -131,8 +132,6 @@ class ActivationVC: UIViewController
             metaWearValueSlider.minimumTrackTintColor = Constants.themeRedColour
             
             helpBtn.hidden = false
-            
-            //            ActivationVC.turnLED(Constants.LEDState.On)
             
             userThresholdSlider.setValue(Constants.userThresholdMaximumValue/2, animated: true)
             userThresholdSlider.userInteractionEnabled = true
