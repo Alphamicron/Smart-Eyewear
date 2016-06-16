@@ -15,12 +15,11 @@ class ActivationVC: UIViewController
     //    @IBOutlet weak var userThresholdLabel: UILabel!
     //    @IBOutlet weak var metaWearLabel: UILabel!
     @IBOutlet weak var manualSwitch: UISwitch!
-    
     @IBOutlet weak var automaticSwitch: UISwitch!
     
     @IBOutlet weak var manualBtn: UIButton!
-    @IBOutlet weak var automaticBtn: UIButton!
     @IBOutlet weak var helpBtn: UIButton!
+    
     @IBOutlet weak var helpTextLabel: UILabel!
     
     @IBOutlet weak var cloudyImageView: UIImageView!
@@ -154,6 +153,9 @@ class ActivationVC: UIViewController
             userThresholdSlider.minimumTrackTintColor = Constants.themeInactiveStateColour
             metaWearValueSlider.minimumTrackTintColor = Constants.themeInactiveStateColour
             
+            userThresholdSlider.setValue(Float(), animated: true)
+            metaWearValueSlider.setValue(Float(), animated: true)
+            
             setImagesForState(Constants.LEDState.Off)
             
             ActivationVC.turnLED(Constants.LEDState.Off)
@@ -259,12 +261,9 @@ class ActivationVC: UIViewController
         helpBtn.hidden = true
         helpTextLabel.hidden = true
         
-        cloudyImageView.image = UIImage(named: "CloudsGray")
-        cloudySunnyImageView.image = UIImage(named: "CloudsSunnyGray")
-        sunnyImageView.image = UIImage(named: "SunnyGray")
+        setImagesForState(Constants.LEDState.Off)
         
         manualBtn.setTitle("OFF", forState: .Normal)
-        automaticBtn.setTitle("OFF", forState: .Normal)
     }
     
     // POST: Get voltage of photo sensor pin and reflects it onto the metaWearSlider
@@ -308,60 +307,6 @@ class ActivationVC: UIViewController
     func repeatThisTaskEvery(requiredTask: Selector, taskDuration: NSTimeInterval)
     {
         Constants.defaultTimer = NSTimer.scheduledTimerWithTimeInterval(taskDuration, target: self, selector: requiredTask, userInfo: nil, repeats: true)
-    }
-    
-    func automaticButtonClicked(sender: UIButton)
-    {
-        if !Constants.isDeviceConnected()
-        {
-            Constants.defaultErrorAlert(self, errorTitle: "Invalid Operation", errorMessage: "A device needs to be connected to continue", errorPriority: Constants.AlertPriority.Medium)
-        }
-        else
-        {
-            sender.selected = !sender.selected
-            
-            // automatic mode selected
-            if sender.selected
-            {
-                unhideAllAutomaticOperationStuff()
-                
-                hideAllManualOperationStuff()
-                
-                // update photo sensor value each second
-                repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
-            }
-            else
-            {
-                Constants.defaultTimer.invalidate()
-                hideAllAutomaticOperationStuff()
-            }
-        }
-    }
-    
-    func hideAllManualOperationStuff()
-    {
-        manualSwitch.on = false
-        manualSwitch.hidden = true
-        manualBtn.selected = false
-    }
-    
-    func hideAllAutomaticOperationStuff()
-    {
-        //        metaWearLabel.hidden = true
-        metaWearValueSlider.hidden = true
-        userThresholdSlider.hidden = true
-        //        userThresholdLabel.hidden = true
-        automaticBtn.selected = false
-    }
-    
-    // POST: Sets a random slider value at first then unhides corresponding stuff
-    func unhideAllAutomaticOperationStuff()
-    {
-        metaWearValueSlider.hidden = false
-        userThresholdSlider.hidden = false
-        
-        //        metaWearLabel.hidden = false
-        //        userThresholdLabel.hidden = false
     }
     
     static func turnLED(ledState: Constants.LEDState)

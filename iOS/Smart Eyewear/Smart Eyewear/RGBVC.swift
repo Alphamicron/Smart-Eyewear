@@ -68,7 +68,6 @@ class RGBVC: UIViewController
         redValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.red)!))
         greenValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.green)!))
         blueValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.blue)!))
-        
     }
     
     override func viewWillDisappear(animated: Bool)
