@@ -84,15 +84,12 @@ class ActivationVC: UIViewController
     {
         if sender.value < metaWearValueSlider.value
         {
-            // TODO: Check if its already ON before actually turning it ON.
             ActivationVC.turnLED(Constants.LEDState.On)
         }
         else
         {
             ActivationVC.turnLED(Constants.LEDState.Off)
         }
-        
-        //        userThresholdLabel.text = String(Int(userThresholdSlider.value))
     }
     
     // POST: tracks when manual mode is activated
