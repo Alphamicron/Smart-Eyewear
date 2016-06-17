@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JSSAlertView-JSSAlertView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>JSSAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,6 +62,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>72D57DED5129BDCAEB112D61B15B08A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>80B247A10EB35D5F4C1AB30928E44A8C</key>
 		<dict>
 			<key>primary</key>
@@ -82,17 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD323711AE430DFCADA96049B1EF6AD0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B272B33F162D6E5C3510BA50ECF2684B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE7B09D7AABB33662D3B092926DCFF8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

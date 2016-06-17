@@ -10,7 +10,7 @@ import UIKit
 
 class RGBVC: UIViewController
 {
-    var colorWheelView: ISColorWheel = ISColorWheel()
+    var colorWheel: ISColorWheel = ISColorWheel()
     
     var redLabel: UILabel = UILabel()
     var greenLabel: UILabel = UILabel()
@@ -60,14 +60,14 @@ class RGBVC: UIViewController
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavRGBWhite"))
         
         // initialise with a value first
-        redSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.red)!, animated: true)
-        greenSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.green)!, animated: true)
-        blueSlider.setValue((colorWheelView.currentColor.getRGBAValue()?.blue)!, animated: true)
+        redSlider.setValue((colorWheel.currentColor.getRGBAValue()?.red)!, animated: true)
+        greenSlider.setValue((colorWheel.currentColor.getRGBAValue()?.green)!, animated: true)
+        blueSlider.setValue((colorWheel.currentColor.getRGBAValue()?.blue)!, animated: true)
         
         // initialise them with the current colour wheel's colour value
-        redValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.red)!))
-        greenValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.green)!))
-        blueValueLabel.text = String(Int((colorWheelView.currentColor.getRGBAValue()?.blue)!))
+        redValueLabel.text = String(Int((colorWheel.currentColor.getRGBAValue()?.red)!))
+        greenValueLabel.text = String(Int((colorWheel.currentColor.getRGBAValue()?.green)!))
+        blueValueLabel.text = String(Int((colorWheel.currentColor.getRGBAValue()?.blue)!))
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -89,20 +89,55 @@ class RGBVC: UIViewController
         // iPhone 6S best settings
         //        let colorWheelSize: CGSize = CGSizeMake(colorView.bounds.size.width * 0.9, colorView.bounds.size.height * 0.9)
         //        
-        //        colorWheelView = ISColorWheel(frame: CGRect(x: colorWheelSize.width/14, y: 15, width: colorView.bounds.size.width/2, height: colorView.bounds.size.height))
+        //        colorWheel = ISColorWheel(frame: CGRect(x: colorWheelSize.width/14, y: 15, width: colorView.bounds.size.width/2, height: colorView.bounds.size.height))
+        
+        
+        //        CGSize size = self.view.bounds.size;
+        //        
+        //        CGSize wheelSize = CGSizeMake(size.width * .9, size.width * .9);
+        //        
+        //        _colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(size.width / 2 - wheelSize.width / 2,
+        //            size.height * .1,
+        //            wheelSize.width,
+        //            wheelSize.height)];
+        //        _colorWheel.delegate = self;
+        //        _colorWheel.continuous = true;
+        //        [self.view addSubview:_colorWheel];
         
         colorView.backgroundColor = UIColor.brownColor()
         
-        colorWheelView = ISColorWheel(frame: CGRect(x: 0, y: 0, width: colorView.frame.size.width/2, height: colorView.frame.size.height/2))
+        let size: CGSize = colorView.bounds.size
         
-        colorWheelView.backgroundColor = UIColor.blueColor()
+        let wheelSize = CGSizeMake(size.width * 0.9, size.width * 0.9)
         
-        colorWheelView.delegate = self
-        // if true, a single tap and drag reflects colour changes
-        // if false, a user is required to drag and stop at a point for the colour to be changed
-        colorWheelView.continuous = false
+        colorWheel = ISColorWheel(frame: CGRect(x: size.width/2 - wheelSize.width/2, y: size.height * 0.1, width: wheelSize.width, height: wheelSize.height))
         
-        colorView.addSubview(colorWheelView)
+        //        colorWheel = ISColorWheel(frame: CGRectMake(size.width/2-wheelSize.width/2, size.height * 0.1, wheelSize.width, wheelSize.height))
+        
+        colorWheel.backgroundColor = UIColor.blueColor()
+        
+        colorWheel.delegate = self
+        colorWheel.continuous = false
+        
+        //        colorView.addSubview(colorWheel)
+        colorView.removeFromSuperview()
+        
+        self.view.addSubview(colorWheel)
+        
+        
+        //        colorView = colorWheel
+        
+        //
+        //        colorWheel = ISColorWheel(frame: CGRect(x: 0, y: 0, width: colorView.frame.size.width/2, height: colorView.frame.size.height/2))
+        //        
+        //        colorWheel.backgroundColor = UIColor.blueColor()
+        //        
+        //        colorWheel.delegate = self
+        //        // if true, a single tap and drag reflects colour changes
+        //        // if false, a user is required to drag and stop at a point for the colour to be changed
+        //        colorWheel.continuous = false
+        //        
+        //        colorView.addSubview(colorWheel)
     }
     
     @IBAction func redSliderTapped(sender: UISlider)
