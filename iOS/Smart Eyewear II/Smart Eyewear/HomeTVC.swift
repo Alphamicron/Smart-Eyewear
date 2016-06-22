@@ -109,7 +109,7 @@ class HomeTVC: UITableViewController
         case 3:
             performSegueWithIdentifier("segueToRGB", sender: self)
         case 4:
-            performSegueWithIdentifier("segueToOthers", sender: self)
+            performSegueWithIdentifier("segueToSensors", sender: self)
         default:
             return
         }

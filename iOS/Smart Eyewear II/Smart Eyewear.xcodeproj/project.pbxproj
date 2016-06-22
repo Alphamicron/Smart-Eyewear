@@ -13,6 +13,7 @@
 		3018118A1D0729D400E4941C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811891D0729D400E4941C /* Modal.swift */; };
 		302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 302A63311CF74A4A00109C02 /* ISColorWheel.m */; };
 		307B0D211D0CA3940095B2C2 /* RGBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B0D201D0CA3940095B2C2 /* RGBVC.swift */; };
+		30972E081D1B05EF002BA825 /* MotionSensorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */; };
 		30A9209A1D08802B00F0EA5D /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A920991D08802B00F0EA5D /* ConnectionVC.swift */; };
 		30D5E61C1D0B24B400681EC6 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5E61B1D0B24B400681EC6 /* CustomNavigationBar.swift */; };
 		30D5E61E1D0B366300681EC6 /* OthersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5E61D1D0B366300681EC6 /* OthersVC.swift */; };
@@ -55,6 +56,7 @@
 		302A63301CF74A4A00109C02 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		302A63311CF74A4A00109C02 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
 		307B0D201D0CA3940095B2C2 /* RGBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBVC.swift; sourceTree = "<group>"; };
+		30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionSensorsVC.swift; sourceTree = "<group>"; };
 		30A920991D08802B00F0EA5D /* ConnectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
 		30D5E61B1D0B24B400681EC6 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		30D5E61D1D0B366300681EC6 /* OthersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthersVC.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				307B0D201D0CA3940095B2C2 /* RGBVC.swift */,
 				30A920991D08802B00F0EA5D /* ConnectionVC.swift */,
 				30D5E61D1D0B366300681EC6 /* OthersVC.swift */,
+				30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */,
 				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
 				B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */,
 				301811871D0724CD00E4941C /* HomeTVC.swift */,
@@ -629,6 +632,7 @@
 			files = (
 				3018118A1D0729D400E4941C /* Modal.swift in Sources */,
 				B23DAEB21CF4AE35003BD7FE /* BatteryLevelVC.swift in Sources */,
+				30972E081D1B05EF002BA825 /* MotionSensorsVC.swift in Sources */,
 				30A9209A1D08802B00F0EA5D /* ConnectionVC.swift in Sources */,
 				30D5E61C1D0B24B400681EC6 /* CustomNavigationBar.swift in Sources */,
 				301811881D0724CD00E4941C /* HomeTVC.swift in Sources */,

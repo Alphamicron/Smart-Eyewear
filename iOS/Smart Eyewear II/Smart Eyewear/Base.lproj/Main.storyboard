@@ -333,7 +333,7 @@
                         <segue destination="G0t-W8-jyp" kind="show" identifier="segueToBTConnection" id="adV-C3-cnU"/>
                         <segue destination="mcf-eH-agu" kind="show" identifier="segueToBatteryLevel" id="Ais-a5-DGK"/>
                         <segue destination="lwX-Ke-ms8" kind="show" identifier="segueToActivation" id="XLw-A4-jVH"/>
-                        <segue destination="Wo5-L9-OaJ" kind="show" identifier="segueToOthers" id="5kh-a8-fJa"/>
+                        <segue destination="Wo5-L9-OaJ" kind="show" identifier="segueToSensors" id="5kh-a8-fJa"/>
                         <segue destination="EMN-re-XCe" kind="show" identifier="segueToRGB" id="eYC-wV-yAQ"/>
                     </connections>
                 </tableViewController>
@@ -341,10 +341,10 @@
             </objects>
             <point key="canvasLocation" x="1329" y="-1204"/>
         </scene>
-        <!--OthersVC-->
+        <!--Motion SensorsVC-->
         <scene sceneID="Wm8-pL-eC1">
             <objects>
-                <viewController id="Wo5-L9-OaJ" customClass="OthersVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wo5-L9-OaJ" customClass="MotionSensorsVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XC6-6h-dhy"/>
                         <viewControllerLayoutGuide type="bottom" id="2Uw-uv-cyK"/>
