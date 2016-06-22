@@ -1,0 +1,6 @@
+framework module Pods_Smart_Eyewear {
+  umbrella header "Pods-Smart Eyewear-umbrella.h"
+
+  export *
+  module * { export * }
+}

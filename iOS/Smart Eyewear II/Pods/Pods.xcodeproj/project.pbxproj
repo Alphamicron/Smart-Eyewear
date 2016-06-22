@@ -1,0 +1,1845 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03F3AFF196E9E8A3F19BC91B5315961B /* PNChart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CFDC6C73B27275C5ECB41B55DB99BE7 /* PNChart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04546466F0033FBA31F45180477613B3 /* Pods-Smart EyewearUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E782188850466E4DF078ECAE869316 /* Pods-Smart EyewearUITests-dummy.m */; };
+		08672331D03D2FAE07F840C369F21B3E /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7327C25BB710726C5208F5C41176B854 /* PNPieChart.m */; };
+		0D6EE0965E430AAFD2E7A800D9B1E948 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		0DACF61783A5911B7DBC35AB25E65393 /* PNScatterChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A19793186A246C14F7FDF9C34AF37E /* PNScatterChart.m */; };
+		0E265E3E7205D2700890106A7824FC9C /* BFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 077AC3946DB732EBAF42E44B065B628D /* BFTask.m */; };
+		0E328F3D9F2225ADCF3FB40D02E06385 /* Pods-Smart EyewearUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A26A666F1D7482203B535D3EB19CF0F0 /* Pods-Smart EyewearUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F16649A56FBD0296BE92E912E7EBABB /* BFExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C30F0A07AD23C91EC10885FEB093073 /* BFExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1044BACAA0F2B00DF1419F89A82D91B1 /* FastCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CCA32990429925764CC6889EF47E4 /* FastCoder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1233196329D27B0B664DB087B2F9A86B /* PNBarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1AB5C4090AB43B9A88AECA50F2D86B /* PNBarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A852E4E5E3DFDA8919F2980BC8664D5 /* UICountingLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 714514AC90F790550A09E4BB7803AD4B /* UICountingLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CBE13FFAB5A46116FECBD96967ADA87 /* PNScatterChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = C829DD8E4E1D8EA8ED1A25D56C5B7AA3 /* PNScatterChartData.m */; };
+		1EE85F95473596165EC40CEB3E04048A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		1FA524F788771A81EBFDCE9A8BC62596 /* PNCircleChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 4642BBAABB3F51E4E34FA347A30617A6 /* PNCircleChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2128CA0C6DE95E52DF780F8042E7E60C /* PNPieChart.h in Headers */ = {isa = PBXBuildFile; fileRef = A16C860E006DCA8E784BD5A3A00B3E30 /* PNPieChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23D731D7D2DEB047AED5F567FF57CAE0 /* FastCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4CDBD12296F241BD514656FC582D7D /* FastCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2705BC03E01B384120D2D3ACAD26F8EB /* UICountingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F26F584823681463AE7AF04D67CA6B06 /* UICountingLabel-dummy.m */; };
+		27FA4C560364ACF28061666AE5155D00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE6C79B18FACDA3BE0ECDB067E9EFA6 /* CoreGraphics.framework */; };
+		2AEE2A9BDB1A753BBC647871F79BE5B5 /* PNChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85266D62368F186049B0654D4D47D248 /* PNChart-dummy.m */; };
+		336ADD6FC3AA8C7867542670EB568FD1 /* Pods-Smart Eyewear-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0000F4734BC2CC7094C9AC9FC0A17F2F /* Pods-Smart Eyewear-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33D5FAE8252CAF41795E199056F65450 /* FastCoding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A64C29ABCA3C253C62D8043BBF0B72BD /* FastCoding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35A2B651CF9001857F8EC53FC150E637 /* PNScatterChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B454B30A2D3585054A027A436D3A203E /* PNScatterChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CCB5E678B6CD6FDEE4DFEAA800BF53A /* Bolts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8117A9CFA75B4349580CBEC3BC0B64B3 /* Bolts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E7416BF3B3BD74F97960609897A6A47 /* PNGenericChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA65AE6F5FEE4D7FA79E28E3EFE60D9 /* PNGenericChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40D493EEA434471CEBDED7565F75B24C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		423AABFB884F74A7074308E0BE76AD9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		427C2DD344E0CDE18760C366D0B7249C /* Bolts.h in Headers */ = {isa = PBXBuildFile; fileRef = 56BFF8843F07C353FF533E04AC5F3475 /* Bolts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43093F4EF5176D9036A3263ECC53E1EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		4445FD5A94FB258B834E9EC6C519437B /* PNRadarChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F755AF343DBBF648DD1360043FF5A9 /* PNRadarChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44503E62F0F804B46B1BFF93DC05EDF4 /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 147729F7CDF99C4ED03CCA8CD6D78FB5 /* BFCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44F06257F3862A43EEFE681411D36FB6 /* BFCancellationTokenRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4354482EA24F9606B0878E9B6391A6E2 /* BFCancellationTokenRegistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4686B7D44AADA84F725CDE0AA159499A /* PNBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AAADA4789D24DB852A3EE36ABFD2A4C /* PNBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46CA19C2B6537554FCA9A2E69D051012 /* PNScatterChartData.h in Headers */ = {isa = PBXBuildFile; fileRef = B31250E21A335E78460FE8EE2E355D1A /* PNScatterChartData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		527E58B2C10E408428F9059FD9EEE624 /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D2031E9546CF00014F7D149D40F624 /* PNLineChart.m */; };
+		5343465689F54EB30F454AD1F903C309 /* BFExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BC3B4ED09A740538CE4EC0D5342855 /* BFExecutor.m */; };
+		5538E17255A2C3CA864393F3419C6825 /* PNPieChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A29C514ABB44D45200A8FD21E93D8CC4 /* PNPieChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6440919F591FCAB877183C8AF8763650 /* FastCoding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCAB929F04DF1077C20736496852F /* FastCoding-dummy.m */; };
+		6A511F3E9E21F7FC4A63F4DCA1F1136D /* PNRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E53F803B13852706710A27768D28CE /* PNRadarChartDataItem.m */; };
+		6F3BEDBDDA0CB23A2B9078CD45182997 /* PNRadarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A76D2135F68577B4EA74C564F85347D /* PNRadarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73457B81D7A2C6D89AE96FF2DF2A8C58 /* UICountingLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9103AD49AA73F4AFAC5A6BD63F2B787 /* UICountingLabel.framework */; };
+		77AECFAD996EFE8C50387C78F2EBD235 /* PNColor.h in Headers */ = {isa = PBXBuildFile; fileRef = A06642CDDFB332E68342CD249F9A0DF1 /* PNColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77E3A7EDAF04B067B82E20B976EE533B /* UICountingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = F0A7087E784B3E288B798A51F0AEFE88 /* UICountingLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79E3B45D90155453A244BFD7E428708E /* BFCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 945B2C99FB3C8FB087DE48A046B78BA7 /* BFCancellationTokenRegistration.m */; };
+		7EA1176A7BD46B6E4D0628C85D1EA0B4 /* BFTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 388BF2B502B7ECB838906E84CC86BA3E /* BFTaskCompletionSource.m */; };
+		816327E3B5B4030A335B1954F78CBA9B /* BFCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D291F2295D4FBA2D1BCAFF6C288D057 /* BFCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		836CB7E83B915DD310FC17C0658CB9CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948CB810917EECC7BC8A89F9F56FA161 /* UIKit.framework */; };
+		865AB43D9552A0CA829D2B5659740EA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ED9483A09851FB9EBA2AD743060706 /* QuartzCore.framework */; };
+		880CDD0D520203697F779D34935E2130 /* PNGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A12A2BBF36E12FCFDEF77A5134554 /* PNGenericChart.m */; };
+		88DD09E622BEEE0AC27E18D034EDF826 /* PNLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = C1693FB06AD31EF0F9FC5B163D220728 /* PNLineChartData.m */; };
+		89BC7093DC782F6880CEB7623ABDA1BC /* JSSAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F04B763A36949346D39A22143BA79 /* JSSAlertView-dummy.m */; };
+		8E809B047E2877E0A241FCC5E5C4314D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		8F18C758F242CA1BAEEDB0B6906252CE /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D228D4B332591EE8BF9B901456AF171 /* PNPieChartDataItem.m */; };
+		94933B136DB3AE83353A8B8C7A5A1A15 /* PNLineChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E92699E63CE9BA6470316ED0D916D /* PNLineChartDataItem.m */; };
+		9759466F486DB2D728C0BAF71A52469C /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7A089489ED20F4134079861045445D /* UICountingLabel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A06835C8E53757EFC7B5C3FF5D1CAC84 /* JSSAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F631D2988984352E0D1388DEFE17C47 /* JSSAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A400B20AADF31528D0085AE05567EB71 /* Bolts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E82E2E4037658203772940B82D4C4F /* Bolts-dummy.m */; };
+		A81D6052693A96D2DCEB37728A2C9015 /* PNLineChart.h in Headers */ = {isa = PBXBuildFile; fileRef = BABB3EB00D08458CC76C386B1642319B /* PNLineChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA1468AFCEE75F6FAA49E33D589C9C16 /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1B4E84E49B48244EBC2409400803D1 /* PNColor.m */; };
+		AAFA95344509AA286425B73468E1BFD3 /* PNChartLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 8089A17CBDB3424FAAA818A0BD34217C /* PNChartLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B52731FAFDE1196E35D00724C612EA25 /* PNCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 76901D5C56CEDE771A4F1148A8A004A0 /* PNCircleChart.m */; };
+		B83754258D25CA46BD8D650FEEABA48C /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F074672612E37FF3A589B252506F2CC /* JSSAlertView.swift */; };
+		BCAB5C1ED3CA194258944FA04B450912 /* Pods-Smart EyewearTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 776015DE9D036690C224D75B5BCD2590 /* Pods-Smart EyewearTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C28B8A54BD1679210221A151EF4ADD36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		C48EF1D77A443EE3378EF52E88583559 /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B4311D8B888AE8E3DC3EDEE9CCDA96A9 /* PNBar.m */; };
+		C555D454E9BFA26AFDF851E0EDB38AAE /* PNLineChartData.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FB860E1C171F15434A2CDAB244214D3 /* PNLineChartData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C86CA8AC9710D6679F106D4C9BE89823 /* BFCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E82BB8C7E4F3B210717AC4DB2DA79C /* BFCancellationTokenSource.m */; };
+		D2D70B403A85C8C6C62013C538C9B0A8 /* BFCancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A855832AFD3CF4B0C6BCC7DC55CD0E0E /* BFCancellationToken.m */; };
+		D7BC261597874B2DBE31E1B8D45D2718 /* BFTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 57CD17C2BC0D2BCA09C4E9403D8964C8 /* BFTaskCompletionSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D82F428D6D1B7822967480842D54C41E /* PNLineChartDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DA3B9C4E2D9519346B9EDEADEDDF4F5 /* PNLineChartDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA01B63653AAFBFD2D45EB53D601DD6F /* Pods-Smart Eyewear-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E27550F189E9927D86ED502524FCA743 /* Pods-Smart Eyewear-dummy.m */; };
+		DD4C2E323E2052ADF508C30F57D5B15E /* Pods-Smart EyewearTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B48D6C8EC9BB5BB7590AF50414DBBA32 /* Pods-Smart EyewearTests-dummy.m */; };
+		E00FEA6FCC637111F44C5E2AF709B418 /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D253632E90164D743C617B61F4C37B /* PNBarChart.m */; };
+		E065A8BA46DC4B001E0FD81E770A7E0A /* PNChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B582606EAE257FBC5A9B6E5E4D47CFE /* PNChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E20B1756CC705A2376E5AC874191610B /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B75946F1CC4C7036ABAF702CFB6E2D5B /* PNScatterChartDataItem.m */; };
+		E5C01C5192623F1A468530DFB94DBF2D /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B155CD86FA0DAAD3AA30FC50553AC8B /* PNChartLabel.m */; };
+		E8CC9CA47448AF29C9EA1421D5605060 /* PNChartDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AB784708CFF081490756E4666222AAD /* PNChartDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0B5B035D67E322F004ED48D01C3510C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651A6F66636286310C71FA415F5163FA /* Foundation.framework */; };
+		F51D6E2E0C6803E73BE09464A04F3B9A /* PNRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96D7CC31927948FDD4186AF9D9FA46 /* PNRadarChart.m */; };
+		F6D277FFA94AC18BEEEFC7C71B8A7A81 /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 99AB00D6135E8DF39C8E10BA2ABDA917 /* BFTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F99889703B01753C466CE3BB4B999AE0 /* Bolts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1751DF1A292B3D7B520CDB711F7D7D /* Bolts.m */; };
+		FF64A823B87747F95068653BFD7A446C /* PNScatterChart.h in Headers */ = {isa = PBXBuildFile; fileRef = B978AD4CC6F416A70EFC94EA9E3EB8B0 /* PNScatterChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		261DBEDC094E61574C6FB4FBC049B5F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B272B33F162D6E5C3510BA50ECF2684B;
+			remoteInfo = Bolts;
+		};
+		431BAB2A39F967693EF6BDF899C7175F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50A790513C5191169FDD5EEBC495AF28;
+			remoteInfo = FastCoding;
+		};
+		8859CBDA1A479DE37859DD13B2870A5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 016D982990393D4CF14C8AE7998AEC65;
+			remoteInfo = PNChart;
+		};
+		A972370D5AA41B8F5CDFFA3E6AB8FAF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72D57DED5129BDCAEB112D61B15B08A2;
+			remoteInfo = JSSAlertView;
+		};
+		BB8ADC1C804D69280ED1E9672BB4172F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C18C789438292FED01EB702705FC9AA;
+			remoteInfo = UICountingLabel;
+		};
+		E6735ACADDD45492411E111D3B38C675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C18C789438292FED01EB702705FC9AA;
+			remoteInfo = UICountingLabel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0000F4734BC2CC7094C9AC9FC0A17F2F /* Pods-Smart Eyewear-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smart Eyewear-umbrella.h"; sourceTree = "<group>"; };
+		0072A93F6671BDA7481D0B8141EF8132 /* MBLRMSAccelerometerData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLRMSAccelerometerData.h; path = MetaWear.framework/Versions/A/Headers/MBLRMSAccelerometerData.h; sourceTree = "<group>"; };
+		0334EF1D698F266392186F119097C534 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		054B4CE8FBE3C7C5AEA0EF0D5210D727 /* MBLRGBData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLRGBData.h; path = MetaWear.framework/Versions/A/Headers/MBLRGBData.h; sourceTree = "<group>"; };
+		077AC3946DB732EBAF42E44B065B628D /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
+		07B7B10F3571DABE9A5B7CD90049565C /* Pods-Smart EyewearTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart EyewearTests-resources.sh"; sourceTree = "<group>"; };
+		092884DCAF00BB19CA3148AE91252DB0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A1B4E84E49B48244EBC2409400803D1 /* PNColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNColor.m; path = PNChart/PNColor.m; sourceTree = "<group>"; };
+		0A76D2135F68577B4EA74C564F85347D /* PNRadarChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNRadarChart.h; path = PNChart/PNRadarChart.h; sourceTree = "<group>"; };
+		0B7076762C97CE515A20403947E06B3B /* Pods-Smart EyewearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart EyewearTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0BCFDA1245B430B05AD4D6B86C4C69C1 /* JSSAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JSSAlertView.xcconfig; sourceTree = "<group>"; };
+		0D1AB5C4090AB43B9A88AECA50F2D86B /* PNBarChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNBarChart.h; path = PNChart/PNBarChart.h; sourceTree = "<group>"; };
+		0DA65AE6F5FEE4D7FA79E28E3EFE60D9 /* PNGenericChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNGenericChart.h; path = PNChart/PNGenericChart.h; sourceTree = "<group>"; };
+		0E29F8D3B050EEC1E060BE9B9B8AA213 /* MBLConductance.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLConductance.h; path = MetaWear.framework/Versions/A/Headers/MBLConductance.h; sourceTree = "<group>"; };
+		0F720E81CE6648163123700DF0874353 /* MBLAccelerometerBMA255MotionEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometerBMA255MotionEvent.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometerBMA255MotionEvent.h; sourceTree = "<group>"; };
+		147729F7CDF99C4ED03CCA8CD6D78FB5 /* BFCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationToken.h; path = Bolts/Common/BFCancellationToken.h; sourceTree = "<group>"; };
+		1762699D7A556E849E237A50CAD1774E /* MBLEntityModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLEntityModule.h; path = MetaWear.framework/Versions/A/Headers/MBLEntityModule.h; sourceTree = "<group>"; };
+		18E083760BB1D090A3D4522C8C78FF50 /* MBLBarometerBosch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLBarometerBosch.h; path = MetaWear.framework/Versions/A/Headers/MBLBarometerBosch.h; sourceTree = "<group>"; };
+		1D291F2295D4FBA2D1BCAFF6C288D057 /* BFCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenSource.h; path = Bolts/Common/BFCancellationTokenSource.h; sourceTree = "<group>"; };
+		1E5CC987E31BC8E61A4B38D4A55E6C0D /* JSSAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSSAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F074672612E37FF3A589B252506F2CC /* JSSAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSSAlertView.swift; path = Pod/Classes/JSSAlertView.swift; sourceTree = "<group>"; };
+		2768D06CEC7B92888E62A2104B705957 /* MBLMagnetometerBMM150.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLMagnetometerBMM150.h; path = MetaWear.framework/Versions/A/Headers/MBLMagnetometerBMM150.h; sourceTree = "<group>"; };
+		2AF998137792F48BDA0EB7F7ECB8C1BD /* UICountingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UICountingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D8B67A4EB33A8E53737A970548522F2 /* Pods-Smart EyewearTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Smart EyewearTests.modulemap"; sourceTree = "<group>"; };
+		2EFFEBB3D5EDBD99D8FB5FDE6B527883 /* UICountingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UICountingLabel.xcconfig; sourceTree = "<group>"; };
+		2FB860E1C171F15434A2CDAB244214D3 /* PNLineChartData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChartData.h; path = PNChart/PNLineChartData.h; sourceTree = "<group>"; };
+		30E53F803B13852706710A27768D28CE /* PNRadarChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNRadarChartDataItem.m; path = PNChart/PNRadarChartDataItem.m; sourceTree = "<group>"; };
+		31BC3B4ED09A740538CE4EC0D5342855 /* BFExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFExecutor.m; path = Bolts/Common/BFExecutor.m; sourceTree = "<group>"; };
+		322C0FA94D6BBA3CACF1CE17DD986286 /* MBLAccelerometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometer.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometer.h; sourceTree = "<group>"; };
+		335B26B479A432484E06B4852E213341 /* Pods-Smart EyewearUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart EyewearUITests-resources.sh"; sourceTree = "<group>"; };
+		338AD924B44705F53D00D6075CD60E3B /* MBLModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLModule.h; path = MetaWear.framework/Versions/A/Headers/MBLModule.h; sourceTree = "<group>"; };
+		340F04B763A36949346D39A22143BA79 /* JSSAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSSAlertView-dummy.m"; sourceTree = "<group>"; };
+		3526943C746C4198C4F4B4AF01911B15 /* Pods-Smart EyewearUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smart EyewearUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		359E6D62DA32944A79EC13C88077399B /* MBLStringData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLStringData.h; path = MetaWear.framework/Versions/A/Headers/MBLStringData.h; sourceTree = "<group>"; };
+		36513ECCAEAB9B99D7DEFC710BDEE682 /* FastCoding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastCoding-prefix.pch"; sourceTree = "<group>"; };
+		3679940633277F11B859AAF5E1C0238A /* FastCoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastCoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		373163B0438EB7FA1C0A6A9C1562C730 /* MBLAmbientLightLTR329.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAmbientLightLTR329.h; path = MetaWear.framework/Versions/A/Headers/MBLAmbientLightLTR329.h; sourceTree = "<group>"; };
+		388BF2B502B7ECB838906E84CC86BA3E /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
+		3994EAB673F2E27FFF3AAECE2DEBD7E5 /* Pods-Smart EyewearUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Smart EyewearUITests.modulemap"; sourceTree = "<group>"; };
+		3A1751DF1A292B3D7B520CDB711F7D7D /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
+		3C5CCA32990429925764CC6889EF47E4 /* FastCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FastCoder.m; path = FastCoder/FastCoder.m; sourceTree = "<group>"; };
+		3DA3B9C4E2D9519346B9EDEADEDDF4F5 /* PNLineChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChartDataItem.h; path = PNChart/PNLineChartDataItem.h; sourceTree = "<group>"; };
+		3DAE23C45F35BF4468219DF4FA81D36F /* Pods-Smart EyewearUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smart EyewearUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3F337865EF84506BEFABC78C50EB109F /* MBLGyroData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLGyroData.h; path = MetaWear.framework/Versions/A/Headers/MBLGyroData.h; sourceTree = "<group>"; };
+		3F4A036E72C1AA9A4EA2FB0BC2713E52 /* Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bolts.xcconfig; sourceTree = "<group>"; };
+		40BB034685442CDE7D3918D91872D19F /* MBLConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLConstants.h; path = MetaWear.framework/Versions/A/Headers/MBLConstants.h; sourceTree = "<group>"; };
+		42F58408D32ACC6F3235601FC8FA88BA /* MBLGyro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLGyro.h; path = MetaWear.framework/Versions/A/Headers/MBLGyro.h; sourceTree = "<group>"; };
+		4354482EA24F9606B0878E9B6391A6E2 /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
+		4642BBAABB3F51E4E34FA347A30617A6 /* PNCircleChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNCircleChart.h; path = PNChart/PNCircleChart.h; sourceTree = "<group>"; };
+		46EEC1F7DBD6FC246D7BAF4B31026C7A /* Pods-Smart Eyewear-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart Eyewear-resources.sh"; sourceTree = "<group>"; };
+		48EDBE580EAE998BD048A88F4740F580 /* MBLHygrometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLHygrometer.h; path = MetaWear.framework/Versions/A/Headers/MBLHygrometer.h; sourceTree = "<group>"; };
+		49E82E2E4037658203772940B82D4C4F /* Bolts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bolts-dummy.m"; sourceTree = "<group>"; };
+		4B582606EAE257FBC5A9B6E5E4D47CFE /* PNChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChart.h; path = PNChart/PNChart.h; sourceTree = "<group>"; };
+		4C4074F5932F36228ABBC4BC656B1854 /* MBLAccelerometerBMA255.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometerBMA255.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometerBMA255.h; sourceTree = "<group>"; };
+		4DFCD6564D1E0CE8E67F96D33399D492 /* Pods-Smart EyewearTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smart EyewearTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4F09917BDF50B845E9CD30FD82D1A981 /* PNChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PNChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3B9AD8E7CE7E7F6F8A2466599DA19B /* bmi160.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bmi160.h; path = MetaWear.framework/Versions/A/Headers/bmi160.h; sourceTree = "<group>"; };
+		4F631D2988984352E0D1388DEFE17C47 /* JSSAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSSAlertView-umbrella.h"; sourceTree = "<group>"; };
+		505F1E93245D146FC99D676E9D6C5186 /* Pods-Smart Eyewear.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Smart Eyewear.modulemap"; sourceTree = "<group>"; };
+		51A7717AADF4D5A9C03C0CECD049C451 /* MBLMechanicalSwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLMechanicalSwitch.h; path = MetaWear.framework/Versions/A/Headers/MBLMechanicalSwitch.h; sourceTree = "<group>"; };
+		51C0F268F25EBCE38A7B98EAF738AC46 /* MBLFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLFilter.h; path = MetaWear.framework/Versions/A/Headers/MBLFilter.h; sourceTree = "<group>"; };
+		536419BE53E70D040249848D17E1CB85 /* MetaWear.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MetaWear.framework; sourceTree = "<group>"; };
+		556084C80EFED9C5DDB288B0C4D98689 /* MBLPhotometerTCS3472.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLPhotometerTCS3472.h; path = MetaWear.framework/Versions/A/Headers/MBLPhotometerTCS3472.h; sourceTree = "<group>"; };
+		56BFF8843F07C353FF533E04AC5F3475 /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
+		56E4E1961DA06C8CE8D40EC27A9B54B3 /* MBLMagnetometerData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLMagnetometerData.h; path = MetaWear.framework/Versions/A/Headers/MBLMagnetometerData.h; sourceTree = "<group>"; };
+		57CD17C2BC0D2BCA09C4E9403D8964C8 /* BFTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTaskCompletionSource.h; path = Bolts/Common/BFTaskCompletionSource.h; sourceTree = "<group>"; };
+		59D760DA6F3EFEC4C418DAA49AF0C790 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CA6C5314C358201A1648F5AA5BC1DA0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D228D4B332591EE8BF9B901456AF171 /* PNPieChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNPieChartDataItem.m; path = PNChart/PNPieChartDataItem.m; sourceTree = "<group>"; };
+		5D2F0E1D13E8BF5811A5DC8466986219 /* MBLAccelerometerBMI160.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometerBMI160.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometerBMI160.h; sourceTree = "<group>"; };
+		62BEAA720B06EEC9FB3D03AF174FB6CC /* MBLBarometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLBarometer.h; path = MetaWear.framework/Versions/A/Headers/MBLBarometer.h; sourceTree = "<group>"; };
+		651A6F66636286310C71FA415F5163FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6A34E18FA3CB3662ED3F123286F728D0 /* MBLAmbientLight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAmbientLight.h; path = MetaWear.framework/Versions/A/Headers/MBLAmbientLight.h; sourceTree = "<group>"; };
+		6CFDC6C73B27275C5ECB41B55DB99BE7 /* PNChart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PNChart-umbrella.h"; sourceTree = "<group>"; };
+		6DC7AF4CB8F50D5B16819FDE46C81F0C /* MBLANCS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLANCS.h; path = MetaWear.framework/Versions/A/Headers/MBLANCS.h; sourceTree = "<group>"; };
+		6DF24450D389FAE6E0487C45B181ACCE /* Pods-Smart Eyewear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart Eyewear.release.xcconfig"; sourceTree = "<group>"; };
+		708CA020F4D956EAAD993A6335BD9776 /* MBLPhotometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLPhotometer.h; path = MetaWear.framework/Versions/A/Headers/MBLPhotometer.h; sourceTree = "<group>"; };
+		714514AC90F790550A09E4BB7803AD4B /* UICountingLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-umbrella.h"; sourceTree = "<group>"; };
+		719AD805869B4426DE9147C4C133E03E /* MBLI2C.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLI2C.h; path = MetaWear.framework/Versions/A/Headers/MBLI2C.h; sourceTree = "<group>"; };
+		72F755AF343DBBF648DD1360043FF5A9 /* PNRadarChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNRadarChartDataItem.h; path = PNChart/PNRadarChartDataItem.h; sourceTree = "<group>"; };
+		7327C25BB710726C5208F5C41176B854 /* PNPieChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNPieChart.m; path = PNChart/PNPieChart.m; sourceTree = "<group>"; };
+		73E49D15DA2B33087D6EB740ADF22E48 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D253632E90164D743C617B61F4C37B /* PNBarChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNBarChart.m; path = PNChart/PNBarChart.m; sourceTree = "<group>"; };
+		7521DF452044DD4E8AE808351AF4F6DE /* MBLEntityEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLEntityEvent.h; path = MetaWear.framework/Versions/A/Headers/MBLEntityEvent.h; sourceTree = "<group>"; };
+		753A1C768363CDF6736C73E4699D737B /* FastCoding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FastCoding.modulemap; sourceTree = "<group>"; };
+		765A1FEAC29514A2D72C9E60A27CF637 /* MBLNeopixel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLNeopixel.h; path = MetaWear.framework/Versions/A/Headers/MBLNeopixel.h; sourceTree = "<group>"; };
+		76901D5C56CEDE771A4F1148A8A004A0 /* PNCircleChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNCircleChart.m; path = PNChart/PNCircleChart.m; sourceTree = "<group>"; };
+		76C5FCD36BD531ADD6DD645DCE8972A6 /* Pods_Smart_EyewearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		776015DE9D036690C224D75B5BCD2590 /* Pods-Smart EyewearTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smart EyewearTests-umbrella.h"; sourceTree = "<group>"; };
+		7A2BA19DC2AD805AF5FC5B2C0F764909 /* MBLData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLData.h; path = MetaWear.framework/Versions/A/Headers/MBLData.h; sourceTree = "<group>"; };
+		7A4CCAB929F04DF1077C20736496852F /* FastCoding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FastCoding-dummy.m"; sourceTree = "<group>"; };
+		7A9870BE3FE3970F5101A92655AB3890 /* MBLGPIOPin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLGPIOPin.h; path = MetaWear.framework/Versions/A/Headers/MBLGPIOPin.h; sourceTree = "<group>"; };
+		7B96D7CC31927948FDD4186AF9D9FA46 /* PNRadarChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNRadarChart.m; path = PNChart/PNRadarChart.m; sourceTree = "<group>"; };
+		7C30F0A07AD23C91EC10885FEB093073 /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
+		7CE5786EDF2A20B6559B9DAD1FC9C4A8 /* MBLMetaWear.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLMetaWear.h; path = MetaWear.framework/Versions/A/Headers/MBLMetaWear.h; sourceTree = "<group>"; };
+		8089A17CBDB3424FAAA818A0BD34217C /* PNChartLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChartLabel.h; path = PNChart/PNChartLabel.h; sourceTree = "<group>"; };
+		809A5DCE2C623762B715F5962335B9C1 /* MBLOrientationData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLOrientationData.h; path = MetaWear.framework/Versions/A/Headers/MBLOrientationData.h; sourceTree = "<group>"; };
+		8117A9CFA75B4349580CBEC3BC0B64B3 /* Bolts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-umbrella.h"; sourceTree = "<group>"; };
+		81D4B77D4C3B493D2819B1BB46ADD16A /* MBLGyroBMI160.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLGyroBMI160.h; path = MetaWear.framework/Versions/A/Headers/MBLGyroBMI160.h; sourceTree = "<group>"; };
+		85266D62368F186049B0654D4D47D248 /* PNChart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PNChart-dummy.m"; sourceTree = "<group>"; };
+		86E5836D3E3C6CA2935CCC2E70516DD1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8804714CB4F5E6460C7A57F0F6443C26 /* MBLRegister.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLRegister.h; path = MetaWear.framework/Versions/A/Headers/MBLRegister.h; sourceTree = "<group>"; };
+		8B155CD86FA0DAAD3AA30FC50553AC8B /* PNChartLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNChartLabel.m; path = PNChart/PNChartLabel.m; sourceTree = "<group>"; };
+		8C417CCA961A6CF9464658201C0F0C91 /* MBLDataSample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLDataSample.h; path = MetaWear.framework/Versions/A/Headers/MBLDataSample.h; sourceTree = "<group>"; };
+		8C8AEABD825125C39040903C183627DB /* MBLAccelerometerBMI160MotionEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometerBMI160MotionEvent.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometerBMI160MotionEvent.h; sourceTree = "<group>"; };
+		8DB17BBAE1AF7FD5B1B380DF4F27F089 /* MBLHapticBuzzer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLHapticBuzzer.h; path = MetaWear.framework/Versions/A/Headers/MBLHapticBuzzer.h; sourceTree = "<group>"; };
+		8E19977FE897E7969D427E6218FA54E4 /* BFTask+MBLExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BFTask+MBLExtensions.h"; path = "MetaWear.framework/Versions/A/Headers/BFTask+MBLExtensions.h"; sourceTree = "<group>"; };
+		8F0E92699E63CE9BA6470316ED0D916D /* PNLineChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChartDataItem.m; path = PNChart/PNLineChartDataItem.m; sourceTree = "<group>"; };
+		8F4A73917CB91E3863CBE1D3370683EB /* Pods-Smart EyewearUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart EyewearUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		905EE394FFC391D4F847C1C2F37CF1AA /* PNChart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PNChart-prefix.pch"; sourceTree = "<group>"; };
+		906123809A567B2821ED0788ADF3EB99 /* Pods_Smart_EyewearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		945B2C99FB3C8FB087DE48A046B78BA7 /* BFCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenRegistration.m; path = Bolts/Common/BFCancellationTokenRegistration.m; sourceTree = "<group>"; };
+		948CB810917EECC7BC8A89F9F56FA161 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		951E7C1568C4E5153CD825B802CB4C1A /* UICountingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UICountingLabel.modulemap; sourceTree = "<group>"; };
+		96E56D21BBA5389929505D656480FB3E /* MBLNeopixelStrand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLNeopixelStrand.h; path = MetaWear.framework/Versions/A/Headers/MBLNeopixelStrand.h; sourceTree = "<group>"; };
+		975BBD50D0808BE0F20E2D94E5430666 /* MBLiBeacon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLiBeacon.h; path = MetaWear.framework/Versions/A/Headers/MBLiBeacon.h; sourceTree = "<group>"; };
+		980625AD0682CCB4CA9AF7B0FC2EA2CB /* MBLEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLEvent.h; path = MetaWear.framework/Versions/A/Headers/MBLEvent.h; sourceTree = "<group>"; };
+		99AB00D6135E8DF39C8E10BA2ABDA917 /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
+		9AAADA4789D24DB852A3EE36ABFD2A4C /* PNBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNBar.h; path = PNChart/PNBar.h; sourceTree = "<group>"; };
+		9AB784708CFF081490756E4666222AAD /* PNChartDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNChartDelegate.h; path = PNChart/PNChartDelegate.h; sourceTree = "<group>"; };
+		9EEDF1E8C07ACD65A2DB76B7198942DC /* MetaWear.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MetaWear.h; path = MetaWear.framework/Versions/A/Headers/MetaWear.h; sourceTree = "<group>"; };
+		A06642CDDFB332E68342CD249F9A0DF1 /* PNColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNColor.h; path = PNChart/PNColor.h; sourceTree = "<group>"; };
+		A16C860E006DCA8E784BD5A3A00B3E30 /* PNPieChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNPieChart.h; path = PNChart/PNPieChart.h; sourceTree = "<group>"; };
+		A26A666F1D7482203B535D3EB19CF0F0 /* Pods-Smart EyewearUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smart EyewearUITests-umbrella.h"; sourceTree = "<group>"; };
+		A29C514ABB44D45200A8FD21E93D8CC4 /* PNPieChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNPieChartDataItem.h; path = PNChart/PNPieChartDataItem.h; sourceTree = "<group>"; };
+		A4C89CA4DA7B3116F85E16D06F487CD6 /* JSSAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JSSAlertView.modulemap; sourceTree = "<group>"; };
+		A4F5205C9EDAAD95C0511C4259AEB66D /* JSSAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSSAlertView-prefix.pch"; sourceTree = "<group>"; };
+		A64C29ABCA3C253C62D8043BBF0B72BD /* FastCoding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastCoding-umbrella.h"; sourceTree = "<group>"; };
+		A806AF397E4D0E9EE3D5FEA9B0F36B11 /* FastCoding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastCoding.xcconfig; sourceTree = "<group>"; };
+		A855832AFD3CF4B0C6BCC7DC55CD0E0E /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
+		A955D6FCFD4F0426ED33281D4FFAEA78 /* MBLProximity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLProximity.h; path = MetaWear.framework/Versions/A/Headers/MBLProximity.h; sourceTree = "<group>"; };
+		A9ED9483A09851FB9EBA2AD743060706 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		ABF333A9E8740404C643005648AD0048 /* MBLMagnetometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLMagnetometer.h; path = MetaWear.framework/Versions/A/Headers/MBLMagnetometer.h; sourceTree = "<group>"; };
+		AEE128BCECAA09183373C7C87FF553A4 /* MBLI2CData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLI2CData.h; path = MetaWear.framework/Versions/A/Headers/MBLI2CData.h; sourceTree = "<group>"; };
+		B200DBDEB6E5D4EE0DACFF106ECF18F1 /* MBLAccelerometerBosch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometerBosch.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometerBosch.h; sourceTree = "<group>"; };
+		B31250E21A335E78460FE8EE2E355D1A /* PNScatterChartData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChartData.h; path = PNChart/PNScatterChartData.h; sourceTree = "<group>"; };
+		B3B2E3464D37DC8A4DE2DE2F3EABA864 /* MBLTimerEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLTimerEvent.h; path = MetaWear.framework/Versions/A/Headers/MBLTimerEvent.h; sourceTree = "<group>"; };
+		B3D0A9CA56917CD6DB8DF56AB1CAFD2E /* MBLNumericData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLNumericData.h; path = MetaWear.framework/Versions/A/Headers/MBLNumericData.h; sourceTree = "<group>"; };
+		B4311D8B888AE8E3DC3EDEE9CCDA96A9 /* PNBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNBar.m; path = PNChart/PNBar.m; sourceTree = "<group>"; };
+		B454B30A2D3585054A027A436D3A203E /* PNScatterChartDataItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChartDataItem.h; path = PNChart/PNScatterChartDataItem.h; sourceTree = "<group>"; };
+		B463845770AE753D9B2E5D07FCE82FEC /* PNChart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PNChart.modulemap; sourceTree = "<group>"; };
+		B48D6C8EC9BB5BB7590AF50414DBBA32 /* Pods-Smart EyewearTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smart EyewearTests-dummy.m"; sourceTree = "<group>"; };
+		B4C2FE5866D6320CE9A5875A887F586D /* MBLHygrometerBME280.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLHygrometerBME280.h; path = MetaWear.framework/Versions/A/Headers/MBLHygrometerBME280.h; sourceTree = "<group>"; };
+		B58A056E0B97AE1A243F6BE2FC03D64A /* MBLLED.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLLED.h; path = MetaWear.framework/Versions/A/Headers/MBLLED.h; sourceTree = "<group>"; };
+		B5FE0B1DD70D731B17C6AF25A83104B8 /* Bolts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-prefix.pch"; sourceTree = "<group>"; };
+		B75946F1CC4C7036ABAF702CFB6E2D5B /* PNScatterChartDataItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartDataItem.m; path = PNChart/PNScatterChartDataItem.m; sourceTree = "<group>"; };
+		B8A19793186A246C14F7FDF9C34AF37E /* PNScatterChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChart.m; path = PNChart/PNScatterChart.m; sourceTree = "<group>"; };
+		B9103AD49AA73F4AFAC5A6BD63F2B787 /* UICountingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UICountingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B978AD4CC6F416A70EFC94EA9E3EB8B0 /* PNScatterChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNScatterChart.h; path = PNChart/PNScatterChart.h; sourceTree = "<group>"; };
+		BABB3EB00D08458CC76C386B1642319B /* PNLineChart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PNLineChart.h; path = PNChart/PNLineChart.h; sourceTree = "<group>"; };
+		BB201D1E3FC22966766BAB18636257CE /* Pods-Smart EyewearTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smart EyewearTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BB39C52F19029932CCF22F00B8219156 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB661A75B4FAF6F1FDCB4BA705EFFAEA /* Pods_Smart_Eyewear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Eyewear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD43E6E49BFF455EC15339ADE8256E07 /* MBLANCSEventData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLANCSEventData.h; path = MetaWear.framework/Versions/A/Headers/MBLANCSEventData.h; sourceTree = "<group>"; };
+		BF897C86DA7477A825F6DA2970F6359E /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bolts.modulemap; sourceTree = "<group>"; };
+		C083BB1E27E57EDE96F62355075F4A6F /* MBLAccelerometerBoschLowOrHighGEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometerBoschLowOrHighGEvent.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometerBoschLowOrHighGEvent.h; sourceTree = "<group>"; };
+		C0DC0DA7737EC3E97F7835126BF64CAF /* MBLTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLTimer.h; path = MetaWear.framework/Versions/A/Headers/MBLTimer.h; sourceTree = "<group>"; };
+		C1693FB06AD31EF0F9FC5B163D220728 /* PNLineChartData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChartData.m; path = PNChart/PNLineChartData.m; sourceTree = "<group>"; };
+		C829DD8E4E1D8EA8ED1A25D56C5B7AA3 /* PNScatterChartData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartData.m; path = PNChart/PNScatterChartData.m; sourceTree = "<group>"; };
+		CCE5452F7698390E1D8728DA8C10BCF4 /* Pods-Smart Eyewear-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smart Eyewear-acknowledgements.plist"; sourceTree = "<group>"; };
+		CD4CDBD12296F241BD514656FC582D7D /* FastCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastCoder.h; path = FastCoder/FastCoder.h; sourceTree = "<group>"; };
+		CDBE972F3CBAE926B1BCD5AE3B373C6D /* MBLBarometerBMP280.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLBarometerBMP280.h; path = MetaWear.framework/Versions/A/Headers/MBLBarometerBMP280.h; sourceTree = "<group>"; };
+		CF0266744CBFA720489CE4DBFC7B6AC4 /* MBLGPIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLGPIO.h; path = MetaWear.framework/Versions/A/Headers/MBLGPIO.h; sourceTree = "<group>"; };
+		D137F53F22CE1842CAF2481DDD7C5376 /* Pods-Smart Eyewear-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smart Eyewear-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D842BDB782E76FF736A5A631198A5554 /* Pods-Smart EyewearTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart EyewearTests.release.xcconfig"; sourceTree = "<group>"; };
+		D8C1FAB1E3C2BF7D133DB82EEE81E3C9 /* MBLExternalThermistor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLExternalThermistor.h; path = MetaWear.framework/Versions/A/Headers/MBLExternalThermistor.h; sourceTree = "<group>"; };
+		D9C9F388BD45D8C0C2AEC66723C4D412 /* PNChart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PNChart.xcconfig; sourceTree = "<group>"; };
+		E190D2C6770C87617960FB63A4EB1682 /* Pods-Smart EyewearTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart EyewearTests-frameworks.sh"; sourceTree = "<group>"; };
+		E27550F189E9927D86ED502524FCA743 /* Pods-Smart Eyewear-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smart Eyewear-dummy.m"; sourceTree = "<group>"; };
+		E2E782188850466E4DF078ECAE869316 /* Pods-Smart EyewearUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smart EyewearUITests-dummy.m"; sourceTree = "<group>"; };
+		E3E213EEF6EEAB54477314F9744AE827 /* MBLTemperature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLTemperature.h; path = MetaWear.framework/Versions/A/Headers/MBLTemperature.h; sourceTree = "<group>"; };
+		E6153A56D7484D800612B3A7D2F58EBF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E775EAB176F07EE86E37C83AA1A22580 /* MBLSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLSettings.h; path = MetaWear.framework/Versions/A/Headers/MBLSettings.h; sourceTree = "<group>"; };
+		EA06DD0DD0858EE918C20B092F7A7DAA /* MBLBarometerBME280.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLBarometerBME280.h; path = MetaWear.framework/Versions/A/Headers/MBLBarometerBME280.h; sourceTree = "<group>"; };
+		ED7A089489ED20F4134079861045445D /* UICountingLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		EEA289B7385371D572610FCBD99E35D9 /* MBLAccelerometerMMA8452Q.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometerMMA8452Q.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometerMMA8452Q.h; sourceTree = "<group>"; };
+		EFB2ABFE5898D312D900810BC3A959D2 /* MBLMetaWearManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLMetaWearManager.h; path = MetaWear.framework/Versions/A/Headers/MBLMetaWearManager.h; sourceTree = "<group>"; };
+		EFC8D63C062ADC0EC74CF6AB4133D876 /* MBLProximityTSL2671.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLProximityTSL2671.h; path = MetaWear.framework/Versions/A/Headers/MBLProximityTSL2671.h; sourceTree = "<group>"; };
+		F0A7087E784B3E288B798A51F0AEFE88 /* UICountingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		F26F584823681463AE7AF04D67CA6B06 /* UICountingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICountingLabel-dummy.m"; sourceTree = "<group>"; };
+		F2D2031E9546CF00014F7D149D40F624 /* PNLineChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNLineChart.m; path = PNChart/PNLineChart.m; sourceTree = "<group>"; };
+		F344A1F1CF8349D7064B90A4281719C6 /* Pods-Smart EyewearUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart EyewearUITests-frameworks.sh"; sourceTree = "<group>"; };
+		F3530AD42E9B5C9625F2A75FB7B94670 /* Pods-Smart Eyewear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart Eyewear.debug.xcconfig"; sourceTree = "<group>"; };
+		F455C5CB9FFD7B001613D7038DC9D938 /* MBLAccelerometerData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLAccelerometerData.h; path = MetaWear.framework/Versions/A/Headers/MBLAccelerometerData.h; sourceTree = "<group>"; };
+		F4E82BB8C7E4F3B210717AC4DB2DA79C /* BFCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenSource.m; path = Bolts/Common/BFCancellationTokenSource.m; sourceTree = "<group>"; };
+		F4F363804BA4F5B06DF447F7D9D8517C /* Pods-Smart EyewearUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smart EyewearUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F5A2706ADAD025A4CC857A526F1BBF33 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7722A8E8B0C5DE3050555714145861A /* MBLDataSwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLDataSwitch.h; path = MetaWear.framework/Versions/A/Headers/MBLDataSwitch.h; sourceTree = "<group>"; };
+		F8AC20D0D59A61B4EE43E1C6C39AC321 /* MBLDeviceInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBLDeviceInfo.h; path = MetaWear.framework/Versions/A/Headers/MBLDeviceInfo.h; sourceTree = "<group>"; };
+		FA0A12A2BBF36E12FCFDEF77A5134554 /* PNGenericChart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PNGenericChart.m; path = PNChart/PNGenericChart.m; sourceTree = "<group>"; };
+		FC512F853C7782A386BAF0AA66A46E18 /* UICountingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-prefix.pch"; sourceTree = "<group>"; };
+		FEE6C79B18FACDA3BE0ECDB067E9EFA6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		FFE99BBC42F2520BEB93723F0F870058 /* Pods-Smart Eyewear-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smart Eyewear-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01CDA930084E0B53C446614B809CDD08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D6EE0965E430AAFD2E7A800D9B1E948 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16DFB3EECA0C446C6B90366CE403804B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				423AABFB884F74A7074308E0BE76AD9C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46FE9C677AB4F5DBA5819B7D23E16369 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B5B035D67E322F004ED48D01C3510C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C48E4ED38705E0E17EDB0BD961EA7F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C28B8A54BD1679210221A151EF4ADD36 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF43291E0935941087405532FEE8CA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE85F95473596165EC40CEB3E04048A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE58FFE5AB62434D61596C70B2FD757 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D493EEA434471CEBDED7565F75B24C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9B7A7C20FE14D96B127A004E30A5CDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27FA4C560364ACF28061666AE5155D00 /* CoreGraphics.framework in Frameworks */,
+				8E809B047E2877E0A241FCC5E5C4314D /* Foundation.framework in Frameworks */,
+				865AB43D9552A0CA829D2B5659740EA3 /* QuartzCore.framework in Frameworks */,
+				73457B81D7A2C6D89AE96FF2DF2A8C58 /* UICountingLabel.framework in Frameworks */,
+				836CB7E83B915DD310FC17C0658CB9CC /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0FD12A3257E105C34B6D60AC6B6CAD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43093F4EF5176D9036A3263ECC53E1EB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D0B3EB075E8C174D300A37A91AFBE3B /* Pods-Smart Eyewear */ = {
+			isa = PBXGroup;
+			children = (
+				092884DCAF00BB19CA3148AE91252DB0 /* Info.plist */,
+				505F1E93245D146FC99D676E9D6C5186 /* Pods-Smart Eyewear.modulemap */,
+				D137F53F22CE1842CAF2481DDD7C5376 /* Pods-Smart Eyewear-acknowledgements.markdown */,
+				CCE5452F7698390E1D8728DA8C10BCF4 /* Pods-Smart Eyewear-acknowledgements.plist */,
+				E27550F189E9927D86ED502524FCA743 /* Pods-Smart Eyewear-dummy.m */,
+				FFE99BBC42F2520BEB93723F0F870058 /* Pods-Smart Eyewear-frameworks.sh */,
+				46EEC1F7DBD6FC246D7BAF4B31026C7A /* Pods-Smart Eyewear-resources.sh */,
+				0000F4734BC2CC7094C9AC9FC0A17F2F /* Pods-Smart Eyewear-umbrella.h */,
+				F3530AD42E9B5C9625F2A75FB7B94670 /* Pods-Smart Eyewear.debug.xcconfig */,
+				6DF24450D389FAE6E0487C45B181ACCE /* Pods-Smart Eyewear.release.xcconfig */,
+			);
+			name = "Pods-Smart Eyewear";
+			path = "Target Support Files/Pods-Smart Eyewear";
+			sourceTree = "<group>";
+		};
+		14E07CF0DA3DA62DE697A65ACF02DC4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				536419BE53E70D040249848D17E1CB85 /* MetaWear.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18A4C1C84E2379DC89B90DB3C61891A9 /* Pods-Smart EyewearUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E6153A56D7484D800612B3A7D2F58EBF /* Info.plist */,
+				3994EAB673F2E27FFF3AAECE2DEBD7E5 /* Pods-Smart EyewearUITests.modulemap */,
+				3526943C746C4198C4F4B4AF01911B15 /* Pods-Smart EyewearUITests-acknowledgements.markdown */,
+				3DAE23C45F35BF4468219DF4FA81D36F /* Pods-Smart EyewearUITests-acknowledgements.plist */,
+				E2E782188850466E4DF078ECAE869316 /* Pods-Smart EyewearUITests-dummy.m */,
+				F344A1F1CF8349D7064B90A4281719C6 /* Pods-Smart EyewearUITests-frameworks.sh */,
+				335B26B479A432484E06B4852E213341 /* Pods-Smart EyewearUITests-resources.sh */,
+				A26A666F1D7482203B535D3EB19CF0F0 /* Pods-Smart EyewearUITests-umbrella.h */,
+				8F4A73917CB91E3863CBE1D3370683EB /* Pods-Smart EyewearUITests.debug.xcconfig */,
+				F4F363804BA4F5B06DF447F7D9D8517C /* Pods-Smart EyewearUITests.release.xcconfig */,
+			);
+			name = "Pods-Smart EyewearUITests";
+			path = "Target Support Files/Pods-Smart EyewearUITests";
+			sourceTree = "<group>";
+		};
+		22F6A184B009B924F8629A2F7652E620 /* Bolts */ = {
+			isa = PBXGroup;
+			children = (
+				605F4941C4B229E4F41F48F3C8EA9A1F /* Support Files */,
+				D924BAFC261C34C4323FE590BFA29B11 /* Tasks */,
+			);
+			path = Bolts;
+			sourceTree = "<group>";
+		};
+		26FF0A66698AA694C23AFE192E8E5C47 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D0B3EB075E8C174D300A37A91AFBE3B /* Pods-Smart Eyewear */,
+				970AD0314E6DE1C47F48DA5A72DAC5BB /* Pods-Smart EyewearTests */,
+				18A4C1C84E2379DC89B90DB3C61891A9 /* Pods-Smart EyewearUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2FD739AFD466F21B2E454004D2EFFB9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22F6A184B009B924F8629A2F7652E620 /* Bolts */,
+				8B07D731B30774B69549A6A3BB93B18A /* FastCoding */,
+				A6CB27A64B0F20CC0AFA9D553D9071F9 /* JSSAlertView */,
+				DFAFDCE56D7E833270EFC97137092D87 /* Metawear-iOSAPI */,
+				98D94A4FA5CDF9F524D7FC98A9C8C436 /* PNChart */,
+				325FBEC81BAE55DAAA5C8A828BC47B3B /* UICountingLabel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		325FBEC81BAE55DAAA5C8A828BC47B3B /* UICountingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				F0A7087E784B3E288B798A51F0AEFE88 /* UICountingLabel.h */,
+				ED7A089489ED20F4134079861045445D /* UICountingLabel.m */,
+				37736A1F927880FA1C5DE9C134805766 /* Support Files */,
+			);
+			path = UICountingLabel;
+			sourceTree = "<group>";
+		};
+		37736A1F927880FA1C5DE9C134805766 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0334EF1D698F266392186F119097C534 /* Info.plist */,
+				951E7C1568C4E5153CD825B802CB4C1A /* UICountingLabel.modulemap */,
+				2EFFEBB3D5EDBD99D8FB5FDE6B527883 /* UICountingLabel.xcconfig */,
+				F26F584823681463AE7AF04D67CA6B06 /* UICountingLabel-dummy.m */,
+				FC512F853C7782A386BAF0AA66A46E18 /* UICountingLabel-prefix.pch */,
+				714514AC90F790550A09E4BB7803AD4B /* UICountingLabel-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UICountingLabel";
+			sourceTree = "<group>";
+		};
+		446CC8394E9E12CC2F1D229A0ADBB733 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				753A1C768363CDF6736C73E4699D737B /* FastCoding.modulemap */,
+				A806AF397E4D0E9EE3D5FEA9B0F36B11 /* FastCoding.xcconfig */,
+				7A4CCAB929F04DF1077C20736496852F /* FastCoding-dummy.m */,
+				36513ECCAEAB9B99D7DEFC710BDEE682 /* FastCoding-prefix.pch */,
+				A64C29ABCA3C253C62D8043BBF0B72BD /* FastCoding-umbrella.h */,
+				F5A2706ADAD025A4CC857A526F1BBF33 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FastCoding";
+			sourceTree = "<group>";
+		};
+		605F4941C4B229E4F41F48F3C8EA9A1F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF897C86DA7477A825F6DA2970F6359E /* Bolts.modulemap */,
+				3F4A036E72C1AA9A4EA2FB0BC2713E52 /* Bolts.xcconfig */,
+				49E82E2E4037658203772940B82D4C4F /* Bolts-dummy.m */,
+				B5FE0B1DD70D731B17C6AF25A83104B8 /* Bolts-prefix.pch */,
+				8117A9CFA75B4349580CBEC3BC0B64B3 /* Bolts-umbrella.h */,
+				86E5836D3E3C6CA2935CCC2E70516DD1 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Bolts";
+			sourceTree = "<group>";
+		};
+		77F62D6DD399DA1778CD4581837DD75D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73E49D15DA2B33087D6EB740ADF22E48 /* Bolts.framework */,
+				3679940633277F11B859AAF5E1C0238A /* FastCoding.framework */,
+				1E5CC987E31BC8E61A4B38D4A55E6C0D /* JSSAlertView.framework */,
+				4F09917BDF50B845E9CD30FD82D1A981 /* PNChart.framework */,
+				BB661A75B4FAF6F1FDCB4BA705EFFAEA /* Pods_Smart_Eyewear.framework */,
+				76C5FCD36BD531ADD6DD645DCE8972A6 /* Pods_Smart_EyewearTests.framework */,
+				906123809A567B2821ED0788ADF3EB99 /* Pods_Smart_EyewearUITests.framework */,
+				2AF998137792F48BDA0EB7F7ECB8C1BD /* UICountingLabel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E7558378B05AD4CBD1053EABE1357F06 /* Frameworks */,
+				2FD739AFD466F21B2E454004D2EFFB9F /* Pods */,
+				77F62D6DD399DA1778CD4581837DD75D /* Products */,
+				26FF0A66698AA694C23AFE192E8E5C47 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8B07D731B30774B69549A6A3BB93B18A /* FastCoding */ = {
+			isa = PBXGroup;
+			children = (
+				CD4CDBD12296F241BD514656FC582D7D /* FastCoder.h */,
+				3C5CCA32990429925764CC6889EF47E4 /* FastCoder.m */,
+				446CC8394E9E12CC2F1D229A0ADBB733 /* Support Files */,
+			);
+			path = FastCoding;
+			sourceTree = "<group>";
+		};
+		970AD0314E6DE1C47F48DA5A72DAC5BB /* Pods-Smart EyewearTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB39C52F19029932CCF22F00B8219156 /* Info.plist */,
+				2D8B67A4EB33A8E53737A970548522F2 /* Pods-Smart EyewearTests.modulemap */,
+				BB201D1E3FC22966766BAB18636257CE /* Pods-Smart EyewearTests-acknowledgements.markdown */,
+				4DFCD6564D1E0CE8E67F96D33399D492 /* Pods-Smart EyewearTests-acknowledgements.plist */,
+				B48D6C8EC9BB5BB7590AF50414DBBA32 /* Pods-Smart EyewearTests-dummy.m */,
+				E190D2C6770C87617960FB63A4EB1682 /* Pods-Smart EyewearTests-frameworks.sh */,
+				07B7B10F3571DABE9A5B7CD90049565C /* Pods-Smart EyewearTests-resources.sh */,
+				776015DE9D036690C224D75B5BCD2590 /* Pods-Smart EyewearTests-umbrella.h */,
+				0B7076762C97CE515A20403947E06B3B /* Pods-Smart EyewearTests.debug.xcconfig */,
+				D842BDB782E76FF736A5A631198A5554 /* Pods-Smart EyewearTests.release.xcconfig */,
+			);
+			name = "Pods-Smart EyewearTests";
+			path = "Target Support Files/Pods-Smart EyewearTests";
+			sourceTree = "<group>";
+		};
+		976DBD55FB9FC4F43A6B6A4235743792 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6C79B18FACDA3BE0ECDB067E9EFA6 /* CoreGraphics.framework */,
+				651A6F66636286310C71FA415F5163FA /* Foundation.framework */,
+				A9ED9483A09851FB9EBA2AD743060706 /* QuartzCore.framework */,
+				948CB810917EECC7BC8A89F9F56FA161 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		98D94A4FA5CDF9F524D7FC98A9C8C436 /* PNChart */ = {
+			isa = PBXGroup;
+			children = (
+				9AAADA4789D24DB852A3EE36ABFD2A4C /* PNBar.h */,
+				B4311D8B888AE8E3DC3EDEE9CCDA96A9 /* PNBar.m */,
+				0D1AB5C4090AB43B9A88AECA50F2D86B /* PNBarChart.h */,
+				74D253632E90164D743C617B61F4C37B /* PNBarChart.m */,
+				4B582606EAE257FBC5A9B6E5E4D47CFE /* PNChart.h */,
+				9AB784708CFF081490756E4666222AAD /* PNChartDelegate.h */,
+				8089A17CBDB3424FAAA818A0BD34217C /* PNChartLabel.h */,
+				8B155CD86FA0DAAD3AA30FC50553AC8B /* PNChartLabel.m */,
+				4642BBAABB3F51E4E34FA347A30617A6 /* PNCircleChart.h */,
+				76901D5C56CEDE771A4F1148A8A004A0 /* PNCircleChart.m */,
+				A06642CDDFB332E68342CD249F9A0DF1 /* PNColor.h */,
+				0A1B4E84E49B48244EBC2409400803D1 /* PNColor.m */,
+				0DA65AE6F5FEE4D7FA79E28E3EFE60D9 /* PNGenericChart.h */,
+				FA0A12A2BBF36E12FCFDEF77A5134554 /* PNGenericChart.m */,
+				BABB3EB00D08458CC76C386B1642319B /* PNLineChart.h */,
+				F2D2031E9546CF00014F7D149D40F624 /* PNLineChart.m */,
+				2FB860E1C171F15434A2CDAB244214D3 /* PNLineChartData.h */,
+				C1693FB06AD31EF0F9FC5B163D220728 /* PNLineChartData.m */,
+				3DA3B9C4E2D9519346B9EDEADEDDF4F5 /* PNLineChartDataItem.h */,
+				8F0E92699E63CE9BA6470316ED0D916D /* PNLineChartDataItem.m */,
+				A16C860E006DCA8E784BD5A3A00B3E30 /* PNPieChart.h */,
+				7327C25BB710726C5208F5C41176B854 /* PNPieChart.m */,
+				A29C514ABB44D45200A8FD21E93D8CC4 /* PNPieChartDataItem.h */,
+				5D228D4B332591EE8BF9B901456AF171 /* PNPieChartDataItem.m */,
+				0A76D2135F68577B4EA74C564F85347D /* PNRadarChart.h */,
+				7B96D7CC31927948FDD4186AF9D9FA46 /* PNRadarChart.m */,
+				72F755AF343DBBF648DD1360043FF5A9 /* PNRadarChartDataItem.h */,
+				30E53F803B13852706710A27768D28CE /* PNRadarChartDataItem.m */,
+				B978AD4CC6F416A70EFC94EA9E3EB8B0 /* PNScatterChart.h */,
+				B8A19793186A246C14F7FDF9C34AF37E /* PNScatterChart.m */,
+				B31250E21A335E78460FE8EE2E355D1A /* PNScatterChartData.h */,
+				C829DD8E4E1D8EA8ED1A25D56C5B7AA3 /* PNScatterChartData.m */,
+				B454B30A2D3585054A027A436D3A203E /* PNScatterChartDataItem.h */,
+				B75946F1CC4C7036ABAF702CFB6E2D5B /* PNScatterChartDataItem.m */,
+				A5EC475CDAADD39BCE412B9CFB28574E /* Support Files */,
+			);
+			path = PNChart;
+			sourceTree = "<group>";
+		};
+		A5EC475CDAADD39BCE412B9CFB28574E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				59D760DA6F3EFEC4C418DAA49AF0C790 /* Info.plist */,
+				B463845770AE753D9B2E5D07FCE82FEC /* PNChart.modulemap */,
+				D9C9F388BD45D8C0C2AEC66723C4D412 /* PNChart.xcconfig */,
+				85266D62368F186049B0654D4D47D248 /* PNChart-dummy.m */,
+				905EE394FFC391D4F847C1C2F37CF1AA /* PNChart-prefix.pch */,
+				6CFDC6C73B27275C5ECB41B55DB99BE7 /* PNChart-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PNChart";
+			sourceTree = "<group>";
+		};
+		A6CB27A64B0F20CC0AFA9D553D9071F9 /* JSSAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				1F074672612E37FF3A589B252506F2CC /* JSSAlertView.swift */,
+				BA6F3E60098BC0149475F969A71F5619 /* Support Files */,
+			);
+			path = JSSAlertView;
+			sourceTree = "<group>";
+		};
+		BA6F3E60098BC0149475F969A71F5619 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CA6C5314C358201A1648F5AA5BC1DA0 /* Info.plist */,
+				A4C89CA4DA7B3116F85E16D06F487CD6 /* JSSAlertView.modulemap */,
+				0BCFDA1245B430B05AD4D6B86C4C69C1 /* JSSAlertView.xcconfig */,
+				340F04B763A36949346D39A22143BA79 /* JSSAlertView-dummy.m */,
+				A4F5205C9EDAAD95C0511C4259AEB66D /* JSSAlertView-prefix.pch */,
+				4F631D2988984352E0D1388DEFE17C47 /* JSSAlertView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JSSAlertView";
+			sourceTree = "<group>";
+		};
+		D924BAFC261C34C4323FE590BFA29B11 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				147729F7CDF99C4ED03CCA8CD6D78FB5 /* BFCancellationToken.h */,
+				A855832AFD3CF4B0C6BCC7DC55CD0E0E /* BFCancellationToken.m */,
+				4354482EA24F9606B0878E9B6391A6E2 /* BFCancellationTokenRegistration.h */,
+				945B2C99FB3C8FB087DE48A046B78BA7 /* BFCancellationTokenRegistration.m */,
+				1D291F2295D4FBA2D1BCAFF6C288D057 /* BFCancellationTokenSource.h */,
+				F4E82BB8C7E4F3B210717AC4DB2DA79C /* BFCancellationTokenSource.m */,
+				7C30F0A07AD23C91EC10885FEB093073 /* BFExecutor.h */,
+				31BC3B4ED09A740538CE4EC0D5342855 /* BFExecutor.m */,
+				99AB00D6135E8DF39C8E10BA2ABDA917 /* BFTask.h */,
+				077AC3946DB732EBAF42E44B065B628D /* BFTask.m */,
+				57CD17C2BC0D2BCA09C4E9403D8964C8 /* BFTaskCompletionSource.h */,
+				388BF2B502B7ECB838906E84CC86BA3E /* BFTaskCompletionSource.m */,
+				56BFF8843F07C353FF533E04AC5F3475 /* Bolts.h */,
+				3A1751DF1A292B3D7B520CDB711F7D7D /* Bolts.m */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
+		DFAFDCE56D7E833270EFC97137092D87 /* Metawear-iOSAPI */ = {
+			isa = PBXGroup;
+			children = (
+				8E19977FE897E7969D427E6218FA54E4 /* BFTask+MBLExtensions.h */,
+				4F3B9AD8E7CE7E7F6F8A2466599DA19B /* bmi160.h */,
+				322C0FA94D6BBA3CACF1CE17DD986286 /* MBLAccelerometer.h */,
+				4C4074F5932F36228ABBC4BC656B1854 /* MBLAccelerometerBMA255.h */,
+				0F720E81CE6648163123700DF0874353 /* MBLAccelerometerBMA255MotionEvent.h */,
+				5D2F0E1D13E8BF5811A5DC8466986219 /* MBLAccelerometerBMI160.h */,
+				8C8AEABD825125C39040903C183627DB /* MBLAccelerometerBMI160MotionEvent.h */,
+				B200DBDEB6E5D4EE0DACFF106ECF18F1 /* MBLAccelerometerBosch.h */,
+				C083BB1E27E57EDE96F62355075F4A6F /* MBLAccelerometerBoschLowOrHighGEvent.h */,
+				F455C5CB9FFD7B001613D7038DC9D938 /* MBLAccelerometerData.h */,
+				EEA289B7385371D572610FCBD99E35D9 /* MBLAccelerometerMMA8452Q.h */,
+				6A34E18FA3CB3662ED3F123286F728D0 /* MBLAmbientLight.h */,
+				373163B0438EB7FA1C0A6A9C1562C730 /* MBLAmbientLightLTR329.h */,
+				6DC7AF4CB8F50D5B16819FDE46C81F0C /* MBLANCS.h */,
+				BD43E6E49BFF455EC15339ADE8256E07 /* MBLANCSEventData.h */,
+				62BEAA720B06EEC9FB3D03AF174FB6CC /* MBLBarometer.h */,
+				EA06DD0DD0858EE918C20B092F7A7DAA /* MBLBarometerBME280.h */,
+				CDBE972F3CBAE926B1BCD5AE3B373C6D /* MBLBarometerBMP280.h */,
+				18E083760BB1D090A3D4522C8C78FF50 /* MBLBarometerBosch.h */,
+				0E29F8D3B050EEC1E060BE9B9B8AA213 /* MBLConductance.h */,
+				40BB034685442CDE7D3918D91872D19F /* MBLConstants.h */,
+				7A2BA19DC2AD805AF5FC5B2C0F764909 /* MBLData.h */,
+				8C417CCA961A6CF9464658201C0F0C91 /* MBLDataSample.h */,
+				F7722A8E8B0C5DE3050555714145861A /* MBLDataSwitch.h */,
+				F8AC20D0D59A61B4EE43E1C6C39AC321 /* MBLDeviceInfo.h */,
+				7521DF452044DD4E8AE808351AF4F6DE /* MBLEntityEvent.h */,
+				1762699D7A556E849E237A50CAD1774E /* MBLEntityModule.h */,
+				980625AD0682CCB4CA9AF7B0FC2EA2CB /* MBLEvent.h */,
+				D8C1FAB1E3C2BF7D133DB82EEE81E3C9 /* MBLExternalThermistor.h */,
+				51C0F268F25EBCE38A7B98EAF738AC46 /* MBLFilter.h */,
+				CF0266744CBFA720489CE4DBFC7B6AC4 /* MBLGPIO.h */,
+				7A9870BE3FE3970F5101A92655AB3890 /* MBLGPIOPin.h */,
+				42F58408D32ACC6F3235601FC8FA88BA /* MBLGyro.h */,
+				81D4B77D4C3B493D2819B1BB46ADD16A /* MBLGyroBMI160.h */,
+				3F337865EF84506BEFABC78C50EB109F /* MBLGyroData.h */,
+				8DB17BBAE1AF7FD5B1B380DF4F27F089 /* MBLHapticBuzzer.h */,
+				48EDBE580EAE998BD048A88F4740F580 /* MBLHygrometer.h */,
+				B4C2FE5866D6320CE9A5875A887F586D /* MBLHygrometerBME280.h */,
+				719AD805869B4426DE9147C4C133E03E /* MBLI2C.h */,
+				AEE128BCECAA09183373C7C87FF553A4 /* MBLI2CData.h */,
+				975BBD50D0808BE0F20E2D94E5430666 /* MBLiBeacon.h */,
+				B58A056E0B97AE1A243F6BE2FC03D64A /* MBLLED.h */,
+				ABF333A9E8740404C643005648AD0048 /* MBLMagnetometer.h */,
+				2768D06CEC7B92888E62A2104B705957 /* MBLMagnetometerBMM150.h */,
+				56E4E1961DA06C8CE8D40EC27A9B54B3 /* MBLMagnetometerData.h */,
+				51A7717AADF4D5A9C03C0CECD049C451 /* MBLMechanicalSwitch.h */,
+				7CE5786EDF2A20B6559B9DAD1FC9C4A8 /* MBLMetaWear.h */,
+				EFB2ABFE5898D312D900810BC3A959D2 /* MBLMetaWearManager.h */,
+				338AD924B44705F53D00D6075CD60E3B /* MBLModule.h */,
+				765A1FEAC29514A2D72C9E60A27CF637 /* MBLNeopixel.h */,
+				96E56D21BBA5389929505D656480FB3E /* MBLNeopixelStrand.h */,
+				B3D0A9CA56917CD6DB8DF56AB1CAFD2E /* MBLNumericData.h */,
+				809A5DCE2C623762B715F5962335B9C1 /* MBLOrientationData.h */,
+				708CA020F4D956EAAD993A6335BD9776 /* MBLPhotometer.h */,
+				556084C80EFED9C5DDB288B0C4D98689 /* MBLPhotometerTCS3472.h */,
+				A955D6FCFD4F0426ED33281D4FFAEA78 /* MBLProximity.h */,
+				EFC8D63C062ADC0EC74CF6AB4133D876 /* MBLProximityTSL2671.h */,
+				8804714CB4F5E6460C7A57F0F6443C26 /* MBLRegister.h */,
+				054B4CE8FBE3C7C5AEA0EF0D5210D727 /* MBLRGBData.h */,
+				0072A93F6671BDA7481D0B8141EF8132 /* MBLRMSAccelerometerData.h */,
+				E775EAB176F07EE86E37C83AA1A22580 /* MBLSettings.h */,
+				359E6D62DA32944A79EC13C88077399B /* MBLStringData.h */,
+				E3E213EEF6EEAB54477314F9744AE827 /* MBLTemperature.h */,
+				C0DC0DA7737EC3E97F7835126BF64CAF /* MBLTimer.h */,
+				B3B2E3464D37DC8A4DE2DE2F3EABA864 /* MBLTimerEvent.h */,
+				9EEDF1E8C07ACD65A2DB76B7198942DC /* MetaWear.h */,
+				14E07CF0DA3DA62DE697A65ACF02DC4A /* Frameworks */,
+			);
+			path = "Metawear-iOSAPI";
+			sourceTree = "<group>";
+		};
+		E7558378B05AD4CBD1053EABE1357F06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9103AD49AA73F4AFAC5A6BD63F2B787 /* UICountingLabel.framework */,
+				976DBD55FB9FC4F43A6B6A4235743792 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0D9BEC18F5842E9B5E8768E308E5A66C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4686B7D44AADA84F725CDE0AA159499A /* PNBar.h in Headers */,
+				1233196329D27B0B664DB087B2F9A86B /* PNBarChart.h in Headers */,
+				03F3AFF196E9E8A3F19BC91B5315961B /* PNChart-umbrella.h in Headers */,
+				E065A8BA46DC4B001E0FD81E770A7E0A /* PNChart.h in Headers */,
+				E8CC9CA47448AF29C9EA1421D5605060 /* PNChartDelegate.h in Headers */,
+				AAFA95344509AA286425B73468E1BFD3 /* PNChartLabel.h in Headers */,
+				1FA524F788771A81EBFDCE9A8BC62596 /* PNCircleChart.h in Headers */,
+				77AECFAD996EFE8C50387C78F2EBD235 /* PNColor.h in Headers */,
+				3E7416BF3B3BD74F97960609897A6A47 /* PNGenericChart.h in Headers */,
+				A81D6052693A96D2DCEB37728A2C9015 /* PNLineChart.h in Headers */,
+				C555D454E9BFA26AFDF851E0EDB38AAE /* PNLineChartData.h in Headers */,
+				D82F428D6D1B7822967480842D54C41E /* PNLineChartDataItem.h in Headers */,
+				2128CA0C6DE95E52DF780F8042E7E60C /* PNPieChart.h in Headers */,
+				5538E17255A2C3CA864393F3419C6825 /* PNPieChartDataItem.h in Headers */,
+				6F3BEDBDDA0CB23A2B9078CD45182997 /* PNRadarChart.h in Headers */,
+				4445FD5A94FB258B834E9EC6C519437B /* PNRadarChartDataItem.h in Headers */,
+				FF64A823B87747F95068653BFD7A446C /* PNScatterChart.h in Headers */,
+				46CA19C2B6537554FCA9A2E69D051012 /* PNScatterChartData.h in Headers */,
+				35A2B651CF9001857F8EC53FC150E637 /* PNScatterChartDataItem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		242EBC0CA7468643ADD00B8366244A5B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A852E4E5E3DFDA8919F2980BC8664D5 /* UICountingLabel-umbrella.h in Headers */,
+				77E3A7EDAF04B067B82E20B976EE533B /* UICountingLabel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		748575FB2C6D7CFF020E308E61350914 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E328F3D9F2225ADCF3FB40D02E06385 /* Pods-Smart EyewearUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A08FAC63A08F7291A1D962A6A55D23 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A06835C8E53757EFC7B5C3FF5D1CAC84 /* JSSAlertView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		997292781BD1FEB3D001B9077415A8FD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44503E62F0F804B46B1BFF93DC05EDF4 /* BFCancellationToken.h in Headers */,
+				44F06257F3862A43EEFE681411D36FB6 /* BFCancellationTokenRegistration.h in Headers */,
+				816327E3B5B4030A335B1954F78CBA9B /* BFCancellationTokenSource.h in Headers */,
+				0F16649A56FBD0296BE92E912E7EBABB /* BFExecutor.h in Headers */,
+				F6D277FFA94AC18BEEEFC7C71B8A7A81 /* BFTask.h in Headers */,
+				D7BC261597874B2DBE31E1B8D45D2718 /* BFTaskCompletionSource.h in Headers */,
+				3CCB5E678B6CD6FDEE4DFEAA800BF53A /* Bolts-umbrella.h in Headers */,
+				427C2DD344E0CDE18760C366D0B7249C /* Bolts.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B56C816403FCF67BFBA2722380BD1B1F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCAB5C1ED3CA194258944FA04B450912 /* Pods-Smart EyewearTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B62B37DEC41C80C69F25D63DDCA5B374 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D731D7D2DEB047AED5F567FF57CAE0 /* FastCoder.h in Headers */,
+				33D5FAE8252CAF41795E199056F65450 /* FastCoding-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5880BE7B1058BA46AE3F413E8B243C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				336ADD6FC3AA8C7867542670EB568FD1 /* Pods-Smart Eyewear-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		016D982990393D4CF14C8AE7998AEC65 /* PNChart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 071C76E65139869DC282CF11496FABD4 /* Build configuration list for PBXNativeTarget "PNChart" */;
+			buildPhases = (
+				80ADA5D970AC3463BBB4B3C2930BE4EE /* Sources */,
+				E9B7A7C20FE14D96B127A004E30A5CDC /* Frameworks */,
+				0D9BEC18F5842E9B5E8768E308E5A66C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				279D49ADD48DCF4E2DC33F777F3FC3D4 /* PBXTargetDependency */,
+			);
+			name = PNChart;
+			productName = PNChart;
+			productReference = 4F09917BDF50B845E9CD30FD82D1A981 /* PNChart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		50A790513C5191169FDD5EEBC495AF28 /* FastCoding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B2400E6FD092CA49CF4906757447D99 /* Build configuration list for PBXNativeTarget "FastCoding" */;
+			buildPhases = (
+				C265EE5D19CC88084CA3833351E45950 /* Sources */,
+				4C48E4ED38705E0E17EDB0BD961EA7F8 /* Frameworks */,
+				B62B37DEC41C80C69F25D63DDCA5B374 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastCoding;
+			productName = FastCoding;
+			productReference = 3679940633277F11B859AAF5E1C0238A /* FastCoding.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C18C789438292FED01EB702705FC9AA /* UICountingLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 075844C62C664CB915B7A5930C35B019 /* Build configuration list for PBXNativeTarget "UICountingLabel" */;
+			buildPhases = (
+				9631B94BC9177D320CE316E9B333FA49 /* Sources */,
+				4DF43291E0935941087405532FEE8CA9 /* Frameworks */,
+				242EBC0CA7468643ADD00B8366244A5B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UICountingLabel;
+			productName = UICountingLabel;
+			productReference = 2AF998137792F48BDA0EB7F7ECB8C1BD /* UICountingLabel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		72D57DED5129BDCAEB112D61B15B08A2 /* JSSAlertView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C41E19394581D63D2B94DA16A8984ACC /* Build configuration list for PBXNativeTarget "JSSAlertView" */;
+			buildPhases = (
+				E6C70A508F54F2F3E1E00E14EDCFFCFF /* Sources */,
+				BBE58FFE5AB62434D61596C70B2FD757 /* Frameworks */,
+				95A08FAC63A08F7291A1D962A6A55D23 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSSAlertView;
+			productName = JSSAlertView;
+			productReference = 1E5CC987E31BC8E61A4B38D4A55E6C0D /* JSSAlertView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		80B247A10EB35D5F4C1AB30928E44A8C /* Pods-Smart EyewearUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59BD75DC058374A0D0E87EB18A931AE /* Build configuration list for PBXNativeTarget "Pods-Smart EyewearUITests" */;
+			buildPhases = (
+				B2DDAC783256BF0635E107145B786773 /* Sources */,
+				01CDA930084E0B53C446614B809CDD08 /* Frameworks */,
+				748575FB2C6D7CFF020E308E61350914 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Smart EyewearUITests";
+			productName = "Pods-Smart EyewearUITests";
+			productReference = 906123809A567B2821ED0788ADF3EB99 /* Pods_Smart_EyewearUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		89C7B7B5111B04611FCCA838E8DA4809 /* Pods-Smart EyewearTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93657495A20D52EFA2845200D281DA97 /* Build configuration list for PBXNativeTarget "Pods-Smart EyewearTests" */;
+			buildPhases = (
+				E3B81849E6417009D89D4A4B8E8DA52D /* Sources */,
+				16DFB3EECA0C446C6B90366CE403804B /* Frameworks */,
+				B56C816403FCF67BFBA2722380BD1B1F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Smart EyewearTests";
+			productName = "Pods-Smart EyewearTests";
+			productReference = 76C5FCD36BD531ADD6DD645DCE8972A6 /* Pods_Smart_EyewearTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		97790D00290CEF949578C95E8D88FFF4 /* Pods-Smart Eyewear */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8DE485C6821CD57D7B00FCA8C3C0AD5 /* Build configuration list for PBXNativeTarget "Pods-Smart Eyewear" */;
+			buildPhases = (
+				4B1EFFDF4CFB2A9CC3C04D4D8956CB88 /* Sources */,
+				F0FD12A3257E105C34B6D60AC6B6CAD9 /* Frameworks */,
+				E5880BE7B1058BA46AE3F413E8B243C5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68994F805EDD197BC0670F80A0FEE046 /* PBXTargetDependency */,
+				4530CD2299BF533E5020C2F123FA1040 /* PBXTargetDependency */,
+				40E1009D06F7E3504267F62412F2C8D6 /* PBXTargetDependency */,
+				A1B1B902595A4688E20CA981ADECC9CF /* PBXTargetDependency */,
+				D5BA2C0EDB9295C91130C7C864760DD3 /* PBXTargetDependency */,
+			);
+			name = "Pods-Smart Eyewear";
+			productName = "Pods-Smart Eyewear";
+			productReference = BB661A75B4FAF6F1FDCB4BA705EFFAEA /* Pods_Smart_Eyewear.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B272B33F162D6E5C3510BA50ECF2684B /* Bolts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B955A99A89C038E184954473BB9BD65 /* Build configuration list for PBXNativeTarget "Bolts" */;
+			buildPhases = (
+				D77317DE676BEBEEAD255FF140A59694 /* Sources */,
+				46FE9C677AB4F5DBA5819B7D23E16369 /* Frameworks */,
+				997292781BD1FEB3D001B9077415A8FD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bolts;
+			productName = Bolts;
+			productReference = 73E49D15DA2B33087D6EB740ADF22E48 /* Bolts.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 77F62D6DD399DA1778CD4581837DD75D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B272B33F162D6E5C3510BA50ECF2684B /* Bolts */,
+				50A790513C5191169FDD5EEBC495AF28 /* FastCoding */,
+				72D57DED5129BDCAEB112D61B15B08A2 /* JSSAlertView */,
+				016D982990393D4CF14C8AE7998AEC65 /* PNChart */,
+				97790D00290CEF949578C95E8D88FFF4 /* Pods-Smart Eyewear */,
+				89C7B7B5111B04611FCCA838E8DA4809 /* Pods-Smart EyewearTests */,
+				80B247A10EB35D5F4C1AB30928E44A8C /* Pods-Smart EyewearUITests */,
+				6C18C789438292FED01EB702705FC9AA /* UICountingLabel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B1EFFDF4CFB2A9CC3C04D4D8956CB88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA01B63653AAFBFD2D45EB53D601DD6F /* Pods-Smart Eyewear-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80ADA5D970AC3463BBB4B3C2930BE4EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48EF1D77A443EE3378EF52E88583559 /* PNBar.m in Sources */,
+				E00FEA6FCC637111F44C5E2AF709B418 /* PNBarChart.m in Sources */,
+				2AEE2A9BDB1A753BBC647871F79BE5B5 /* PNChart-dummy.m in Sources */,
+				E5C01C5192623F1A468530DFB94DBF2D /* PNChartLabel.m in Sources */,
+				B52731FAFDE1196E35D00724C612EA25 /* PNCircleChart.m in Sources */,
+				AA1468AFCEE75F6FAA49E33D589C9C16 /* PNColor.m in Sources */,
+				880CDD0D520203697F779D34935E2130 /* PNGenericChart.m in Sources */,
+				527E58B2C10E408428F9059FD9EEE624 /* PNLineChart.m in Sources */,
+				88DD09E622BEEE0AC27E18D034EDF826 /* PNLineChartData.m in Sources */,
+				94933B136DB3AE83353A8B8C7A5A1A15 /* PNLineChartDataItem.m in Sources */,
+				08672331D03D2FAE07F840C369F21B3E /* PNPieChart.m in Sources */,
+				8F18C758F242CA1BAEEDB0B6906252CE /* PNPieChartDataItem.m in Sources */,
+				F51D6E2E0C6803E73BE09464A04F3B9A /* PNRadarChart.m in Sources */,
+				6A511F3E9E21F7FC4A63F4DCA1F1136D /* PNRadarChartDataItem.m in Sources */,
+				0DACF61783A5911B7DBC35AB25E65393 /* PNScatterChart.m in Sources */,
+				1CBE13FFAB5A46116FECBD96967ADA87 /* PNScatterChartData.m in Sources */,
+				E20B1756CC705A2376E5AC874191610B /* PNScatterChartDataItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9631B94BC9177D320CE316E9B333FA49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2705BC03E01B384120D2D3ACAD26F8EB /* UICountingLabel-dummy.m in Sources */,
+				9759466F486DB2D728C0BAF71A52469C /* UICountingLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2DDAC783256BF0635E107145B786773 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04546466F0033FBA31F45180477613B3 /* Pods-Smart EyewearUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C265EE5D19CC88084CA3833351E45950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1044BACAA0F2B00DF1419F89A82D91B1 /* FastCoder.m in Sources */,
+				6440919F591FCAB877183C8AF8763650 /* FastCoding-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77317DE676BEBEEAD255FF140A59694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2D70B403A85C8C6C62013C538C9B0A8 /* BFCancellationToken.m in Sources */,
+				79E3B45D90155453A244BFD7E428708E /* BFCancellationTokenRegistration.m in Sources */,
+				C86CA8AC9710D6679F106D4C9BE89823 /* BFCancellationTokenSource.m in Sources */,
+				5343465689F54EB30F454AD1F903C309 /* BFExecutor.m in Sources */,
+				0E265E3E7205D2700890106A7824FC9C /* BFTask.m in Sources */,
+				7EA1176A7BD46B6E4D0628C85D1EA0B4 /* BFTaskCompletionSource.m in Sources */,
+				A400B20AADF31528D0085AE05567EB71 /* Bolts-dummy.m in Sources */,
+				F99889703B01753C466CE3BB4B999AE0 /* Bolts.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3B81849E6417009D89D4A4B8E8DA52D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD4C2E323E2052ADF508C30F57D5B15E /* Pods-Smart EyewearTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6C70A508F54F2F3E1E00E14EDCFFCFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89BC7093DC782F6880CEB7623ABDA1BC /* JSSAlertView-dummy.m in Sources */,
+				B83754258D25CA46BD8D650FEEABA48C /* JSSAlertView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		279D49ADD48DCF4E2DC33F777F3FC3D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UICountingLabel;
+			target = 6C18C789438292FED01EB702705FC9AA /* UICountingLabel */;
+			targetProxy = BB8ADC1C804D69280ED1E9672BB4172F /* PBXContainerItemProxy */;
+		};
+		40E1009D06F7E3504267F62412F2C8D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSSAlertView;
+			target = 72D57DED5129BDCAEB112D61B15B08A2 /* JSSAlertView */;
+			targetProxy = A972370D5AA41B8F5CDFFA3E6AB8FAF4 /* PBXContainerItemProxy */;
+		};
+		4530CD2299BF533E5020C2F123FA1040 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FastCoding;
+			target = 50A790513C5191169FDD5EEBC495AF28 /* FastCoding */;
+			targetProxy = 431BAB2A39F967693EF6BDF899C7175F /* PBXContainerItemProxy */;
+		};
+		68994F805EDD197BC0670F80A0FEE046 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bolts;
+			target = B272B33F162D6E5C3510BA50ECF2684B /* Bolts */;
+			targetProxy = 261DBEDC094E61574C6FB4FBC049B5F3 /* PBXContainerItemProxy */;
+		};
+		A1B1B902595A4688E20CA981ADECC9CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PNChart;
+			target = 016D982990393D4CF14C8AE7998AEC65 /* PNChart */;
+			targetProxy = 8859CBDA1A479DE37859DD13B2870A5C /* PBXContainerItemProxy */;
+		};
+		D5BA2C0EDB9295C91130C7C864760DD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UICountingLabel;
+			target = 6C18C789438292FED01EB702705FC9AA /* UICountingLabel */;
+			targetProxy = E6735ACADDD45492411E111D3B38C675 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1808FB459D7CF42C9AB46F60CA86B392 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C9F388BD45D8C0C2AEC66723C4D412 /* PNChart.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PNChart/PNChart-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PNChart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PNChart/PNChart.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PNChart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		264ABD7199B588761ACEAD1178B7A44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3530AD42E9B5C9625F2A75FB7B94670 /* Pods-Smart Eyewear.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Smart Eyewear/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Smart_Eyewear;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3AB371869124ED223164CFDD3A8CB452 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F4A036E72C1AA9A4EA2FB0BC2713E52 /* Bolts.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Bolts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Bolts/Bolts.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Bolts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3DD9054588E8D3AF7297CA36DFBAD8B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF24450D389FAE6E0487C45B181ACCE /* Pods-Smart Eyewear.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Smart Eyewear/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Smart_Eyewear;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A4161186E085F95C06EE0428CBCD98F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F4A73917CB91E3863CBE1D3370683EB /* Pods-Smart EyewearUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Smart EyewearUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Smart EyewearUITests/Pods-Smart EyewearUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Smart_EyewearUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BB947481D14015737E23E96C5965E17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C9F388BD45D8C0C2AEC66723C4D412 /* PNChart.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PNChart/PNChart-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PNChart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PNChart/PNChart.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PNChart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		628D37DE43C26BD2D178AA2246615500 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EFFEBB3D5EDBD99D8FB5FDE6B527883 /* UICountingLabel.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UICountingLabel/UICountingLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UICountingLabel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UICountingLabel/UICountingLabel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = UICountingLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		68823014FF5B9BFE0AD54A0588847496 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BCFDA1245B430B05AD4D6B86C4C69C1 /* JSSAlertView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JSSAlertView/JSSAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JSSAlertView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JSSAlertView/JSSAlertView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = JSSAlertView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6BEC351D8A158871D66632D66CE08A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A806AF397E4D0E9EE3D5FEA9B0F36B11 /* FastCoding.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FastCoding/FastCoding-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FastCoding/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FastCoding/FastCoding.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FastCoding;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		80AE4F20835C82964AD0DB484323ABA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D842BDB782E76FF736A5A631198A5554 /* Pods-Smart EyewearTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Smart EyewearTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Smart EyewearTests/Pods-Smart EyewearTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Smart_EyewearTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		86950D5668DD022195CD182E09B819EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EFFEBB3D5EDBD99D8FB5FDE6B527883 /* UICountingLabel.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UICountingLabel/UICountingLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UICountingLabel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UICountingLabel/UICountingLabel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = UICountingLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9316C8DAA8275F055B9BA2CB46E37A56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F363804BA4F5B06DF447F7D9D8517C /* Pods-Smart EyewearUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Smart EyewearUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Smart EyewearUITests/Pods-Smart EyewearUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Smart_EyewearUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9AA78787393C419BD4FD3B360DA0AA40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A806AF397E4D0E9EE3D5FEA9B0F36B11 /* FastCoding.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FastCoding/FastCoding-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FastCoding/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FastCoding/FastCoding.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FastCoding;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A822FCFF8BABB91951AD524D55C2D97C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F4A036E72C1AA9A4EA2FB0BC2713E52 /* Bolts.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Bolts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Bolts/Bolts.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Bolts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BD204712077682BD1A7691C94BBBED8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BCFDA1245B430B05AD4D6B86C4C69C1 /* JSSAlertView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JSSAlertView/JSSAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JSSAlertView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JSSAlertView/JSSAlertView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JSSAlertView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CCFDB36D82B937D2AAF3DA82E5319C3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B7076762C97CE515A20403947E06B3B /* Pods-Smart EyewearTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Smart EyewearTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Smart EyewearTests/Pods-Smart EyewearTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Smart_EyewearTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		071C76E65139869DC282CF11496FABD4 /* Build configuration list for PBXNativeTarget "PNChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BB947481D14015737E23E96C5965E17 /* Debug */,
+				1808FB459D7CF42C9AB46F60CA86B392 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		075844C62C664CB915B7A5930C35B019 /* Build configuration list for PBXNativeTarget "UICountingLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86950D5668DD022195CD182E09B819EF /* Debug */,
+				628D37DE43C26BD2D178AA2246615500 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B2400E6FD092CA49CF4906757447D99 /* Build configuration list for PBXNativeTarget "FastCoding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA78787393C419BD4FD3B360DA0AA40 /* Debug */,
+				6BEC351D8A158871D66632D66CE08A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B955A99A89C038E184954473BB9BD65 /* Build configuration list for PBXNativeTarget "Bolts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AB371869124ED223164CFDD3A8CB452 /* Debug */,
+				A822FCFF8BABB91951AD524D55C2D97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93657495A20D52EFA2845200D281DA97 /* Build configuration list for PBXNativeTarget "Pods-Smart EyewearTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCFDB36D82B937D2AAF3DA82E5319C3E /* Debug */,
+				80AE4F20835C82964AD0DB484323ABA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C41E19394581D63D2B94DA16A8984ACC /* Build configuration list for PBXNativeTarget "JSSAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD204712077682BD1A7691C94BBBED8D /* Debug */,
+				68823014FF5B9BFE0AD54A0588847496 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8DE485C6821CD57D7B00FCA8C3C0AD5 /* Build configuration list for PBXNativeTarget "Pods-Smart Eyewear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264ABD7199B588761ACEAD1178B7A44D /* Debug */,
+				3DD9054588E8D3AF7297CA36DFBAD8B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59BD75DC058374A0D0E87EB18A931AE /* Build configuration list for PBXNativeTarget "Pods-Smart EyewearUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A4161186E085F95C06EE0428CBCD98F /* Debug */,
+				9316C8DAA8275F055B9BA2CB46E37A56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
