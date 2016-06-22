@@ -367,6 +367,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Sjd-sV-BRb" kind="presentation" identifier="segueToAccelerometer" modalTransitionStyle="flipHorizontal" id="Omy-1F-Gm5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhf-Oe-bvk">
                                 <rect key="frame" x="227" y="243" width="146" height="50"/>
@@ -381,6 +384,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Sjd-sV-BRb" kind="presentation" identifier="segueToMagnetometer" modalTransitionStyle="flipHorizontal" id="gj4-5M-piG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eG8-Ni-6Xy">
                                 <rect key="frame" x="227" y="396" width="146" height="50"/>
@@ -395,6 +401,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Sjd-sV-BRb" kind="presentation" identifier="segueToGyroscope" modalTransitionStyle="flipHorizontal" id="T7b-7l-12k"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -418,6 +427,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gfu-sH-Ed5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1329" y="-1911"/>
+        </scene>
+        <!--Graphs-->
+        <scene sceneID="017-E2-eFg">
+            <objects>
+                <viewController title="Graphs" id="Sjd-sV-BRb" customClass="GraphsVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2aG-a2-YSJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rvr-Kd-I9C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2sd-sn-fTG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRu-yy-TI2">
+                                <rect key="frame" x="546" y="0.0" width="54" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="BRx-gX-gOI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitBtnAction:" destination="Sjd-sV-BRb" eventType="touchUpInside" id="Cca-WB-L5L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uRu-yy-TI2" firstAttribute="top" secondItem="2sd-sn-fTG" secondAttribute="top" id="3yK-0m-N2h"/>
+                            <constraint firstItem="rvr-Kd-I9C" firstAttribute="top" secondItem="uRu-yy-TI2" secondAttribute="bottom" constant="577" id="PvL-Be-8gb"/>
+                            <constraint firstAttribute="trailing" secondItem="uRu-yy-TI2" secondAttribute="trailing" id="byv-Q4-DLb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHL-k1-jfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="-1911"/>
         </scene>
         <!--Connection-->
         <scene sceneID="fRI-hD-9lt">
@@ -799,4 +846,7 @@
         <image name="LogoGrey" width="251" height="251"/>
         <image name="Sunny" width="74" height="74"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Omy-1F-Gm5"/>
+    </inferredMetricsTieBreakers>
 </document>

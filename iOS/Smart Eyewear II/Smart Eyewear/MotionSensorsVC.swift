@@ -18,10 +18,19 @@ class MotionSensorsVC: UIViewController
     {
         super.viewDidLoad()
         
-        // increase character spacing
-        accelerometerBtn.titleLabel?.kerning = 1.0
-        gyroscopeBtn.titleLabel?.kerning = (accelerometerBtn.titleLabel?.kerning)!
-        magnetometerBtn.titleLabel?.kerning = (accelerometerBtn.titleLabel?.kerning)!
+        if !Constants.isDeviceConnected()
+        {
+            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to access its sensors", errorPriority: Constants.AlertPriority.Medium)
+            
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
+        }
+        else
+        {
+            // increase character spacing
+            accelerometerBtn.titleLabel?.kerning = 1.0
+            gyroscopeBtn.titleLabel?.kerning = (accelerometerBtn.titleLabel?.kerning)!
+            magnetometerBtn.titleLabel?.kerning = (accelerometerBtn.titleLabel?.kerning)!
+        }
     }
     
     override func viewWillAppear(animated: Bool)
@@ -37,4 +46,21 @@ class MotionSensorsVC: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let destinationVC = segue.destinationViewController as! GraphsVC
+        
+        if segue.identifier == "segueToAccelerometer"
+        {
+            destinationVC.desiredSensor = Constants.Sensor.Accelerometer
+        }
+        else if segue.identifier == "segueToMagnetometer"
+        {
+            destinationVC.desiredSensor = Constants.Sensor.Magnetometer
+        }
+        else if segue.identifier == "segueToGyroscope"
+        {
+            destinationVC.desiredSensor = Constants.Sensor.Gyroscope
+        }
+    }
 }

@@ -16,15 +16,6 @@ class RGBVC: UIViewController
     var greenLabel: UILabel = UILabel()
     var blueLabel: UILabel = UILabel()
     
-    //    var redSlider: UISlider = UISlider()
-    //    var greenSlider: UISlider = UISlider()
-    //    var blueSlider: UISlider = UISlider()
-    
-    //    var redValueLabel: UILabel = UILabel()
-    //    var greenValueLabel: UILabel = UILabel()
-    //    var blueValueLabel: UILabel = UILabel()
-    
-    
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!

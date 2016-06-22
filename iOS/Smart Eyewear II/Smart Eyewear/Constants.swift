@@ -154,4 +154,12 @@ struct Constants
         case Medium
         case High
     }
+    
+    enum Sensor
+    {
+        case Accelerometer
+        case Magnetometer
+        case Gyroscope
+        case Null
+    }
 }
