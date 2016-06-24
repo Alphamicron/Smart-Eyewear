@@ -16,6 +16,7 @@
 		30972E081D1B05EF002BA825 /* MotionSensorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */; };
 		30972E0A1D1B1D00002BA825 /* GraphsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972E091D1B1D00002BA825 /* GraphsVC.swift */; };
 		30A9209A1D08802B00F0EA5D /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A920991D08802B00F0EA5D /* ConnectionVC.swift */; };
+		30CF114C1D1DA13500E2843C /* ProgramLEDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CF114B1D1DA13500E2843C /* ProgramLEDVC.swift */; };
 		30D5E61C1D0B24B400681EC6 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5E61B1D0B24B400681EC6 /* CustomNavigationBar.swift */; };
 		30D5E6201D0B669A00681EC6 /* CustomUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5E61F1D0B669A00681EC6 /* CustomUISlider.swift */; };
 		B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionSensorsVC.swift; sourceTree = "<group>"; };
 		30972E091D1B1D00002BA825 /* GraphsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphsVC.swift; sourceTree = "<group>"; };
 		30A920991D08802B00F0EA5D /* ConnectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
+		30CF114B1D1DA13500E2843C /* ProgramLEDVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramLEDVC.swift; sourceTree = "<group>"; };
 		30D5E61B1D0B24B400681EC6 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		30D5E61F1D0B669A00681EC6 /* CustomUISlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUISlider.swift; sourceTree = "<group>"; };
 		3192B10E27AE59F74D527FE6 /* Pods-Smart Eyewear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Eyewear.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		B23DAEB51CF4AE57003BD7FE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				30CF114B1D1DA13500E2843C /* ProgramLEDVC.swift */,
 				30972E091D1B1D00002BA825 /* GraphsVC.swift */,
 				307B0D201D0CA3940095B2C2 /* RGBVC.swift */,
 				30A920991D08802B00F0EA5D /* ConnectionVC.swift */,
@@ -642,6 +645,7 @@
 				307B0D211D0CA3940095B2C2 /* RGBVC.swift in Sources */,
 				B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */,
 				B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */,
+				30CF114C1D1DA13500E2843C /* ProgramLEDVC.swift in Sources */,
 				B2BBD5DE1CF5187E00D0EA32 /* Constants.swift in Sources */,
 				30D5E6201D0B669A00681EC6 /* CustomUISlider.swift in Sources */,
 			);

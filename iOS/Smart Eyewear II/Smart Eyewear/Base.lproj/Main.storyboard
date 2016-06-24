@@ -634,7 +634,25 @@
             </objects>
             <point key="canvasLocation" x="4213" y="-1174"/>
         </scene>
-        <!--Title-->
+        <!--ProgramLEDVC-->
+        <scene sceneID="3ov-d4-2Ey">
+            <objects>
+                <viewController id="vsf-Na-vib" customClass="ProgramLEDVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SjA-SX-3Vc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ehg-vh-xDc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M6v-ao-jTX">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uh9-66-sUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="412" y="-491"/>
+        </scene>
+        <!--RGBVC-->
         <scene sceneID="VIv-cx-2zC">
             <objects>
                 <viewController id="EMN-re-XCe" customClass="RGBVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
@@ -786,8 +804,12 @@
                             <constraint firstItem="iSL-Re-sCo" firstAttribute="top" secondItem="LNO-Ha-gb9" secondAttribute="top" id="yt4-C4-FdM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="jIL-5x-ysA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pEM-7n-fXY"/>
+                    <navigationItem key="navigationItem" id="jIL-5x-ysA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pEM-7n-fXY">
+                            <connections>
+                                <segue destination="vsf-Na-vib" kind="show" id="I5k-Gk-4e6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="blueSlider" destination="adu-FH-C15" id="wfq-h5-0yk"/>
