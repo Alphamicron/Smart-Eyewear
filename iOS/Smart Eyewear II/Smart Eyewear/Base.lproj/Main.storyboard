@@ -634,7 +634,7 @@
             </objects>
             <point key="canvasLocation" x="4213" y="-1174"/>
         </scene>
-        <!--RGBVC-->
+        <!--Title-->
         <scene sceneID="VIv-cx-2zC">
             <objects>
                 <viewController id="EMN-re-XCe" customClass="RGBVC" customModule="Smart_Eyewear" customModuleProvider="target" sceneMemberID="viewController">
@@ -786,6 +786,9 @@
                             <constraint firstItem="iSL-Re-sCo" firstAttribute="top" secondItem="LNO-Ha-gb9" secondAttribute="top" id="yt4-C4-FdM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="jIL-5x-ysA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pEM-7n-fXY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="blueSlider" destination="adu-FH-C15" id="wfq-h5-0yk"/>
                         <outlet property="blueValueLabel" destination="wB6-wz-uMJ" id="ca8-tP-W8M"/>
@@ -847,6 +850,6 @@
         <image name="Sunny" width="74" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Omy-1F-Gm5"/>
+        <segue reference="T7b-7l-12k"/>
     </inferredMetricsTieBreakers>
 </document>

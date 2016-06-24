@@ -120,7 +120,6 @@ struct Constants
                 ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
                 
             }
-            
             print(ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
             
         }
@@ -161,5 +160,19 @@ struct Constants
         case Magnetometer
         case Gyroscope
         case Null
+    }
+}
+
+class GraphPoints
+{
+    var xValue: CGFloat = CGFloat()
+    var yValue: CGFloat = CGFloat()
+    var zValue: CGFloat = CGFloat()
+    
+    init(newX: CGFloat, newY: CGFloat, newZ: CGFloat)
+    {
+        xValue = newX
+        yValue = newY
+        zValue = newZ
     }
 }

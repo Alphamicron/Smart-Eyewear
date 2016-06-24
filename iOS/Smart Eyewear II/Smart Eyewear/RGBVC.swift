@@ -78,15 +78,15 @@ class RGBVC: UIViewController
     func createTheColorWheel()
     {
         // iPhone 6S best settings
-        //        let colorWheelSize: CGSize = CGSizeMake(colorView.bounds.size.width * 0.9, colorView.bounds.size.height * 0.9)
+        let colorWheelSize: CGSize = CGSizeMake(colorView.bounds.size.width * 0.9, colorView.bounds.size.height * 0.9)
+        
+        colorWheel = ISColorWheel(frame: CGRect(x: colorWheelSize.width/14, y: 15, width: colorView.bounds.size.width/2, height: colorView.bounds.size.height))
+        
+        //        let size: CGSize = colorView.bounds.size
         //        
-        //        colorWheel = ISColorWheel(frame: CGRect(x: colorWheelSize.width/14, y: 15, width: colorView.bounds.size.width/2, height: colorView.bounds.size.height))
-        
-        let size: CGSize = colorView.bounds.size
-        
-        let wheelSize = CGSizeMake(size.width * 0.41, size.width * 0.41)
-        
-        colorWheel = ISColorWheel(frame: CGRect(x: size.width/15, y: 5, width: wheelSize.width, height: wheelSize.height))
+        //        let wheelSize = CGSizeMake(size.width * 0.41, size.width * 0.41)
+        //        
+        //        colorWheel = ISColorWheel(frame: CGRect(x: size.width/15, y: 5, width: wheelSize.width, height: wheelSize.height))
         
         colorWheel.delegate = self
         colorWheel.continuous = false

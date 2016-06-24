@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import PNChart
 
 class GraphsVC: UIViewController
 {
     var desiredSensor: Constants.Sensor = Constants.Sensor.Null
     let BMM150Magnetometer: MBLMagnetometerBMM150 = ConnectionVC.currentlySelectedDevice.magnetometer as! MBLMagnetometerBMM150
+    let lineChart: PNLineChart = PNLineChart(frame: CGRect(x: 0, y: 0, width: GraphsVC().view.bounds.size.width, height: GraphsVC().view.bounds.size.height))
+    var newPoints: [GraphPoints] = [GraphPoints]()
     
     override func viewDidLoad()
     {
@@ -42,6 +45,7 @@ class GraphsVC: UIViewController
     {
         super.viewWillDisappear(animated)
         
+        print("VWD called")
         stopStreamingSensorInfo()
     }
     
@@ -109,4 +113,26 @@ class GraphsVC: UIViewController
         ConnectionVC.currentlySelectedDevice.gyro?.dataReadyEvent.stopNotificationsAsync()
         BMM150Magnetometer.periodicMagneticField.stopNotificationsAsync()
     }
+    
+    //    func graphResults(newGraphPoint: GraphPoints)
+    //    {
+    //        newPoints.append(newGraphPoint)
+    //        
+    //        // X-Value Graph
+    //        let xValueData: PNLineChartData = PNLineChartData()
+    //        xValueData.color = Constants.themeGreenColour
+    //        xValueData.itemCount = UInt(newPoints.count)
+    //        xValueData.inflexionPointStyle = .Triangle
+    //        
+    //        xValueData.getData = ({(index: Int) -> PNLineChartDataItem in
+    //            //            var xValue: CGFloat = self.newPoints[index].xValue
+    //            //            var item: PNLineChartDataItem = PNLineChartDataItem(y: xValue)
+    //            //            return item
+    //            return PNLineChartDataItem(y: newPoints[index].xValue)
+    //        })
+    //        
+    //        lineChart.strokeChart()
+    //        
+    //        self.view.addSubview(lineChart)
+    //    }
 }
