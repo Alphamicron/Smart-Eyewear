@@ -22,4 +22,8 @@ class ProgramLEDVC: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func exitBtnAction(sender: UIButton)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
