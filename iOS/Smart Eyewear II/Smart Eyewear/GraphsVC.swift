@@ -11,9 +11,9 @@ import PNChart
 
 class GraphsVC: UIViewController
 {
-    var desiredSensor: Constants.Sensor = Constants.Sensor.Null
+    var desiredSensor: Sensor = Sensor.Null
     let BMM150Magnetometer: MBLMagnetometerBMM150 = ConnectionVC.currentlySelectedDevice.magnetometer as! MBLMagnetometerBMM150
-    let lineChart: PNLineChart = PNLineChart(frame: CGRect(x: 0, y: 0, width: GraphsVC().view.bounds.size.width, height: GraphsVC().view.bounds.size.height))
+    //    let lineChart: PNLineChart = PNLineChart(frame: CGRect(x: 0, y: 0, width: GraphsVC().view.bounds.size.width, height: GraphsVC().view.bounds.size.height))
     var newPoints: [GraphPoints] = [GraphPoints]()
     
     override func viewDidLoad()

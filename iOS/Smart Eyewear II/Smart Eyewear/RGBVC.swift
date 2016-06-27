@@ -33,9 +33,9 @@ class RGBVC: UIViewController
         
         if !Constants.isDeviceConnected()
         {
-            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to change its LED colours", errorPriority: Constants.AlertPriority.Medium)
+            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to change its LED colours", errorPriority: AlertPriority.Medium)
             
-            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: ErrorState.NoMetaWear)
         }
         else
         {

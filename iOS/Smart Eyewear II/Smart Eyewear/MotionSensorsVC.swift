@@ -20,9 +20,9 @@ class MotionSensorsVC: UIViewController
         
         if !Constants.isDeviceConnected()
         {
-            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to access its sensors", errorPriority: Constants.AlertPriority.Medium)
+            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to access its sensors", errorPriority: AlertPriority.Medium)
             
-            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: ErrorState.NoMetaWear)
         }
         else
         {
@@ -52,15 +52,15 @@ class MotionSensorsVC: UIViewController
         
         if segue.identifier == "segueToAccelerometer"
         {
-            destinationVC.desiredSensor = Constants.Sensor.Accelerometer
+            destinationVC.desiredSensor = Sensor.Accelerometer
         }
         else if segue.identifier == "segueToMagnetometer"
         {
-            destinationVC.desiredSensor = Constants.Sensor.Magnetometer
+            destinationVC.desiredSensor = Sensor.Magnetometer
         }
         else if segue.identifier == "segueToGyroscope"
         {
-            destinationVC.desiredSensor = Constants.Sensor.Gyroscope
+            destinationVC.desiredSensor = Sensor.Gyroscope
         }
     }
 }

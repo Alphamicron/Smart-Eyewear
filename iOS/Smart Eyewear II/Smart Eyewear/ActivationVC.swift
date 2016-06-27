@@ -34,9 +34,9 @@ class ActivationVC: UIViewController
         
         if !Constants.isDeviceConnected()
         {
-            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to activate the photo sensor", errorPriority: Constants.AlertPriority.Medium)
+            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to activate the photo sensor", errorPriority: AlertPriority.Medium)
             
-            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: ErrorState.NoMetaWear)
         }
         else
         {
@@ -51,14 +51,14 @@ class ActivationVC: UIViewController
         self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavGogglesWhite"))
         
-        ActivationVC.turnLED(Constants.LEDState.Off)
+        ActivationVC.turnLED(LEDState.Off)
     }
     
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
         
-        ActivationVC.turnLED(Constants.LEDState.Off)
+        ActivationVC.turnLED(LEDState.Off)
     }
     
     override func didReceiveMemoryWarning()
@@ -71,11 +71,11 @@ class ActivationVC: UIViewController
     {
         if sender.value > userThresholdSlider.value
         {
-            ActivationVC.turnLED(Constants.LEDState.On)
+            ActivationVC.turnLED(LEDState.On)
         }
         else
         {
-            ActivationVC.turnLED(Constants.LEDState.Off)
+            ActivationVC.turnLED(LEDState.Off)
         }
     }
     
@@ -84,11 +84,11 @@ class ActivationVC: UIViewController
     {
         if sender.value < metaWearValueSlider.value
         {
-            ActivationVC.turnLED(Constants.LEDState.On)
+            ActivationVC.turnLED(LEDState.On)
         }
         else
         {
-            ActivationVC.turnLED(Constants.LEDState.Off)
+            ActivationVC.turnLED(LEDState.Off)
         }
     }
     
@@ -109,7 +109,7 @@ class ActivationVC: UIViewController
             manualBtn.backgroundColor = Constants.themeInactiveStateColour
             manualBtn.userInteractionEnabled = false
             
-            ActivationVC.turnLED(Constants.LEDState.Off)
+            ActivationVC.turnLED(LEDState.Off)
         }
     }
     
@@ -120,7 +120,7 @@ class ActivationVC: UIViewController
             manualSwitch.setOn(false, animated: true)
             manualSwitch.sendActionsForControlEvents(.ValueChanged)
             
-            setImagesForState(Constants.LEDState.On)
+            setImagesForState(LEDState.On)
             
             metaWearValueSlider.thumbTintColor = Constants.themeRedColour
             userThresholdSlider.thumbTintColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
@@ -152,9 +152,9 @@ class ActivationVC: UIViewController
             userThresholdSlider.setValue(Float(), animated: true)
             metaWearValueSlider.setValue(Float(), animated: true)
             
-            setImagesForState(Constants.LEDState.Off)
+            setImagesForState(LEDState.Off)
             
-            ActivationVC.turnLED(Constants.LEDState.Off)
+            ActivationVC.turnLED(LEDState.Off)
         }
     }
     
@@ -164,7 +164,7 @@ class ActivationVC: UIViewController
         
         if sender.selected // button has already been pressed before
         {
-            ActivationVC.turnLED(Constants.LEDState.Off)
+            ActivationVC.turnLED(LEDState.Off)
             sender.setTitle("OFF", forState: .Selected)
             sender.backgroundColor = Constants.themeRedColour
             
@@ -172,7 +172,7 @@ class ActivationVC: UIViewController
         else // not pressed before
         {
             sender.setTitle("ON", forState: .Normal)
-            ActivationVC.turnLED(Constants.LEDState.On)
+            ActivationVC.turnLED(LEDState.On)
             sender.backgroundColor = Constants.themeGreenColour
         }
     }
@@ -181,7 +181,7 @@ class ActivationVC: UIViewController
     {
         //        if !Constants.isDeviceConnected()
         //        {
-        //            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to continue", errorPriority: Constants.AlertPriority.Medium)
+        //            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to continue", errorPriority: AlertPriority.Medium)
         //        }
         //        else
         //        {
@@ -221,7 +221,7 @@ class ActivationVC: UIViewController
         }
     }
     
-    func setImagesForState(ledState: Constants.LEDState)
+    func setImagesForState(ledState: LEDState)
     {
         switch ledState
         {
@@ -257,7 +257,7 @@ class ActivationVC: UIViewController
         helpBtn.hidden = true
         helpTextLabel.hidden = true
         
-        setImagesForState(Constants.LEDState.Off)
+        setImagesForState(LEDState.Off)
         
         manualBtn.setTitle("OFF", forState: .Normal)
     }
@@ -269,7 +269,7 @@ class ActivationVC: UIViewController
         
         if let photoSensorGPIO = ConnectionVC.currentlySelectedDevice.gpio
         {
-            let photoSensor: MBLGPIOPin = photoSensorGPIO.pins[Constants.PinAssignments.pinTwo] as! MBLGPIOPin
+            let photoSensor: MBLGPIOPin = photoSensorGPIO.pins[PinAssignments.pinTwo] as! MBLGPIOPin
             
             photoSensor.analogAbsolute.readAsync().success({ (analogueResult: AnyObject) in
                 
@@ -305,11 +305,11 @@ class ActivationVC: UIViewController
         Constants.defaultTimer = NSTimer.scheduledTimerWithTimeInterval(taskDuration, target: self, selector: requiredTask, userInfo: nil, repeats: true)
     }
     
-    static func turnLED(ledState: Constants.LEDState)
+    static func turnLED(ledState: LEDState)
     {
         if let metaWearGPIO = ConnectionVC.currentlySelectedDevice.gpio
         {
-            let LEDPin = metaWearGPIO.pins[Constants.PinAssignments.pinOne] as! MBLGPIOPin
+            let LEDPin = metaWearGPIO.pins[PinAssignments.pinOne] as! MBLGPIOPin
             
             switch ledState
             {

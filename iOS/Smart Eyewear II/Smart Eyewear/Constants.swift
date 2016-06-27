@@ -124,43 +124,43 @@ struct Constants
             
         }
     }
-    
-    // Refer https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
-    struct PinAssignments
-    {
-        static let pinZero: Int = Int() // DIO0/AIN0
-        static let pinOne: Int = 1 // DIO1/AIN1
-        static let pinTwo: Int = 2 // DIO2/AIN2
-        static let pinThree: Int = 3 // DIO3/AIN3
-        static let pinFour: Int = 4 // DIO4
-    }
-    
-    enum LEDState
-    {
-        case On
-        case Off
-    }
-    
-    enum ErrorState
-    {
-        case NoMetaWear
-        case NoBLEConnection
-    }
-    
-    enum AlertPriority
-    {
-        case Low
-        case Medium
-        case High
-    }
-    
-    enum Sensor
-    {
-        case Accelerometer
-        case Magnetometer
-        case Gyroscope
-        case Null
-    }
+}
+
+// Refer https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
+struct PinAssignments
+{
+    static let pinZero: Int = Int() // DIO0/AIN0
+    static let pinOne: Int = 1 // DIO1/AIN1
+    static let pinTwo: Int = 2 // DIO2/AIN2
+    static let pinThree: Int = 3 // DIO3/AIN3
+    static let pinFour: Int = 4 // DIO4
+}
+
+enum AlertPriority
+{
+    case Low
+    case Medium
+    case High
+}
+
+enum ErrorState
+{
+    case NoMetaWear
+    case NoBLEConnection
+}
+
+enum LEDState
+{
+    case On
+    case Off
+}
+
+enum Sensor
+{
+    case Accelerometer
+    case Magnetometer
+    case Gyroscope
+    case Null
 }
 
 class GraphPoints

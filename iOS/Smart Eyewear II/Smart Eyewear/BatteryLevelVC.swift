@@ -17,9 +17,9 @@ class BatteryLevelVC: UIViewController
         
         if !Constants.isDeviceConnected()
         {
-            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to see its battery life", errorPriority: Constants.AlertPriority.Medium)
+            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to see its battery life", errorPriority: AlertPriority.Medium)
             
-            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoMetaWear)
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: ErrorState.NoMetaWear)
         }
         else
         {

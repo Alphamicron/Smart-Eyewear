@@ -170,7 +170,7 @@ class ConnectionVC: UIViewController
                         // flash the Metawear LED Green just to confirm its the right device
                         ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(Constants.themeGreenColour, withIntensity: 1.0, numberOfFlashes: 3)
                         
-                        ActivationVC.turnLED(Constants.LEDState.Off)
+                        ActivationVC.turnLED(LEDState.Off)
                         
                         self.tapToConnectLabel.hidden = true
                         self.neutralLabel.hidden = false
@@ -200,10 +200,10 @@ extension ConnectionVC: CBCentralManagerDelegate
         case .PoweredOff:
             print("BLE OFF")
             
-            Constants.defaultErrorAlert(self, errorTitle: "Bluetooth Error", errorMessage: "Please turn on your bluetooth to connect to the CTRL Eyewear", errorPriority: Constants.AlertPriority.High)
+            Constants.defaultErrorAlert(self, errorTitle: "Bluetooth Error", errorMessage: "Please turn on your bluetooth to connect to the CTRL Eyewear", errorPriority: AlertPriority.High)
             
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
-            Constants.displayBackgroundImageOnError(self.view, typeOfError: Constants.ErrorState.NoBLEConnection)
+            Constants.displayBackgroundImageOnError(self.view, typeOfError: ErrorState.NoBLEConnection)
             break
             
         case .Resetting:
@@ -213,7 +213,7 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .Unauthorized:
             print("BLE Unauthorized")
-            Constants.defaultErrorAlert(self, errorTitle: "Authorisation Error", errorMessage: "Smart Eyewear requires access to Bluetooth", errorPriority: Constants.AlertPriority.High)
+            Constants.defaultErrorAlert(self, errorTitle: "Authorisation Error", errorMessage: "Smart Eyewear requires access to Bluetooth", errorPriority: AlertPriority.High)
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
@@ -224,7 +224,7 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .Unsupported:
             print("BLE Unsupported")
-            Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Device does not support Bluetooth Low Energy technology", errorPriority: Constants.AlertPriority.High)
+            Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Device does not support Bluetooth Low Energy technology", errorPriority: AlertPriority.High)
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
         }
@@ -232,7 +232,7 @@ extension ConnectionVC: CBCentralManagerDelegate
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
     {
-        Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: (error?.localizedDescription)!, errorPriority: Constants.AlertPriority.High)
+        Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: (error?.localizedDescription)!, errorPriority: AlertPriority.High)
     }
     
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
