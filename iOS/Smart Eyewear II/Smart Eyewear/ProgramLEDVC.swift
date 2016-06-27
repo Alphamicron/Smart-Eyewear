@@ -18,6 +18,12 @@ class ProgramLEDVC: UIViewController
     @IBOutlet weak var secondColorSequence: UIButton!
     @IBOutlet weak var thirdColorSequence: UIButton!
     
+    var firstColorSelected: Bool = Bool()
+    var secondColorSelected: Bool = Bool()
+    var thirdColorSelected: Bool = Bool()
+    
+    var userSelectedColour: UIColor = UIColor()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -37,19 +43,23 @@ class ProgramLEDVC: UIViewController
     
     @IBAction func colour1BtnAction(sender: UIButton)
     {
-        print("Colour I button tapped")
+        showColourPickerBelow(sender)
+        firstColorSelected = true
     }
     
     @IBAction func colour2BtnAction(sender: UIButton)
     {
-        print("Colour II button tapped")
+        showColourPickerBelow(sender)
+        secondColorSelected = true
     }
     
     @IBAction func colour3BtnAction(sender: UIButton)
     {
-        print("Colour III button tapped")
+        showColourPickerBelow(sender)
+        thirdColorSelected = true
     }
     
+    // MARK: Textfield Editing Did End
     @IBAction func firstColourAction(sender: UITextField)
     {
         print("First colour text box: \(sender.text!)")
@@ -73,5 +83,63 @@ class ProgramLEDVC: UIViewController
     @IBAction func saveBtnAction(sender: UIButton)
     {
         print("Save button pressed")
+    }
+    
+    private func showColourPickerBelow(desiredButton: UIButton)
+    {
+        let colorPickerVC = storyboard?.instantiateViewControllerWithIdentifier("colorPicker") as! ColorPickerViewController
+        
+        colorPickerVC.modalPresentationStyle = .Popover
+        
+        colorPickerVC.preferredContentSize = CGSizeMake(265, 400)
+        
+        colorPickerVC.colorPickerDelegate = self
+        
+        if let popoverController = colorPickerVC.popoverPresentationController
+        {
+            popoverController.sourceView = self.view
+            
+            // show popover from button
+            popoverController.sourceRect = desiredButton.frame
+            
+            // show popover arrow at feasible direction
+            popoverController.permittedArrowDirections = UIPopoverArrowDirection.Any
+            
+            popoverController.delegate = self
+        }
+        
+        presentViewController(colorPickerVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: Popover Delegate
+extension ProgramLEDVC: UIPopoverPresentationControllerDelegate
+{
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle
+    {
+        return .None // present popover for both iOS and iPad
+    }
+}
+
+// MARK: Color Picker Delegate
+extension ProgramLEDVC: ColorPickerDelegate
+{
+    func colorPickerDidColorSelected(selectedUIColor selectedUIColor: UIColor, selectedHexColor: String)
+    {
+        if firstColorSelected
+        {
+            firstColorSelected = false
+            firstColorSequence.backgroundColor = selectedUIColor
+        }
+        else if secondColorSelected
+        {
+            secondColorSelected = false
+            secondColorSequence.backgroundColor = selectedUIColor
+        }
+        else if thirdColorSelected
+        {
+            thirdColorSelected = false
+            thirdColorSequence.backgroundColor = selectedUIColor
+        }
     }
 }
