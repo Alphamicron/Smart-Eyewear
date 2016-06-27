@@ -107,10 +107,8 @@ struct Constants
         currentView.addSubview(errorImageView)
     }
     
-    // TODO: Use this to write commands to the pins
-    static func setButtonToFlashLED()
+    static func eraseAllSwitchCommands()
     {
-        // erase any existing commands before assigning new ones
         if let deviceHasButtonPrograms = ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands()
         {
             print(deviceHasButtonPrograms)
@@ -118,10 +116,8 @@ struct Constants
             if deviceHasButtonPrograms
             {
                 ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
-                
             }
             print(ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
-            
         }
     }
 }

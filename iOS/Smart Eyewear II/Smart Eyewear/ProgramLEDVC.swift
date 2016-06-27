@@ -10,6 +10,10 @@ import UIKit
 
 class ProgramLEDVC: UIViewController
 {
+    var firstColorSelected: Bool = Bool()
+    var secondColorSelected: Bool = Bool()
+    var thirdColorSelected: Bool = Bool()
+    
     @IBOutlet weak var firstTimerTextField: UITextField!
     @IBOutlet weak var secondTimerTextField: UITextField!
     @IBOutlet weak var thirdTimerTextField: UITextField!
@@ -17,12 +21,6 @@ class ProgramLEDVC: UIViewController
     @IBOutlet weak var firstColorSequence: UIButton!
     @IBOutlet weak var secondColorSequence: UIButton!
     @IBOutlet weak var thirdColorSequence: UIButton!
-    
-    var firstColorSelected: Bool = Bool()
-    var secondColorSelected: Bool = Bool()
-    var thirdColorSelected: Bool = Bool()
-    
-    var userSelectedColour: UIColor = UIColor()
     
     override func viewDidLoad()
     {
@@ -43,36 +41,20 @@ class ProgramLEDVC: UIViewController
     
     @IBAction func colour1BtnAction(sender: UIButton)
     {
-        showColourPickerBelow(sender)
         firstColorSelected = true
+        showColourPickerRelativeTo(sender)
     }
     
     @IBAction func colour2BtnAction(sender: UIButton)
     {
-        showColourPickerBelow(sender)
         secondColorSelected = true
+        showColourPickerRelativeTo(sender)
     }
     
     @IBAction func colour3BtnAction(sender: UIButton)
     {
-        showColourPickerBelow(sender)
         thirdColorSelected = true
-    }
-    
-    // MARK: Textfield Editing Did End
-    @IBAction func firstColourAction(sender: UITextField)
-    {
-        print("First colour text box: \(sender.text!)")
-    }
-    
-    @IBAction func secondColorAction(sender: UITextField)
-    {
-        print("Second colour textbox: \(sender.text!)")
-    }
-    
-    @IBAction func thirdColurAction(sender: UITextField)
-    {
-        print("Third colour textbox: \(sender.text!)")
+        showColourPickerRelativeTo(sender)
     }
     
     @IBAction func exitBtnAction(sender: UIButton)
@@ -83,9 +65,56 @@ class ProgramLEDVC: UIViewController
     @IBAction func saveBtnAction(sender: UIButton)
     {
         print("Save button pressed")
+        
+        performFieldsCheck()
+        
+        //        Constants.eraseAllSwitchCommands()
+        
+        ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.programCommandsToRunOnEventAsync({
+            
+            // flash the first sequence
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.redColor(), withIntensity: 1.0, numberOfFlashes: UInt8(self.firstTimerTextField.text!)!)
+            
+            // flash the second sequence
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0, numberOfFlashes: UInt8(self.secondTimerTextField.text!)!)
+            
+            // flash the third sequence
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.blueColor(), withIntensity: 1.0, numberOfFlashes: UInt8(self.thirdTimerTextField.text!)!)
+        })
+        
+        //            // flash the first sequence
+        //            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.firstColorSequence.backgroundColor!, withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.firstTimerTextField.text!)!), andPeriod: 0)
+        //
+        //            // flash the second sequence
+        //            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.secondColorSequence.backgroundColor!, withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.secondTimerTextField.text!)!), andPeriod: 0)
+        //
+        //            // flash the third sequence
+        //            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.thirdColorSequence.backgroundColor!, withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.thirdTimerTextField.text!)!), andPeriod: 0)
     }
     
-    private func showColourPickerBelow(desiredButton: UIButton)
+    // POST: Makes sure that no empty fields exist
+    func performFieldsCheck()
+    {
+        if firstTimerTextField.text?.characters.count < 1
+        {
+            firstTimerTextField.text = "1"
+        }
+        else if secondTimerTextField.text?.characters.count < 1
+        {
+            secondTimerTextField.text = "1"
+        }
+        else if thirdTimerTextField.text?.characters.count < 1
+        {
+            thirdTimerTextField.text = "1"
+        }
+    }
+    
+    func timeInMilliseconds(numberOfSeconds: Int)-> UInt16
+    {
+        return UInt16(numberOfSeconds * 1000)
+    }
+    
+    private func showColourPickerRelativeTo(desiredButton: UIButton)
     {
         let colorPickerVC = storyboard?.instantiateViewControllerWithIdentifier("colorPicker") as! ColorPickerViewController
         

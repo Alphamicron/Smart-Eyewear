@@ -730,9 +730,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="thirdColurAction:" destination="vsf-Na-vib" eventType="editingDidEnd" id="mlN-jI-Aq8"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lM-TL-X7H">
                                 <rect key="frame" x="37" y="127" width="123" height="55"/>
@@ -762,9 +759,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="firstColourAction:" destination="vsf-Na-vib" eventType="editingDidEnd" id="7Xs-Ig-CZA"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8s-qJ-3RM">
                                 <rect key="frame" x="37" y="201" width="123" height="55"/>
@@ -791,9 +785,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="secondColorAction:" destination="vsf-Na-vib" eventType="editingDidEnd" id="oqE-m9-9xJ"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-IX-mlK">
                                 <rect key="frame" x="188" y="369" width="225" height="52"/>
