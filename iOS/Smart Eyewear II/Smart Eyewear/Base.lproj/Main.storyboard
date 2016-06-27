@@ -671,11 +671,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJF-oa-gY8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJF-oa-gY8">
                                 <rect key="frame" x="485" y="276" width="100" height="45"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="thirdColurAction:" destination="vsf-Na-vib" eventType="editingDidEnd" id="mlN-jI-Aq8"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lM-TL-X7H">
                                 <rect key="frame" x="37" y="127" width="123" height="55"/>
@@ -684,11 +690,17 @@
                                     <constraint firstAttribute="width" constant="123" id="O57-5W-jfO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <state key="normal" title="color I">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="colour1BtnAction:" destination="vsf-Na-vib" eventType="touchUpInside" id="8Sq-2k-Y1T"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48W-Vo-PGM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48W-Vo-PGM">
                                 <rect key="frame" x="485" y="127" width="100" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="atK-SP-bXQ"/>
@@ -696,23 +708,42 @@
                                 <color key="textColor" red="0.50196078431372548" green="0.50588235294117645" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="firstColourAction:" destination="vsf-Na-vib" eventType="editingDidEnd" id="7Xs-Ig-CZA"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8s-qJ-3RM">
                                 <rect key="frame" x="37" y="201" width="123" height="55"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <state key="normal" title="color II">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="colour2BtnAction:" destination="vsf-Na-vib" eventType="touchUpInside" id="2nn-n0-lby"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-kM-bZr">
-                                <rect key="frame" x="37" y="276" width="123" height="55"/>
-                                <color key="backgroundColor" red="0.20784313730000001" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Quc-Qa-PRc">
+                                <rect key="frame" x="485" y="201" width="100" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="d6p-8w-op7"/>
+                                </constraints>
+                                <color key="textColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <state key="normal" title="color III">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="secondColorAction:" destination="vsf-Na-vib" eventType="editingDidEnd" id="oqE-m9-9xJ"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-IX-mlK">
                                 <rect key="frame" x="188" y="369" width="225" height="52"/>
                                 <color key="backgroundColor" red="0.20784313730000001" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -726,6 +757,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBtnAction:" destination="vsf-Na-vib" eventType="touchUpInside" id="R5k-r7-DHh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ql-fY-X6X">
                                 <rect key="frame" x="560" y="20" width="40" height="33"/>
@@ -741,15 +775,20 @@
                                     <action selector="exitBtnAction:" destination="vsf-Na-vib" eventType="touchUpInside" id="CCV-E5-cNX"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Quc-Qa-PRc">
-                                <rect key="frame" x="485" y="201" width="100" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="d6p-8w-op7"/>
-                                </constraints>
-                                <color key="textColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-kM-bZr">
+                                <rect key="frame" x="37" y="276" width="123" height="55"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="colour3BtnAction:" destination="vsf-Na-vib" eventType="touchUpInside" id="UA4-8r-KYO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -786,6 +825,14 @@
                             <constraint firstItem="v8s-qJ-3RM" firstAttribute="top" secondItem="4lM-TL-X7H" secondAttribute="bottom" constant="19" id="yu7-3y-let"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstColorSequence" destination="4lM-TL-X7H" id="p3M-b1-U2F"/>
+                        <outlet property="firstTimerTextField" destination="48W-Vo-PGM" id="BmT-68-ET2"/>
+                        <outlet property="secondColorSequence" destination="v8s-qJ-3RM" id="Ixo-jg-1eD"/>
+                        <outlet property="secondTimerTextField" destination="Quc-Qa-PRc" id="lUP-Ei-bW7"/>
+                        <outlet property="thirdColorSequence" destination="aeh-kM-bZr" id="kci-zI-SUm"/>
+                        <outlet property="thirdTimerTextField" destination="PJF-oa-gY8" id="JSZ-eX-fq3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh9-66-sUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
