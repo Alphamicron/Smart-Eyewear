@@ -68,28 +68,41 @@ class ProgramLEDVC: UIViewController
         
         performFieldsCheck()
         
-        //        Constants.eraseAllSwitchCommands()
+        Constants.eraseAllSwitchCommands()
         
+        //        flashLEDWithTimer()
+        //        flashLEDWithNumberOfFlashes()
+    }
+    
+    //TODO: Reflect the LED colour to be that of the selected button
+    func flashLEDWithTimer()
+    {
         ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.programCommandsToRunOnEventAsync({
             
             // flash the first sequence
-            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.redColor(), withIntensity: 1.0, numberOfFlashes: UInt8(self.firstTimerTextField.text!)!)
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.redColor(), withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.firstTimerTextField.text!)!), andPeriod: self.timeInMilliseconds(Int(self.firstTimerTextField.text!)!) * 2)
             
             // flash the second sequence
-            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0, numberOfFlashes: UInt8(self.secondTimerTextField.text!)!)
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.greenColor(), withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.secondTimerTextField.text!)!), andPeriod: self.timeInMilliseconds(Int(self.firstTimerTextField.text!)!) * 4)
             
             // flash the third sequence
-            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.blueColor(), withIntensity: 1.0, numberOfFlashes: UInt8(self.thirdTimerTextField.text!)!)
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(UIColor.blueColor(), withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.thirdTimerTextField.text!)!), andPeriod: 0)
         })
-        
-        //            // flash the first sequence
-        //            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.firstColorSequence.backgroundColor!, withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.firstTimerTextField.text!)!), andPeriod: 0)
-        //
-        //            // flash the second sequence
-        //            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.secondColorSequence.backgroundColor!, withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.secondTimerTextField.text!)!), andPeriod: 0)
-        //
-        //            // flash the third sequence
-        //            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.thirdColorSequence.backgroundColor!, withIntensity: 1.0, onTime: self.timeInMilliseconds(Int(self.thirdTimerTextField.text!)!), andPeriod: 0)
+    }
+    
+    func flashLEDWithNumberOfFlashes()
+    {
+        ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.programCommandsToRunOnEventAsync({
+            
+            // flash the first sequence
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.firstColorSequence.backgroundColor!, withIntensity: 1.0, numberOfFlashes: UInt8(self.firstTimerTextField.text!)!)
+            
+            // flash the second sequence
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.secondColorSequence.backgroundColor!, withIntensity: 1.0, numberOfFlashes: UInt8(self.secondTimerTextField.text!)!)
+            
+            // flash the third sequence
+            ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(self.thirdColorSequence.backgroundColor!, withIntensity: 1.0, numberOfFlashes: UInt8(self.thirdTimerTextField.text!)!)
+        })
     }
     
     // POST: Makes sure that no empty fields exist
