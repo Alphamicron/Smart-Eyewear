@@ -12,8 +12,8 @@ import UIKit
 //#define point(x, y)                                 CGPointMake((x) * kXScale, yOffset + (y) * kYScale)
 class GraphView: UIView
 {
-    let kXScale: CGFloat = 10.0
-    let kYScale: CGFloat = 30.0
+    let kXScale: CGFloat = 15.0
+    let kYScale: CGFloat = 50.0
     var timer: dispatch_source_t?
     let GraphColor = UIColor.greenColor()
     var generalYOffset: CGFloat = CGFloat()
@@ -32,6 +32,11 @@ class GraphView: UIView
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
+    }
+    
+    deinit
+    {
+        dispatch_source_cancel(timer!)
     }
     
     override func awakeFromNib()
@@ -70,12 +75,6 @@ class GraphView: UIView
         self.setNeedsDisplay()
     }
     
-    deinit
-    {
-        print("view dealloc called")
-        dispatch_source_cancel(timer!)
-    }
-    
     //    convenience func dealloc()
     //    {
     //        dispatch_source_cancel(timer)
@@ -105,33 +104,29 @@ class GraphView: UIView
         
         for x in 1 ..< self.values.count
         {
-            y = CGFloat(self.values[x] as! NSNumber)
+            y = self.values[x] as! CGFloat
             CGPathAddLineToPoint(path, &transform, CGFloat(x), y)
             self.drawAtPoint(point(CGFloat(x), y: y), withStr: str(x))
         }
         
         CGContextAddPath(ctx, path)
-        //        CGPathRelease(path)
         CGContextStrokePath(ctx)
     }
     
     func drawAtPoint(point: CGPoint, withStr str: String)
     {
-        //        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: UIFont.systemFontOfSize(8), NSStrokeColorAttributeName: GraphColor])
-        
-        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(10), NSStrokeColorAttributeName: GraphColor])
-        
+        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(8), NSStrokeColorAttributeName: GraphColor])
     }
     
     func str(index: Int)-> String
     {
-        return String(format: "%.f", CGFloat(self.values[index] as! NSNumber) * kYScale)
+        print("String: \(String(format: "%.f", CGFloat(self.values[index] as! NSNumber) * kYScale))")
+        return String(format: "%.f", self.values[index] as! CGFloat * kYScale)
     }
     
     func point(x: CGFloat, y: CGFloat)-> CGPoint
     {
-        //        return CGPointMake(x * kXScale, generalYOffset + y * kYScale)
-        
+        print("Point: \(CGPointMake(x * kXScale, generalYOffset + y * kYScale))")
         return CGPointMake(x * kXScale, generalYOffset + y * kYScale)
     }
 }
