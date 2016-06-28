@@ -12,10 +12,11 @@ import UIKit
 //#define point(x, y)                                 CGPointMake((x) * kXScale, yOffset + (y) * kYScale)
 class GraphView: UIView
 {
-    let kXScale: CGFloat = 15.0
-    let kYScale: CGFloat = 50.0
+    let kXScale: CGFloat = 10.0
+    let kYScale: CGFloat = 30.0
     var timer: dispatch_source_t?
     let GraphColor = UIColor.greenColor()
+    var generalYOffset: CGFloat = CGFloat()
     var values: NSMutableArray = NSMutableArray()
     
     func CGAffineTransformMakeScaleTranslate(sx: CGFloat, sy:CGFloat, dx: CGFloat, dy: CGFloat) -> CGAffineTransform
@@ -52,19 +53,18 @@ class GraphView: UIView
     func updateValues()
     {
         let nextValue: Double = sin(CFAbsoluteTimeGetCurrent()) + (Double(rand()) / Double(RAND_MAX))
+        print("new value: \(nextValue)")
         self.values.addObject(Int(nextValue))
         let size: CGSize = self.bounds.size
-        /*
-         *   UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-         *   if(orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight){
-         *
-         *
-         *   }
-         */
+        
         let maxDimension: CGFloat = size.width
         // MAX(size.height, size.width);
         let maxValues: Int = Int(floor(maxDimension / kXScale))
-        if self.values.count > maxValues {
+        print("max. value: \(maxValues)")
+        print("array count: \(self.values.count)")
+        
+        if self.values.count > maxValues
+        {
             self.values.removeObjectsInRange(NSMakeRange(0, self.values.count - maxValues))
         }
         self.setNeedsDisplay()
@@ -72,6 +72,7 @@ class GraphView: UIView
     
     deinit
     {
+        print("view dealloc called")
         dispatch_source_cancel(timer!)
     }
     
@@ -94,6 +95,7 @@ class GraphView: UIView
         CGContextSetLineWidth(ctx, 2)
         let path: CGMutablePathRef = CGPathCreateMutable()
         let yOffset: CGFloat = self.bounds.size.height / 2
+        generalYOffset = yOffset
         var transform: CGAffineTransform = CGAffineTransformMakeScaleTranslate(kXScale, sy: kYScale, dx: 0, dy: yOffset)
         CGPathMoveToPoint(path, &transform, 0, 0)
         CGPathAddLineToPoint(path, &transform, self.bounds.size.width, 0)
@@ -115,7 +117,10 @@ class GraphView: UIView
     
     func drawAtPoint(point: CGPoint, withStr str: String)
     {
-        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: UIFont.systemFontOfSize(8), NSStrokeColorAttributeName: GraphColor])
+        //        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: UIFont.systemFontOfSize(8), NSStrokeColorAttributeName: GraphColor])
+        
+        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(10), NSStrokeColorAttributeName: GraphColor])
+        
     }
     
     func str(index: Int)-> String
@@ -125,7 +130,8 @@ class GraphView: UIView
     
     func point(x: CGFloat, y: CGFloat)-> CGPoint
     {
-        // TODO: Add the yOffSet to y before multiplying to kYScale
-        return CGPointMake(x * kXScale, y * kYScale)
+        //        return CGPointMake(x * kXScale, generalYOffset + y * kYScale)
+        
+        return CGPointMake(x * kXScale, generalYOffset + y * kYScale)
     }
 }
