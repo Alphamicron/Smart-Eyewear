@@ -59,11 +59,12 @@ class GraphView: UIView
     {
         let nextValue: Double = sin(CFAbsoluteTimeGetCurrent()) + (Double(rand()) / Double(RAND_MAX))
         print("new value: \(nextValue)")
-        self.values.addObject(Int(nextValue))
+        self.values.addObject(nextValue)
         let size: CGSize = self.bounds.size
         
         let maxDimension: CGFloat = size.width
         // MAX(size.height, size.width);
+        
         let maxValues: Int = Int(floor(maxDimension / kXScale))
         print("max. value: \(maxValues)")
         print("array count: \(self.values.count)")
@@ -75,11 +76,6 @@ class GraphView: UIView
         self.setNeedsDisplay()
     }
     
-    //    convenience func dealloc()
-    //    {
-    //        dispatch_source_cancel(timer)
-    //    }
-    
     override func drawRect(rect: CGRect)
     {
         if self.values.count == 0
@@ -89,7 +85,6 @@ class GraphView: UIView
         
         let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
         CGContextSetStrokeColorWithColor(ctx, GraphColor.CGColor)
-        //        CGContextSetLineJoin(ctx, kCGLineJoinRound)
         CGContextSetLineJoin(ctx, .Round)
         CGContextSetLineWidth(ctx, 2)
         let path: CGMutablePathRef = CGPathCreateMutable()
@@ -98,13 +93,15 @@ class GraphView: UIView
         var transform: CGAffineTransform = CGAffineTransformMakeScaleTranslate(kXScale, sy: kYScale, dx: 0, dy: yOffset)
         CGPathMoveToPoint(path, &transform, 0, 0)
         CGPathAddLineToPoint(path, &transform, self.bounds.size.width, 0)
-        var y: CGFloat = CGFloat(self.values[0] as! NSNumber)
+        var y: CGFloat = self.values.objectAtIndex(0) as! CGFloat
         CGPathMoveToPoint(path, &transform, 0, y)
         self.drawAtPoint(point(0, y: y), withStr: str(0))
         
         for x in 1 ..< self.values.count
         {
-            y = self.values[x] as! CGFloat
+            print("x is: \(x)")
+            print("value is: \(self.values.objectAtIndex(x))")
+            y = self.values.objectAtIndex(x) as! CGFloat
             CGPathAddLineToPoint(path, &transform, CGFloat(x), y)
             self.drawAtPoint(point(CGFloat(x), y: y), withStr: str(x))
         }
@@ -120,13 +117,11 @@ class GraphView: UIView
     
     func str(index: Int)-> String
     {
-        print("String: \(String(format: "%.f", CGFloat(self.values[index] as! NSNumber) * kYScale))")
         return String(format: "%.f", self.values[index] as! CGFloat * kYScale)
     }
     
     func point(x: CGFloat, y: CGFloat)-> CGPoint
     {
-        print("Point: \(CGPointMake(x * kXScale, generalYOffset + y * kYScale))")
         return CGPointMake(x * kXScale, generalYOffset + y * kYScale)
     }
 }
