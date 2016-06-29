@@ -64,7 +64,7 @@ class GraphsVC: UIViewController
             if error == nil
             {
                 let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
-                GraphsVC.sensorReadings.addObject(accelData.x)
+                GraphsVC.sensorReadings.addObject(accelData)
                 print(accelData)
             }
             else
@@ -81,7 +81,7 @@ class GraphsVC: UIViewController
             if error == nil
             {
                 let gyroData: MBLGyroData = result as! MBLGyroData
-                GraphsVC.sensorReadings.addObject(gyroData.x)
+                GraphsVC.sensorReadings.addObject(gyroData)
                 print(gyroData)
             }
             else
@@ -98,7 +98,7 @@ class GraphsVC: UIViewController
             if error == nil
             {
                 let magnetoData: MBLMagnetometerData = result as! MBLMagnetometerData
-                GraphsVC.sensorReadings.addObject(magnetoData.x)
+                GraphsVC.sensorReadings.addObject(magnetoData)
                 print(magnetoData)
             }
             else

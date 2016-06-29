@@ -6,6 +6,8 @@
 //  Copyright © 2016 Emil Shirima. All rights reserved.
 //
 
+//  Credits to easyui https://goo.gl/4GZmTH
+
 import UIKit
 
 class GraphView: UIView
@@ -13,7 +15,7 @@ class GraphView: UIView
     let xAxisScale: CGFloat = 20.0
     let yAxisScale: CGFloat = 50.0
     var timer: dispatch_source_t?
-    let graphColour: UIColor = UIColor.greenColor()
+    let graphColour: UIColor = Constants.themeGreenColour
     var generalYOffset: CGFloat = CGFloat()
     
     func CGAffineTransformMakeScaleTranslate(sx: CGFloat, sy:CGFloat, dx: CGFloat, dy: CGFloat) -> CGAffineTransform
@@ -77,40 +79,44 @@ class GraphView: UIView
         let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
         CGContextSetStrokeColorWithColor(ctx, graphColour.CGColor)
         CGContextSetLineJoin(ctx, .Round)
-        CGContextSetLineWidth(ctx, 2)
+        CGContextSetLineWidth(ctx, 3)
         
         let path: CGMutablePathRef = CGPathCreateMutable()
         let yOffset: CGFloat = self.bounds.size.height / 2
         generalYOffset = yOffset
         var transform: CGAffineTransform = CGAffineTransformMakeScaleTranslate(xAxisScale, sy: yAxisScale, dx: 0, dy: yOffset)
-        CGPathMoveToPoint(path, &transform, 0, 0)
-        CGPathAddLineToPoint(path, &transform, self.bounds.size.width, 0)
         
-        // initially draw the first point
-        var y: CGFloat = GraphsVC.sensorReadings.objectAtIndex(0) as! CGFloat
+        // draw the x-axis
+        //        CGPathMoveToPoint(path, &transform, 0, 0)
+        //        CGPathAddLineToPoint(path, &transform, self.bounds.size.width, 0)
+        
+        // draw the first point initially
+        var y: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).x)
         CGPathMoveToPoint(path, &transform, 0, y)
-        self.drawAtPoint(point(0, y: y), withStr: str(0))
+        self.drawAtPoint(point(0, y: y), withTitle: valueTitle(0))
         
         // then draw the remaining points
-        for x in 1 ..< GraphsVC.sensorReadings.count
+        for readingPosition in 1 ..< GraphsVC.sensorReadings.count
         {
-            y = GraphsVC.sensorReadings.objectAtIndex(x) as! CGFloat
-            CGPathAddLineToPoint(path, &transform, CGFloat(x), y)
-            self.drawAtPoint(point(CGFloat(x), y: y), withStr: str(x))
+            y = CGFloat(GraphsVC.sensorReadings.objectAtIndex(readingPosition).x)
+            
+            CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), y)
+            self.drawAtPoint(point(CGFloat(readingPosition), y: y), withTitle: valueTitle(readingPosition))
         }
         
         CGContextAddPath(ctx, path)
         CGContextStrokePath(ctx)
     }
     
-    func drawAtPoint(point: CGPoint, withStr str: String)
+    func drawAtPoint(point: CGPoint, withTitle newTitle: String)
     {
-        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(8), NSStrokeColorAttributeName: graphColour])
+        newTitle.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(8), NSStrokeColorAttributeName: graphColour])
     }
     
-    func str(index: Int)-> String
+    // converts the point to a string inorder to present to the graph
+    func valueTitle(index: Int)-> String
     {
-        return String(format: "%.f", GraphsVC.sensorReadings.objectAtIndex(index) as! CGFloat * yAxisScale)
+        return String(format: "%.f", CGFloat(GraphsVC.sensorReadings.objectAtIndex(index).x) * yAxisScale)
     }
     
     func point(x: CGFloat, y: CGFloat)-> CGPoint
