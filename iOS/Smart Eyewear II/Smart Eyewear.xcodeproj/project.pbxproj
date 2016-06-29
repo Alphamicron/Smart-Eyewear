@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1C382CC59FEDE12332381F2D /* Pods_Smart_EyewearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035A6D54EC4B10F5F69FFAEF /* Pods_Smart_EyewearUITests.framework */; };
 		1FE6FD5492DA30CE0C44BD6C /* Pods_Smart_Eyewear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDF5163926418102CCAE0C2 /* Pods_Smart_Eyewear.framework */; };
-		300F57B41D22F80800A52DCB /* SPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F57B31D22F80800A52DCB /* SPView.m */; };
 		300F57B61D23040100A52DCB /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F57B51D23040100A52DCB /* GraphView.swift */; };
 		300F57B81D230FA100A52DCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300F57B71D230FA100A52DCB /* CoreGraphics.framework */; };
 		301811881D0724CD00E4941C /* HomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811871D0724CD00E4941C /* HomeTVC.swift */; };
@@ -57,8 +56,6 @@
 /* Begin PBXFileReference section */
 		035A6D54EC4B10F5F69FFAEF /* Pods_Smart_EyewearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E70B8B72465E29E7B5132F8 /* Pods-Smart EyewearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart EyewearTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart EyewearTests/Pods-Smart EyewearTests.debug.xcconfig"; sourceTree = "<group>"; };
-		300F57B21D22F80800A52DCB /* SPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPView.h; sourceTree = "<group>"; };
-		300F57B31D22F80800A52DCB /* SPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPView.m; sourceTree = "<group>"; };
 		300F57B51D23040100A52DCB /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		300F57B71D230FA100A52DCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		301811871D0724CD00E4941C /* HomeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTVC.swift; sourceTree = "<group>"; };
@@ -154,8 +151,6 @@
 				302A63301CF74A4A00109C02 /* ISColorWheel.h */,
 				302A63311CF74A4A00109C02 /* ISColorWheel.m */,
 				30CA557D1D2192DC0062FFA7 /* ColorPickerViewController.swift */,
-				300F57B21D22F80800A52DCB /* SPView.h */,
-				300F57B31D22F80800A52DCB /* SPView.m */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -673,7 +668,6 @@
 				307B0D211D0CA3940095B2C2 /* RGBVC.swift in Sources */,
 				300F57B61D23040100A52DCB /* GraphView.swift in Sources */,
 				B23DAEAE1CF4ADFD003BD7FE /* ActivationVC.swift in Sources */,
-				300F57B41D22F80800A52DCB /* SPView.m in Sources */,
 				B23DAEB91CF4B62A003BD7FE /* Extensions.swift in Sources */,
 				30CF114C1D1DA13500E2843C /* ProgramLEDVC.swift in Sources */,
 				B2BBD5DE1CF5187E00D0EA32 /* Constants.swift in Sources */,

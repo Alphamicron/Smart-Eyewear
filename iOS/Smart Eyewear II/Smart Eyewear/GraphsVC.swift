@@ -12,8 +12,6 @@ class GraphsVC: UIViewController
 {
     var desiredSensor: Sensor = Sensor.Null
     let BMM150Magnetometer: MBLMagnetometerBMM150 = ConnectionVC.currentlySelectedDevice.magnetometer as! MBLMagnetometerBMM150
-    
-    var newPoints: [GraphPoints] = [GraphPoints]()
     static var sensorReadings: NSMutableArray = NSMutableArray()
     
     override func viewDidLoad()
