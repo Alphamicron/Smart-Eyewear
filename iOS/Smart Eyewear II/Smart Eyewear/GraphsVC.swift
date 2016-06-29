@@ -14,6 +14,7 @@ class GraphsVC: UIViewController
     let BMM150Magnetometer: MBLMagnetometerBMM150 = ConnectionVC.currentlySelectedDevice.magnetometer as! MBLMagnetometerBMM150
     
     var newPoints: [GraphPoints] = [GraphPoints]()
+    static var sensorReadings: NSMutableArray = NSMutableArray()
     
     override func viewDidLoad()
     {
@@ -46,6 +47,7 @@ class GraphsVC: UIViewController
         
         print("VWD called")
         stopStreamingSensorInfo()
+        GraphsVC.sensorReadings.removeAllObjects()
     }
     
     override func didReceiveMemoryWarning()
@@ -64,7 +66,8 @@ class GraphsVC: UIViewController
             if error == nil
             {
                 let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
-                //                print(accelData)
+                GraphsVC.sensorReadings.addObject(accelData.x)
+                print(accelData)
             }
             else
             {
@@ -80,6 +83,7 @@ class GraphsVC: UIViewController
             if error == nil
             {
                 let gyroData: MBLGyroData = result as! MBLGyroData
+                GraphsVC.sensorReadings.addObject(gyroData.x)
                 print(gyroData)
             }
             else
@@ -96,6 +100,7 @@ class GraphsVC: UIViewController
             if error == nil
             {
                 let magnetoData: MBLMagnetometerData = result as! MBLMagnetometerData
+                GraphsVC.sensorReadings.addObject(magnetoData.x)
                 print(magnetoData)
             }
             else

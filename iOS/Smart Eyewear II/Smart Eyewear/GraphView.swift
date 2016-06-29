@@ -8,12 +8,10 @@
 
 import UIKit
 
-//#define str(index)                                  [NSString stringWithFormat : @"%.f", [[self.values objectAtIndex:(index)] floatValue] * kYScale]
-//#define point(x, y)                                 CGPointMake((x) * kXScale, yOffset + (y) * kYScale)
 class GraphView: UIView
 {
-    let kXScale: CGFloat = 15.0
-    let kYScale: CGFloat = 50.0
+    let xAxisScale: CGFloat = 20.0
+    let yAxisScale: CGFloat = 50.0
     var timer: dispatch_source_t?
     let GraphColor = UIColor.greenColor()
     var generalYOffset: CGFloat = CGFloat()
@@ -51,34 +49,29 @@ class GraphView: UIView
         dispatch_source_set_event_handler(timer!, {() -> Void in
             weakSelf!.updateValues()
         })
-        dispatch_resume(timer!)
         
+        dispatch_resume(timer!)
     }
     
     func updateValues()
     {
-        let nextValue: Double = sin(CFAbsoluteTimeGetCurrent()) + (Double(rand()) / Double(RAND_MAX))
-        print("new value: \(nextValue)")
-        self.values.addObject(nextValue)
         let size: CGSize = self.bounds.size
-        
         let maxDimension: CGFloat = size.width
         // MAX(size.height, size.width);
         
-        let maxValues: Int = Int(floor(maxDimension / kXScale))
-        print("max. value: \(maxValues)")
-        print("array count: \(self.values.count)")
+        let maxValues: Int = Int(floor(maxDimension / xAxisScale))
         
-        if self.values.count > maxValues
+        if GraphsVC.sensorReadings.count > maxValues
         {
-            self.values.removeObjectsInRange(NSMakeRange(0, self.values.count - maxValues))
+            GraphsVC.sensorReadings.removeObjectsInRange(NSMakeRange(0, GraphsVC.sensorReadings.count - maxValues))
         }
+        
         self.setNeedsDisplay()
     }
     
     override func drawRect(rect: CGRect)
     {
-        if self.values.count == 0
+        if GraphsVC.sensorReadings.count == 0
         {
             return
         }
@@ -87,21 +80,23 @@ class GraphView: UIView
         CGContextSetStrokeColorWithColor(ctx, GraphColor.CGColor)
         CGContextSetLineJoin(ctx, .Round)
         CGContextSetLineWidth(ctx, 2)
+        
         let path: CGMutablePathRef = CGPathCreateMutable()
         let yOffset: CGFloat = self.bounds.size.height / 2
         generalYOffset = yOffset
-        var transform: CGAffineTransform = CGAffineTransformMakeScaleTranslate(kXScale, sy: kYScale, dx: 0, dy: yOffset)
+        var transform: CGAffineTransform = CGAffineTransformMakeScaleTranslate(xAxisScale, sy: yAxisScale, dx: 0, dy: yOffset)
         CGPathMoveToPoint(path, &transform, 0, 0)
         CGPathAddLineToPoint(path, &transform, self.bounds.size.width, 0)
-        var y: CGFloat = self.values.objectAtIndex(0) as! CGFloat
+        
+        // Initially draw the first point
+        var y: CGFloat = GraphsVC.sensorReadings.objectAtIndex(0) as! CGFloat
         CGPathMoveToPoint(path, &transform, 0, y)
         self.drawAtPoint(point(0, y: y), withStr: str(0))
         
-        for x in 1 ..< self.values.count
+        // then draw the remaining points
+        for x in 1 ..< GraphsVC.sensorReadings.count
         {
-            print("x is: \(x)")
-            print("value is: \(self.values.objectAtIndex(x))")
-            y = self.values.objectAtIndex(x) as! CGFloat
+            y = GraphsVC.sensorReadings.objectAtIndex(x) as! CGFloat
             CGPathAddLineToPoint(path, &transform, CGFloat(x), y)
             self.drawAtPoint(point(CGFloat(x), y: y), withStr: str(x))
         }
@@ -117,11 +112,11 @@ class GraphView: UIView
     
     func str(index: Int)-> String
     {
-        return String(format: "%.f", self.values[index] as! CGFloat * kYScale)
+        return String(format: "%.f", GraphsVC.sensorReadings.objectAtIndex(index) as! CGFloat * yAxisScale)
     }
     
     func point(x: CGFloat, y: CGFloat)-> CGPoint
     {
-        return CGPointMake(x * kXScale, generalYOffset + y * kYScale)
+        return CGPointMake(x * xAxisScale, generalYOffset + y * yAxisScale)
     }
 }
