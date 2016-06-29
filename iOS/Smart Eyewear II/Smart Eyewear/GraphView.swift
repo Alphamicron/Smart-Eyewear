@@ -13,9 +13,8 @@ class GraphView: UIView
     let xAxisScale: CGFloat = 20.0
     let yAxisScale: CGFloat = 50.0
     var timer: dispatch_source_t?
-    let GraphColor = UIColor.greenColor()
+    let graphColour: UIColor = UIColor.greenColor()
     var generalYOffset: CGFloat = CGFloat()
-    var values: NSMutableArray = NSMutableArray()
     
     func CGAffineTransformMakeScaleTranslate(sx: CGFloat, sy:CGFloat, dx: CGFloat, dy: CGFloat) -> CGAffineTransform
     {
@@ -40,13 +39,14 @@ class GraphView: UIView
     override func awakeFromNib()
     {
         self.contentMode = .Right
-        self.values = NSMutableArray()
+        GraphsVC.sensorReadings = NSMutableArray()
         weak var weakSelf: AnyObject? = self
         let delayInSeconds: Float = 0.25
         
         self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue())
         dispatch_source_set_timer(timer!, dispatch_walltime(nil, 0), UInt64(delayInSeconds * Float(NSEC_PER_SEC)), 0)
         dispatch_source_set_event_handler(timer!, {() -> Void in
+            
             weakSelf!.updateValues()
         })
         
@@ -57,13 +57,11 @@ class GraphView: UIView
     {
         let size: CGSize = self.bounds.size
         let maxDimension: CGFloat = size.width
-        // MAX(size.height, size.width);
+        let maxValue: Int = Int(floor(maxDimension / xAxisScale))
         
-        let maxValues: Int = Int(floor(maxDimension / xAxisScale))
-        
-        if GraphsVC.sensorReadings.count > maxValues
+        if GraphsVC.sensorReadings.count > maxValue
         {
-            GraphsVC.sensorReadings.removeObjectsInRange(NSMakeRange(0, GraphsVC.sensorReadings.count - maxValues))
+            GraphsVC.sensorReadings.removeObjectsInRange(NSMakeRange(0, GraphsVC.sensorReadings.count - maxValue))
         }
         
         self.setNeedsDisplay()
@@ -77,7 +75,7 @@ class GraphView: UIView
         }
         
         let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
-        CGContextSetStrokeColorWithColor(ctx, GraphColor.CGColor)
+        CGContextSetStrokeColorWithColor(ctx, graphColour.CGColor)
         CGContextSetLineJoin(ctx, .Round)
         CGContextSetLineWidth(ctx, 2)
         
@@ -88,7 +86,7 @@ class GraphView: UIView
         CGPathMoveToPoint(path, &transform, 0, 0)
         CGPathAddLineToPoint(path, &transform, self.bounds.size.width, 0)
         
-        // Initially draw the first point
+        // initially draw the first point
         var y: CGFloat = GraphsVC.sensorReadings.objectAtIndex(0) as! CGFloat
         CGPathMoveToPoint(path, &transform, 0, y)
         self.drawAtPoint(point(0, y: y), withStr: str(0))
@@ -107,7 +105,7 @@ class GraphView: UIView
     
     func drawAtPoint(point: CGPoint, withStr str: String)
     {
-        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(8), NSStrokeColorAttributeName: GraphColor])
+        str.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(8), NSStrokeColorAttributeName: graphColour])
     }
     
     func str(index: Int)-> String
