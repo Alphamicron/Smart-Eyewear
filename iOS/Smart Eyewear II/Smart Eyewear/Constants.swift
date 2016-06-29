@@ -158,3 +158,11 @@ enum Sensor
     case Gyroscope
     case Null
 }
+
+enum SensorAxes
+{
+    case xAxis
+    case yAxis
+    case zAxis
+    case RMS // root mean square => sqrt(1/n(sq(x1) + sq(x2) +.....+ sq(xn)))
+}

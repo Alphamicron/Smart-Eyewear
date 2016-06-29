@@ -15,7 +15,6 @@ class GraphView: UIView
     let xAxisScale: CGFloat = 20.0
     let yAxisScale: CGFloat = 50.0
     var timer: dispatch_source_t?
-    let graphColour: UIColor = Constants.themeGreenColour
     var generalYOffset: CGFloat = CGFloat()
     
     func CGAffineTransformMakeScaleTranslate(sx: CGFloat, sy:CGFloat, dx: CGFloat, dy: CGFloat) -> CGAffineTransform
@@ -77,7 +76,7 @@ class GraphView: UIView
         }
         
         let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
-        CGContextSetStrokeColorWithColor(ctx, graphColour.CGColor)
+        CGContextSetStrokeColorWithColor(ctx, Constants.themeGreenColour.CGColor)
         CGContextSetLineJoin(ctx, .Round)
         CGContextSetLineWidth(ctx, 3)
         
@@ -90,27 +89,58 @@ class GraphView: UIView
         //        CGPathMoveToPoint(path, &transform, 0, 0)
         //        CGPathAddLineToPoint(path, &transform, self.bounds.size.width, 0)
         
-        // draw the first point initially
-        var y: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).x)
-        CGPathMoveToPoint(path, &transform, 0, y)
-        self.drawAtPoint(point(0, y: y), withTitle: valueTitle(0))
+        // draw the x-value points initially
+        var sensorXValue: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).x)
+        CGPathMoveToPoint(path, &transform, 0, sensorXValue)
+        self.drawAtPoint(point(0, y: sensorXValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.xAxis)
+        
+        // draw the y-value points initially
+        var sensorYValue: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).y)
+        CGPathMoveToPoint(path, &transform, 0, sensorYValue)
+        self.drawAtPoint(point(0, y: sensorYValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.yAxis)
+        
+        // draw the z-value points initially
+        var sensorZValue: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).z)
+        CGPathMoveToPoint(path, &transform, 0, sensorZValue)
+        self.drawAtPoint(point(0, y: sensorZValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.zAxis)
         
         // then draw the remaining points
         for readingPosition in 1 ..< GraphsVC.sensorReadings.count
         {
-            y = CGFloat(GraphsVC.sensorReadings.objectAtIndex(readingPosition).x)
+            sensorXValue = CGFloat(GraphsVC.sensorReadings.objectAtIndex(readingPosition).x)
+            sensorYValue = CGFloat(GraphsVC.sensorReadings.objectAtIndex(readingPosition).y)
+            sensorZValue = CGFloat(GraphsVC.sensorReadings.objectAtIndex(readingPosition).z)
             
-            CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), y)
-            self.drawAtPoint(point(CGFloat(readingPosition), y: y), withTitle: valueTitle(readingPosition))
+            CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), sensorXValue)
+            CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), sensorYValue)
+            CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), sensorZValue)
+            
+            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorXValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.xAxis)
+            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorYValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.yAxis)
+            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorZValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.zAxis)
         }
         
         CGContextAddPath(ctx, path)
         CGContextStrokePath(ctx)
     }
     
-    func drawAtPoint(point: CGPoint, withTitle newTitle: String)
+    func drawAtPoint(point: CGPoint, withTitle newTitle: String, sensorAxis: SensorAxes)
     {
-        newTitle.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(8), NSStrokeColorAttributeName: graphColour])
+        var axisColour: UIColor = UIColor()
+        
+        switch sensorAxis
+        {
+        case .xAxis:
+            axisColour = Constants.themeGreenColour
+        case .yAxis:
+            axisColour = Constants.themeRedColour
+        case .zAxis:
+            axisColour = Constants.themeYellowColour
+        case .RMS:
+            axisColour = Constants.themeInactiveStateColour
+        }
+        
+        newTitle.drawAtPoint(point, withAttributes: [NSFontAttributeName: Constants.defaultFont.fontWithSize(8), NSStrokeColorAttributeName: axisColour])
     }
     
     // converts the point to a string inorder to present to the graph

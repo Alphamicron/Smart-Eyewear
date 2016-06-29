@@ -43,7 +43,6 @@ class GraphsVC: UIViewController
     {
         super.viewWillDisappear(animated)
         
-        print("VWD called")
         stopStreamingSensorInfo()
         GraphsVC.sensorReadings.removeAllObjects()
     }
