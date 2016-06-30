@@ -12,8 +12,8 @@ import UIKit
 
 class GraphView: UIView
 {
-    let xAxisScale: CGFloat = 10.0
-    let yAxisScale: CGFloat = 50.0
+    let xAxisScale: CGFloat = 1.0
+    let yAxisScale: CGFloat = 1.0
     var timer: dispatch_source_t?
     var globalYOffset: CGFloat = CGFloat()
     
