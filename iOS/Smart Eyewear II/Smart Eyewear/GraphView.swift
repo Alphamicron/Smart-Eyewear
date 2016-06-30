@@ -12,10 +12,10 @@ import UIKit
 
 class GraphView: UIView
 {
-    let xAxisScale: CGFloat = 20.0
+    let xAxisScale: CGFloat = 10.0
     let yAxisScale: CGFloat = 50.0
     var timer: dispatch_source_t?
-    var generalYOffset: CGFloat = CGFloat()
+    var globalYOffset: CGFloat = CGFloat()
     
     func CGAffineTransformMakeScaleTranslate(sx: CGFloat, sy:CGFloat, dx: CGFloat, dy: CGFloat) -> CGAffineTransform
     {
@@ -75,37 +75,46 @@ class GraphView: UIView
             return
         }
         
-        let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
-        CGContextSetStrokeColorWithColor(ctx, Constants.themeGreenColour.CGColor)
-        CGContextSetLineJoin(ctx, .Round)
-        CGContextSetLineWidth(ctx, 3)
+        let ctx1: CGContextRef = UIGraphicsGetCurrentContext()!
+        let ctx2: CGContextRef = UIGraphicsGetCurrentContext()!
+        let ctx3: CGContextRef = UIGraphicsGetCurrentContext()!
         
-        let path: CGMutablePathRef = CGPathCreateMutable()
+        CGContextSetStrokeColorWithColor(ctx1, Constants.themeGreenColour.CGColor)
+        CGContextSetStrokeColorWithColor(ctx2, Constants.themeRedColour.CGColor)
+        CGContextSetStrokeColorWithColor(ctx3, Constants.themeYellowColour.CGColor)
+        
+        CGContextSetLineJoin(ctx1, .Round)
+        CGContextSetLineJoin(ctx2, .Round)
+        CGContextSetLineJoin(ctx3, .Round)
+        
+        CGContextSetLineWidth(ctx1, 3)
+        CGContextSetLineWidth(ctx2, 3)
+        CGContextSetLineWidth(ctx3, 3)
+        
+        let path1: CGMutablePathRef = CGPathCreateMutable()
         let path2: CGMutablePathRef = CGPathCreateMutable()
         let path3: CGMutablePathRef = CGPathCreateMutable()
         
         let yOffset: CGFloat = self.bounds.size.height / 2
-        generalYOffset = yOffset
         var transform: CGAffineTransform = CGAffineTransformMakeScaleTranslate(xAxisScale, sy: yAxisScale, dx: 0, dy: yOffset)
+        globalYOffset = yOffset
         
         // draw the x-axis
-        //        CGPathMoveToPoint(path, &transform, 0, 0)
-        //        CGPathAddLineToPoint(path, &transform, self.bounds.size.width, 0)
+        //        CGPathMoveToPoint(path1, &transform, 0, 0)
+        //        CGPathAddLineToPoint(path1, &transform, self.bounds.size.width, 0)
         
-        // draw the x-value points initially
+        // draw the first point initially
         var sensorXValue: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).x)
-        CGPathMoveToPoint(path, &transform, 0, sensorXValue)
-        self.drawAtPoint(point(0, y: sensorXValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.xAxis)
-        
-        // draw the y-value points initially
         var sensorYValue: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).y)
-        CGPathMoveToPoint(path2, &transform, 0, sensorYValue)
-        self.drawAtPoint(point(0, y: sensorYValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.yAxis)
-        
-        // draw the z-value points initially
         var sensorZValue: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).z)
+        
+        CGPathMoveToPoint(path1, &transform, 0, sensorXValue)
+        CGPathMoveToPoint(path2, &transform, 0, sensorYValue)
         CGPathMoveToPoint(path3, &transform, 0, sensorZValue)
-        self.drawAtPoint(point(0, y: sensorZValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.zAxis)
+        
+        //        self.drawAtPoint(point(0, y: sensorXValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.xAxis)
+        //        self.drawAtPoint(point(0, y: sensorYValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.yAxis)
+        //        self.drawAtPoint(point(0, y: sensorZValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.zAxis)
         
         // then draw the remaining points
         for readingPosition in 1 ..< GraphsVC.sensorReadings.count
@@ -114,19 +123,22 @@ class GraphView: UIView
             sensorYValue = CGFloat(GraphsVC.sensorReadings.objectAtIndex(readingPosition).y)
             sensorZValue = CGFloat(GraphsVC.sensorReadings.objectAtIndex(readingPosition).z)
             
-            CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), sensorXValue)
+            CGPathAddLineToPoint(path1, &transform, CGFloat(readingPosition), sensorXValue)
             CGPathAddLineToPoint(path2, &transform, CGFloat(readingPosition), sensorYValue)
             CGPathAddLineToPoint(path3, &transform, CGFloat(readingPosition), sensorZValue)
             
-            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorXValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.xAxis)
-            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorYValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.yAxis)
-            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorZValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.zAxis)
+            //            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorXValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.xAxis)
+            //            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorYValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.yAxis)
+            //            self.drawAtPoint(point(CGFloat(readingPosition), y: sensorZValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.zAxis)
         }
         
-        CGContextAddPath(ctx, path)
-        CGContextAddPath(ctx, path2)
-        CGContextAddPath(ctx, path3)
-        CGContextStrokePath(ctx)
+        CGContextAddPath(ctx1, path1)
+        CGContextAddPath(ctx2, path2)
+        CGContextAddPath(ctx3, path3)
+        
+        CGContextStrokePath(ctx1)
+        CGContextStrokePath(ctx2)
+        CGContextStrokePath(ctx3)
     }
     
     func drawAtPoint(point: CGPoint, withTitle newTitle: String, sensorAxis: SensorAxes)
@@ -156,6 +168,6 @@ class GraphView: UIView
     
     func point(x: CGFloat, y: CGFloat)-> CGPoint
     {
-        return CGPointMake(x * xAxisScale, generalYOffset + y * yAxisScale)
+        return CGPointMake(x * xAxisScale, globalYOffset + y * yAxisScale)
     }
 }
