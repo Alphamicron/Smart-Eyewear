@@ -81,6 +81,9 @@ class GraphView: UIView
         CGContextSetLineWidth(ctx, 3)
         
         let path: CGMutablePathRef = CGPathCreateMutable()
+        let path2: CGMutablePathRef = CGPathCreateMutable()
+        let path3: CGMutablePathRef = CGPathCreateMutable()
+        
         let yOffset: CGFloat = self.bounds.size.height / 2
         generalYOffset = yOffset
         var transform: CGAffineTransform = CGAffineTransformMakeScaleTranslate(xAxisScale, sy: yAxisScale, dx: 0, dy: yOffset)
@@ -96,12 +99,12 @@ class GraphView: UIView
         
         // draw the y-value points initially
         var sensorYValue: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).y)
-        CGPathMoveToPoint(path, &transform, 0, sensorYValue)
+        CGPathMoveToPoint(path2, &transform, 0, sensorYValue)
         self.drawAtPoint(point(0, y: sensorYValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.yAxis)
         
         // draw the z-value points initially
         var sensorZValue: CGFloat = CGFloat(GraphsVC.sensorReadings.objectAtIndex(0).z)
-        CGPathMoveToPoint(path, &transform, 0, sensorZValue)
+        CGPathMoveToPoint(path3, &transform, 0, sensorZValue)
         self.drawAtPoint(point(0, y: sensorZValue), withTitle: valueTitle(0), sensorAxis: SensorAxes.zAxis)
         
         // then draw the remaining points
@@ -112,8 +115,8 @@ class GraphView: UIView
             sensorZValue = CGFloat(GraphsVC.sensorReadings.objectAtIndex(readingPosition).z)
             
             CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), sensorXValue)
-            CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), sensorYValue)
-            CGPathAddLineToPoint(path, &transform, CGFloat(readingPosition), sensorZValue)
+            CGPathAddLineToPoint(path2, &transform, CGFloat(readingPosition), sensorYValue)
+            CGPathAddLineToPoint(path3, &transform, CGFloat(readingPosition), sensorZValue)
             
             self.drawAtPoint(point(CGFloat(readingPosition), y: sensorXValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.xAxis)
             self.drawAtPoint(point(CGFloat(readingPosition), y: sensorYValue), withTitle: valueTitle(readingPosition), sensorAxis: SensorAxes.yAxis)
@@ -121,6 +124,8 @@ class GraphView: UIView
         }
         
         CGContextAddPath(ctx, path)
+        CGContextAddPath(ctx, path2)
+        CGContextAddPath(ctx, path3)
         CGContextStrokePath(ctx)
     }
     
