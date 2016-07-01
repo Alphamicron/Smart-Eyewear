@@ -14,6 +14,7 @@
 		301811881D0724CD00E4941C /* HomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811871D0724CD00E4941C /* HomeTVC.swift */; };
 		3018118A1D0729D400E4941C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811891D0729D400E4941C /* Modal.swift */; };
 		302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 302A63311CF74A4A00109C02 /* ISColorWheel.m */; };
+		3041985E1D26E471008B8919 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3041985D1D26E471008B8919 /* Charts.framework */; };
 		307B0D211D0CA3940095B2C2 /* RGBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B0D201D0CA3940095B2C2 /* RGBVC.swift */; };
 		30972E081D1B05EF002BA825 /* MotionSensorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */; };
 		30972E0A1D1B1D00002BA825 /* GraphsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972E091D1B1D00002BA825 /* GraphsVC.swift */; };
@@ -62,6 +63,7 @@
 		301811891D0729D400E4941C /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		302A63301CF74A4A00109C02 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		302A63311CF74A4A00109C02 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
+		3041985D1D26E471008B8919 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Smart_Eyewear-akefipjttpfiekhginmlseyfjtfo/Build/Products/Debug-iphoneos/Charts/Charts.framework"; sourceTree = "<group>"; };
 		307B0D201D0CA3940095B2C2 /* RGBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBVC.swift; sourceTree = "<group>"; };
 		30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionSensorsVC.swift; sourceTree = "<group>"; };
 		30972E091D1B1D00002BA825 /* GraphsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphsVC.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3041985E1D26E471008B8919 /* Charts.framework in Frameworks */,
 				300F57B81D230FA100A52DCB /* CoreGraphics.framework in Frameworks */,
 				1FE6FD5492DA30CE0C44BD6C /* Pods_Smart_Eyewear.framework in Frameworks */,
 			);
@@ -129,6 +132,7 @@
 		009C26F0D92BF2DDA027FFF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3041985D1D26E471008B8919 /* Charts.framework */,
 				300F57B71D230FA100A52DCB /* CoreGraphics.framework */,
 				3EDF5163926418102CCAE0C2 /* Pods_Smart_Eyewear.framework */,
 				B6A9A2F296E4B0FF5E08576D /* Pods_Smart_EyewearTests.framework */,

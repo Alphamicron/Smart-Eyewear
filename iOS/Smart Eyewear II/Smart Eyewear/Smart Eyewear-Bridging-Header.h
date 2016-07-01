@@ -4,4 +4,5 @@
 
 #import <MetaWear/MetaWear.h>
 #import <PNChart/PNChart.h>
+#import <Charts/Charts-umbrella.h>
 #import "ISColorWheel.h"

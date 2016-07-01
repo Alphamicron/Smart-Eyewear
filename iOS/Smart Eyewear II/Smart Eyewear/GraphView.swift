@@ -12,8 +12,8 @@ import UIKit
 
 class GraphView: UIView
 {
-    let xAxisScale: CGFloat = 1.0
-    let yAxisScale: CGFloat = 1.0
+    let xAxisScale: CGFloat = 2.0
+    let yAxisScale: CGFloat = 2.0
     var timer: dispatch_source_t?
     var globalYOffset: CGFloat = CGFloat()
     
@@ -56,8 +56,7 @@ class GraphView: UIView
     
     func updateValues()
     {
-        let size: CGSize = self.bounds.size
-        let maxDimension: CGFloat = size.width
+        let maxDimension: CGFloat = self.bounds.size.width
         let maxValue: Int = Int(floor(maxDimension / xAxisScale))
         
         if GraphsVC.sensorReadings.count > maxValue
@@ -169,5 +168,7 @@ class GraphView: UIView
     func point(x: CGFloat, y: CGFloat)-> CGPoint
     {
         return CGPointMake(x * xAxisScale, globalYOffset + y * yAxisScale)
+        
+        //        return CGPointMake(x * xAxisScale, y * yAxisScale)
     }
 }

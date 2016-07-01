@@ -436,7 +436,7 @@
                         <viewControllerLayoutGuide type="top" id="2aG-a2-YSJ"/>
                         <viewControllerLayoutGuide type="bottom" id="rvr-Kd-I9C"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2sd-sn-fTG" customClass="GraphView" customModule="Smart_Eyewear" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="2sd-sn-fTG" customClass="LineChartView" customModule="Charts">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -461,6 +461,9 @@
                             <constraint firstAttribute="trailing" secondItem="uRu-yy-TI2" secondAttribute="trailing" id="byv-Q4-DLb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="2sd-sn-fTG" id="Yr5-r7-jSY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JHL-k1-jfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
