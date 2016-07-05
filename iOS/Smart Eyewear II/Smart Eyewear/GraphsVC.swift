@@ -12,38 +12,16 @@ class GraphsVC: UIViewController
 {
     var desiredSensor: Sensor = Sensor.Null
     let BMM150Magnetometer: MBLMagnetometerBMM150 = ConnectionVC.currentlySelectedDevice.magnetometer as! MBLMagnetometerBMM150
+    let BMM160Accelerometer: MBLAccelerometerBMI160 = ConnectionVC.currentlySelectedDevice.accelerometer as! MBLAccelerometerBMI160
+    
+    //    MBLAccelerometerBMI160 *accelerometer = (MBLAccelerometerBMI160 *)device.accelerometer
     
     var dataEntries: [BarChartDataEntry] = [BarChartDataEntry]()
     static var sensorReadings: NSMutableArray = NSMutableArray()
     
-    @IBOutlet var chartView: LineChartView!
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        chartView.delegate = self
-        
-        chartView.dragEnabled = true
-        chartView.setScaleEnabled(true)
-        chartView.pinchZoomEnabled = false // TODO: Change to true
-        chartView.drawGridBackgroundEnabled = false
-        
-        chartView.leftAxis.labelFont = Constants.defaultFont // TODO: Decrease the font to 10pts?
-        chartView.leftAxis.granularityEnabled = true
-        chartView.leftAxis.granularity = 0.1
-        
-        chartView.rightAxis.labelFont = Constants.defaultFont // TODO: Decrease the font to 10pts?
-        chartView.rightAxis.granularityEnabled = true
-        chartView.rightAxis.granularity = 0.1
-        
-        chartView.legend.position = .BelowChartLeft
-        chartView.legend.form = .Line
-        chartView.legend.font = Constants.defaultFont
-        chartView.legend.xEntrySpace = 4.0
-        
-        chartView.animate(xAxisDuration: 2.0)
-        chartView.animate(xAxisDuration: 2.0)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -86,20 +64,32 @@ class GraphsVC: UIViewController
     
     func getAccelerometerReading()
     {
-        ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
+        //        ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
+        //            if error == nil
+        //            {
+        //                let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
+        //                GraphsVC.sensorReadings.addObject(accelData)
+        //                print(accelData)
+        //            }
+        //            else
+        //            {
+        //                print("Error getting accelerometer data")
+        //                print(error?.localizedDescription)
+        //            }
+        //        })
+        
+        BMM160Accelerometer.stepEvent.startNotificationsWithHandlerAsync { (result: AnyObject?, error:NSError?) in
             if error == nil
             {
-                let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
-                GraphsVC.sensorReadings.addObject(accelData)
-                self.updateGraph()
-                print(accelData)
+                let stepData: MBLNumericData = result as! MBLNumericData
+                print("Data step: \(stepData)")
             }
             else
             {
-                print("Error getting accelerometer data")
+                print("Error getting footstep data")
                 print(error?.localizedDescription)
             }
-        })
+        }
     }
     
     func getGyroscopeReading()
@@ -141,61 +131,6 @@ class GraphsVC: UIViewController
         ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
         ConnectionVC.currentlySelectedDevice.gyro?.dataReadyEvent.stopNotificationsAsync()
         BMM150Magnetometer.periodicMagneticField.stopNotificationsAsync()
-    }
-    
-    //    func setDataCount(count: Int) {
-    //        var xVals: [AnyObject] = [AnyObject]()
-    //        var entries: [AnyObject] = [AnyObject]()
-    //        for var i = 0; i < count; i++ {
-    //            xVals.append(i.stringValue())
-    //            entries.append(BarChartDataEntry(value: sinf(M_PI * (i % 128) / 64.0), xIndex: i))
-    //        }
-    //        var set: BarChartDataSet? = nil
-    //        if chartView.data.dataSetCount > 0 {
-    //            set = (chartView.data.dataSets[0] as! BarChartDataSet)
-    //            set.yVals = entries
-    //            self.chartView.data.xValsObjc = xVals
-    //            chartView.notifyDataSetChanged()
-    //        }
-    //        else {
-    //            set = BarChartDataSet(yVals: entries, label: "Sinus Function")
-    //            set.barSpace = 0.4
-    //            set!.color = UIColor(red: 240 / 255.0, green: 120 / 255.0, blue: 124 / 255.0, alpha: 1.0)
-    //            var data: BarChartData = BarChartData(xVals: xVals, dataSet: set!)
-    //            data.valueFont = UIFont(name: "HelveticaNeue-Light", size: 10.0)
-    //            data.drawValues = false
-    //            self.chartView.data = data
-    //        }
-    //    }
-    
-    func updateGraph()
-    {
-        let newData = GraphsVC.sensorReadings.lastObject as! MBLAccelerometerData
-        let lastElementIndex = GraphsVC.sensorReadings.count - 1
-        let newDataEntry = BarChartDataEntry(value: newData.x, xIndex: lastElementIndex)
-        dataEntries.append(newDataEntry)
-        
-        var dataSet: BarChartDataSet? = nil
-        
-        if chartView.data?.dataSetCount > 0
-        {
-            dataSet = chartView.data?.dataSets[0] as? BarChartDataSet
-            dataSet?.yVals = dataEntries
-            chartView.notifyDataSetChanged()
-        }
-        else
-        {
-            dataSet = BarChartDataSet(yVals: dataEntries, label: "X-Axis Accellerometer")
-            dataSet?.barSpace = 0.4
-            dataSet?.colors = [Constants.themeGreenColour]
-            
-            let barData: BarChartData = BarChartData()
-            barData.dataSets = [dataSet!]
-            barData.xVals = ["hello", "world", "this"]
-            barData.setValueFont(Constants.defaultFont)
-            
-            self.chartView.data = barData
-        }
     }
 }
 
