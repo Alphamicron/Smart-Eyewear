@@ -535,6 +535,12 @@
                             <constraint firstItem="Eva-oG-3Fi" firstAttribute="baseline" secondItem="hDZ-B7-2LY" secondAttribute="baseline" id="zXP-SR-eZL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="caloriesTitleLabel" destination="WrO-uH-OjY" id="GR5-gF-K65"/>
+                        <outlet property="numberOfCaloriesLabel" destination="hDZ-B7-2LY" id="gwy-8d-g3e"/>
+                        <outlet property="numberOfStepsLabel" destination="Eva-oG-3Fi" id="rY8-7z-xxo"/>
+                        <outlet property="stepsTitleLabel" destination="GcB-aK-3Sz" id="e0A-01-him"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JHL-k1-jfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

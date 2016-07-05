@@ -10,18 +10,27 @@ import UIKit
 
 class GraphsVC: UIViewController
 {
+    var totalNumberOfSteps: Int = Int()
+    var totalNumberOfCalories: Int = Int()
     var desiredSensor: Sensor = Sensor.Null
+    static var sensorReadings: NSMutableArray = NSMutableArray()
+    
     let BMM150Magnetometer: MBLMagnetometerBMM150 = ConnectionVC.currentlySelectedDevice.magnetometer as! MBLMagnetometerBMM150
     let BMM160Accelerometer: MBLAccelerometerBMI160 = ConnectionVC.currentlySelectedDevice.accelerometer as! MBLAccelerometerBMI160
     
-    //    MBLAccelerometerBMI160 *accelerometer = (MBLAccelerometerBMI160 *)device.accelerometer
-    
-    var dataEntries: [BarChartDataEntry] = [BarChartDataEntry]()
-    static var sensorReadings: NSMutableArray = NSMutableArray()
+    @IBOutlet weak var numberOfStepsLabel: UILabel!
+    @IBOutlet weak var stepsTitleLabel: UILabel!
+    @IBOutlet weak var numberOfCaloriesLabel: UILabel!
+    @IBOutlet weak var caloriesTitleLabel: UILabel!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        numberOfStepsLabel.text = String(Int())
+        stepsTitleLabel.text = "steps"
+        numberOfCaloriesLabel.text = String(Int())
+        caloriesTitleLabel.text = "calorie"
     }
     
     override func viewWillAppear(animated: Bool)
@@ -31,7 +40,8 @@ class GraphsVC: UIViewController
         switch desiredSensor
         {
         case .Accelerometer:
-            getAccelerometerReading()
+            //            getAccelerometerReading()
+            countNumberOfSteps()
         case .Gyroscope:
             getGyroscopeReading()
         case .Magnetometer:
@@ -64,32 +74,19 @@ class GraphsVC: UIViewController
     
     func getAccelerometerReading()
     {
-        //        ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
-        //            if error == nil
-        //            {
-        //                let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
-        //                GraphsVC.sensorReadings.addObject(accelData)
-        //                print(accelData)
-        //            }
-        //            else
-        //            {
-        //                print("Error getting accelerometer data")
-        //                print(error?.localizedDescription)
-        //            }
-        //        })
-        
-        BMM160Accelerometer.stepEvent.startNotificationsWithHandlerAsync { (result: AnyObject?, error:NSError?) in
+        ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
             if error == nil
             {
-                let stepData: MBLNumericData = result as! MBLNumericData
-                print("Data step: \(stepData)")
+                let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
+                GraphsVC.sensorReadings.addObject(accelData)
+                print(accelData)
             }
             else
             {
-                print("Error getting footstep data")
+                print("Error getting accelerometer data")
                 print(error?.localizedDescription)
             }
-        }
+        })
     }
     
     func getGyroscopeReading()
@@ -126,24 +123,40 @@ class GraphsVC: UIViewController
         }
     }
     
+    func countNumberOfSteps()
+    {
+        BMM160Accelerometer.stepEvent.startNotificationsWithHandlerAsync { (result: AnyObject?, error:NSError?) in
+            if error == nil
+            {
+                let stepData: MBLNumericData = result as! MBLNumericData
+                self.totalNumberOfSteps += Int(stepData.value)
+                
+                self.numberOfStepsLabel.text = String(self.totalNumberOfSteps)
+                
+                if self.totalNumberOfSteps <= 1
+                {
+                    self.stepsTitleLabel.text = "step"
+                }
+                else
+                {
+                    self.stepsTitleLabel.text = "steps"
+                }
+                
+                print("data step: \(stepData)")
+            }
+            else
+            {
+                print("Error getting footstep data")
+                print(error?.localizedDescription)
+            }
+        }
+    }
+    
     func stopStreamingSensorInfo()
     {
         ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
         ConnectionVC.currentlySelectedDevice.gyro?.dataReadyEvent.stopNotificationsAsync()
         BMM150Magnetometer.periodicMagneticField.stopNotificationsAsync()
-    }
-}
-
-// MARK: ChartView Delegate
-extension GraphsVC: ChartViewDelegate
-{
-    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
-    {
-        print("Chart view selected")
-    }
-    
-    func chartValueNothingSelected(chartView: ChartViewBase)
-    {
-        print("Chart view nothing selected")
+        BMM160Accelerometer.stepEvent.stopNotificationsAsync()
     }
 }
