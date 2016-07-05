@@ -7,7 +7,6 @@ target 'Smart Eyewear' do
     pod 'Metawear-iOSAPI'
     pod 'PNChart'
     pod 'JSSAlertView'
-    pod 'Charts'
 end
 
 target 'Smart EyewearTests' do

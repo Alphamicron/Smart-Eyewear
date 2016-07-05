@@ -159,6 +159,14 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		3047792F1D2C546B006C3FD1 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
 		30CA55811D21931D0062FFA7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,7 +217,7 @@
 				302A63331CF74A5700109C02 /* Libraries */,
 				3018118B1D0729E500E4941C /* Modal */,
 				B2BBD5DF1CF5188600D0EA32 /* Extensions */,
-				B23DAE7F1CF49C8B003BD7FE /* AppDelegate.swift */,
+				3047792F1D2C546B006C3FD1 /* Delegates */,
 				B23DAEB51CF4AE57003BD7FE /* Controllers */,
 				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
 				B23DAE861CF49C8B003BD7FE /* Assets.xcassets */,

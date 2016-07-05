@@ -1,8 +1,5 @@
 PODS:
   - Bolts/Tasks (1.7.0)
-  - Charts (2.2.5):
-    - Charts/Core (= 2.2.5)
-  - Charts/Core (2.2.5)
   - FastCoding (3.2.1)
   - JSSAlertView (1.1.5)
   - Metawear-iOSAPI (2.5.1):
@@ -13,20 +10,18 @@ PODS:
   - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
-  - Charts
   - JSSAlertView
   - Metawear-iOSAPI
   - PNChart
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
-  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
   FastCoding: ed46c83ba23d048aafa0251972a1e1fc1cfc58ed
   JSSAlertView: 1ff5d4dcb28b00a38c0293c4c555231c02590be1
   Metawear-iOSAPI: 580147c1f82afd1bbb8fedad7fd49c9180baa94e
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: eb8e868a415981708f88662db15225b552cbafb0
+PODFILE CHECKSUM: f77c6660c2e0fe5ec233e435e0221d59bc761d74
 
 COCOAPODS: 1.0.0
