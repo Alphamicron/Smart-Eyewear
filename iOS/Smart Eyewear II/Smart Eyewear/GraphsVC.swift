@@ -44,7 +44,7 @@ class GraphsVC: UIViewController
         graphView.noDataTextDescription = "you need to workout for data to be displayed"
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        unitsSold = [25.2, 4.0, 6.0, 10.5, 12.0, 16.0, 4.20, 18.6, 2.19, 4.0, 5.0, 4.0,]
+        unitsSold = [26.8, 4.9, 6.0, 10.5, 12.0, 16.6, 4.20, 18.6, 2.19, 4.1, 5.0, 4.0,]
         
         setChart(months, values: unitsSold)
     }
@@ -230,7 +230,6 @@ extension GraphsVC: ChartViewDelegate
 {
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
     {
-        print("value: \(entry.value) in \(months[dataSetIndex])")
         print("value: \(entry.value) in \(months[entry.xIndex])")
     }
 }
