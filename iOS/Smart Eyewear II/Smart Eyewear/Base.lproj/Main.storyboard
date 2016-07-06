@@ -440,9 +440,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-SN-cIg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-SN-cIg" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="60" width="600" height="354"/>
-                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eva-oG-3Fi">
                                 <rect key="frame" x="20" y="435" width="170" height="40"/>
@@ -537,6 +537,7 @@
                     </view>
                     <connections>
                         <outlet property="caloriesTitleLabel" destination="WrO-uH-OjY" id="GR5-gF-K65"/>
+                        <outlet property="graphView" destination="bRt-SN-cIg" id="zUJ-l1-N9J"/>
                         <outlet property="numberOfCaloriesLabel" destination="hDZ-B7-2LY" id="gwy-8d-g3e"/>
                         <outlet property="numberOfStepsLabel" destination="Eva-oG-3Fi" id="rY8-7z-xxo"/>
                         <outlet property="stepsTitleLabel" destination="GcB-aK-3Sz" id="e0A-01-him"/>

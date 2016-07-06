@@ -11,6 +11,7 @@
 		1FE6FD5492DA30CE0C44BD6C /* Pods_Smart_Eyewear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDF5163926418102CCAE0C2 /* Pods_Smart_Eyewear.framework */; };
 		300F57B61D23040100A52DCB /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F57B51D23040100A52DCB /* GraphView.swift */; };
 		300F57B81D230FA100A52DCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300F57B71D230FA100A52DCB /* CoreGraphics.framework */; };
+		301619201D2D9AF800BB4F98 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3041985D1D26E471008B8919 /* Charts.framework */; };
 		301811881D0724CD00E4941C /* HomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811871D0724CD00E4941C /* HomeTVC.swift */; };
 		3018118A1D0729D400E4941C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811891D0729D400E4941C /* Modal.swift */; };
 		302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 302A63311CF74A4A00109C02 /* ISColorWheel.m */; };
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301619201D2D9AF800BB4F98 /* Charts.framework in Frameworks */,
 				300F57B81D230FA100A52DCB /* CoreGraphics.framework in Frameworks */,
 				1FE6FD5492DA30CE0C44BD6C /* Pods_Smart_Eyewear.framework in Frameworks */,
 			);
@@ -137,6 +139,15 @@
 				035A6D54EC4B10F5F69FFAEF /* Pods_Smart_EyewearUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		301619211D2D9BEA00BB4F98 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
+				B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		3018118B1D0729E500E4941C /* Modal */ = {
@@ -217,9 +228,8 @@
 				B2BBD5DF1CF5188600D0EA32 /* Extensions */,
 				3047792F1D2C546B006C3FD1 /* Delegates */,
 				B23DAEB51CF4AE57003BD7FE /* Controllers */,
-				B23DAE831CF49C8B003BD7FE /* Main.storyboard */,
+				301619211D2D9BEA00BB4F98 /* Storyboards */,
 				B23DAE861CF49C8B003BD7FE /* Assets.xcassets */,
-				B23DAE881CF49C8B003BD7FE /* LaunchScreen.storyboard */,
 				30CA55811D21931D0062FFA7 /* Supporting Files */,
 				B23DAEBA1CF4CD97003BD7FE /* Smart Eyewear-Bridging-Header.h */,
 			);
@@ -278,7 +288,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B23DAEA41CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart Eyewear" */;
 			buildPhases = (
-				C2E5327D688498425C1E93B2 /* 📦 Check Pods Manifest.lock */,
+				C2E5327D688498425C1E93B2 /* [CP] Check Pods Manifest.lock */,
 				5AEE27F81E7D2576370C988C /* [CP] Check Pods Manifest.lock */,
 				B23DAE781CF49C8B003BD7FE /* Sources */,
 				B23DAE791CF49C8B003BD7FE /* Frameworks */,
@@ -301,7 +311,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B23DAEA71CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearTests" */;
 			buildPhases = (
-				605CDB140C639C053F047D3D /* 📦 Check Pods Manifest.lock */,
+				605CDB140C639C053F047D3D /* [CP] Check Pods Manifest.lock */,
 				D1E5731F5679A74A65399B5F /* [CP] Check Pods Manifest.lock */,
 				B23DAE8C1CF49C8B003BD7FE /* Sources */,
 				B23DAE8D1CF49C8B003BD7FE /* Frameworks */,
@@ -325,7 +335,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B23DAEAA1CF49C8C003BD7FE /* Build configuration list for PBXNativeTarget "Smart EyewearUITests" */;
 			buildPhases = (
-				805F4ABD5991CD0A4A9F7DB8 /* 📦 Check Pods Manifest.lock */,
+				805F4ABD5991CD0A4A9F7DB8 /* [CP] Check Pods Manifest.lock */,
 				28C77FCB5430180D740BD619 /* [CP] Check Pods Manifest.lock */,
 				B23DAE971CF49C8B003BD7FE /* Sources */,
 				B23DAE981CF49C8B003BD7FE /* Frameworks */,
@@ -493,14 +503,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		605CDB140C639C053F047D3D /* 📦 Check Pods Manifest.lock */ = {
+		605CDB140C639C053F047D3D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,14 +533,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart EyewearTests/Pods-Smart EyewearTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		805F4ABD5991CD0A4A9F7DB8 /* 📦 Check Pods Manifest.lock */ = {
+		805F4ABD5991CD0A4A9F7DB8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,14 +608,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart Eyewear/Pods-Smart Eyewear-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C2E5327D688498425C1E93B2 /* 📦 Check Pods Manifest.lock */ = {
+		C2E5327D688498425C1E93B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

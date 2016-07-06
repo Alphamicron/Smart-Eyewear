@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class GraphsVC: UIViewController
 {
@@ -14,14 +15,19 @@ class GraphsVC: UIViewController
     var totalNumberOfCalories: Int = Int()
     var desiredSensor: Sensor = Sensor.Null
     static var sensorReadings: NSMutableArray = NSMutableArray()
+    static var sensorReadingsTimeStamps: NSMutableArray = NSMutableArray()
     
     let BMM150Magnetometer: MBLMagnetometerBMM150 = ConnectionVC.currentlySelectedDevice.magnetometer as! MBLMagnetometerBMM150
     let BMM160Accelerometer: MBLAccelerometerBMI160 = ConnectionVC.currentlySelectedDevice.accelerometer as! MBLAccelerometerBMI160
     
+    @IBOutlet weak var graphView: BarChartView!
     @IBOutlet weak var numberOfStepsLabel: UILabel!
     @IBOutlet weak var stepsTitleLabel: UILabel!
     @IBOutlet weak var numberOfCaloriesLabel: UILabel!
     @IBOutlet weak var caloriesTitleLabel: UILabel!
+    
+    var months: [String] = [String]()
+    var unitsSold: [Double] = [Double]()
     
     override func viewDidLoad()
     {
@@ -31,6 +37,14 @@ class GraphsVC: UIViewController
         stepsTitleLabel.text = "steps"
         numberOfCaloriesLabel.text = String(Int())
         caloriesTitleLabel.text = "calorie"
+        
+        graphView.noDataText = "no chart data available"
+        graphView.noDataTextDescription = "you need to workout for data to be displayed"
+        
+        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
+        
+        setChart(months, values: unitsSold)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -142,7 +156,12 @@ class GraphsVC: UIViewController
                     self.stepsTitleLabel.text = "steps"
                 }
                 
-                print("data step: \(stepData)")
+                
+                GraphsVC.sensorReadings.addObject(self.totalNumberOfSteps)
+                GraphsVC.sensorReadingsTimeStamps.addObject(self.getDateStringFrom(stepData.description))
+                
+                print("Sensor size: \(GraphsVC.sensorReadings.count)")
+                print("Timestamp size: \(GraphsVC.sensorReadingsTimeStamps.count)")
             }
             else
             {
@@ -150,6 +169,26 @@ class GraphsVC: UIViewController
                 print(error?.localizedDescription)
             }
         }
+    }
+    
+    func getDateStringFrom(sensorReadingsResult: String)-> String
+    {
+        return String(sensorReadingsResult.characters.dropLast())
+    }
+    
+    func setChart(dataPoints: [String], values: [Double])
+    {
+        var dataEntries: [BarChartDataEntry] = [BarChartDataEntry]()
+        
+        for i in 0..<dataPoints.count
+        {
+            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet: BarChartDataSet = BarChartDataSet(yVals: dataEntries, label: "units sold")
+        let chartData: BarChartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        graphView.data = chartData
     }
     
     func stopStreamingSensorInfo()
