@@ -38,11 +38,13 @@ class GraphsVC: UIViewController
         numberOfCaloriesLabel.text = String(Int())
         caloriesTitleLabel.text = "calorie"
         
+        graphView.delegate = self
+        
         graphView.noDataText = "no chart data available"
         graphView.noDataTextDescription = "you need to workout for data to be displayed"
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
+        unitsSold = [25.2, 4.0, 6.0, 10.5, 12.0, 16.0, 4.20, 18.6, 2.19, 4.0, 5.0, 4.0,]
         
         setChart(months, values: unitsSold)
     }
@@ -189,6 +191,30 @@ class GraphsVC: UIViewController
         let chartDataSet: BarChartDataSet = BarChartDataSet(yVals: dataEntries, label: "units sold")
         let chartData: BarChartData = BarChartData(xVals: months, dataSet: chartDataSet)
         graphView.data = chartData
+        
+        let averageLine: ChartLimitLine = ChartLimitLine(limit: averageSteps(), label: "average steps")
+        graphView.rightAxis.addLimitLine(averageLine)
+        averageLine.lineColor = Constants.themeInactiveStateColour
+        
+        chartDataSet.colors = ChartColorTemplates.colorful()
+        chartDataSet.barBorderColor = Constants.themeInactiveStateColour
+        chartDataSet.barBorderWidth = 1.5
+        
+        graphView.descriptionText = String()
+        graphView.xAxis.labelPosition = .Bottom
+        graphView.animate(yAxisDuration: 2.0, easingOption: .EaseInOutBack)
+    }
+    
+    func averageSteps()-> Double
+    {
+        var sumOfElements: Double = Double()
+        
+        for thisStep in unitsSold
+        {
+            sumOfElements += thisStep
+        }
+        
+        return sumOfElements/Double(unitsSold.count)
     }
     
     func stopStreamingSensorInfo()
@@ -197,5 +223,14 @@ class GraphsVC: UIViewController
         ConnectionVC.currentlySelectedDevice.gyro?.dataReadyEvent.stopNotificationsAsync()
         BMM150Magnetometer.periodicMagneticField.stopNotificationsAsync()
         BMM160Accelerometer.stepEvent.stopNotificationsAsync()
+    }
+}
+
+extension GraphsVC: ChartViewDelegate
+{
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
+    {
+        print("value: \(entry.value) in \(months[dataSetIndex])")
+        print("value: \(entry.value) in \(months[entry.xIndex])")
     }
 }
