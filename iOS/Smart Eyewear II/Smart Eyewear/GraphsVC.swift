@@ -238,10 +238,6 @@ class GraphsVC: UIViewController
             
             }.success { (result: AnyObject) in
                 
-                print("************************************")
-                print(result)
-                print("************************************")
-                
                 let loggedEntries: [MBLNumericData] = result as! [MBLNumericData]
                 
                 for thisLoggedEntry in loggedEntries
@@ -251,6 +247,11 @@ class GraphsVC: UIViewController
                     print("************************************")
                 }
         }
+    }
+    
+    func countNumberOfStepsInOneMinute()
+    {
+        
     }
     
     func stopStreamingSensorInfo()
