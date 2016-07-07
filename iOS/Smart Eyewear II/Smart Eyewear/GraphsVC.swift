@@ -180,18 +180,22 @@ class GraphsVC: UIViewController
     
     func setChart(dataPoints: [String], values: [Double])
     {
+        // consists of the data points for the chart
         var dataEntries: [BarChartDataEntry] = [BarChartDataEntry]()
         
+        // add the recorded values to the data entry array
         for i in 0..<dataPoints.count
         {
             let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
         }
         
+        // declare the y and x axis values respectively
         let chartDataSet: BarChartDataSet = BarChartDataSet(yVals: dataEntries, label: "units sold")
         let chartData: BarChartData = BarChartData(xVals: months, dataSet: chartDataSet)
         graphView.data = chartData
         
+        // chart GUI modifications
         let averageLine: ChartLimitLine = ChartLimitLine(limit: averageSteps(), label: "average steps")
         graphView.rightAxis.addLimitLine(averageLine)
         averageLine.lineColor = Constants.themeInactiveStateColour
