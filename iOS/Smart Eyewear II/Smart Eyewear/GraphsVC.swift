@@ -57,7 +57,9 @@ class GraphsVC: UIViewController
         {
         case .Accelerometer:
             //            getAccelerometerReading()
-            countNumberOfSteps()
+            countNumberOfStepsInRealTime()
+            //            startLoggingDataToController()
+        //            downloadDataFromController()
         case .Gyroscope:
             getGyroscopeReading()
         case .Magnetometer:
@@ -139,7 +141,7 @@ class GraphsVC: UIViewController
         }
     }
     
-    func countNumberOfSteps()
+    func countNumberOfStepsInRealTime()
     {
         BMM160Accelerometer.stepEvent.startNotificationsWithHandlerAsync { (result: AnyObject?, error:NSError?) in
             if error == nil
@@ -158,12 +160,10 @@ class GraphsVC: UIViewController
                     self.stepsTitleLabel.text = "steps"
                 }
                 
-                
                 GraphsVC.sensorReadings.addObject(self.totalNumberOfSteps)
-                GraphsVC.sensorReadingsTimeStamps.addObject(self.getDateStringFrom(stepData.description))
+                GraphsVC.sensorReadingsTimeStamps.addObject(self.getTimeStringFrom(stepData.description))
                 
-                print("Sensor size: \(GraphsVC.sensorReadings.count)")
-                print("Timestamp size: \(GraphsVC.sensorReadingsTimeStamps.count)")
+                print("steps data: \(stepData)")
             }
             else
             {
@@ -173,9 +173,14 @@ class GraphsVC: UIViewController
         }
     }
     
-    func getDateStringFrom(sensorReadingsResult: String)-> String
+    // Given a string, extracts the time portion
+    // PRE: String should be of format: "MMM DD, YYYY, HH:MM:SEC 1" e.g "Jul 7, 2016, 15:10:32 1"
+    // POST: 15:10:32
+    func getTimeStringFrom(sensorReadingsResult: String)-> String
     {
-        return String(sensorReadingsResult.characters.dropLast())
+        let dateRange: Range = sensorReadingsResult.endIndex.advancedBy(-10)..<sensorReadingsResult.endIndex.advancedBy(-2)
+        
+        return sensorReadingsResult[dateRange]
     }
     
     func setChart(dataPoints: [String], values: [Double])
@@ -219,6 +224,33 @@ class GraphsVC: UIViewController
         }
         
         return sumOfElements/Double(unitsSold.count)
+    }
+    
+    func startLoggingDataToController()
+    {
+        BMM160Accelerometer.stepCounter.periodicReadWithPeriod(500).differentialSampleOfEvent(60000)
+        BMM160Accelerometer.stepEvent.startLoggingAsync()
+    }
+    
+    func downloadDataFromController()
+    {        
+        BMM160Accelerometer.stepEvent.downloadLogAndStopLoggingAsync(true) { (number: Float) in
+            
+            }.success { (result: AnyObject) in
+                
+                print("************************************")
+                print(result)
+                print("************************************")
+                
+                let loggedEntries: [MBLNumericData] = result as! [MBLNumericData]
+                
+                for thisLoggedEntry in loggedEntries
+                {
+                    print("************************************")
+                    print(thisLoggedEntry)
+                    print("************************************")
+                }
+        }
     }
     
     func stopStreamingSensorInfo()

@@ -257,17 +257,17 @@
 		B23DAEB51CF4AE57003BD7FE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				300F57B51D23040100A52DCB /* GraphView.swift */,
-				30CF114B1D1DA13500E2843C /* ProgramLEDVC.swift */,
-				30972E091D1B1D00002BA825 /* GraphsVC.swift */,
-				307B0D201D0CA3940095B2C2 /* RGBVC.swift */,
-				30A920991D08802B00F0EA5D /* ConnectionVC.swift */,
-				30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */,
-				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
 				B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */,
-				301811871D0724CD00E4941C /* HomeTVC.swift */,
-				30D5E61F1D0B669A00681EC6 /* CustomUISlider.swift */,
+				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
+				30A920991D08802B00F0EA5D /* ConnectionVC.swift */,
 				30D5E61B1D0B24B400681EC6 /* CustomNavigationBar.swift */,
+				30D5E61F1D0B669A00681EC6 /* CustomUISlider.swift */,
+				30972E091D1B1D00002BA825 /* GraphsVC.swift */,
+				300F57B51D23040100A52DCB /* GraphView.swift */,
+				301811871D0724CD00E4941C /* HomeTVC.swift */,
+				30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */,
+				30CF114B1D1DA13500E2843C /* ProgramLEDVC.swift */,
+				307B0D201D0CA3940095B2C2 /* RGBVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

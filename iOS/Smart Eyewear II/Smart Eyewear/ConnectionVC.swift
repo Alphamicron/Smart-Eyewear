@@ -170,6 +170,9 @@ class ConnectionVC: UIViewController
                         // flash the Metawear LED Green just to confirm its the right device
                         ConnectionVC.currentlySelectedDevice.led?.flashLEDColorAsync(Constants.themeGreenColour, withIntensity: 1.0, numberOfFlashes: 3)
                         
+                        // erase all non-volatile memory data and results into a disconnection
+                        //                        ConnectionVC.currentlySelectedDevice.setConfiguration(nil, handler: nil)
+                        
                         ActivationVC.turnLED(LEDState.Off)
                         
                         self.tapToConnectLabel.hidden = true
