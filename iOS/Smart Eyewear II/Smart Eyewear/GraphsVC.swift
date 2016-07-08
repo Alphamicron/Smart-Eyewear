@@ -12,8 +12,10 @@ import Charts
 class GraphsVC: UIViewController
 {
     var totalNumberOfSteps: Int = Int()
-    var totalNumberOfCalories: Int = Int()
     var desiredSensor: Sensor = Sensor.Null
+    var timeStampsWithSeconds: [String] = [String]()
+    var sensorTimeStamps: [String] = [String]()
+    var numberOfSteps: [Int] = [Int]()
     static var sensorReadings: NSMutableArray = NSMutableArray()
     static var sensorReadingsTimeStamps: NSMutableArray = NSMutableArray()
     
@@ -40,13 +42,8 @@ class GraphsVC: UIViewController
         
         graphView.delegate = self
         
-        graphView.noDataText = "no chart data available"
-        graphView.noDataTextDescription = "you need to workout for data to be displayed"
-        
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        unitsSold = [26.8, 4.9, 6.0, 10.5, 12.0, 16.6, 4.20, 18.6, 2.19, 4.1, 5.0, 4.0,]
-        
-        setChart(months, values: unitsSold)
+        graphView.noDataText = "No data to display"
+        graphView.noDataTextDescription = "You need to workout for data to be displayed"
     }
     
     override func viewWillAppear(animated: Bool)
@@ -57,9 +54,9 @@ class GraphsVC: UIViewController
         {
         case .Accelerometer:
             //            getAccelerometerReading()
-            countNumberOfStepsInRealTime()
+            //            countNumberOfStepsInRealTime()
             //            startLoggingDataToController()
-        //            downloadDataFromController()
+            downloadDataFromController()
         case .Gyroscope:
             getGyroscopeReading()
         case .Magnetometer:
@@ -78,6 +75,7 @@ class GraphsVC: UIViewController
         
         stopStreamingSensorInfo()
         GraphsVC.sensorReadings.removeAllObjects()
+        GraphsVC.sensorReadingsTimeStamps.removeAllObjects()
     }
     
     override func didReceiveMemoryWarning()
@@ -141,24 +139,38 @@ class GraphsVC: UIViewController
         }
     }
     
+    func stopStreamingSensorInfo()
+    {
+        ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
+        ConnectionVC.currentlySelectedDevice.gyro?.dataReadyEvent.stopNotificationsAsync()
+        BMM150Magnetometer.periodicMagneticField.stopNotificationsAsync()
+        BMM160Accelerometer.stepEvent.stopNotificationsAsync()
+    }
+    
+    func setTotalStepsText()
+    {
+        self.numberOfStepsLabel.text = String(self.totalNumberOfSteps)
+        
+        if self.totalNumberOfSteps <= 1
+        {
+            self.stepsTitleLabel.text = "step"
+        }
+        else
+        {
+            self.stepsTitleLabel.text = "steps"
+        }
+    }
+    
     func countNumberOfStepsInRealTime()
     {
         BMM160Accelerometer.stepEvent.startNotificationsWithHandlerAsync { (result: AnyObject?, error:NSError?) in
             if error == nil
             {
+                print(result)
                 let stepData: MBLNumericData = result as! MBLNumericData
                 self.totalNumberOfSteps += Int(stepData.value)
                 
-                self.numberOfStepsLabel.text = String(self.totalNumberOfSteps)
-                
-                if self.totalNumberOfSteps <= 1
-                {
-                    self.stepsTitleLabel.text = "step"
-                }
-                else
-                {
-                    self.stepsTitleLabel.text = "steps"
-                }
+                self.setTotalStepsText()
                 
                 GraphsVC.sensorReadings.addObject(self.totalNumberOfSteps)
                 GraphsVC.sensorReadingsTimeStamps.addObject(self.getTimeStringFrom(stepData.description))
@@ -183,7 +195,7 @@ class GraphsVC: UIViewController
         return sensorReadingsResult[dateRange]
     }
     
-    func setChart(dataPoints: [String], values: [Double])
+    func drawChart(dataPoints: [String], values: [Int])
     {
         // consists of the data points for the chart
         var dataEntries: [BarChartDataEntry] = [BarChartDataEntry]()
@@ -191,13 +203,13 @@ class GraphsVC: UIViewController
         // add the recorded values to the data entry array
         for i in 0..<dataPoints.count
         {
-            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            let dataEntry = BarChartDataEntry(value: Double(values[i]), xIndex: i)
             dataEntries.append(dataEntry)
         }
         
         // declare the y and x axis values respectively
-        let chartDataSet: BarChartDataSet = BarChartDataSet(yVals: dataEntries, label: "units sold")
-        let chartData: BarChartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        let chartDataSet: BarChartDataSet = BarChartDataSet(yVals: dataEntries, label: "number of steps")
+        let chartData: BarChartData = BarChartData(xVals: sensorTimeStamps, dataSet: chartDataSet)
         graphView.data = chartData
         
         // chart GUI modifications
@@ -216,14 +228,7 @@ class GraphsVC: UIViewController
     
     func averageSteps()-> Double
     {
-        var sumOfElements: Double = Double()
-        
-        for thisStep in unitsSold
-        {
-            sumOfElements += thisStep
-        }
-        
-        return sumOfElements/Double(unitsSold.count)
+        return Double(totalNumberOfSteps)/Double(numberOfSteps.count)
     }
     
     func startLoggingDataToController()
@@ -234,7 +239,8 @@ class GraphsVC: UIViewController
     
     func downloadDataFromController()
     {        
-        BMM160Accelerometer.stepEvent.downloadLogAndStopLoggingAsync(true) { (number: Float) in
+        BMM160Accelerometer.stepEvent.downloadLogAndStopLoggingAsync(true)
+        { (number: Float) in
             
             }.success { (result: AnyObject) in
                 
@@ -242,24 +248,130 @@ class GraphsVC: UIViewController
                 
                 for thisLoggedEntry in loggedEntries
                 {
+                    self.timeStampsWithSeconds.append(self.getTimeStringFrom(thisLoggedEntry.description))
+                    
                     print("************************************")
                     print(thisLoggedEntry)
                     print("************************************")
                 }
+                
+                self.prepareDataForGraphing()
         }
     }
     
-    func countNumberOfStepsInOneMinute()
+    func binarySearchForFirstOccurence(elements: [String], desiredElement: String)-> Int
     {
+        var left: Int = 0, right: Int = elements.count - 1
         
+        while left <= right
+        {
+            let middle: Int = (left + right)/2
+            
+            let middleElement: String = elements[middle]
+            
+            if left == right && middleElement.hasPrefix(desiredElement)
+            {
+                return left
+            }
+            
+            if middleElement.hasPrefix(desiredElement)
+            {
+                if middle > 0
+                {
+                    if !elements[middle - 1].hasPrefix(desiredElement)
+                    {
+                        return middle
+                    }
+                }
+                
+                right = middle - 1
+            }
+            else if middleElement < desiredElement
+            {
+                left = middle + 1
+            }
+            else if middleElement > desiredElement
+            {
+                right = middle - 1
+            }
+        }
+        
+        return -1
     }
     
-    func stopStreamingSensorInfo()
+    func binarySearchForLastOccurence(elements: [String], desiredElement: String) -> Int
     {
-        ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
-        ConnectionVC.currentlySelectedDevice.gyro?.dataReadyEvent.stopNotificationsAsync()
-        BMM150Magnetometer.periodicMagneticField.stopNotificationsAsync()
-        BMM160Accelerometer.stepEvent.stopNotificationsAsync()
+        var left: Int = 0, right: Int = elements.count - 1
+        
+        while (left <= right)
+        {
+            let middle: Int = (left + right) / 2
+            
+            let middleElement: String = elements[middle]
+            
+            if left == right && middleElement.hasPrefix(desiredElement)
+            {
+                return left
+            }
+            
+            if middleElement.hasPrefix(desiredElement)
+            {
+                if middle < elements.count - 1
+                {
+                    if !elements[middle + 1].hasPrefix(desiredElement)
+                    {
+                        return middle
+                    }
+                }
+                
+                left = middle + 1
+            }
+            else if (middleElement < desiredElement)
+            {
+                left = middle + 1
+            }
+            else if (middleElement > desiredElement)
+            {
+                right = middle - 1
+            }
+        }
+        
+        return -1
+    }
+    
+    func prepareDataForGraphing()
+    {
+        var count: Int = Int()
+        
+        // reset it back to zero to avoid conflicts with real time number of steps
+        totalNumberOfSteps = 0
+        
+        while count < timeStampsWithSeconds.count
+        {
+            let thisTimeStamp = timeStampsWithSeconds[count]
+            
+            let timeWithoutSecondsRange: Range = thisTimeStamp.endIndex.advancedBy(-8)..<thisTimeStamp.endIndex.advancedBy(-3)
+            
+            let timeWithoutSeconds: String = thisTimeStamp[timeWithoutSecondsRange]
+            
+            let firstIndex = binarySearchForFirstOccurence(timeStampsWithSeconds, desiredElement: timeWithoutSeconds)
+            let lastIndex = binarySearchForLastOccurence(timeStampsWithSeconds, desiredElement: timeWithoutSeconds)
+            
+            let numberOfStepsForThisTimeStamp: Int = (lastIndex - firstIndex) + 1
+            totalNumberOfSteps += numberOfStepsForThisTimeStamp
+            
+            sensorTimeStamps.append(timeWithoutSeconds)
+            numberOfSteps.append(numberOfStepsForThisTimeStamp)
+            
+            count = lastIndex + 1
+        }
+        
+        self.setTotalStepsText()
+        
+        // get rid of this array at this point
+        timeStampsWithSeconds.removeAll(keepCapacity: false)
+        
+        drawChart(sensorTimeStamps, values: numberOfSteps)
     }
 }
 
@@ -267,6 +379,6 @@ extension GraphsVC: ChartViewDelegate
 {
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
     {
-        print("value: \(entry.value) in \(months[entry.xIndex])")
+        print("value: \(entry.value) at \(sensorTimeStamps[entry.xIndex])")
     }
 }
