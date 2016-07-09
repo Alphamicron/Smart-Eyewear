@@ -339,6 +339,17 @@ class GraphsVC: UIViewController
         return -1
     }
     
+    /*
+     * Iterate through the time stamps and extract the seconds portion
+     * Run two BFSs using this time stamp w/out secs in time stamp with secs to get the start and end location of this time stamp
+     * The difference between start and end added by 1 gives you the total steps done in this minute
+     * Update totalNumber of steps with number of steps done in a minute
+     * Add the time w/out seconds along with the number of steps to their respective arrays to act as data source for the graph
+     * Update count so as it skips the already discovered elements
+     * Set the textLabel to reflect the total number of steps
+     * Graph the data points
+     * Complexity: O(nlogn)
+     */
     func prepareDataForGraphing()
     {
         var count: Int = Int()
@@ -352,6 +363,7 @@ class GraphsVC: UIViewController
             
             let timeWithoutSecondsRange: Range = thisTimeStamp.endIndex.advancedBy(-8)..<thisTimeStamp.endIndex.advancedBy(-3)
             
+            // time will be of format "HH:MM"
             let timeWithoutSeconds: String = thisTimeStamp[timeWithoutSecondsRange]
             
             let firstIndex = binarySearchForFirstOccurence(timeStampsWithSeconds, desiredElement: timeWithoutSeconds)
