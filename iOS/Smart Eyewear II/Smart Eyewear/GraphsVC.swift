@@ -358,6 +358,7 @@ class GraphsVC: UIViewController
             let lastIndex = binarySearchForLastOccurence(timeStampsWithSeconds, desiredElement: timeWithoutSeconds)
             
             let numberOfStepsForThisTimeStamp: Int = (lastIndex - firstIndex) + 1
+            
             totalNumberOfSteps += numberOfStepsForThisTimeStamp
             
             sensorTimeStamps.append(timeWithoutSeconds)
