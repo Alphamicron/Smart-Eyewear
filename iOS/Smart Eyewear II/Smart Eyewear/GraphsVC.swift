@@ -83,6 +83,21 @@ class GraphsVC: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    
+    @IBAction func startBtnAction(sender: UIButton)
+    {
+        sender.selected = !sender.selected
+        
+        if sender.selected
+        {
+            sender.setTitle("stop", forState: .Selected)
+        }
+        else
+        {
+            sender.setTitle("start", forState: .Normal)
+        }
+    }
+    
     @IBAction func exitBtnAction(sender: UIButton)
     {
         self.dismissViewControllerAnimated(true, completion: nil)

@@ -508,7 +508,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oc-8K-t1o">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oc-8K-t1o">
                                 <rect key="frame" x="20" y="22" width="56" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4hg-TI-2DM"/>
@@ -518,6 +518,9 @@
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="startBtnAction:" destination="Sjd-sV-BRb" eventType="touchUpInside" id="n7s-Vl-mQz"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-SN-cIg" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="59" width="600" height="354"/>
