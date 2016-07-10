@@ -12,6 +12,7 @@ import Charts
 class GraphsVC: UIViewController
 {
     var totalNumberOfSteps: Int = Int()
+    var realTimeNumberOfSteps: Int = Int()
     var desiredSensor: Sensor = Sensor.Null
     var timeStampsWithSeconds: [String] = [String]()
     var sensorTimeStamps: [String] = [String]()
@@ -54,8 +55,8 @@ class GraphsVC: UIViewController
         {
         case .Accelerometer:
             //            getAccelerometerReading()
-            //            countNumberOfStepsInRealTime()
-            startLoggingDataToController()
+            countNumberOfStepsInRealTime()
+            //            startLoggingDataToController()
         //            downloadDataFromController()
         case .Gyroscope:
             getGyroscopeReading()
@@ -73,7 +74,7 @@ class GraphsVC: UIViewController
     {
         super.viewWillDisappear(animated)
         
-        stopStreamingSensorInfo()
+        //        stopStreamingSensorInfo()
         GraphsVC.sensorReadings.removeAllObjects()
         GraphsVC.sensorReadingsTimeStamps.removeAllObjects()
     }
@@ -83,18 +84,29 @@ class GraphsVC: UIViewController
         super.didReceiveMemoryWarning()
     }
     
-    
     @IBAction func startBtnAction(sender: UIButton)
     {
         sender.selected = !sender.selected
         
-        if sender.selected
+        if sender.selected // user wants to start logging their workout
         {
             sender.setTitle("stop", forState: .Selected)
+            
+            // stop getting number of steps in real time
+            BMM160Accelerometer.stepEvent.stopNotificationsAsync()
+            
+            if !BMM160Accelerometer.stepEvent.isLogging()
+            {
+                startLoggingDataToController()
+            }
         }
-        else
+        else // user stopped logging hence graph their results
         {
             sender.setTitle("start", forState: .Normal)
+            
+            downloadDataFromController()
+            
+            countNumberOfStepsInRealTime()
         }
     }
     
@@ -183,9 +195,21 @@ class GraphsVC: UIViewController
             {
                 print(result)
                 let stepData: MBLNumericData = result as! MBLNumericData
-                self.totalNumberOfSteps += Int(stepData.value)
+                self.realTimeNumberOfSteps += Int(stepData.value)
                 
-                self.setTotalStepsText()
+                //TODO: Temporary solution. Remove this and call self.setTotalStepsText()
+                self.numberOfCaloriesLabel.text = String(self.realTimeNumberOfSteps)
+                
+                if self.realTimeNumberOfSteps <= 1
+                {
+                    self.caloriesTitleLabel.text = "step"
+                }
+                else
+                {
+                    self.caloriesTitleLabel.text = "steps"
+                }
+                
+                //                self.setTotalStepsText()
                 
                 GraphsVC.sensorReadings.addObject(self.totalNumberOfSteps)
                 GraphsVC.sensorReadingsTimeStamps.addObject(self.getTimeStringFrom(stepData.description))
