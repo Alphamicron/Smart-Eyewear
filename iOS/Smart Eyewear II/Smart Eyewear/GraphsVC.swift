@@ -298,6 +298,8 @@ class GraphsVC: UIViewController
         }
     }
     
+    // Runs a binary search on elements to find the first occurence of desiredElement
+    // Complexity: O(logn)
     func binarySearchForFirstOccurence(elements: [String], desiredElement: String)-> Int
     {
         var left: Int = 0, right: Int = elements.count - 1
@@ -338,6 +340,8 @@ class GraphsVC: UIViewController
         return -1
     }
     
+    // Runs a binary search on elements to find the last occurence of desiredElement
+    // Complexity: O(logn)
     func binarySearchForLastOccurence(elements: [String], desiredElement: String) -> Int
     {
         var left: Int = 0, right: Int = elements.count - 1
@@ -420,7 +424,7 @@ class GraphsVC: UIViewController
         
         self.setTotalStepsText()
         
-        // get rid of this array at this point
+        // useless at this point
         timeStampsWithSeconds.removeAll(keepCapacity: false)
         
         drawChart(sensorTimeStamps, values: numberOfSteps)
