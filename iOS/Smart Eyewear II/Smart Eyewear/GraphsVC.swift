@@ -55,8 +55,8 @@ class GraphsVC: UIViewController
         case .Accelerometer:
             //            getAccelerometerReading()
             //            countNumberOfStepsInRealTime()
-            //            startLoggingDataToController()
-            downloadDataFromController()
+            startLoggingDataToController()
+        //            downloadDataFromController()
         case .Gyroscope:
             getGyroscopeReading()
         case .Magnetometer:
