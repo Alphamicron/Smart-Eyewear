@@ -25,15 +25,13 @@ class StepCounter
     
     func numberOfSteps()-> Int
     {
-        //        var magnitude = calculateMagnitude()
+        var pointMagnitudes: [Double] = rmsValues
         
-        var magnitude = rmsValues
+        removeGravityEffectsFrom(&pointMagnitudes)
         
-        removeGravityEffectsFrom(&magnitude)
+        let minimumPeakHeight: Double = standardDeviationOf(pointMagnitudes)
         
-        let minimumPeakHeight: Double = standardDeviationOf(magnitude)
-        
-        let peaks = findPeaks(&magnitude)
+        let peaks = findPeaks(&pointMagnitudes)
         
         var totalNumberOfSteps: Int = Int()
         
@@ -68,10 +66,6 @@ class StepCounter
         
         for i in 0..<magnitudesWithGravityEffect.count
         {
-            //            let mean: Double = (xAxes[i] + yAxes[i] + zAxes[i])/3.0
-            
-            //            let mean: Double = rmsValues[i]/3.0
-            
             magnitudesWithGravityEffect[i] -= mean
         }
     }
@@ -106,27 +100,49 @@ class StepCounter
     private func findPeaks(inout magnitudes: [Double])-> [Double]
     {
         var peaks: [Double] = [Double]()
-        
-        // ignore the first element
-        peaks.append(max(magnitudes[1], magnitudes[2]))
-        
-        for i in 2..<magnitudes.count
+        // only store initial point, if it is larger than the second. You can ignore in most data sets
+        if max(magnitudes[0], magnitudes[1]) == magnitudes[0]
         {
-            if i != magnitudes.count - 1
+            peaks.append(magnitudes[0])
+        }
+        
+        for i in 1..<magnitudes.count - 2
+        {
+            let maxValue = max(magnitudes[i - 1], magnitudes[i], magnitudes[i + 1])
+            // magnitudes[i] is a peak iff it's greater than it's surrounding points
+            if maxValue == magnitudes[i]
             {
-                peaks.append(max(magnitudes[i], magnitudes[i - 1], magnitudes[i + 1]))
-            }
-            else
-            {
-                break
+                peaks.append(magnitudes[i])
             }
         }
         
-        // TODO:Does this affect the number of steps? Are they clumsly lost or foolishly added?
-        peaks = Array(Set(peaks)) // removing duplicates.
-        
         return peaks
     }
+    
+    //    private func findPeaks(inout magnitudes: [Double])-> [Double]
+    //    {
+    //        var peaks: [Double] = [Double]()
+    //        
+    //        // ignore the first element
+    //        peaks.append(max(magnitudes[1], magnitudes[2]))
+    //        
+    //        for i in 2..<magnitudes.count
+    //        {
+    //            if i != magnitudes.count - 1
+    //            {
+    //                peaks.append(max(magnitudes[i], magnitudes[i - 1], magnitudes[i + 1]))
+    //            }
+    //            else
+    //            {
+    //                break
+    //            }
+    //        }
+    //        
+    //        // TODO:Does this affect the number of steps? Are they clumsly lost or foolishly added?
+    //        peaks = Array(Set(peaks)) // removing duplicates.
+    //        
+    //        return peaks
+    //    }
     
     private func calculateMeanOf(magnitudes: [Double])-> Double
     {
