@@ -134,9 +134,16 @@ struct PinAssignments
 
 struct GraphPoints
 {
-    static var xAxes: [Double] = [Double]()
-    static var yAxes: [Double] = [Double]()
-    static var zAxes: [Double] = [Double]()
+    var xAxes: [Double] = [Double]()
+    var yAxes: [Double] = [Double]()
+    var zAxes: [Double] = [Double]()
+    var rmsValues: [Double] = [Double]()
+    
+    //    init(newXAxes: [Double], newYAxes: [Double], newZAxes: [Double])
+    //    {
+    //        xAxes = newXAxes
+    //        
+    //    }
 }
 
 enum AlertPriority

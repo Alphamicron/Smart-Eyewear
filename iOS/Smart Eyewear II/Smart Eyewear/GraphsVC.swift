@@ -17,6 +17,7 @@ class GraphsVC: UIViewController
     var timeStampsWithSeconds: [String] = [String]()
     var sensorTimeStamps: [String] = [String]()
     var numberOfSteps: [Int] = [Int]()
+    var graphPoints: GraphPoints = GraphPoints()
     static var sensorReadings: NSMutableArray = NSMutableArray()
     static var sensorReadingsTimeStamps: NSMutableArray = NSMutableArray()
     
@@ -97,14 +98,26 @@ class GraphsVC: UIViewController
             
             if !BMM160Accelerometer.stepEvent.isLogging()
             {
-                startLoggingDataToController()
+                //                startLoggingDataToController()
+                
+                getAccelerometerReading()
             }
         }
         else // user stopped logging hence graph their results
         {
             sender.setTitle("start", forState: .Normal)
             
-            downloadDataFromController()
+            //            downloadDataFromController()
+            
+            ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
+            
+            let stepCounterObject: StepCounter = StepCounter(graphPoints: self.graphPoints)
+            let numberOfSteps: Int = stepCounterObject.numberOfSteps()
+            
+            print("number of calculated steps: \(numberOfSteps)")
+            
+            stepsTitleLabel.text = String(numberOfSteps)
+            //            numberOfCaloriesLabel.text = String(numberOfSteps)
             
             countNumberOfStepsInRealTime()
         }
@@ -123,9 +136,10 @@ class GraphsVC: UIViewController
                 let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
                 GraphsVC.sensorReadings.addObject(accelData)
                 
-                GraphPoints.xAxes.append(accelData.x)
-                GraphPoints.yAxes.append(accelData.y)
-                GraphPoints.yAxes.append(accelData.z)
+                self.graphPoints.xAxes.append(accelData.x)
+                self.graphPoints.yAxes.append(accelData.y)
+                self.graphPoints.zAxes.append(accelData.z)
+                self.graphPoints.rmsValues.append(accelData.RMS)
                 
                 print(accelData)
             }

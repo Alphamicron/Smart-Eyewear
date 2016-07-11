@@ -13,17 +13,21 @@ class StepCounter
     private var xAxes: [Double] = [Double]()
     private var yAxes: [Double] = [Double]()
     private var zAxes: [Double] = [Double]()
+    private var rmsValues: [Double] = [Double]()
     
     init(graphPoints: GraphPoints)
     {
-        xAxes = GraphPoints.xAxes
-        yAxes = GraphPoints.yAxes
-        zAxes = GraphPoints.zAxes
+        xAxes = graphPoints.xAxes
+        yAxes = graphPoints.yAxes
+        zAxes = graphPoints.zAxes
+        rmsValues = graphPoints.rmsValues
     }
     
     func numberOfSteps()-> Int
     {
-        var magnitude = calculateMagnitude()
+        //        var magnitude = calculateMagnitude()
+        
+        var magnitude = rmsValues
         
         removeGravityEffectsFrom(&magnitude)
         
@@ -44,6 +48,7 @@ class StepCounter
         return totalNumberOfSteps
     }
     
+    // TODO: dummy method for the time being. replaced with RMS values from controller itself
     private func calculateMagnitude()-> [Double]
     {
         var pointMagnitudes: [Double] = [Double]()
@@ -59,9 +64,13 @@ class StepCounter
     
     private func removeGravityEffectsFrom(inout magnitudesWithGravityEffect: [Double])
     {
+        let mean: Double = calculateMeanOf(rmsValues)
+        
         for i in 0..<magnitudesWithGravityEffect.count
         {
-            let mean: Double = (xAxes[i] + yAxes[i] + zAxes[i])/3
+            //            let mean: Double = (xAxes[i] + yAxes[i] + zAxes[i])/3.0
+            
+            //            let mean: Double = rmsValues[i]/3.0
             
             magnitudesWithGravityEffect[i] -= mean
         }
@@ -73,15 +82,17 @@ class StepCounter
         var sumOfElements: Double = Double()
         var mutableMagnitudes: [Double] = magnitudes
         
-        let mean = calculateMeanOf(magnitudes)
-        
-        // calculate the numerator of the equation without the sqrt
+        // calculates the numerator of the equation
+        /* no need to do (mutableMagnitudes[i] = mutableMagnitudes[i] - mean) 
+         * because it has already been done when the gravity effect was removed
+         * from the dataset
+         */
         for i in 0..<mutableMagnitudes.count
         {
-            mutableMagnitudes[i] = mutableMagnitudes[i] - mean
             mutableMagnitudes[i] = pow(mutableMagnitudes[i], 2)
         }
         
+        // sum the elements
         for thisElement in mutableMagnitudes
         {
             sumOfElements += thisElement
@@ -111,8 +122,8 @@ class StepCounter
             }
         }
         
-        // removing duplicates. TODO:Does this affect the number of steps? Or result into some steps from being missed?
-        peaks = Array(Set(peaks))
+        // TODO:Does this affect the number of steps? Are they clumsly lost or foolishly added?
+        peaks = Array(Set(peaks)) // removing duplicates.
         
         return peaks
     }
