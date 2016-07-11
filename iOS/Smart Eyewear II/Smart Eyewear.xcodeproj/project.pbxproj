@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C382CC59FEDE12332381F2D /* Pods_Smart_EyewearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035A6D54EC4B10F5F69FFAEF /* Pods_Smart_EyewearUITests.framework */; };
 		1FE6FD5492DA30CE0C44BD6C /* Pods_Smart_Eyewear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDF5163926418102CCAE0C2 /* Pods_Smart_Eyewear.framework */; };
+		30018D4F1D33746A00E04BDC /* StepCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30018D4E1D33746A00E04BDC /* StepCounter.swift */; };
 		300F57B61D23040100A52DCB /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F57B51D23040100A52DCB /* GraphView.swift */; };
 		300F57B81D230FA100A52DCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300F57B71D230FA100A52DCB /* CoreGraphics.framework */; };
 		301619201D2D9AF800BB4F98 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3041985D1D26E471008B8919 /* Charts.framework */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		035A6D54EC4B10F5F69FFAEF /* Pods_Smart_EyewearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_EyewearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E70B8B72465E29E7B5132F8 /* Pods-Smart EyewearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart EyewearTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart EyewearTests/Pods-Smart EyewearTests.debug.xcconfig"; sourceTree = "<group>"; };
+		30018D4E1D33746A00E04BDC /* StepCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCounter.swift; sourceTree = "<group>"; };
 		300F57B51D23040100A52DCB /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		300F57B71D230FA100A52DCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		301811871D0724CD00E4941C /* HomeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTVC.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				301811891D0729D400E4941C /* Modal.swift */,
+				30018D4E1D33746A00E04BDC /* StepCounter.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				30D5E61C1D0B24B400681EC6 /* CustomNavigationBar.swift in Sources */,
 				30CA557E1D2192DD0062FFA7 /* ColorPickerViewController.swift in Sources */,
 				301811881D0724CD00E4941C /* HomeTVC.swift in Sources */,
+				30018D4F1D33746A00E04BDC /* StepCounter.swift in Sources */,
 				302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */,
 				B23DAE801CF49C8B003BD7FE /* AppDelegate.swift in Sources */,
 				307B0D211D0CA3940095B2C2 /* RGBVC.swift in Sources */,

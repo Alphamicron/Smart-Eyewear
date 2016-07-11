@@ -132,6 +132,13 @@ struct PinAssignments
     static let pinFour: Int = 4 // DIO4
 }
 
+struct GraphPoints
+{
+    static var xAxes: [Double] = [Double]()
+    static var yAxes: [Double] = [Double]()
+    static var zAxes: [Double] = [Double]()
+}
+
 enum AlertPriority
 {
     case Low
