@@ -122,6 +122,11 @@ class GraphsVC: UIViewController
             {
                 let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
                 GraphsVC.sensorReadings.addObject(accelData)
+                
+                GraphPoints.xAxes.append(accelData.x)
+                GraphPoints.yAxes.append(accelData.y)
+                GraphPoints.yAxes.append(accelData.z)
+                
                 print(accelData)
             }
             else
@@ -194,7 +199,9 @@ class GraphsVC: UIViewController
             if error == nil
             {
                 print(result)
+                
                 let stepData: MBLNumericData = result as! MBLNumericData
+                
                 self.realTimeNumberOfSteps += Int(stepData.value)
                 
                 //TODO: Temporary solution. Remove this and call self.setTotalStepsText()
