@@ -119,31 +119,6 @@ class StepCounter
         return peaks
     }
     
-    //    private func findPeaks(inout magnitudes: [Double])-> [Double]
-    //    {
-    //        var peaks: [Double] = [Double]()
-    //        
-    //        // ignore the first element
-    //        peaks.append(max(magnitudes[1], magnitudes[2]))
-    //        
-    //        for i in 2..<magnitudes.count
-    //        {
-    //            if i != magnitudes.count - 1
-    //            {
-    //                peaks.append(max(magnitudes[i], magnitudes[i - 1], magnitudes[i + 1]))
-    //            }
-    //            else
-    //            {
-    //                break
-    //            }
-    //        }
-    //        
-    //        // TODO:Does this affect the number of steps? Are they clumsly lost or foolishly added?
-    //        peaks = Array(Set(peaks)) // removing duplicates.
-    //        
-    //        return peaks
-    //    }
-    
     private func calculateMeanOf(magnitudes: [Double])-> Double
     {
         var sumOfElements: Double = Double()
