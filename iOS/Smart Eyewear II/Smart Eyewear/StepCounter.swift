@@ -31,6 +31,9 @@ class StepCounter
         
         let minimumPeakHeight: Double = standardDeviationOf(pointMagnitudes)
         
+        // smoothes the points first before finding their peaks
+        simpleMovingAverage(&pointMagnitudes, movingAverageWindow: 10)
+        
         let peaks = findPeaks(&pointMagnitudes)
         
         var totalNumberOfSteps: Int = Int()
@@ -117,6 +120,37 @@ class StepCounter
         }
         
         return peaks
+    }
+    
+    // A data smoothing algorithm.
+    // Reference: https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average
+    private func simpleMovingAverage(inout magnitudes: [Double], movingAverageWindow: Int)
+    {
+        var count: Int = Int()
+        var front: Int = Int()
+        
+        for currentSpot in movingAverageWindow...magnitudes.count
+        {
+            count = currentSpot - 1
+            
+            var sum: Double = Double()
+            
+            while count >= front
+            {
+                sum += magnitudes[count]
+                
+                count -= 1
+            }
+            
+            let mean: Double = sum/Double(movingAverageWindow)
+            magnitudes[front] = mean
+            
+            front += 1
+        }
+        
+        // since no copies made, delete the untouched part of the array
+        let rangeOfNumbersNotUsedInCalculation: Range = front..<magnitudes.count
+        magnitudes.removeRange(rangeOfNumbersNotUsedInCalculation)
     }
     
     private func calculateMeanOf(magnitudes: [Double])-> Double
