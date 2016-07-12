@@ -55,8 +55,8 @@ class GraphsVC: UIViewController
         switch desiredSensor
         {
         case .Accelerometer:
-            //            getAccelerometerReading()
-            countNumberOfStepsInRealTime()
+            getAccelerometerReading()
+            //            countNumberOfStepsInRealTime()
             //            startLoggingDataToController()
         //            downloadDataFromController()
         case .Gyroscope:
