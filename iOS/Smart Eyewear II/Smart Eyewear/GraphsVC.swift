@@ -114,10 +114,9 @@ class GraphsVC: UIViewController
             let stepCounterObject: StepCounter = StepCounter(graphPoints: self.graphPoints)
             let numberOfSteps: Int = stepCounterObject.numberOfSteps()
             
-            print("number of calculated steps: \(numberOfSteps)")
+            print("steps taken: \(numberOfSteps)")
             
-            stepsTitleLabel.text = String(numberOfSteps)
-            //            numberOfCaloriesLabel.text = String(numberOfSteps)
+            self.setTotalStepsText(numberOfSteps, labelOption: LabelOption.totalCalories)
             
             countNumberOfStepsInRealTime()
         }
@@ -193,17 +192,17 @@ class GraphsVC: UIViewController
         BMM160Accelerometer.stepEvent.stopNotificationsAsync()
     }
     
-    func setTotalStepsText()
+    func setTotalStepsText(numberOfSteps: Int, labelOption: LabelOption)
     {
-        self.numberOfStepsLabel.text = String(self.totalNumberOfSteps)
-        
-        if self.totalNumberOfSteps <= 1
+        switch labelOption
         {
-            self.stepsTitleLabel.text = "step"
-        }
-        else
-        {
-            self.stepsTitleLabel.text = "steps"
+        case .totalSteps:
+            self.numberOfStepsLabel.text = String(numberOfSteps)
+            self.stepsTitleLabel.text = numberOfSteps <= 1 ? "step" : "steps"
+            
+        case .totalCalories:
+            self.numberOfCaloriesLabel.text = String(numberOfSteps)
+            self.caloriesTitleLabel.text = numberOfSteps <= 1 ? "step" : "steps"
         }
     }
     
@@ -218,19 +217,7 @@ class GraphsVC: UIViewController
                 
                 self.realTimeNumberOfSteps += Int(stepData.value)
                 
-                //TODO: Temporary solution. Remove this and call self.setTotalStepsText()
-                self.numberOfCaloriesLabel.text = String(self.realTimeNumberOfSteps)
-                
-                if self.realTimeNumberOfSteps <= 1
-                {
-                    self.caloriesTitleLabel.text = "step"
-                }
-                else
-                {
-                    self.caloriesTitleLabel.text = "steps"
-                }
-                
-                //                self.setTotalStepsText()
+                self.setTotalStepsText(self.realTimeNumberOfSteps, labelOption: LabelOption.totalSteps)
                 
                 GraphsVC.sensorReadings.addObject(self.totalNumberOfSteps)
                 GraphsVC.sensorReadingsTimeStamps.addObject(self.getTimeStringFrom(stepData.description))
@@ -248,6 +235,7 @@ class GraphsVC: UIViewController
     // Given a string, extracts the time portion
     // PRE: String should be of format: "MMM DD, YYYY, HH:MM:SEC 1" e.g "Jul 7, 2016, 15:10:32 1"
     // POST: 15:10:32
+    // Complexity: O(n)
     func getTimeStringFrom(sensorReadingsResult: String)-> String
     {
         let dateRange: Range = sensorReadingsResult.endIndex.advancedBy(-10)..<sensorReadingsResult.endIndex.advancedBy(-2)
@@ -297,6 +285,8 @@ class GraphsVC: UIViewController
         BMM160Accelerometer.stepEvent.startLoggingAsync()
     }
     
+    // Reads step count data stored inside the controller
+    // Complexity: O(n)
     func downloadDataFromController()
     {        
         BMM160Accelerometer.stepEvent.downloadLogAndStopLoggingAsync(true)
@@ -320,7 +310,7 @@ class GraphsVC: UIViewController
     }
     
     // Runs a binary search on elements to find the first occurence of desiredElement
-    // Complexity: O(logn)
+    // Complexity: O(log(n))
     func binarySearchForFirstOccurence(elements: [String], desiredElement: String)-> Int
     {
         var left: Int = 0, right: Int = elements.count - 1
@@ -362,7 +352,7 @@ class GraphsVC: UIViewController
     }
     
     // Runs a binary search on elements to find the last occurence of desiredElement
-    // Complexity: O(logn)
+    // Complexity: O(log(n))
     func binarySearchForLastOccurence(elements: [String], desiredElement: String) -> Int
     {
         var left: Int = 0, right: Int = elements.count - 1
@@ -412,7 +402,7 @@ class GraphsVC: UIViewController
      * Update count so as it skips the already discovered elements
      * Set the textLabel to reflect the total number of steps
      * Graph the data points
-     * Complexity: O(nlogn)
+     * Complexity: O(nlog(n))
      */
     func prepareDataForGraphing()
     {
@@ -443,7 +433,7 @@ class GraphsVC: UIViewController
             count = lastIndex + 1
         }
         
-        self.setTotalStepsText()
+        self.setTotalStepsText(totalNumberOfSteps, labelOption: LabelOption.totalCalories)
         
         // useless at this point
         timeStampsWithSeconds.removeAll(keepCapacity: false)

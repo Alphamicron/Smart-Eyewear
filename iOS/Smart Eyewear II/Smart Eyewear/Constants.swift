@@ -138,12 +138,6 @@ struct GraphPoints
     var yAxes: [Double] = [Double]()
     var zAxes: [Double] = [Double]()
     var rmsValues: [Double] = [Double]()
-    
-    //    init(newXAxes: [Double], newYAxes: [Double], newZAxes: [Double])
-    //    {
-    //        xAxes = newXAxes
-    //        
-    //    }
 }
 
 enum AlertPriority
@@ -179,4 +173,10 @@ enum SensorAxes
     case yAxis
     case zAxis
     case RMS // root mean square => sqrt(1/n(sq(x1) + sq(x2) +.....+ sq(xn)))
+}
+
+enum LabelOption
+{
+    case totalSteps
+    case totalCalories
 }

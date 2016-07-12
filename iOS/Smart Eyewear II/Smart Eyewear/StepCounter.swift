@@ -49,20 +49,6 @@ class StepCounter
         return totalNumberOfSteps
     }
     
-    // TODO: dummy method for the time being. replaced with RMS values from controller itself
-    private func calculateMagnitude()-> [Double]
-    {
-        var pointMagnitudes: [Double] = [Double]()
-        
-        for i in 0..<xAxes.count
-        {
-            let sumOfAxesSquare: Double = pow(xAxes[i], 2) + pow(yAxes[i], 2) + pow(zAxes[i], 2)
-            pointMagnitudes.append(sqrt(sumOfAxesSquare))
-        }
-        
-        return pointMagnitudes
-    }
-    
     private func removeGravityEffectsFrom(inout magnitudesWithGravityEffect: [Double])
     {
         let mean: Double = calculateMeanOf(rmsValues)
@@ -100,6 +86,8 @@ class StepCounter
         return sqrt(sampleVariance)
     }
     
+    // Finds local maxima of given points
+    // Complexity: O(n)
     private func findPeaks(inout magnitudes: [Double])-> [Double]
     {
         var peaks: [Double] = [Double]()
@@ -124,26 +112,27 @@ class StepCounter
     
     // A data smoothing algorithm.
     // Reference: https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average
+    // Complexity: O(n squared)
     private func simpleMovingAverage(inout magnitudes: [Double], movingAverageWindow: Int)
     {
-        var count: Int = Int()
-        var front: Int = Int()
+        var count: Int = Int(), front: Int = Int()
         
         for currentSpot in movingAverageWindow...magnitudes.count
         {
             count = currentSpot - 1
             
-            var sum: Double = Double()
+            var sumOfElements: Double = Double()
             
+            // sum up all the elements before and including count
             while count >= front
             {
-                sum += magnitudes[count]
+                sumOfElements += magnitudes[count]
                 
                 count -= 1
             }
             
-            let mean: Double = sum/Double(movingAverageWindow)
-            magnitudes[front] = mean
+            // replace it with the average
+            magnitudes[front] = sumOfElements/Double(movingAverageWindow)
             
             front += 1
         }
