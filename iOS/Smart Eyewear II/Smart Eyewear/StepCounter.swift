@@ -8,12 +8,27 @@
 
 import Foundation
 
+/**************************************************************
+ +------------------------------------------------------------+
+ | Name: StepCounter                                          |
+ | Purpose: Count number of steps from accelerometer data     |
+ | Inputs: X,Y,Z and RMS values                               |
+ | Outputs: Total number of steps, distance and speed         |
+ | Throws: Poop                                               |
+ +------------------------------------------------------------+
+ **************************************************************/
+
 class StepCounter
 {
     private var xAxes: [Double] = [Double]()
     private var yAxes: [Double] = [Double]()
     private var zAxes: [Double] = [Double]()
     private var rmsValues: [Double] = [Double]()
+    
+    private var userHeight: Double = Double()
+    private var totalNumberOfSteps: Int = Int()
+    private var speedTravelled: Double = Double()
+    private var totalDistanceTravelled: Double = Double()
     
     init(graphPoints: GraphPoints)
     {
@@ -23,7 +38,7 @@ class StepCounter
         rmsValues = graphPoints.rmsValues
     }
     
-    func numberOfSteps()-> Int
+    func numberOfSteps()-> (totalSteps: Int, distanceInFeet: Double)
     {
         var pointMagnitudes: [Double] = rmsValues
         
@@ -36,8 +51,6 @@ class StepCounter
         
         let peaks = findPeaks(&pointMagnitudes)
         
-        var totalNumberOfSteps: Int = Int()
-        
         for thisPeak in peaks
         {
             if thisPeak > minimumPeakHeight
@@ -46,7 +59,10 @@ class StepCounter
             }
         }
         
-        return totalNumberOfSteps
+        // calculate the distance travelled
+        distanceTravelled()
+        
+        return (totalNumberOfSteps, totalDistanceTravelled)
     }
     
     private func removeGravityEffectsFrom(inout magnitudesWithGravityEffect: [Double])
@@ -152,5 +168,10 @@ class StepCounter
         }
         
         return sumOfElements/Double(magnitudes.count)
+    }
+    
+    private func distanceTravelled()
+    {
+        totalDistanceTravelled = Double(totalNumberOfSteps) * userHeight
     }
 }

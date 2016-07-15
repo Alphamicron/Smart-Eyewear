@@ -13,6 +13,7 @@ class GraphsVC: UIViewController
 {
     var totalNumberOfSteps: Int = Int()
     var realTimeNumberOfSteps: Int = Int()
+    var userHeight: Double = Double()
     var desiredSensor: Sensor = Sensor.Null
     var timeStampsWithSeconds: [String] = [String]()
     var sensorTimeStamps: [String] = [String]()
@@ -112,7 +113,8 @@ class GraphsVC: UIViewController
             ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
             
             let stepCounterObject: StepCounter = StepCounter(graphPoints: self.graphPoints)
-            let numberOfSteps: Int = stepCounterObject.numberOfSteps()
+            let result = stepCounterObject.numberOfSteps()
+            let numberOfSteps: Int = result.totalSteps
             
             print("steps taken: \(numberOfSteps)")
             
@@ -126,6 +128,12 @@ class GraphsVC: UIViewController
     {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    /**********************
+     ++++++++++++++++++++++
+     | Controller Methods |
+     ++++++++++++++++++++++
+     **********************/
     
     func getAccelerometerReading()
     {
@@ -184,6 +192,12 @@ class GraphsVC: UIViewController
         }
     }
     
+    func startLoggingDataToController()
+    {
+        BMM160Accelerometer.stepCounter.periodicReadWithPeriod(500).differentialSampleOfEvent(60000)
+        BMM160Accelerometer.stepEvent.startLoggingAsync()
+    }
+    
     func stopStreamingSensorInfo()
     {
         ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
@@ -192,17 +206,27 @@ class GraphsVC: UIViewController
         BMM160Accelerometer.stepEvent.stopNotificationsAsync()
     }
     
-    func setTotalStepsText(numberOfSteps: Int, labelOption: LabelOption)
+    // Reads step count data stored inside the controller
+    // Complexity: O(n)
+    func downloadDataFromController()
     {
-        switch labelOption
-        {
-        case .totalSteps:
-            self.numberOfStepsLabel.text = String(numberOfSteps)
-            self.stepsTitleLabel.text = numberOfSteps <= 1 ? "step" : "steps"
+        BMM160Accelerometer.stepEvent.downloadLogAndStopLoggingAsync(true)
+        { (number: Float) in
             
-        case .totalCalories:
-            self.numberOfCaloriesLabel.text = String(numberOfSteps)
-            self.caloriesTitleLabel.text = numberOfSteps <= 1 ? "step" : "steps"
+            }.success { (result: AnyObject) in
+                
+                let loggedEntries: [MBLNumericData] = result as! [MBLNumericData]
+                
+                for thisLoggedEntry in loggedEntries
+                {
+                    self.timeStampsWithSeconds.append(self.getTimeStringFrom(thisLoggedEntry.description))
+                    
+                    print("************************************")
+                    print(thisLoggedEntry)
+                    print("************************************")
+                }
+                
+                self.prepareDataForGraphing()
         }
     }
     
@@ -230,6 +254,60 @@ class GraphsVC: UIViewController
                 print(error?.localizedDescription)
             }
         }
+    }
+    
+    /***************************
+     +++++++++++++++++++++++++++
+     | Data Processing Methods |
+     +++++++++++++++++++++++++++
+     ***************************/
+    
+    /*
+     * Iterate through the time stamps and extract the seconds portion
+     * Run two BFSs using this time stamp w/out secs in time stamp with secs to get the start and end location of this time stamp
+     * The difference between start and end added by 1 gives you the total steps done in this minute
+     * Update totalNumber of steps with number of steps done in a minute
+     * Add the time w/out seconds along with the number of steps to their respective arrays to act as data source for the graph
+     * Update count so as it skips the already discovered elements
+     * Set the textLabel to reflect the total number of steps
+     * Graph the data points
+     * Complexity: O(nlog(n))
+     */
+    func prepareDataForGraphing()
+    {
+        var count: Int = Int()
+        
+        // reset it back to zero to avoid conflicts with real time number of steps
+        totalNumberOfSteps = 0
+        
+        while count < timeStampsWithSeconds.count
+        {
+            let thisTimeStamp = timeStampsWithSeconds[count]
+            
+            let timeWithoutSecondsRange: Range = thisTimeStamp.endIndex.advancedBy(-8)..<thisTimeStamp.endIndex.advancedBy(-3)
+            
+            // time will be of format "HH:MM"
+            let timeWithoutSeconds: String = thisTimeStamp[timeWithoutSecondsRange]
+            
+            let firstIndex = binarySearchForFirstOccurence(timeStampsWithSeconds, desiredElement: timeWithoutSeconds)
+            let lastIndex = binarySearchForLastOccurence(timeStampsWithSeconds, desiredElement: timeWithoutSeconds)
+            
+            let numberOfStepsForThisTimeStamp: Int = (lastIndex - firstIndex) + 1
+            
+            totalNumberOfSteps += numberOfStepsForThisTimeStamp
+            
+            sensorTimeStamps.append(timeWithoutSeconds)
+            numberOfSteps.append(numberOfStepsForThisTimeStamp)
+            
+            count = lastIndex + 1
+        }
+        
+        self.setTotalStepsText(totalNumberOfSteps, labelOption: LabelOption.totalCalories)
+        
+        // useless at this point
+        timeStampsWithSeconds.removeAll(keepCapacity: false)
+        
+        drawChart(sensorTimeStamps, values: numberOfSteps)
     }
     
     // Given a string, extracts the time portion
@@ -272,41 +350,6 @@ class GraphsVC: UIViewController
         graphView.descriptionText = String()
         graphView.xAxis.labelPosition = .Bottom
         graphView.animate(yAxisDuration: 2.0, easingOption: .EaseInOutBack)
-    }
-    
-    func averageSteps()-> Double
-    {
-        return Double(totalNumberOfSteps)/Double(numberOfSteps.count)
-    }
-    
-    func startLoggingDataToController()
-    {
-        BMM160Accelerometer.stepCounter.periodicReadWithPeriod(500).differentialSampleOfEvent(60000)
-        BMM160Accelerometer.stepEvent.startLoggingAsync()
-    }
-    
-    // Reads step count data stored inside the controller
-    // Complexity: O(n)
-    func downloadDataFromController()
-    {        
-        BMM160Accelerometer.stepEvent.downloadLogAndStopLoggingAsync(true)
-        { (number: Float) in
-            
-            }.success { (result: AnyObject) in
-                
-                let loggedEntries: [MBLNumericData] = result as! [MBLNumericData]
-                
-                for thisLoggedEntry in loggedEntries
-                {
-                    self.timeStampsWithSeconds.append(self.getTimeStringFrom(thisLoggedEntry.description))
-                    
-                    print("************************************")
-                    print(thisLoggedEntry)
-                    print("************************************")
-                }
-                
-                self.prepareDataForGraphing()
-        }
     }
     
     // Runs a binary search on elements to find the first occurence of desiredElement
@@ -393,52 +436,29 @@ class GraphsVC: UIViewController
         return -1
     }
     
-    /*
-     * Iterate through the time stamps and extract the seconds portion
-     * Run two BFSs using this time stamp w/out secs in time stamp with secs to get the start and end location of this time stamp
-     * The difference between start and end added by 1 gives you the total steps done in this minute
-     * Update totalNumber of steps with number of steps done in a minute
-     * Add the time w/out seconds along with the number of steps to their respective arrays to act as data source for the graph
-     * Update count so as it skips the already discovered elements
-     * Set the textLabel to reflect the total number of steps
-     * Graph the data points
-     * Complexity: O(nlog(n))
-     */
-    func prepareDataForGraphing()
+    /******************
+     ++++++++++++++++++
+     | Helper Methods |
+     ++++++++++++++++++
+     ******************/
+    
+    func averageSteps()-> Double
     {
-        var count: Int = Int()
-        
-        // reset it back to zero to avoid conflicts with real time number of steps
-        totalNumberOfSteps = 0
-        
-        while count < timeStampsWithSeconds.count
+        return Double(totalNumberOfSteps)/Double(numberOfSteps.count)
+    }
+    
+    func setTotalStepsText(numberOfSteps: Int, labelOption: LabelOption)
+    {
+        switch labelOption
         {
-            let thisTimeStamp = timeStampsWithSeconds[count]
+        case .totalSteps:
+            self.numberOfStepsLabel.text = String(numberOfSteps)
+            self.stepsTitleLabel.text = numberOfSteps <= 1 ? "step" : "steps"
             
-            let timeWithoutSecondsRange: Range = thisTimeStamp.endIndex.advancedBy(-8)..<thisTimeStamp.endIndex.advancedBy(-3)
-            
-            // time will be of format "HH:MM"
-            let timeWithoutSeconds: String = thisTimeStamp[timeWithoutSecondsRange]
-            
-            let firstIndex = binarySearchForFirstOccurence(timeStampsWithSeconds, desiredElement: timeWithoutSeconds)
-            let lastIndex = binarySearchForLastOccurence(timeStampsWithSeconds, desiredElement: timeWithoutSeconds)
-            
-            let numberOfStepsForThisTimeStamp: Int = (lastIndex - firstIndex) + 1
-            
-            totalNumberOfSteps += numberOfStepsForThisTimeStamp
-            
-            sensorTimeStamps.append(timeWithoutSeconds)
-            numberOfSteps.append(numberOfStepsForThisTimeStamp)
-            
-            count = lastIndex + 1
+        case .totalCalories:
+            self.numberOfCaloriesLabel.text = String(numberOfSteps)
+            self.caloriesTitleLabel.text = numberOfSteps <= 1 ? "step" : "steps"
         }
-        
-        self.setTotalStepsText(totalNumberOfSteps, labelOption: LabelOption.totalCalories)
-        
-        // useless at this point
-        timeStampsWithSeconds.removeAll(keepCapacity: false)
-        
-        drawChart(sensorTimeStamps, values: numberOfSteps)
     }
 }
 
