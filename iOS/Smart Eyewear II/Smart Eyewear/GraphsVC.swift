@@ -13,7 +13,6 @@ class GraphsVC: UIViewController
 {
     var totalNumberOfSteps: Int = Int()
     var realTimeNumberOfSteps: Int = Int()
-    var userHeight: Double = Double()
     var desiredSensor: Sensor = Sensor.Null
     var timeStampsWithSeconds: [String] = [String]()
     var sensorTimeStamps: [String] = [String]()
@@ -30,9 +29,6 @@ class GraphsVC: UIViewController
     @IBOutlet weak var stepsTitleLabel: UILabel!
     @IBOutlet weak var numberOfCaloriesLabel: UILabel!
     @IBOutlet weak var caloriesTitleLabel: UILabel!
-    
-    var months: [String] = [String]()
-    var unitsSold: [Double] = [Double]()
     
     override func viewDidLoad()
     {
@@ -115,12 +111,15 @@ class GraphsVC: UIViewController
             let stepCounterObject: StepCounter = StepCounter(graphPoints: self.graphPoints)
             let result = stepCounterObject.numberOfSteps()
             let numberOfSteps: Int = result.totalSteps
+            let distanceTravelled: Double = result.distanceInFeet
             
             print("steps taken: \(numberOfSteps)")
             
             self.setTotalStepsText(numberOfSteps, labelOption: LabelOption.totalCalories)
             
-            countNumberOfStepsInRealTime()
+            self.setTotalStepsText(Int(distanceTravelled), labelOption: LabelOption.totalSteps)
+            
+            //            countNumberOfStepsInRealTime()
         }
     }
     

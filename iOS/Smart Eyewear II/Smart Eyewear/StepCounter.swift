@@ -25,10 +25,17 @@ class StepCounter
     private var zAxes: [Double] = [Double]()
     private var rmsValues: [Double] = [Double]()
     
-    private var userHeight: Double = Double()
     private var totalNumberOfSteps: Int = Int()
     private var speedTravelled: Double = Double()
     private var totalDistanceTravelled: Double = Double()
+    
+    private let userHeight: Double = ({
+        
+        let feet: Double = 5.0
+        let inches: Double = 8.0
+        
+        return feet + (inches/12.0)
+        }())
     
     init(graphPoints: GraphPoints)
     {
@@ -172,6 +179,7 @@ class StepCounter
     
     private func distanceTravelled()
     {
-        totalDistanceTravelled = Double(totalNumberOfSteps) * userHeight
+        // assumed that a user's step is (0.4-0.5) their height
+        totalDistanceTravelled = Double(totalNumberOfSteps) * userHeight * 0.45
     }
 }
