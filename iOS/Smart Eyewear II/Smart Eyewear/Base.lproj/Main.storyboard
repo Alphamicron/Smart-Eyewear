@@ -694,43 +694,6 @@
             </objects>
             <point key="canvasLocation" x="2046" y="-1527"/>
         </scene>
-        <!--Battery Level II-->
-        <scene sceneID="h6A-jn-p9u">
-            <objects>
-                <viewController title="Battery Level II" id="mPr-pJ-S62" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="joG-r7-geU"/>
-                        <viewControllerLayoutGuide type="bottom" id="ahS-R3-1v7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UbC-JU-b0z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iTY-TM-7zD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4213" y="-1837"/>
-        </scene>
-        <!--Others-->
-        <scene sceneID="JGg-Bc-UlL">
-            <objects>
-                <viewController title="Others" id="QyX-AU-JA8" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5Ni-gW-reZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="48K-4t-THZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AYN-71-mLB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="68v-z9-3gF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XY5-UV-KPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4213" y="-1174"/>
-        </scene>
         <!--Color Picker View Controller-->
         <scene sceneID="Tq9-QI-d2a">
             <objects>
@@ -1170,24 +1133,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxx-2I-Vuy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="619" y="-1204"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RcN-9J-CR8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5RC-oh-fzu" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m8D-IE-ugs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="QyX-AU-JA8" kind="relationship" relationship="rootViewController" id="UKz-BI-WgS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bnM-G5-H3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3401" y="-1174"/>
         </scene>
     </scenes>
     <resources>

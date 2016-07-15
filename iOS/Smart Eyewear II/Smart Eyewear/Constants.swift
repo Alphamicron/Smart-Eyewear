@@ -179,4 +179,5 @@ enum LabelOption
 {
     case totalSteps
     case totalCalories
+    case totalDistance
 }

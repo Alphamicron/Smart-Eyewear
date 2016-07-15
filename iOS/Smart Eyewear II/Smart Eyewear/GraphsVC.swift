@@ -52,8 +52,8 @@ class GraphsVC: UIViewController
         switch desiredSensor
         {
         case .Accelerometer:
-            getAccelerometerReading()
-            //            countNumberOfStepsInRealTime()
+            //            getAccelerometerReading()
+            countNumberOfStepsInRealTime()
             //            startLoggingDataToController()
         //            downloadDataFromController()
         case .Gyroscope:
@@ -72,7 +72,7 @@ class GraphsVC: UIViewController
     {
         super.viewWillDisappear(animated)
         
-        //        stopStreamingSensorInfo()
+        stopStreamingSensorInfo()
         GraphsVC.sensorReadings.removeAllObjects()
         GraphsVC.sensorReadingsTimeStamps.removeAllObjects()
     }
@@ -110,14 +110,12 @@ class GraphsVC: UIViewController
             
             let stepCounterObject: StepCounter = StepCounter(graphPoints: self.graphPoints)
             let result = stepCounterObject.numberOfSteps()
-            let numberOfSteps: Int = result.totalSteps
-            let distanceTravelled: Double = result.distanceInFeet
             
-            print("steps taken: \(numberOfSteps)")
+            print("calculated data: \(result)")
             
-            self.setTotalStepsText(numberOfSteps, labelOption: LabelOption.totalCalories)
+            self.setTotalStepsText(Double(result.totalSteps), labelOption: LabelOption.totalCalories)
             
-            self.setTotalStepsText(Int(distanceTravelled), labelOption: LabelOption.totalSteps)
+            self.setTotalStepsText(result.distanceInFeet, labelOption: LabelOption.totalDistance)
             
             //            countNumberOfStepsInRealTime()
         }
@@ -240,7 +238,7 @@ class GraphsVC: UIViewController
                 
                 self.realTimeNumberOfSteps += Int(stepData.value)
                 
-                self.setTotalStepsText(self.realTimeNumberOfSteps, labelOption: LabelOption.totalSteps)
+                self.setTotalStepsText(Double(self.realTimeNumberOfSteps), labelOption: LabelOption.totalSteps)
                 
                 GraphsVC.sensorReadings.addObject(self.totalNumberOfSteps)
                 GraphsVC.sensorReadingsTimeStamps.addObject(self.getTimeStringFrom(stepData.description))
@@ -301,7 +299,7 @@ class GraphsVC: UIViewController
             count = lastIndex + 1
         }
         
-        self.setTotalStepsText(totalNumberOfSteps, labelOption: LabelOption.totalCalories)
+        self.setTotalStepsText(Double(totalNumberOfSteps), labelOption: LabelOption.totalCalories)
         
         // useless at this point
         timeStampsWithSeconds.removeAll(keepCapacity: false)
@@ -446,17 +444,21 @@ class GraphsVC: UIViewController
         return Double(totalNumberOfSteps)/Double(numberOfSteps.count)
     }
     
-    func setTotalStepsText(numberOfSteps: Int, labelOption: LabelOption)
+    func setTotalStepsText(value: Double, labelOption: LabelOption)
     {
         switch labelOption
         {
         case .totalSteps:
-            self.numberOfStepsLabel.text = String(numberOfSteps)
-            self.stepsTitleLabel.text = numberOfSteps <= 1 ? "step" : "steps"
+            self.numberOfStepsLabel.text = String(Int(value))
+            self.stepsTitleLabel.text = value <= 1 ? "step" : "steps"
             
         case .totalCalories:
-            self.numberOfCaloriesLabel.text = String(numberOfSteps)
-            self.caloriesTitleLabel.text = numberOfSteps <= 1 ? "step" : "steps"
+            self.numberOfCaloriesLabel.text = String(Int(value))
+            self.caloriesTitleLabel.text = value <= 1 ? "step" : "steps"
+            
+        case .totalDistance: // TODO: Change this to distance label
+            self.numberOfStepsLabel.text = String(value)
+            self.stepsTitleLabel.text = value <= 1 ? "foot" : "feet"
         }
     }
 }

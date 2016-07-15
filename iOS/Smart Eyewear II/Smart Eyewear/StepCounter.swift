@@ -54,7 +54,8 @@ class StepCounter
         let minimumPeakHeight: Double = standardDeviationOf(pointMagnitudes)
         
         // smoothes the points first before finding their peaks
-        simpleMovingAverage(&pointMagnitudes, movingAverageWindow: 10)
+        // the window is adviced to be an odd number
+        simpleMovingAverage(&pointMagnitudes, movingAverageWindow: 5)
         
         let peaks = findPeaks(&pointMagnitudes)
         
@@ -177,9 +178,28 @@ class StepCounter
         return sumOfElements/Double(magnitudes.count)
     }
     
+    // PRE:  Non zero values entered as range
+    // POST: Random number between [firstNumber - secondNumber] of 'points' decimal points
+    private func generateRandomNumber(from firstNumber: Double, to secondNumber: Double, decimalPoints points: Double)-> Double
+    {
+        let factor: Double = pow(10, points)
+        
+        // convert them to whole numbers
+        let first: UInt32 = UInt32(firstNumber * factor)
+        let second: UInt32 = UInt32(secondNumber * factor)
+        
+        // get number between the whole numbers
+        let randomNumber: Double = Double(arc4random_uniform(second - first + 1) + first)
+        
+        // division for 'points' d.p precision
+        return randomNumber/factor
+    }
+    
     private func distanceTravelled()
     {
         // assumed that a user's step is (0.4-0.5) their height
-        totalDistanceTravelled = Double(totalNumberOfSteps) * userHeight * 0.45
+        let stepLengthFactor: Double = generateRandomNumber(from: 0.4, to: 0.5, decimalPoints: 4)
+        
+        totalDistanceTravelled = Double(totalNumberOfSteps) * userHeight * stepLengthFactor
     }
 }
