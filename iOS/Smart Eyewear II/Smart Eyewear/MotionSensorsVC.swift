@@ -48,19 +48,27 @@ class MotionSensorsVC: UIViewController
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        let destinationVC = segue.destinationViewController as! GraphsVC
-        
-        if segue.identifier == "segueToAccelerometer"
+        if sender?.tag == 1
         {
-            destinationVC.desiredSensor = Sensor.Accelerometer
+            let heartRateVC = segue.destinationViewController as! HeartRateVC
+            
+            if segue.identifier == "segueToHeartRate"
+            {
+                heartRateVC.entryText = "Heart Rate"
+            }
         }
-        else if segue.identifier == "segueToMagnetometer"
+        else
         {
-            destinationVC.desiredSensor = Sensor.Magnetometer
-        }
-        else if segue.identifier == "segueToGyroscope"
-        {
-            destinationVC.desiredSensor = Sensor.Gyroscope
+            let destinationVC = segue.destinationViewController as! GraphsVC
+            
+            if segue.identifier == "segueToAccelerometer"
+            {
+                destinationVC.desiredSensor = Sensor.Accelerometer
+            }
+            else if segue.identifier == "segueToGyroscope"
+            {
+                destinationVC.desiredSensor = Sensor.Gyroscope
+            }
         }
     }
 }

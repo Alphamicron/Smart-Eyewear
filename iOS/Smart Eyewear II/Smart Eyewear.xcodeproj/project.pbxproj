@@ -17,6 +17,7 @@
 		3018118A1D0729D400E4941C /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301811891D0729D400E4941C /* Modal.swift */; };
 		302A63321CF74A4A00109C02 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 302A63311CF74A4A00109C02 /* ISColorWheel.m */; };
 		307B0D211D0CA3940095B2C2 /* RGBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B0D201D0CA3940095B2C2 /* RGBVC.swift */; };
+		307ED5C21D3D533000222533 /* HeartRateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ED5C11D3D533000222533 /* HeartRateVC.swift */; };
 		30972E081D1B05EF002BA825 /* MotionSensorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */; };
 		30972E0A1D1B1D00002BA825 /* GraphsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972E091D1B1D00002BA825 /* GraphsVC.swift */; };
 		30A9209A1D08802B00F0EA5D /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A920991D08802B00F0EA5D /* ConnectionVC.swift */; };
@@ -67,6 +68,7 @@
 		302A63311CF74A4A00109C02 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
 		3041985D1D26E471008B8919 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Smart_Eyewear-akefipjttpfiekhginmlseyfjtfo/Build/Products/Debug-iphoneos/Charts/Charts.framework"; sourceTree = "<group>"; };
 		307B0D201D0CA3940095B2C2 /* RGBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBVC.swift; sourceTree = "<group>"; };
+		307ED5C11D3D533000222533 /* HeartRateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateVC.swift; sourceTree = "<group>"; };
 		30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionSensorsVC.swift; sourceTree = "<group>"; };
 		30972E091D1B1D00002BA825 /* GraphsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphsVC.swift; sourceTree = "<group>"; };
 		30A920991D08802B00F0EA5D /* ConnectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		B23DAEB51CF4AE57003BD7FE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				307ED5C11D3D533000222533 /* HeartRateVC.swift */,
 				B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */,
 				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
 				30A920991D08802B00F0EA5D /* ConnectionVC.swift */,
@@ -684,6 +687,7 @@
 				30972E081D1B05EF002BA825 /* MotionSensorsVC.swift in Sources */,
 				30A9209A1D08802B00F0EA5D /* ConnectionVC.swift in Sources */,
 				30D5E61C1D0B24B400681EC6 /* CustomNavigationBar.swift in Sources */,
+				307ED5C21D3D533000222533 /* HeartRateVC.swift in Sources */,
 				30CA557E1D2192DD0062FFA7 /* ColorPickerViewController.swift in Sources */,
 				301811881D0724CD00E4941C /* HomeTVC.swift in Sources */,
 				30018D4F1D33746A00E04BDC /* StepCounter.swift in Sources */,

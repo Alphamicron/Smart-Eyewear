@@ -37,7 +37,7 @@ class StepCounter
         return feet + (inches/12.0)
         }())
     
-    init(graphPoints: GraphPoints)
+    init(inout graphPoints: GraphPoints)
     {
         xAxes = graphPoints.xAxes
         yAxes = graphPoints.yAxes
@@ -179,7 +179,7 @@ class StepCounter
     }
     
     // PRE:  Non zero values entered as range
-    // POST: Random number between [firstNumber - secondNumber] of 'points' decimal points
+    // POST: Random number between [firstNumber, secondNumber] of 'points' decimal points
     private func generateRandomNumber(from firstNumber: Double, to secondNumber: Double, decimalPoints points: Double)-> Double
     {
         let factor: Double = pow(10, points)

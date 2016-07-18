@@ -108,7 +108,7 @@ class GraphsVC: UIViewController
             
             ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
             
-            let stepCounterObject: StepCounter = StepCounter(graphPoints: self.graphPoints)
+            let stepCounterObject: StepCounter = StepCounter(graphPoints: &self.graphPoints)
             let result = stepCounterObject.numberOfSteps()
             
             print("calculated data: \(result)")
