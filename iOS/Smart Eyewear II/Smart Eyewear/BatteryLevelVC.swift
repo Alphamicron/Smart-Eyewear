@@ -81,7 +81,7 @@ class BatteryLevelVC: UIViewController
     }
     
     func getColourForCharge(currentDeviceCharge: NSNumber)-> UIColor
-    {
+    {        
         if currentDeviceCharge.intValue > 50 // good charge if above half
         {
             return Constants.themeGreenColour

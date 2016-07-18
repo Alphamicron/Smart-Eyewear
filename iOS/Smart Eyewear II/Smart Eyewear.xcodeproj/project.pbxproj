@@ -262,7 +262,6 @@
 		B23DAEB51CF4AE57003BD7FE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				307ED5C11D3D533000222533 /* HeartRateVC.swift */,
 				B23DAEAD1CF4ADFD003BD7FE /* ActivationVC.swift */,
 				B23DAEB11CF4AE35003BD7FE /* BatteryLevelVC.swift */,
 				30A920991D08802B00F0EA5D /* ConnectionVC.swift */,
@@ -270,6 +269,7 @@
 				30D5E61F1D0B669A00681EC6 /* CustomUISlider.swift */,
 				30972E091D1B1D00002BA825 /* GraphsVC.swift */,
 				300F57B51D23040100A52DCB /* GraphView.swift */,
+				307ED5C11D3D533000222533 /* HeartRateVC.swift */,
 				301811871D0724CD00E4941C /* HomeTVC.swift */,
 				30972E071D1B05EF002BA825 /* MotionSensorsVC.swift */,
 				30CF114B1D1DA13500E2843C /* ProgramLEDVC.swift */,
