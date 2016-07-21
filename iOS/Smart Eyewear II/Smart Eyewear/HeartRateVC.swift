@@ -17,6 +17,7 @@ import UIKit
 
 class HeartRateVC: UIViewController
 {
+    let arrayCapacity: Int = 10
     var entryText: String = String()
     var lastBeatTime: Int = Int() // used to find Inter-beat Interval (IBI)
     var sampleCounter: Int = Int() // used to determine pulse timing
@@ -30,7 +31,6 @@ class HeartRateVC: UIViewController
     var firstBeat: Bool = true // used to seed rate array so we startup with reasonable BPM
     var secondBeat: Bool = Bool() // used to seed rate array so we startup with reasonable BPM
     var heartRate: NSMutableArray = NSMutableArray()
-    let arrayCapacity: Int = 10
     
     @IBOutlet weak var entryLabel: UILabel!
     
@@ -77,7 +77,7 @@ class HeartRateVC: UIViewController
             
             self.heartBeatCalculator(signal)
             
-            self.entryLabel.text = String(self.beatsPerMinute)
+            self.entryLabel.text = "\(Int(self.beatsPerMinute)) bpm"
         })
     }
     
