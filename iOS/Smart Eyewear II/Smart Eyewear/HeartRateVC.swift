@@ -75,8 +75,6 @@ class HeartRateVC: UIViewController
             let resultData: MBLNumericData = result as! MBLNumericData
             let signal: Float = resultData.value.floatValue * 512
             
-            print("Signal: \(signal)")
-            
             self.heartBeatCalculator(signal)
             
             self.entryLabel.text = String(self.beatsPerMinute)
@@ -88,7 +86,6 @@ class HeartRateVC: UIViewController
         self.sampleCounter += 50 // keeps track of the time in milliseconds
         
         let timeSinceLastBeat = self.sampleCounter - self.lastBeatTime // to avoid noise
-        print("Time Interval: \(timeSinceLastBeat)")
         
         // find the crest and trough of the wave
         if signal < self.threshold && timeSinceLastBeat > ((self.interBeatInterval/5)*3)
@@ -96,15 +93,12 @@ class HeartRateVC: UIViewController
             if signal < self.waveTrough
             {
                 self.waveTrough = signal // lowest point in pulse wave
-                
-                print("Trough: \(self.waveTrough)")
             }
         }
         
         if signal > self.threshold && signal > self.waveCrest // helps in noise avoidance
         {
             self.waveCrest = signal // highest point in pulse wave
-            print("crest: \(self.waveCrest)")
         }
         
         // Looking for an actual heart beat
@@ -116,12 +110,10 @@ class HeartRateVC: UIViewController
                 self.pulse = true
                 
                 self.interBeatInterval = self.sampleCounter - self.lastBeatTime
-                print("IBI: \(self.interBeatInterval)")
                 self.lastBeatTime = self.sampleCounter
                 
                 if self.secondBeat
                 {
-                    print("Is second beat")
                     self.secondBeat = false
                     
                     // seed the running total to get a realisitic BPM at startup
@@ -133,7 +125,6 @@ class HeartRateVC: UIViewController
                 
                 if self.firstBeat
                 {
-                    print("first beat")
                     self.firstBeat = false
                     self.secondBeat = true
                     return // discard IBI value because its unreliable
@@ -144,24 +135,16 @@ class HeartRateVC: UIViewController
                 for i in 0...arrayCapacity - 2 // shift data in the array
                 {
                     self.heartRate.replaceObjectAtIndex(i, withObject: self.heartRate[i + 1])
-                    
                     runningTotal += self.heartRate[i].integerValue
-                    
-                    print("count \(i) from added \(self.heartRate[i + 1])")
                 }
                 
                 self.heartRate.removeObjectAtIndex(arrayCapacity - 1)
                 self.heartRate.insertObject(self.interBeatInterval, atIndex: arrayCapacity - 1)
-                print("count 9 from added \(self.heartRate[arrayCapacity - 1])")
                 
                 runningTotal += self.heartRate.objectAtIndex(arrayCapacity - 1).integerValue
-                print("running total: \(runningTotal)")
-                
                 runningTotal /= arrayCapacity // mean of IBI values
-                print("running average: \(runningTotal)")
                 
                 self.beatsPerMinute = Float(60000/runningTotal)
-                print("BPM: \(self.beatsPerMinute)")
             }
         }
         

@@ -10,11 +10,11 @@ import Foundation
 
 /**************************************************************
  +------------------------------------------------------------+
- | Name: StepCounter                                          |
+ | Name:    StepCounter                                       |
  | Purpose: Count number of steps from accelerometer data     |
- | Inputs: X,Y,Z and RMS values                               |
+ | Inputs:  X,Y,Z and RMS values                              |
  | Outputs: Total number of steps, distance and speed         |
- | Throws: Poop                                               |
+ | Throws:  Poop                                              |
  +------------------------------------------------------------+
  **************************************************************/
 

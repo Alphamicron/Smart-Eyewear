@@ -9,6 +9,15 @@
 import Foundation
 import JSSAlertView
 
+/**************************************************************
+ +------------------------------------------------------------+
+ | Name:    Constants                                         |
+ | Purpose: Holds all constant variables, methods that        |
+ |          perform the same operations throughout and        |
+ |          structures universally used in the app            |
+ +------------------------------------------------------------+
+ **************************************************************/
+
 struct Constants
 {
     static let deviceFullChargeValue: NSNumber = 100
