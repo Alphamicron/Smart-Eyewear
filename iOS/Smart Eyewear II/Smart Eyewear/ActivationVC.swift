@@ -133,7 +133,7 @@ class ActivationVC: UIViewController
             userThresholdSlider.setValue(Constants.userThresholdMaximumValue/2, animated: true)
             userThresholdSlider.userInteractionEnabled = true
             
-            repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
+            Constants.repeatThis(task: #selector(ActivationVC.readPhotoSensorValue), forDuration: Constants.defaultDelayTime, onTarget: self)
         }
         else
         {
@@ -175,38 +175,6 @@ class ActivationVC: UIViewController
             ActivationVC.turnLED(LEDState.On)
             sender.backgroundColor = Constants.themeGreenColour
         }
-    }
-    
-    @IBAction func automaticBtnAction(sender: UIButton)
-    {
-        //        if !Constants.isDeviceConnected()
-        //        {
-        //            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to continue", errorPriority: AlertPriority.Medium)
-        //        }
-        //        else
-        //        {
-        //            sender.selected = !sender.selected
-        //            
-        //            if sender.selected
-        //            {
-        //                print("button on")
-        //                sender.setTitle("ON", forState: .Selected)
-        //                sender.backgroundColor = Constants.themeGreenColour
-        //                
-        //                userThresholdSlider.setValue(Constants.userThresholdMaximumValue/2, animated: true)
-        //                userThresholdSlider.userInteractionEnabled = true
-        //                
-        //                repeatThisTaskEvery(#selector(ActivationVC.readPhotoSensorValue), taskDuration: Constants.defaultDelayTime)
-        //            }
-        //            else
-        //            {
-        //                print("button off")
-        //                Constants.defaultTimer.invalidate()
-        //                sender.setTitle("OFF", forState: .Normal)
-        //                sender.backgroundColor = Constants.themeRedColour
-        //                userThresholdSlider.userInteractionEnabled = false
-        //            }
-        //        }
     }
     
     @IBAction func helpBtnAction(sender: UIButton)

@@ -120,6 +120,11 @@ struct Constants
             print(ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
         }
     }
+    
+    static func repeatThis(task requiredTask: Selector, forDuration taskDuration: NSTimeInterval, onTarget taskTarget: AnyObject)
+    {
+        defaultTimer = NSTimer.scheduledTimerWithTimeInterval(taskDuration, target: taskTarget, selector: requiredTask, userInfo: nil, repeats: true)
+    }
 }
 
 // Refer https://mbientlab.com/docs/MetaWearCPSv0.5.pdf

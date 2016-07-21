@@ -46,7 +46,7 @@ class HeartRateVC: UIViewController
     {
         super.viewDidAppear(animated)
         
-        repeatThisTaskEvery(#selector(HeartRateVC.getHeartRateData), taskDuration: 0.05)
+        Constants.repeatThis(task: #selector(HeartRateVC.getHeartRateData), forDuration: 0.05, onTarget: self)
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -186,10 +186,5 @@ class HeartRateVC: UIViewController
             self.firstBeat = true
             self.secondBeat = Bool()
         }
-    }
-    
-    func repeatThisTaskEvery(requiredTask: Selector, taskDuration: NSTimeInterval)
-    {
-        Constants.defaultTimer = NSTimer.scheduledTimerWithTimeInterval(taskDuration, target: self, selector: requiredTask, userInfo: nil, repeats: true)
     }
 }
