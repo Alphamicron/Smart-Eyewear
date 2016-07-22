@@ -32,8 +32,8 @@ class HeartRateVC: UIViewController
     var firstBeat: Bool = true // used to seed rate array so we startup with reasonable BPM
     var secondBeat: Bool = Bool() // used to seed rate array so we startup with reasonable BPM
     var heartRate: NSMutableArray = NSMutableArray()
-    let months: [String] = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
-    let dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
+    var months: [String] = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
+    var dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
     
     @IBOutlet weak var entryLabel: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
@@ -63,7 +63,9 @@ class HeartRateVC: UIViewController
     {
         super.viewDidAppear(animated)
         
-        Constants.repeatThis(task: #selector(HeartRateVC.getHeartRateData), forDuration: 0.05, onTarget: self)
+        //        Constants.repeatThis(task: #selector(HeartRateVC.getHeartRateData), forDuration: 0.05, onTarget: self)
+        
+        Constants.repeatThis(task: #selector(HeartRateVC.generateRandomGraphData), forDuration: 2.0, onTarget: self)
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -198,32 +200,105 @@ class HeartRateVC: UIViewController
             yVals1.append(ChartDataEntry(value: dollars1[i], xIndex: i))
         }
         
-        //2 - create a data set with our array
-        let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1, label: "heart rate")
-        set1.axisDependency = .Left // Line will correlate with left axis values
-        set1.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
-        set1.setCircleColor(Constants.themeRedColour) // our circle will be dark red
-        set1.lineWidth = 2.0
-        set1.circleRadius = 5.0 // the radius of the node circle
-        set1.fillAlpha = 65 / 255.0
-        set1.fillColor = UIColor.redColor()
-        set1.highlightColor = Constants.themeInactiveStateColour
-        set1.drawCircleHoleEnabled = true
-        set1.valueFont = Constants.defaultFont.fontWithSize(9)
+        var set1: LineChartDataSet = LineChartDataSet()
         
-        //3 - create an array to store our LineChartDataSets
-        var dataSets : [LineChartDataSet] = [LineChartDataSet]()
-        dataSets.append(set1)
+        if lineChartView.data?.dataSetCount > 0
+        {
+            
+            //            set1 = (LineChartDataSet *)_chartView.data.dataSets[0];
+            //            set2 = (LineChartDataSet *)_chartView.data.dataSets[1];
+            //            set1.yVals = yVals1;
+            //            set2.yVals = yVals2;
+            //            _chartView.data.xValsObjc = xVals;
+            //            [_chartView.data notifyDataChanged];
+            //            [_chartView notifyDataSetChanged];
+            
+            set1 = lineChartView.data?.dataSets[0] as! LineChartDataSet
+            set1.yVals = yVals1
+            lineChartView.data?.xValsObjc = months
+            lineChartView.data?.notifyDataChanged()
+            lineChartView.notifyDataSetChanged()
+        }
+        else
+        {
+            //2 - create a data set with our array
+            set1 = LineChartDataSet(yVals: yVals1, label: "heart rate")
+            set1.axisDependency = .Left // Line will correlate with left axis values
+            set1.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
+            set1.setCircleColor(Constants.themeRedColour) // our circle will be dark red
+            set1.lineWidth = 2.0
+            set1.circleRadius = 5.0 // the radius of the node circle
+            set1.fillAlpha = 65 / 255.0
+            set1.fillColor = UIColor.redColor()
+            set1.highlightColor = Constants.themeInactiveStateColour
+            set1.drawCircleHoleEnabled = true
+            set1.valueFont = Constants.defaultFont.fontWithSize(9)
+            
+            //3 - create an array to store our LineChartDataSets
+            var dataSets : [LineChartDataSet] = [LineChartDataSet]()
+            dataSets.append(set1)
+            
+            //4 - pass our months in for our x-axis label value along with our dataSets
+            let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
+            data.setValueTextColor(UIColor(red: 0.925, green: 0.494, blue: 0.114, alpha: 1.00))
+            
+            lineChartView.xAxis.labelPosition = .Bottom
+            lineChartView.animate(xAxisDuration: 3.0)
+            
+            //5 - finally set our data
+            self.lineChartView.data = data
+        }
+    }
+    
+    func generateRandomGraphData()
+    {
+        months.append(randomText(3, justLowerCase: true))
+        dollars1.append(Double(randomInt(1000, to: 9999)))
         
-        //4 - pass our months in for our x-axis label value along with our dataSets
-        let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
-        data.setValueTextColor(UIColor(red: 0.925, green: 0.494, blue: 0.114, alpha: 1.00))
-        
-        lineChartView.xAxis.labelPosition = .Bottom
-        lineChartView.animate(xAxisDuration: 3.0)
-        
-        //5 - finally set our data
-        self.lineChartView.data = data
+        setChartData(months)
+    }
+    
+    // returns random text of a defined length
+    // optional bool parameter justLowerCase
+    // to just generate random lowercase text
+    func randomText(length: Int, justLowerCase: Bool = false) -> String
+    {
+        var text = ""
+        for _ in 1...length
+        {
+            var decValue = 0  // ascii decimal value of a character
+            var charType = 3  // default is lowercase
+            if justLowerCase == false
+            {
+                // randomize the character type
+                charType =  Int(arc4random_uniform(4))
+            }
+            switch charType
+            {
+            case 1:  // digit: random Int between 48 and 57
+                decValue = Int(arc4random_uniform(10)) + 48
+            case 2:  // uppercase letter
+                decValue = Int(arc4random_uniform(26)) + 65
+            case 3:  // lowercase letter
+                decValue = Int(arc4random_uniform(26)) + 97
+            default:  // space character
+                decValue = 32
+            }
+            // get ASCII character from random decimal value
+            let char = String(UnicodeScalar(decValue))
+            text = text + char
+            // remove double spaces
+            text = text.stringByReplacingOccurrencesOfString(" ", withString: "")
+        }
+        return text
+    }
+    
+    // returns a random int within given range
+    func randomInt(from: Int, to: Int) -> Int
+    {
+        let range = UInt32(to - from)
+        let rndInt = Int(arc4random_uniform(range + 1)) + from
+        return rndInt
     }
 }
 
