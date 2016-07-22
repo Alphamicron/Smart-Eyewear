@@ -32,17 +32,18 @@ class HeartRateVC: UIViewController
     var firstBeat: Bool = true // used to seed rate array so we startup with reasonable BPM
     var secondBeat: Bool = Bool() // used to seed rate array so we startup with reasonable BPM
     var heartRate: NSMutableArray = NSMutableArray()
-    var months: [String] = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
-    var dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
+    var months: [String] = [String]()
+    var dollars1: [Double] = [Double]()
     
-    @IBOutlet weak var entryLabel: UILabel!
+    @IBOutlet weak var sensorReadingLabel: UILabel!
+    @IBOutlet weak var graphReadingLabel: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        entryLabel.text = entryText
+        sensorReadingLabel.text = entryText
         heartRate = NSMutableArray(capacity: arrayCapacity)
         
         lineChartView.delegate = self
@@ -55,8 +56,6 @@ class HeartRateVC: UIViewController
         // 4
         lineChartView.noDataText = "No data to display"
         lineChartView.noDataTextDescription = "Heart rate readings needed for data to be displayed"
-        // 5
-        setChartData(months)
     }
     
     override func viewDidAppear(animated: Bool)
@@ -96,7 +95,7 @@ class HeartRateVC: UIViewController
             
             self.heartBeatCalculator(signal)
             
-            self.entryLabel.text = "\(Int(self.beatsPerMinute)) bpm"
+            self.sensorReadingLabel.text = "\(Int(self.beatsPerMinute)) bpm"
         })
     }
     
@@ -190,62 +189,54 @@ class HeartRateVC: UIViewController
         }
     }
     
-    func setChartData(months: [String])
+    func drawChartData(inout xAxisValues dataPoints: [String], inout yAxisValues values: [Double])
     {
-        //1 - creating an array of data entries
-        var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
+        // creating an array of data entries
+        var dataEntries : [ChartDataEntry] = [ChartDataEntry]()
         
-        for i in 0..<months.count
+        for i in 0..<dataPoints.count
         {
-            yVals1.append(ChartDataEntry(value: dollars1[i], xIndex: i))
+            dataEntries.append(ChartDataEntry(value: values[i], xIndex: i))
         }
         
-        var set1: LineChartDataSet = LineChartDataSet()
+        var dataSet: LineChartDataSet = LineChartDataSet()
         
+        // executed if we are simply adding data in real time
         if lineChartView.data?.dataSetCount > 0
         {
-            
-            //            set1 = (LineChartDataSet *)_chartView.data.dataSets[0];
-            //            set2 = (LineChartDataSet *)_chartView.data.dataSets[1];
-            //            set1.yVals = yVals1;
-            //            set2.yVals = yVals2;
-            //            _chartView.data.xValsObjc = xVals;
-            //            [_chartView.data notifyDataChanged];
-            //            [_chartView notifyDataSetChanged];
-            
-            set1 = lineChartView.data?.dataSets[0] as! LineChartDataSet
-            set1.yVals = yVals1
-            lineChartView.data?.xValsObjc = months
+            dataSet = lineChartView.data?.dataSets[0] as! LineChartDataSet
+            dataSet.yVals = dataEntries
+            lineChartView.data?.xValsObjc = dataPoints
             lineChartView.data?.notifyDataChanged()
             lineChartView.notifyDataSetChanged()
         }
-        else
+        else // creating an entirely new graph
         {
-            //2 - create a data set with our array
-            set1 = LineChartDataSet(yVals: yVals1, label: "heart rate")
-            set1.axisDependency = .Left // Line will correlate with left axis values
-            set1.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
-            set1.setCircleColor(Constants.themeRedColour) // our circle will be dark red
-            set1.lineWidth = 2.0
-            set1.circleRadius = 5.0 // the radius of the node circle
-            set1.fillAlpha = 65 / 255.0
-            set1.fillColor = UIColor.redColor()
-            set1.highlightColor = Constants.themeInactiveStateColour
-            set1.drawCircleHoleEnabled = true
-            set1.valueFont = Constants.defaultFont.fontWithSize(9)
+            // create a data set with our array
+            dataSet = LineChartDataSet(yVals: dataEntries, label: "heart rate")
+            dataSet.axisDependency = .Left // line will correlate with left axis values
+            dataSet.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // set colour & opacity
+            dataSet.setCircleColor(Constants.themeRedColour) // circle will be dark red
+            dataSet.lineWidth = 3.0
+            dataSet.circleRadius = 6.0 // node circle radius
+            dataSet.fillAlpha = 65 / 255.0
+            dataSet.fillColor = UIColor.redColor()
+            dataSet.highlightColor = Constants.themeInactiveStateColour
+            dataSet.mode = .CubicBezier // give it the cubic function graph style
+            //            dataSet.drawValuesEnabled = false
+            dataSet.valueFont = Constants.defaultFont.fontWithSize(8)
             
-            //3 - create an array to store our LineChartDataSets
             var dataSets : [LineChartDataSet] = [LineChartDataSet]()
-            dataSets.append(set1)
+            dataSets.append(dataSet)
             
-            //4 - pass our months in for our x-axis label value along with our dataSets
-            let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
+            // pass our dataPoints in for our x-axis label value along with our dataSets
+            let data: LineChartData = LineChartData(xVals: dataPoints, dataSets: dataSets)
             data.setValueTextColor(UIColor(red: 0.925, green: 0.494, blue: 0.114, alpha: 1.00))
             
+            // GUI stuff
             lineChartView.xAxis.labelPosition = .Bottom
             lineChartView.animate(xAxisDuration: 3.0)
             
-            //5 - finally set our data
             self.lineChartView.data = data
         }
     }
@@ -253,9 +244,9 @@ class HeartRateVC: UIViewController
     func generateRandomGraphData()
     {
         months.append(randomText(3, justLowerCase: true))
-        dollars1.append(Double(randomInt(1000, to: 9999)))
+        dollars1.append(Double(randomInt(0, to: 9999)))
         
-        setChartData(months)
+        drawChartData(xAxisValues: &months, yAxisValues: &dollars1)
     }
     
     // returns random text of a defined length

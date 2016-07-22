@@ -440,11 +440,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mux-jS-VzZ">
+                                <rect key="frame" x="20" y="465" width="127" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="RZt-ZC-kgu"/>
+                                    <constraint firstAttribute="width" constant="127" id="cLq-uh-kjA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="kerning">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emq-CH-Yg3">
                                 <rect key="frame" x="569" y="20" width="20" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="OXs-F5-McN"/>
-                                    <constraint firstAttribute="height" constant="40" id="oZq-Bb-vi4"/>
+                                    <constraint firstAttribute="width" constant="20" id="3UD-4Y-0Ea"/>
+                                    <constraint firstAttribute="height" constant="40" id="gzl-91-JRH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <state key="normal" title="X">
@@ -458,11 +473,10 @@
                                 <rect key="frame" x="0.0" y="59" width="600" height="354"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mux-jS-VzZ">
-                                <rect key="frame" x="237" y="457" width="127" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiE-wV-Nih">
+                                <rect key="frame" x="453" y="465" width="127" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Ij1-mR-JF5"/>
-                                    <constraint firstAttribute="width" constant="127" id="fJ1-tk-f5x"/>
+                                    <constraint firstAttribute="width" constant="127" id="VzN-Sg-qAz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -476,19 +490,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XbR-FX-Aow" firstAttribute="centerX" secondItem="mux-jS-VzZ" secondAttribute="centerX" id="JVg-2w-39F"/>
-                            <constraint firstItem="mux-jS-VzZ" firstAttribute="top" secondItem="XbR-FX-Aow" secondAttribute="bottom" constant="44" id="QIu-Ge-4iR"/>
-                            <constraint firstItem="XbR-FX-Aow" firstAttribute="leading" secondItem="XHV-0j-ZbX" secondAttribute="leading" id="XyX-g4-lYF"/>
-                            <constraint firstItem="emq-CH-Yg3" firstAttribute="top" secondItem="Ebh-2Q-FU6" secondAttribute="bottom" id="Z7N-fl-0YB"/>
-                            <constraint firstAttribute="trailing" secondItem="XbR-FX-Aow" secondAttribute="trailing" id="dfV-yj-oEI"/>
-                            <constraint firstItem="XbR-FX-Aow" firstAttribute="top" secondItem="Ebh-2Q-FU6" secondAttribute="bottom" constant="39" id="kd1-K8-aDV"/>
-                            <constraint firstItem="w8y-x8-922" firstAttribute="top" secondItem="mux-jS-VzZ" secondAttribute="bottom" constant="111" id="sEq-UR-m78"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="emq-CH-Yg3" secondAttribute="trailing" constant="-9" id="t4W-LK-XM1"/>
+                            <constraint firstItem="aiE-wV-Nih" firstAttribute="trailing" secondItem="XHV-0j-ZbX" secondAttribute="trailingMargin" id="C1M-PO-fOv"/>
+                            <constraint firstItem="mux-jS-VzZ" firstAttribute="top" secondItem="XbR-FX-Aow" secondAttribute="bottom" constant="52" id="H9H-b7-Scq"/>
+                            <constraint firstItem="mux-jS-VzZ" firstAttribute="firstBaseline" secondItem="aiE-wV-Nih" secondAttribute="firstBaseline" id="MRM-Y4-pv4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="emq-CH-Yg3" secondAttribute="trailing" constant="-9" id="PRS-hd-lBs"/>
+                            <constraint firstItem="XbR-FX-Aow" firstAttribute="leading" secondItem="XHV-0j-ZbX" secondAttribute="leading" id="TSy-7F-b9K"/>
+                            <constraint firstItem="emq-CH-Yg3" firstAttribute="top" secondItem="Ebh-2Q-FU6" secondAttribute="bottom" id="Trm-8t-ClD"/>
+                            <constraint firstItem="mux-jS-VzZ" firstAttribute="leading" secondItem="XHV-0j-ZbX" secondAttribute="leadingMargin" id="d8Q-vE-kvF"/>
+                            <constraint firstItem="XbR-FX-Aow" firstAttribute="top" secondItem="Ebh-2Q-FU6" secondAttribute="bottom" constant="39" id="nkd-m0-DVx"/>
+                            <constraint firstAttribute="trailing" secondItem="XbR-FX-Aow" secondAttribute="trailing" id="oF3-nj-B7R"/>
+                            <constraint firstItem="mux-jS-VzZ" firstAttribute="baseline" secondItem="aiE-wV-Nih" secondAttribute="baseline" id="ogF-pQ-B0Z"/>
+                            <constraint firstItem="w8y-x8-922" firstAttribute="top" secondItem="mux-jS-VzZ" secondAttribute="bottom" constant="103" id="xPr-ff-d6A"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="entryLabel" destination="mux-jS-VzZ" id="k8t-eJ-tVb"/>
+                        <outlet property="graphReadingLabel" destination="aiE-wV-Nih" id="dTo-SZ-mUZ"/>
                         <outlet property="lineChartView" destination="XbR-FX-Aow" id="ssZ-pj-9Gc"/>
+                        <outlet property="sensorReadingLabel" destination="mux-jS-VzZ" id="7UX-UK-DaG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHh-MT-Q8b" userLabel="First Responder" sceneMemberID="firstResponder"/>

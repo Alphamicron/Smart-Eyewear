@@ -304,7 +304,7 @@ class GraphsVC: UIViewController
         // useless at this point
         timeStampsWithSeconds.removeAll(keepCapacity: false)
         
-        drawChart(sensorTimeStamps, values: numberOfSteps)
+        drawChart(xAxisValues: &sensorTimeStamps, yAxisValues: &numberOfSteps)        
     }
     
     // Given a string, extracts the time portion
@@ -318,7 +318,7 @@ class GraphsVC: UIViewController
         return sensorReadingsResult[dateRange]
     }
     
-    func drawChart(dataPoints: [String], values: [Int])
+    func drawChart(inout xAxisValues dataPoints: [String], inout yAxisValues values: [Int])
     {
         // consists of the data points for the chart
         var dataEntries: [BarChartDataEntry] = [BarChartDataEntry]()
@@ -339,6 +339,7 @@ class GraphsVC: UIViewController
         let averageLine: ChartLimitLine = ChartLimitLine(limit: averageSteps(), label: "average steps")
         graphView.rightAxis.addLimitLine(averageLine)
         averageLine.lineColor = Constants.themeInactiveStateColour
+        averageLine.valueFont = Constants.defaultFont.fontWithSize(8)
         
         chartDataSet.colors = ChartColorTemplates.colorful()
         chartDataSet.barBorderColor = Constants.themeInactiveStateColour
