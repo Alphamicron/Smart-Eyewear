@@ -32,7 +32,7 @@ class HeartRateVC: UIViewController
     var firstBeat: Bool = true // used to seed rate array so we startup with reasonable BPM
     var secondBeat: Bool = Bool() // used to seed rate array so we startup with reasonable BPM
     var heartRate: NSMutableArray = NSMutableArray()
-    var sensorTimeStamps: [String] = [String]()
+    var heartRateTimeStamps: [String] = [String]()
     var heartRateReadings: [Double] = [Double]()
     
     @IBOutlet weak var sensorReadingLabel: UILabel!
@@ -62,9 +62,9 @@ class HeartRateVC: UIViewController
     {
         super.viewDidAppear(animated)
         
-        //        Constants.repeatThis(task: #selector(HeartRateVC.getHeartRateData), forDuration: 0.05, onTarget: self)
+        Constants.repeatThis(task: #selector(HeartRateVC.getHeartRateData), forDuration: 2.0, onTarget: self)
         
-        Constants.repeatThis(task: #selector(HeartRateVC.generateRandomGraphData), forDuration: 2.0, onTarget: self)
+        //        Constants.repeatThis(task: #selector(HeartRateVC.generateRandomGraphData), forDuration: 2.0, onTarget: self)
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -91,11 +91,17 @@ class HeartRateVC: UIViewController
         heartRateSensorPin?.analogRatio.readAsync().success({ (result: AnyObject) in
             
             let resultData: MBLNumericData = result as! MBLNumericData
+            print(resultData.description)
             let signal: Float = resultData.value.floatValue * 512
             
             self.heartBeatCalculator(signal)
             
             self.sensorReadingLabel.text = "\(Int(self.beatsPerMinute)) bpm"
+            
+            self.heartRateReadings.append(Double(self.beatsPerMinute))
+            self.heartRateTimeStamps.append(GraphsVC.getTimeStringFrom(resultData.description, sensorType: Sensor.HeartRate))
+            
+            self.drawChartData(xAxisValues: &self.heartRateTimeStamps, yAxisValues: &self.heartRateReadings)
         })
     }
     
@@ -177,8 +183,8 @@ class HeartRateVC: UIViewController
             self.waveTrough = self.threshold
         }
         
-        // If 2.5 seconds go by without a beat -> reset
-        if timeSinceLastBeat > 2500
+        // If 5 seconds go by without a beat -> reset
+        if timeSinceLastBeat > 5000
         {
             self.threshold = 250
             self.waveCrest = self.threshold
@@ -240,64 +246,13 @@ class HeartRateVC: UIViewController
             self.lineChartView.data = data
         }
     }
-    
-    func generateRandomGraphData()
-    {
-        sensorTimeStamps.append(randomText(3, justLowerCase: true))
-        heartRateReadings.append(Double(randomInt(0, to: 9999)))
-        
-        drawChartData(xAxisValues: &sensorTimeStamps, yAxisValues: &heartRateReadings)
-    }
-    
-    // returns random text of a defined length
-    // optional bool parameter justLowerCase
-    // to just generate random lowercase text
-    func randomText(length: Int, justLowerCase: Bool = false) -> String
-    {
-        var text = ""
-        for _ in 1...length
-        {
-            var decValue = 0  // ascii decimal value of a character
-            var charType = 3  // default is lowercase
-            if justLowerCase == false
-            {
-                // randomize the character type
-                charType =  Int(arc4random_uniform(4))
-            }
-            switch charType
-            {
-            case 1:  // digit: random Int between 48 and 57
-                decValue = Int(arc4random_uniform(10)) + 48
-            case 2:  // uppercase letter
-                decValue = Int(arc4random_uniform(26)) + 65
-            case 3:  // lowercase letter
-                decValue = Int(arc4random_uniform(26)) + 97
-            default:  // space character
-                decValue = 32
-            }
-            // get ASCII character from random decimal value
-            let char = String(UnicodeScalar(decValue))
-            text = text + char
-            // remove double spaces
-            text = text.stringByReplacingOccurrencesOfString(" ", withString: "")
-        }
-        return text
-    }
-    
-    // returns a random int within given range
-    func randomInt(from: Int, to: Int) -> Int
-    {
-        let range = UInt32(to - from)
-        let rndInt = Int(arc4random_uniform(range + 1)) + from
-        return rndInt
-    }
 }
 
 extension HeartRateVC: ChartViewDelegate
 {
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
     {
-        print("value: \(entry.value) at \(sensorTimeStamps[entry.xIndex])")
+        print("value: \(entry.value) at \(heartRateTimeStamps[entry.xIndex])")
         graphReadingLabel.text = "\(Int(entry.value)) bpm"
     }
 }

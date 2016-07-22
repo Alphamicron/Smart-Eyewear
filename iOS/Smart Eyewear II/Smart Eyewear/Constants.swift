@@ -178,6 +178,7 @@ enum Sensor
     case Accelerometer
     case Magnetometer
     case Gyroscope
+    case HeartRate
     case Null
 }
 

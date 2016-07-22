@@ -58,6 +58,8 @@ class GraphsVC: UIViewController
         //            downloadDataFromController()
         case .Gyroscope:
             getGyroscopeReading()
+        case .HeartRate:
+            print("Heart rate sensor wrongly called in GraphsVC")
         case .Magnetometer:
             getMagnetometerReading()
         case .Null:
@@ -216,7 +218,7 @@ class GraphsVC: UIViewController
                 
                 for thisLoggedEntry in loggedEntries
                 {
-                    self.timeStampsWithSeconds.append(self.getTimeStringFrom(thisLoggedEntry.description))
+                    self.timeStampsWithSeconds.append(GraphsVC.getTimeStringFrom(thisLoggedEntry.description, sensorType: Sensor.Accelerometer))
                     
                     print("************************************")
                     print(thisLoggedEntry)
@@ -241,7 +243,7 @@ class GraphsVC: UIViewController
                 self.setTotalStepsText(Double(self.realTimeNumberOfSteps), labelOption: LabelOption.totalSteps)
                 
                 GraphsVC.sensorReadings.addObject(self.totalNumberOfSteps)
-                GraphsVC.sensorReadingsTimeStamps.addObject(self.getTimeStringFrom(stepData.description))
+                GraphsVC.sensorReadingsTimeStamps.addObject(GraphsVC.getTimeStringFrom(stepData.description, sensorType: Sensor.Accelerometer))
                 
                 print("steps data: \(stepData)")
             }
@@ -307,15 +309,30 @@ class GraphsVC: UIViewController
         drawChart(xAxisValues: &sensorTimeStamps, yAxisValues: &numberOfSteps)        
     }
     
-    // Given a string, extracts the time portion
-    // PRE: String should be of format: "MMM DD, YYYY, HH:MM:SEC 1" e.g "Jul 7, 2016, 15:10:32 1"
-    // POST: 15:10:32
-    // Complexity: O(n)
-    func getTimeStringFrom(sensorReadingsResult: String)-> String
+    /*  Given a string, extracts the time portion
+     *  Complexity: O(n)
+     *  If sensorType == Accelerometer
+     *      PRE:  String format is "MMM DD, YYYY, HH:MM:SEC 1" e.g "Jul 7, 2016, 15:10:32 1"
+     *      POST: 15:10:32
+     *  Else if sensorType == HeartRate
+     *      PRE:  String format is "MMM DD, YYYY, HH:MM:SEC Float" e.g "Jul 22, 2016, 15:57:26 0.424242.."
+     *      POST: 15:57:26
+     */
+    static func getTimeStringFrom(sensorReadingsResult: String, sensorType: Sensor)-> String
     {
-        let dateRange: Range = sensorReadingsResult.endIndex.advancedBy(-10)..<sensorReadingsResult.endIndex.advancedBy(-2)
+        var timeRange: Any?
         
-        return sensorReadingsResult[dateRange]
+        switch sensorType
+        {
+        case .Accelerometer:
+            timeRange = sensorReadingsResult.endIndex.advancedBy(-10)..<sensorReadingsResult.endIndex.advancedBy(-2)
+        case .HeartRate:
+            timeRange = sensorReadingsResult.startIndex.advancedBy(14)..<sensorReadingsResult.startIndex.advancedBy(22)
+        default:
+            break
+        }
+        
+        return sensorReadingsResult[timeRange as! Range]
     }
     
     func drawChart(inout xAxisValues dataPoints: [String], inout yAxisValues values: [Int])
