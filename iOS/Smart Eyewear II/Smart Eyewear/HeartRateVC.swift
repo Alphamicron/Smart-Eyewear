@@ -49,11 +49,8 @@ class HeartRateVC: UIViewController
         heartRate = NSMutableArray(capacity: arrayCapacity)
         
         lineChartView.delegate = self
-        
-        lineChartView.descriptionText = "Tap node for details"
         lineChartView.descriptionTextColor = UIColor.whiteColor()
         lineChartView.gridBackgroundColor = UIColor.darkGrayColor()
-        
         lineChartView.noDataText = "No data to display"
         lineChartView.noDataTextDescription = "Heart rate readings needed for data to be displayed"
     }
@@ -62,9 +59,7 @@ class HeartRateVC: UIViewController
     {
         super.viewDidAppear(animated)
         
-        Constants.repeatThis(task: #selector(HeartRateVC.getHeartRateData), forDuration: 2.0, onTarget: self)
-        
-        //        Constants.repeatThis(task: #selector(HeartRateVC.generateRandomGraphData), forDuration: 2.0, onTarget: self)
+        Constants.repeatThis(task: #selector(HeartRateVC.getHeartRateData), forDuration: 0.05, onTarget: self)
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -183,8 +178,8 @@ class HeartRateVC: UIViewController
             self.waveTrough = self.threshold
         }
         
-        // If 5 seconds go by without a beat -> reset
-        if timeSinceLastBeat > 5000
+        // If 2.5 seconds go by without a beat -> reset
+        if timeSinceLastBeat > 2500
         {
             self.threshold = 250
             self.waveCrest = self.threshold
