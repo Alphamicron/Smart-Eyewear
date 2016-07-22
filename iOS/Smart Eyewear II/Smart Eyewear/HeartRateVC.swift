@@ -93,7 +93,7 @@ class HeartRateVC: UIViewController
             
             self.sensorReadingLabel.text = "\(Int(self.beatsPerMinute)) bpm"
             
-            self.heartRateReadings.append(Double(self.beatsPerMinute))
+            self.heartRateReadings.append(resultData.value.doubleValue)
             self.heartRateTimeStamps.append(GraphsVC.getTimeStringFrom(resultData.description, sensorType: Sensor.HeartRate))
             
             self.drawChartData(xAxisValues: &self.heartRateTimeStamps, yAxisValues: &self.heartRateReadings)
@@ -217,14 +217,13 @@ class HeartRateVC: UIViewController
             dataSet = LineChartDataSet(yVals: dataEntries, label: "heart rate")
             dataSet.axisDependency = .Left // line will correlate with left axis values
             dataSet.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // set colour & opacity
-            dataSet.setCircleColor(Constants.themeRedColour) // circle will be dark red
-            dataSet.lineWidth = 3.0
-            dataSet.circleRadius = 6.0 // node circle radius
+            dataSet.lineWidth = 2.0
             dataSet.fillAlpha = 65 / 255.0
             dataSet.fillColor = UIColor.redColor()
             dataSet.highlightColor = Constants.themeInactiveStateColour
             dataSet.mode = .CubicBezier // give it the cubic function graph style
             dataSet.drawValuesEnabled = false
+            dataSet.drawCirclesEnabled = false
             dataSet.valueFont = Constants.defaultFont.fontWithSize(8)
             
             var dataSets : [LineChartDataSet] = [LineChartDataSet]()
