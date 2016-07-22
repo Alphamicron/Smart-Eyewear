@@ -51,8 +51,10 @@ class HeartRateVC: UIViewController
         // 3
         lineChartView.descriptionTextColor = UIColor.whiteColor()
         lineChartView.gridBackgroundColor = UIColor.darkGrayColor()
+        
         // 4
-        lineChartView.noDataText = "No data provided"
+        lineChartView.noDataText = "No data to display"
+        lineChartView.noDataTextDescription = "Heart rate readings needed for data to be displayed"
         // 5
         setChartData(months)
     }
@@ -188,7 +190,7 @@ class HeartRateVC: UIViewController
     
     func setChartData(months: [String])
     {
-        // 1 - creating an array of data entries
+        //1 - creating an array of data entries
         var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
         
         for i in 0..<months.count
@@ -196,17 +198,18 @@ class HeartRateVC: UIViewController
             yVals1.append(ChartDataEntry(value: dollars1[i], xIndex: i))
         }
         
-        // 2 - create a data set with our array
-        let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1, label: "First Set")
+        //2 - create a data set with our array
+        let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1, label: "heart rate")
         set1.axisDependency = .Left // Line will correlate with left axis values
         set1.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
-        set1.setCircleColor(UIColor.redColor()) // our circle will be dark red
+        set1.setCircleColor(Constants.themeRedColour) // our circle will be dark red
         set1.lineWidth = 2.0
-        set1.circleRadius = 6.0 // the radius of the node circle
+        set1.circleRadius = 5.0 // the radius of the node circle
         set1.fillAlpha = 65 / 255.0
         set1.fillColor = UIColor.redColor()
-        set1.highlightColor = UIColor.whiteColor()
+        set1.highlightColor = Constants.themeInactiveStateColour
         set1.drawCircleHoleEnabled = true
+        set1.valueFont = Constants.defaultFont.fontWithSize(9)
         
         //3 - create an array to store our LineChartDataSets
         var dataSets : [LineChartDataSet] = [LineChartDataSet]()
@@ -214,7 +217,10 @@ class HeartRateVC: UIViewController
         
         //4 - pass our months in for our x-axis label value along with our dataSets
         let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
-        data.setValueTextColor(UIColor.whiteColor())
+        data.setValueTextColor(UIColor(red: 0.925, green: 0.494, blue: 0.114, alpha: 1.00))
+        
+        lineChartView.xAxis.labelPosition = .Bottom
+        lineChartView.animate(xAxisDuration: 3.0)
         
         //5 - finally set our data
         self.lineChartView.data = data
@@ -223,5 +229,8 @@ class HeartRateVC: UIViewController
 
 extension HeartRateVC: ChartViewDelegate
 {
-    
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
+    {
+        print("value: \(entry.value) at \(months[entry.xIndex])")
+    }
 }

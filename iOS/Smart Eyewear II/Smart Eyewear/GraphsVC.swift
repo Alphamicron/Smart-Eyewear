@@ -331,7 +331,7 @@ class GraphsVC: UIViewController
         }
         
         // declare the y and x axis values respectively
-        let chartDataSet: BarChartDataSet = BarChartDataSet(yVals: dataEntries, label: "number of steps")
+        let chartDataSet: BarChartDataSet = BarChartDataSet(yVals: dataEntries, label: "steps")
         let chartData: BarChartData = BarChartData(xVals: sensorTimeStamps, dataSet: chartDataSet)
         graphView.data = chartData
         
