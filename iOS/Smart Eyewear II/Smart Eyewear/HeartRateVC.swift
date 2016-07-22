@@ -32,8 +32,8 @@ class HeartRateVC: UIViewController
     var firstBeat: Bool = true // used to seed rate array so we startup with reasonable BPM
     var secondBeat: Bool = Bool() // used to seed rate array so we startup with reasonable BPM
     var heartRate: NSMutableArray = NSMutableArray()
-    var months: [String] = [String]()
-    var dollars1: [Double] = [Double]()
+    var sensorTimeStamps: [String] = [String]()
+    var heartRateReadings: [Double] = [Double]()
     
     @IBOutlet weak var sensorReadingLabel: UILabel!
     @IBOutlet weak var graphReadingLabel: UILabel!
@@ -44,16 +44,16 @@ class HeartRateVC: UIViewController
         super.viewDidLoad()
         
         sensorReadingLabel.text = entryText
+        graphReadingLabel.text = entryText
+        
         heartRate = NSMutableArray(capacity: arrayCapacity)
         
         lineChartView.delegate = self
         
         lineChartView.descriptionText = "Tap node for details"
-        // 3
         lineChartView.descriptionTextColor = UIColor.whiteColor()
         lineChartView.gridBackgroundColor = UIColor.darkGrayColor()
         
-        // 4
         lineChartView.noDataText = "No data to display"
         lineChartView.noDataTextDescription = "Heart rate readings needed for data to be displayed"
     }
@@ -223,7 +223,7 @@ class HeartRateVC: UIViewController
             dataSet.fillColor = UIColor.redColor()
             dataSet.highlightColor = Constants.themeInactiveStateColour
             dataSet.mode = .CubicBezier // give it the cubic function graph style
-            //            dataSet.drawValuesEnabled = false
+            dataSet.drawValuesEnabled = false
             dataSet.valueFont = Constants.defaultFont.fontWithSize(8)
             
             var dataSets : [LineChartDataSet] = [LineChartDataSet]()
@@ -243,10 +243,10 @@ class HeartRateVC: UIViewController
     
     func generateRandomGraphData()
     {
-        months.append(randomText(3, justLowerCase: true))
-        dollars1.append(Double(randomInt(0, to: 9999)))
+        sensorTimeStamps.append(randomText(3, justLowerCase: true))
+        heartRateReadings.append(Double(randomInt(0, to: 9999)))
         
-        drawChartData(xAxisValues: &months, yAxisValues: &dollars1)
+        drawChartData(xAxisValues: &sensorTimeStamps, yAxisValues: &heartRateReadings)
     }
     
     // returns random text of a defined length
@@ -297,6 +297,7 @@ extension HeartRateVC: ChartViewDelegate
 {
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
     {
-        print("value: \(entry.value) at \(months[entry.xIndex])")
+        print("value: \(entry.value) at \(sensorTimeStamps[entry.xIndex])")
+        graphReadingLabel.text = "\(Int(entry.value)) bpm"
     }
 }

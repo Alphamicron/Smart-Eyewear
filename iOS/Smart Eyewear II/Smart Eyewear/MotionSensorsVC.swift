@@ -54,7 +54,7 @@ class MotionSensorsVC: UIViewController
             
             if segue.identifier == "segueToHeartRate"
             {
-                heartRateVC.entryText = "Heart Rate"
+                heartRateVC.entryText = "0 bpm"
             }
         }
         else
