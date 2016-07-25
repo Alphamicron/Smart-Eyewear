@@ -12,6 +12,8 @@ class ScrollVC: UIViewController
 {
     @IBOutlet weak var scrollView: UIScrollView!
     
+    let totalNumberOfViews: CGFloat = 4
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -45,15 +47,15 @@ class ScrollVC: UIViewController
         fitnessVC.view.frame = fitnessVCFrame
         
         var healthVCFrame: CGRect = healthVC.view.frame
-        healthVCFrame.origin.x = 2*self.view.frame.width // multiply by 2
+        healthVCFrame.origin.x = (totalNumberOfViews-2)*self.view.frame.width // multiply by 2
         healthVC.view.frame = healthVCFrame
         
         var environmentVCFrame: CGRect = environmentVC.view.frame
-        environmentVCFrame.origin.x = 3*self.view.frame.width // multiply by 3
+        environmentVCFrame.origin.x = (totalNumberOfViews-1)*self.view.frame.width // multiply by 3
         environmentVC.view.frame = environmentVCFrame
         
         
-        self.scrollView.contentSize = CGSizeMake(self.view.frame.width*4, self.view.frame.size.height)
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.width*totalNumberOfViews, self.view.frame.size.height)
         
     }
     
