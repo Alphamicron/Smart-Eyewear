@@ -1,16 +1,16 @@
 //
-//  TestPageVC.swift
+//  MainPageVC.swift
 //  Uvex
 //
-//  Created by Alphamicron on 7/27/16.
+//  Created by Alphamicron on 7/28/16.
 //  Copyright © 2016 Alphamicron. All rights reserved.
 //
 
 import UIKit
 
-class TestPageVC: UIPageViewController
+class MainPageVC: UIPageViewController
 {
-    var pages: [UIViewController] = [UIViewController]()
+    var totalPages: [UIViewController] = [UIViewController]()
     
     override func viewDidLoad()
     {
@@ -24,10 +24,10 @@ class TestPageVC: UIPageViewController
         let healthVC = storyboard!.instantiateViewControllerWithIdentifier("health") as! HealthVC
         let environmentVC = storyboard!.instantiateViewControllerWithIdentifier("environment") as! EnvironmentVC
         
-        pages.append(eyeWearVC)
-        pages.append(fitnessVC)
-        pages.append(healthVC)
-        pages.append(environmentVC)
+        totalPages.append(eyeWearVC)
+        totalPages.append(fitnessVC)
+        totalPages.append(healthVC)
+        totalPages.append(environmentVC)
         
         setViewControllers([eyeWearVC], direction: .Forward, animated: true, completion: nil)
     }
@@ -39,25 +39,25 @@ class TestPageVC: UIPageViewController
     
     func viewControllerAtIndex(index: Int)-> UIViewController
     {
-        if self.pages.count == 0 || index >= self.pages.count
+        if self.totalPages.count == 0 || index >= self.totalPages.count
         {
             return UIViewController()
         }
         
-        return pages[index]
+        return totalPages[index]
     }
 }
 
-extension TestPageVC: UIPageViewControllerDelegate
+extension MainPageVC: UIPageViewControllerDelegate
 {
     
 }
 
-extension TestPageVC: UIPageViewControllerDataSource
+extension MainPageVC: UIPageViewControllerDataSource
 {
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return pages.count
+        return totalPages.count
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
@@ -67,7 +67,7 @@ extension TestPageVC: UIPageViewControllerDataSource
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {
-        var currentIndex: Int = pages.indexOf(viewController)!
+        var currentIndex: Int = totalPages.indexOf(viewController)!
         
         if currentIndex == 0 || currentIndex == NSNotFound
         {
@@ -75,13 +75,13 @@ extension TestPageVC: UIPageViewControllerDataSource
         }
         
         currentIndex -= 1
-        return self.viewControllerAtIndex(currentIndex)
         
+        return self.viewControllerAtIndex(currentIndex)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
     {
-        var currentIndex: Int = pages.indexOf(viewController)!
+        var currentIndex: Int = totalPages.indexOf(viewController)!
         
         if currentIndex == NSNotFound
         {
@@ -90,7 +90,7 @@ extension TestPageVC: UIPageViewControllerDataSource
         
         currentIndex += 1
         
-        if currentIndex == pages.count
+        if currentIndex == totalPages.count
         {
             return nil
         }
@@ -98,12 +98,3 @@ extension TestPageVC: UIPageViewControllerDataSource
         return self.viewControllerAtIndex(currentIndex)
     }
 }
-
-
-
-
-
-
-
-
-
