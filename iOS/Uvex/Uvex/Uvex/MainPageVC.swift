@@ -12,9 +12,14 @@ class MainPageVC: UIPageViewController
 {
     var totalPages: [UIViewController] = [UIViewController]()
     
+    @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        let attributes: [String : AnyObject] = [NSFontAttributeName: Constants.defaultFont]
+        rightBarButtonItem.setTitleTextAttributes(attributes, forState: .Normal)
         
         self.delegate = self
         self.dataSource = self

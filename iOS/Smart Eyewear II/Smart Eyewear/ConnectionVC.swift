@@ -239,7 +239,7 @@ extension ConnectionVC: CBCentralManagerDelegate
     }
     
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)
-    {
+    {        
         // just discover this particular metawear device
         if peripheral.name == Constants.metaWearName
         {

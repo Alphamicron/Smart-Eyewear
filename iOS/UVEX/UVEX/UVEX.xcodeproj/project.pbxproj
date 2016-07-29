@@ -7,25 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		309A2B661D4678B100C1EDD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2B651D4678B100C1EDD6 /* AppDelegate.swift */; };
-		309A2B681D4678B100C1EDD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2B671D4678B100C1EDD6 /* ViewController.swift */; };
-		309A2B6B1D4678B100C1EDD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B691D4678B100C1EDD6 /* Main.storyboard */; };
-		309A2B6D1D4678B100C1EDD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B6C1D4678B100C1EDD6 /* Assets.xcassets */; };
-		309A2B701D4678B100C1EDD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B6E1D4678B100C1EDD6 /* LaunchScreen.storyboard */; };
+		309A2B841D467FA300C1EDD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2B831D467FA300C1EDD6 /* AppDelegate.swift */; };
+		309A2B891D467FA300C1EDD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B871D467FA300C1EDD6 /* Main.storyboard */; };
+		309A2B8B1D467FA300C1EDD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B8A1D467FA300C1EDD6 /* Assets.xcassets */; };
+		309A2B8E1D467FA300C1EDD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B8C1D467FA300C1EDD6 /* LaunchScreen.storyboard */; };
+		309A2B981D46A44300C1EDD6 /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B971D46A44300C1EDD6 /* videoplayback.mp4 */; };
+		309A2BA21D46CB1400C1EDD6 /* EyeWearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2BA01D46CB1400C1EDD6 /* EyeWearVC.swift */; };
+		309A2BA61D46CB2D00C1EDD6 /* FitnessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2BA41D46CB2D00C1EDD6 /* FitnessVC.swift */; };
+		309A2BAA1D46CB4100C1EDD6 /* HealthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2BA81D46CB4100C1EDD6 /* HealthVC.swift */; };
+		309A2BAE1D46CB5400C1EDD6 /* EnvironmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2BAC1D46CB5400C1EDD6 /* EnvironmentVC.swift */; };
+		309A2BB31D46D39300C1EDD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2BB21D46D39300C1EDD6 /* Extensions.swift */; };
+		30D42DCE1D4BC67C00016BA8 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D42DCD1D4BC67C00016BA8 /* CustomNavigationBar.swift */; };
+		30D42DD01D4BCA7800016BA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D42DCF1D4BCA7800016BA8 /* Constants.swift */; };
+		30F462C61D4A6EBE00BA0B4F /* MainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F462C51D4A6EBE00BA0B4F /* MainPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		309A2B621D4678B100C1EDD6 /* UVEX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UVEX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		309A2B651D4678B100C1EDD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		309A2B671D4678B100C1EDD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		309A2B6A1D4678B100C1EDD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		309A2B6C1D4678B100C1EDD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		309A2B6F1D4678B100C1EDD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		309A2B711D4678B100C1EDD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		309A2B801D467FA300C1EDD6 /* Uvex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uvex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		309A2B831D467FA300C1EDD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		309A2B881D467FA300C1EDD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		309A2B8A1D467FA300C1EDD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		309A2B8D1D467FA300C1EDD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		309A2B8F1D467FA300C1EDD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		309A2B971D46A44300C1EDD6 /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
+		309A2BA01D46CB1400C1EDD6 /* EyeWearVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeWearVC.swift; sourceTree = "<group>"; };
+		309A2BA41D46CB2D00C1EDD6 /* FitnessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessVC.swift; sourceTree = "<group>"; };
+		309A2BA81D46CB4100C1EDD6 /* HealthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthVC.swift; sourceTree = "<group>"; };
+		309A2BAC1D46CB5400C1EDD6 /* EnvironmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentVC.swift; sourceTree = "<group>"; };
+		309A2BB21D46D39300C1EDD6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		30D42DCD1D4BC67C00016BA8 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		30D42DCF1D4BCA7800016BA8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30F462C51D4A6EBE00BA0B4F /* MainPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		309A2B5F1D4678B100C1EDD6 /* Frameworks */ = {
+		309A2B7D1D467FA300C1EDD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,72 +51,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		309A2B591D4678B100C1EDD6 = {
+		309A2B771D467FA300C1EDD6 = {
 			isa = PBXGroup;
 			children = (
-				309A2B641D4678B100C1EDD6 /* UVEX */,
-				309A2B631D4678B100C1EDD6 /* Products */,
+				309A2B821D467FA300C1EDD6 /* Uvex */,
+				309A2B811D467FA300C1EDD6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		309A2B631D4678B100C1EDD6 /* Products */ = {
+		309A2B811D467FA300C1EDD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				309A2B621D4678B100C1EDD6 /* UVEX.app */,
+				309A2B801D467FA300C1EDD6 /* Uvex.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		309A2B641D4678B100C1EDD6 /* UVEX */ = {
+		309A2B821D467FA300C1EDD6 /* Uvex */ = {
 			isa = PBXGroup;
 			children = (
-				309A2B651D4678B100C1EDD6 /* AppDelegate.swift */,
-				309A2B671D4678B100C1EDD6 /* ViewController.swift */,
-				309A2B691D4678B100C1EDD6 /* Main.storyboard */,
-				309A2B6C1D4678B100C1EDD6 /* Assets.xcassets */,
-				309A2B6E1D4678B100C1EDD6 /* LaunchScreen.storyboard */,
-				309A2B711D4678B100C1EDD6 /* Info.plist */,
+				309A2B831D467FA300C1EDD6 /* AppDelegate.swift */,
+				309A2B9D1D46C79A00C1EDD6 /* Controllers */,
+				309A2B971D46A44300C1EDD6 /* videoplayback.mp4 */,
+				309A2B871D467FA300C1EDD6 /* Main.storyboard */,
+				309A2B8A1D467FA300C1EDD6 /* Assets.xcassets */,
+				309A2B8C1D467FA300C1EDD6 /* LaunchScreen.storyboard */,
+				309A2B8F1D467FA300C1EDD6 /* Info.plist */,
 			);
-			path = UVEX;
+			path = Uvex;
+			sourceTree = "<group>";
+		};
+		309A2B9D1D46C79A00C1EDD6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				30D42DCD1D4BC67C00016BA8 /* CustomNavigationBar.swift */,
+				30F462C51D4A6EBE00BA0B4F /* MainPageVC.swift */,
+				30D42DCF1D4BCA7800016BA8 /* Constants.swift */,
+				309A2BB21D46D39300C1EDD6 /* Extensions.swift */,
+				309A2BA01D46CB1400C1EDD6 /* EyeWearVC.swift */,
+				309A2BA41D46CB2D00C1EDD6 /* FitnessVC.swift */,
+				309A2BA81D46CB4100C1EDD6 /* HealthVC.swift */,
+				309A2BAC1D46CB5400C1EDD6 /* EnvironmentVC.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		309A2B611D4678B100C1EDD6 /* UVEX */ = {
+		309A2B7F1D467FA300C1EDD6 /* Uvex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 309A2B741D4678B100C1EDD6 /* Build configuration list for PBXNativeTarget "UVEX" */;
+			buildConfigurationList = 309A2B921D467FA300C1EDD6 /* Build configuration list for PBXNativeTarget "Uvex" */;
 			buildPhases = (
-				309A2B5E1D4678B100C1EDD6 /* Sources */,
-				309A2B5F1D4678B100C1EDD6 /* Frameworks */,
-				309A2B601D4678B100C1EDD6 /* Resources */,
+				309A2B7C1D467FA300C1EDD6 /* Sources */,
+				309A2B7D1D467FA300C1EDD6 /* Frameworks */,
+				309A2B7E1D467FA300C1EDD6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = UVEX;
-			productName = UVEX;
-			productReference = 309A2B621D4678B100C1EDD6 /* UVEX.app */;
+			name = Uvex;
+			productName = Uvex;
+			productReference = 309A2B801D467FA300C1EDD6 /* Uvex.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		309A2B5A1D4678B100C1EDD6 /* Project object */ = {
+		309A2B781D467FA300C1EDD6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Alphamicron;
 				TargetAttributes = {
-					309A2B611D4678B100C1EDD6 = {
+					309A2B7F1D467FA300C1EDD6 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = TLKR2E3633;
 					};
 				};
 			};
-			buildConfigurationList = 309A2B5D1D4678B100C1EDD6 /* Build configuration list for PBXProject "UVEX" */;
+			buildConfigurationList = 309A2B7B1D467FA300C1EDD6 /* Build configuration list for PBXProject "Uvex" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -108,54 +140,62 @@
 				en,
 				Base,
 			);
-			mainGroup = 309A2B591D4678B100C1EDD6;
-			productRefGroup = 309A2B631D4678B100C1EDD6 /* Products */;
+			mainGroup = 309A2B771D467FA300C1EDD6;
+			productRefGroup = 309A2B811D467FA300C1EDD6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				309A2B611D4678B100C1EDD6 /* UVEX */,
+				309A2B7F1D467FA300C1EDD6 /* Uvex */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		309A2B601D4678B100C1EDD6 /* Resources */ = {
+		309A2B7E1D467FA300C1EDD6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				309A2B701D4678B100C1EDD6 /* LaunchScreen.storyboard in Resources */,
-				309A2B6D1D4678B100C1EDD6 /* Assets.xcassets in Resources */,
-				309A2B6B1D4678B100C1EDD6 /* Main.storyboard in Resources */,
+				309A2B8E1D467FA300C1EDD6 /* LaunchScreen.storyboard in Resources */,
+				309A2B8B1D467FA300C1EDD6 /* Assets.xcassets in Resources */,
+				309A2B891D467FA300C1EDD6 /* Main.storyboard in Resources */,
+				309A2B981D46A44300C1EDD6 /* videoplayback.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		309A2B5E1D4678B100C1EDD6 /* Sources */ = {
+		309A2B7C1D467FA300C1EDD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				309A2B681D4678B100C1EDD6 /* ViewController.swift in Sources */,
-				309A2B661D4678B100C1EDD6 /* AppDelegate.swift in Sources */,
+				309A2BA21D46CB1400C1EDD6 /* EyeWearVC.swift in Sources */,
+				309A2BA61D46CB2D00C1EDD6 /* FitnessVC.swift in Sources */,
+				309A2BB31D46D39300C1EDD6 /* Extensions.swift in Sources */,
+				309A2BAE1D46CB5400C1EDD6 /* EnvironmentVC.swift in Sources */,
+				30D42DCE1D4BC67C00016BA8 /* CustomNavigationBar.swift in Sources */,
+				30F462C61D4A6EBE00BA0B4F /* MainPageVC.swift in Sources */,
+				309A2BAA1D46CB4100C1EDD6 /* HealthVC.swift in Sources */,
+				309A2B841D467FA300C1EDD6 /* AppDelegate.swift in Sources */,
+				30D42DD01D4BCA7800016BA8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		309A2B691D4678B100C1EDD6 /* Main.storyboard */ = {
+		309A2B871D467FA300C1EDD6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				309A2B6A1D4678B100C1EDD6 /* Base */,
+				309A2B881D467FA300C1EDD6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		309A2B6E1D4678B100C1EDD6 /* LaunchScreen.storyboard */ = {
+		309A2B8C1D467FA300C1EDD6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				309A2B6F1D4678B100C1EDD6 /* Base */,
+				309A2B8D1D467FA300C1EDD6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -163,7 +203,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		309A2B721D4678B100C1EDD6 /* Debug */ = {
+		309A2B901D467FA300C1EDD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -209,7 +249,7 @@
 			};
 			name = Debug;
 		};
-		309A2B731D4678B100C1EDD6 /* Release */ = {
+		309A2B911D467FA300C1EDD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,26 +288,26 @@
 			};
 			name = Release;
 		};
-		309A2B751D4678B100C1EDD6 /* Debug */ = {
+		309A2B931D467FA300C1EDD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = UVEX/Info.plist;
+				INFOPLIST_FILE = Uvex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Alphamicron.UVEX;
+				PRODUCT_BUNDLE_IDENTIFIER = Alphamicron.Uvex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		309A2B761D4678B100C1EDD6 /* Release */ = {
+		309A2B941D467FA300C1EDD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = UVEX/Info.plist;
+				INFOPLIST_FILE = Uvex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Alphamicron.UVEX;
+				PRODUCT_BUNDLE_IDENTIFIER = Alphamicron.Uvex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -275,24 +315,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		309A2B5D1D4678B100C1EDD6 /* Build configuration list for PBXProject "UVEX" */ = {
+		309A2B7B1D467FA300C1EDD6 /* Build configuration list for PBXProject "Uvex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				309A2B721D4678B100C1EDD6 /* Debug */,
-				309A2B731D4678B100C1EDD6 /* Release */,
+				309A2B901D467FA300C1EDD6 /* Debug */,
+				309A2B911D467FA300C1EDD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		309A2B741D4678B100C1EDD6 /* Build configuration list for PBXNativeTarget "UVEX" */ = {
+		309A2B921D467FA300C1EDD6 /* Build configuration list for PBXNativeTarget "Uvex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				309A2B751D4678B100C1EDD6 /* Debug */,
-				309A2B761D4678B100C1EDD6 /* Release */,
+				309A2B931D467FA300C1EDD6 /* Debug */,
+				309A2B941D467FA300C1EDD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 309A2B5A1D4678B100C1EDD6 /* Project object */;
+	rootObject = 309A2B781D467FA300C1EDD6 /* Project object */;
 }

@@ -1,25 +1,180 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oMd-29-h9P">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Eye WearVC-->
+        <scene sceneID="XIW-Is-VVL">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eyeWear" id="jl6-wh-Vk7" customClass="EyeWearVC" customModule="Uvex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="RPg-Lr-V3w"/>
+                        <viewControllerLayoutGuide type="bottom" id="5tQ-U7-7ma"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="qt5-dO-pQu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH2-JW-5on">
+                                <rect key="frame" x="175" y="83" width="250" height="250"/>
+                                <color key="backgroundColor" red="1" green="0.41807934250000001" blue="0.1456787454" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Dwp-iI-dUr"/>
+                                    <constraint firstAttribute="height" constant="250" id="W6V-DL-7Yi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Goggles" translatesAutoresizingMaskIntoConstraints="NO" id="lcu-3k-AII">
+                                <rect key="frame" x="226" y="373" width="149" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="rhz-BF-mth"/>
+                                    <constraint firstAttribute="height" constant="72" id="yEz-gk-1cL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gH2-JW-5on" firstAttribute="centerX" secondItem="qt5-dO-pQu" secondAttribute="centerX" id="1in-G6-KDL"/>
+                            <constraint firstItem="lcu-3k-AII" firstAttribute="top" secondItem="gH2-JW-5on" secondAttribute="bottom" constant="40" id="4G6-Md-3aT"/>
+                            <constraint firstItem="gH2-JW-5on" firstAttribute="top" secondItem="RPg-Lr-V3w" secondAttribute="bottom" constant="63" id="IQI-tJ-whW"/>
+                            <constraint firstItem="lcu-3k-AII" firstAttribute="centerX" secondItem="qt5-dO-pQu" secondAttribute="centerX" id="rjF-AM-mPN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="gH2-JW-5on" id="eIV-Ix-dWS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qRX-y9-ieh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762" y="1055"/>
+        </scene>
+        <!--FitnessVC-->
+        <scene sceneID="34Z-JR-Cbz">
+            <objects>
+                <viewController storyboardIdentifier="fitness" id="TTL-Dm-bti" customClass="FitnessVC" customModule="Uvex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bhy-t1-xpj"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Gg-q5-jE4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tio-Rc-5pV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUq-nh-ZK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2416" y="1055"/>
+        </scene>
+        <!--HealthVC-->
+        <scene sceneID="zzj-cy-vlR">
+            <objects>
+                <viewController storyboardIdentifier="health" id="UYV-Gw-x1M" customClass="HealthVC" customModule="Uvex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SZH-eB-dot"/>
+                        <viewControllerLayoutGuide type="bottom" id="XPd-Sf-qEW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="den-Zb-Fuc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWU-mP-jyu">
+                                <rect key="frame" x="275" y="289" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RWU-mP-jyu" firstAttribute="centerX" secondItem="den-Zb-Fuc" secondAttribute="centerX" id="Rrm-qa-9M4"/>
+                            <constraint firstItem="RWU-mP-jyu" firstAttribute="centerY" secondItem="den-Zb-Fuc" secondAttribute="centerY" id="uGz-it-E17"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pub-jG-0By" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3083" y="1055"/>
+        </scene>
+        <!--EnvironmentVC-->
+        <scene sceneID="17g-bw-QZ6">
+            <objects>
+                <viewController storyboardIdentifier="environment" id="tfL-hh-LkM" customClass="EnvironmentVC" customModule="Uvex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IMW-0S-vWS"/>
+                        <viewControllerLayoutGuide type="bottom" id="N2O-8C-nRt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2QR-yL-2Su">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Environment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2z-mQ-HG2">
+                                <rect key="frame" x="252" y="289" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U2z-mQ-HG2" firstAttribute="centerX" secondItem="2QR-yL-2Su" secondAttribute="centerX" id="K7s-eg-11Q"/>
+                            <constraint firstItem="U2z-mQ-HG2" firstAttribute="centerY" secondItem="2QR-yL-2Su" secondAttribute="centerY" id="zYD-iU-Kch"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1O-6U-RUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3764" y="1055"/>
+        </scene>
+        <!--Main PageVC-->
+        <scene sceneID="zlN-s3-39y">
+            <objects>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jNP-bR-shV" customClass="MainPageVC" customModule="Uvex" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="I0Z-Ke-SIj">
+                        <barButtonItem key="leftBarButtonItem" image="SandwichIcon" id="tj1-eg-K7u">
+                            <color key="tintColor" red="0.87058823529999996" green="0.29411764709999999" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="uvex" id="L0o-K6-mrM">
+                            <color key="tintColor" red="0.71764705882352942" green="0.72156862745098038" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="rightBarButtonItem" destination="L0o-K6-mrM" id="1VW-3x-8bB"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zi1-LN-m2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108" y="1055"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mt5-eg-kNY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oMd-29-h9P" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AnU-XG-pwF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.79607843137254897" green="0.80000000000000004" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jNP-bR-shV" kind="relationship" relationship="rootViewController" id="2Te-HO-eUE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNd-JC-qCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429" y="1055"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Goggles" width="319" height="178"/>
+        <image name="SandwichIcon" width="31" height="30"/>
+    </resources>
 </document>
