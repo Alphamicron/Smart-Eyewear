@@ -63,3 +63,15 @@ extension UIView
         self.center = circleCenter
     }
 }
+
+extension UIImageView
+{
+    override func makeCircle(ofRadius newSize: CGFloat)
+    {
+        let circleCenter: CGPoint = self.center
+        let newCircleFrame: CGRect = CGRectMake(self.frame.origin.x, self.frame.origin.y, newSize, newSize)
+        self.frame = newCircleFrame
+        self.layer.cornerRadius = newSize / 2.0
+        self.center = circleCenter
+    }
+}

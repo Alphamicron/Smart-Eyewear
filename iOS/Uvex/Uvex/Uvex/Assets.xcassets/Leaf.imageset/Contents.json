@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "eyewear.png",
+      "filename" : "leaf.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "eyewear@2x.png",
+      "filename" : "leaf@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "eyewear@3x.png",
+      "filename" : "leaf@3x.png",
       "scale" : "3x"
     }
   ],

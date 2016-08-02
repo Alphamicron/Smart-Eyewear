@@ -13,6 +13,8 @@ class EyeWearVC: UIViewController
 {
     @IBOutlet weak var playerView: UIView!
     
+    let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+    
     lazy var playerLayer:AVPlayerLayer = {
         
         let player = AVPlayer(URL:  NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("videoplayback", ofType: "mp4")!))
@@ -53,9 +55,12 @@ class EyeWearVC: UIViewController
         super.viewDidLoad()
         
         self.playerView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
-        self.playerView.layer.masksToBounds = true
-        self.playerView.makeCircle(ofRadius: self.playerView.frame.width)
+        //        self.playerView.layer.masksToBounds = true
+        self.playerView.makeCircle(ofRadius: playerView.frame.width)
         self.playerView.layer.addSublayer(self.playerLayer)
+        
+        tapGesture.addTarget(self, action: #selector(EyeWearVC.userTappedView(_:)))
+        playerView.addGestureRecognizer(tapGesture)
     }
     
     override func viewDidDisappear(animated: Bool)
@@ -78,7 +83,6 @@ class EyeWearVC: UIViewController
     
     func playerDidReachEnd()
     {
-        print("End of video")
         self.playerLayer.player!.seekToTime(kCMTimeZero)
         self.playerLayer.player!.play()
     }
@@ -86,5 +90,10 @@ class EyeWearVC: UIViewController
     func getCircleFrame()->CGRect
     {
         return playerView.bounds
+    }
+    
+    func userTappedView(sender: UITapGestureRecognizer)
+    {
+        performSegueWithIdentifier("segueToEyeWearOptionsVC", sender: nil)
     }
 }
