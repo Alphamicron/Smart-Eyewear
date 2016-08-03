@@ -9,7 +9,8 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     
     var window: UIWindow?
     
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageController.pageIndicatorTintColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00)
         pageController.currentPageIndicatorTintColor = UIColor(red: 0.871, green: 0.294, blue: 0.165, alpha: 1.00)
         pageController.backgroundColor = UIColor.whiteColor()
+        
+        UINavigationBar.appearance().tintColor = Constants.themeRed
         
         return true
     }

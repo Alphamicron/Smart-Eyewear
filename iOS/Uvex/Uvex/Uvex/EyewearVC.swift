@@ -23,7 +23,7 @@ class EyeWearVC: UIViewController
         player.appliesMediaSelectionCriteriaAutomatically = false
         var error:NSError?
         
-        // This is needed so it would not cut off users audio (if listening to music etc.
+        // This is needed so it would not cut off users audio; if listening to music etc.
         do
         {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
@@ -55,7 +55,6 @@ class EyeWearVC: UIViewController
         super.viewDidLoad()
         
         self.playerView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
-        //        self.playerView.layer.masksToBounds = true
         self.playerView.makeCircle(ofRadius: playerView.frame.width)
         self.playerView.layer.addSublayer(self.playerLayer)
         
@@ -94,6 +93,6 @@ class EyeWearVC: UIViewController
     
     func userTappedView(sender: UITapGestureRecognizer)
     {
-        performSegueWithIdentifier("segueToEyeWearOptionsVC", sender: nil)
+        performSegueWithIdentifier("segueToEyeWearTVC", sender: nil)
     }
 }

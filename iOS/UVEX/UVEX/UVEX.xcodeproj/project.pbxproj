@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		304D37F11D525A6B00CBE68B /* EyeWearTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304D37F01D525A6B00CBE68B /* EyeWearTVC.swift */; };
+		304D37F81D527E0F00CBE68B /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304D37F71D527E0F00CBE68B /* Services.swift */; };
 		309A2B841D467FA300C1EDD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2B831D467FA300C1EDD6 /* AppDelegate.swift */; };
 		309A2B891D467FA300C1EDD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B871D467FA300C1EDD6 /* Main.storyboard */; };
 		309A2B8B1D467FA300C1EDD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309A2B8A1D467FA300C1EDD6 /* Assets.xcassets */; };
@@ -17,12 +19,13 @@
 		309A2BAA1D46CB4100C1EDD6 /* HealthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2BA81D46CB4100C1EDD6 /* HealthVC.swift */; };
 		309A2BAE1D46CB5400C1EDD6 /* EnvironmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2BAC1D46CB5400C1EDD6 /* EnvironmentVC.swift */; };
 		309A2BB31D46D39300C1EDD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A2BB21D46D39300C1EDD6 /* Extensions.swift */; };
-		30D42DCE1D4BC67C00016BA8 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D42DCD1D4BC67C00016BA8 /* CustomNavigationBar.swift */; };
 		30D42DD01D4BCA7800016BA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D42DCF1D4BCA7800016BA8 /* Constants.swift */; };
 		30F462C61D4A6EBE00BA0B4F /* MainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F462C51D4A6EBE00BA0B4F /* MainPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		304D37F01D525A6B00CBE68B /* EyeWearTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeWearTVC.swift; sourceTree = "<group>"; };
+		304D37F71D527E0F00CBE68B /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		309A2B801D467FA300C1EDD6 /* Uvex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uvex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309A2B831D467FA300C1EDD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		309A2B881D467FA300C1EDD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,7 +38,6 @@
 		309A2BA81D46CB4100C1EDD6 /* HealthVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthVC.swift; sourceTree = "<group>"; };
 		309A2BAC1D46CB5400C1EDD6 /* EnvironmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentVC.swift; sourceTree = "<group>"; };
 		309A2BB21D46D39300C1EDD6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		30D42DCD1D4BC67C00016BA8 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		30D42DCF1D4BCA7800016BA8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30F462C51D4A6EBE00BA0B4F /* MainPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +53,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		304D37F21D525CAA00CBE68B /* Eyewear */ = {
+			isa = PBXGroup;
+			children = (
+				309A2BA01D46CB1400C1EDD6 /* EyeWearVC.swift */,
+				304D37F01D525A6B00CBE68B /* EyeWearTVC.swift */,
+			);
+			name = Eyewear;
+			sourceTree = "<group>";
+		};
+		304D37F31D525CC800CBE68B /* Fitness */ = {
+			isa = PBXGroup;
+			children = (
+				309A2BA41D46CB2D00C1EDD6 /* FitnessVC.swift */,
+			);
+			name = Fitness;
+			sourceTree = "<group>";
+		};
+		304D37F41D525CD400CBE68B /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				309A2BA81D46CB4100C1EDD6 /* HealthVC.swift */,
+			);
+			name = Health;
+			sourceTree = "<group>";
+		};
+		304D37F51D525CDF00CBE68B /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				309A2BAC1D46CB5400C1EDD6 /* EnvironmentVC.swift */,
+			);
+			name = Environment;
+			sourceTree = "<group>";
+		};
+		304D37F61D527D4F00CBE68B /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				304D37F71D527E0F00CBE68B /* Services.swift */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
 		309A2B771D467FA300C1EDD6 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				309A2B831D467FA300C1EDD6 /* AppDelegate.swift */,
+				304D37F61D527D4F00CBE68B /* Modal */,
 				309A2B9D1D46C79A00C1EDD6 /* Controllers */,
 				309A2B971D46A44300C1EDD6 /* videoplayback.mp4 */,
 				309A2B871D467FA300C1EDD6 /* Main.storyboard */,
@@ -84,14 +128,13 @@
 		309A2B9D1D46C79A00C1EDD6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				30D42DCD1D4BC67C00016BA8 /* CustomNavigationBar.swift */,
+				304D37F21D525CAA00CBE68B /* Eyewear */,
+				304D37F31D525CC800CBE68B /* Fitness */,
+				304D37F41D525CD400CBE68B /* Health */,
+				304D37F51D525CDF00CBE68B /* Environment */,
 				30F462C51D4A6EBE00BA0B4F /* MainPageVC.swift */,
 				30D42DCF1D4BCA7800016BA8 /* Constants.swift */,
 				309A2BB21D46D39300C1EDD6 /* Extensions.swift */,
-				309A2BA01D46CB1400C1EDD6 /* EyeWearVC.swift */,
-				309A2BA41D46CB2D00C1EDD6 /* FitnessVC.swift */,
-				309A2BA81D46CB4100C1EDD6 /* HealthVC.swift */,
-				309A2BAC1D46CB5400C1EDD6 /* EnvironmentVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -173,7 +216,8 @@
 				309A2BA61D46CB2D00C1EDD6 /* FitnessVC.swift in Sources */,
 				309A2BB31D46D39300C1EDD6 /* Extensions.swift in Sources */,
 				309A2BAE1D46CB5400C1EDD6 /* EnvironmentVC.swift in Sources */,
-				30D42DCE1D4BC67C00016BA8 /* CustomNavigationBar.swift in Sources */,
+				304D37F11D525A6B00CBE68B /* EyeWearTVC.swift in Sources */,
+				304D37F81D527E0F00CBE68B /* Services.swift in Sources */,
 				30F462C61D4A6EBE00BA0B4F /* MainPageVC.swift in Sources */,
 				309A2BAA1D46CB4100C1EDD6 /* HealthVC.swift in Sources */,
 				309A2B841D467FA300C1EDD6 /* AppDelegate.swift in Sources */,
