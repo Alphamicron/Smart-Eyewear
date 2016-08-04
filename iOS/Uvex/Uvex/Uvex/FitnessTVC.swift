@@ -18,6 +18,7 @@ class FitnessTVCell: UITableViewCell
 class FitnessTVC: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var todaysDateLabel: UILabel! // Swift doesn't allow apostrophes so yeah :)
     
     var fitnessServices: [Service] = [Service]()
     
@@ -32,9 +33,24 @@ class FitnessTVC: UIViewController
         fitnessServices = tempObject.getAllServices(under: ServiceType.Fitness)
     }
     
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        todaysDateLabel.text = todaysDate()
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    
+    func todaysDate()-> String
+    {
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        
+        return dateFormatter.stringFromDate(NSDate())
     }
     
 }
