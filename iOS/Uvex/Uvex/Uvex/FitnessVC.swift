@@ -12,16 +12,26 @@ class FitnessVC: UIViewController
 {
     @IBOutlet weak var runnerImageView: UIImageView!
     
+    let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         runnerImageView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
         runnerImageView.makeCircle(ofRadius: runnerImageView.frame.width)
+        
+        tapGesture.addTarget(self, action: #selector(FitnessVC.userTappedView(_:)))
+        runnerImageView.addGestureRecognizer(tapGesture)
     }
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    
+    func userTappedView(sender: UITapGestureRecognizer)
+    {
+        performSegueWithIdentifier("segueToFitnessTVC", sender: nil)
     }
 }
