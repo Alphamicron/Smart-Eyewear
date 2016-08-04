@@ -12,6 +12,8 @@ class HealthVC: UIViewController
 {
     @IBOutlet weak var healthImageView: UIImageView!
     
+    let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -19,6 +21,9 @@ class HealthVC: UIViewController
         healthImageView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
         
         healthImageView.makeCircle(ofRadius: healthImageView.frame.width)
+        
+        tapGesture.addTarget(self, action: #selector(HealthVC.userTappedView(_:)))
+        healthImageView.addGestureRecognizer(tapGesture)
     }
     
     override func didReceiveMemoryWarning()
@@ -26,4 +31,8 @@ class HealthVC: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    func userTappedView(sender: UITapGestureRecognizer)
+    {
+        performSegueWithIdentifier("segueToHealthTVC", sender: nil)
+    }
 }

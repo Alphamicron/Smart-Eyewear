@@ -45,11 +45,18 @@ class Services
         let calories: Service = Service(serviceIcon: UIImage(named: "Fire")!, serviceName: "Calories")
         let distance: Service = Service(serviceIcon: UIImage(named: "Map")!, serviceName: "Distance")
         
+        // Health Services
+        let heartRate: Service = Service(serviceIcon: UIImage(named: "Heart-1")!, serviceName: "Heart Rate")
+        let oxygenLevel: Service = Service(serviceIcon: UIImage(named: "Lungs")!, serviceName: "SpO2")
+        let skinTemperature: Service = Service(serviceIcon: UIImage(named: "Thermostat")!, serviceName: "Skin Temperature")
+        
         let allEyewearServices: [Service] = [batteryLevel, autoMode, manualMode]
         let allFitnessServices: [Service] = [steps, calories, distance]
+        let allHealthServices: [Service] = [heartRate, oxygenLevel, skinTemperature]
         
         allServices[.Eyewear] = allEyewearServices
         allServices[.Fitness] = allFitnessServices
+        allServices[.Health] = allHealthServices
     }
     
     func getAllServices(under serviceType: ServiceType)-> [Service]
