@@ -17,19 +17,17 @@ class EyeWearTVCell: UITableViewCell
 
 class EyeWearTVC: UITableViewController
 {
-    var stupidArray: [String] = ["Battery Level", "Manual", "Automatic"]
-    var stupidImages: [UIImage] = [UIImage]()
+    var eyeWearServices: [Service] = [Service]()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        stupidImages.append(UIImage(named: "Battery")!)
-        stupidImages.append(UIImage(named: "ManualBtn")!)
-        stupidImages.append(UIImage(named: "AutomaticBtn")!)
-        
-        tableView.tableFooterView = UIView(frame: .zero)
         tableView.separatorStyle = .None
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        let tempObject: Services = Services.sharedInstance
+        eyeWearServices = tempObject.getAllServices(under: ServiceType.Eyewear)
     }
     
     override func didReceiveMemoryWarning()
@@ -46,7 +44,7 @@ class EyeWearTVC: UITableViewController
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return stupidArray.count
+        return eyeWearServices.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -55,8 +53,8 @@ class EyeWearTVC: UITableViewController
         
         cell.selectionStyle = .None
         
-        cell.serviceIcon.image = stupidImages[indexPath.row]
-        cell.serviceDescription.text = stupidArray[indexPath.row]
+        cell.serviceIcon.image = eyeWearServices[indexPath.row].serviceIcon
+        cell.serviceDescription.text = eyeWearServices[indexPath.row].serviceName
         cell.serviceView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
         
         return cell

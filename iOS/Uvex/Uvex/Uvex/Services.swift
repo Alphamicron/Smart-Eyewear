@@ -20,14 +20,13 @@ enum ServiceType
 struct Service
 {
     var serviceIcon: UIImage
-    var serviceName: ServiceType
+    var serviceName: String
 }
 
 class Services
 {
+    static let sharedInstance: Services = Services()
     private var allServices: [ServiceType:[Service]] = [:]
-    
-    private static let sharedInstance: Services = Services()
     
     private init()
     {
@@ -37,11 +36,11 @@ class Services
     private func addServices()
     {
         // Eyewear Services
-        let batteryLevel: Service = Service(serviceIcon: UIImage(named: "Battery")!, serviceName: .Eyewear)
-        let manualMode: Service = Service(serviceIcon: UIImage(named: "ManualBtn")!, serviceName: .Eyewear)
-        let autoMode: Service = Service(serviceIcon: UIImage(named: "AutomaticBtn")!, serviceName: .Eyewear)
+        let batteryLevel: Service = Service(serviceIcon: UIImage(named: "Battery")!, serviceName: "Battery Level")
+        let autoMode: Service = Service(serviceIcon: UIImage(named: "AutomaticBtn")!, serviceName: "Automatic")
+        let manualMode: Service = Service(serviceIcon: UIImage(named: "ManualBtn")!, serviceName: "Manual")
         
-        let allEyewearServices: [Service] = [batteryLevel, manualMode, autoMode]
+        let allEyewearServices: [Service] = [batteryLevel, autoMode, manualMode]
         
         allServices[.Eyewear] = allEyewearServices
     }
