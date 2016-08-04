@@ -51,10 +51,10 @@ class EyeWearTVC: UITableViewController
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! EyeWearTVCell
         
-        cell.selectionStyle = .None
-        
         cell.serviceIcon.image = eyeWearServices[indexPath.row].serviceIcon
         cell.serviceDescription.text = eyeWearServices[indexPath.row].serviceName
+        
+        cell.selectionStyle = .None
         cell.serviceView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
         
         return cell

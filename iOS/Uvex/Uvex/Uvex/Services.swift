@@ -40,9 +40,16 @@ class Services
         let autoMode: Service = Service(serviceIcon: UIImage(named: "AutomaticBtn")!, serviceName: "Automatic")
         let manualMode: Service = Service(serviceIcon: UIImage(named: "ManualBtn")!, serviceName: "Manual")
         
+        // Fitness Services
+        let steps: Service = Service(serviceIcon: UIImage(named: "Steps")!, serviceName: "Steps")
+        let calories: Service = Service(serviceIcon: UIImage(named: "Fire")!, serviceName: "Calories")
+        let distance: Service = Service(serviceIcon: UIImage(named: "Map")!, serviceName: "Distance")
+        
         let allEyewearServices: [Service] = [batteryLevel, autoMode, manualMode]
+        let allFitnessServices: [Service] = [steps, calories, distance]
         
         allServices[.Eyewear] = allEyewearServices
+        allServices[.Fitness] = allFitnessServices
     }
     
     func getAllServices(under serviceType: ServiceType)-> [Service]
