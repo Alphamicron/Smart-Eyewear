@@ -10,6 +10,8 @@ import UIKit
 
 class EnvironmentVC: UIViewController
 {
+    let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+    
     @IBOutlet weak var environmentImageView: UIImageView!
     
     override func viewDidLoad()
@@ -19,6 +21,9 @@ class EnvironmentVC: UIViewController
         environmentImageView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
         
         environmentImageView.makeCircle(ofRadius: environmentImageView.frame.width)
+        
+        tapGesture.addTarget(self, action: #selector(EnvironmentVC.userTappedView(_:)))
+        environmentImageView.addGestureRecognizer(tapGesture)
     }
     
     override func didReceiveMemoryWarning()
@@ -26,4 +31,8 @@ class EnvironmentVC: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    func userTappedView(sender: UITapGestureRecognizer)
+    {
+        performSegueWithIdentifier("segueToEnvironmentTVC", sender: nil)
+    }
 }

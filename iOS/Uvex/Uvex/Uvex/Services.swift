@@ -50,13 +50,21 @@ class Services
         let oxygenLevel: Service = Service(serviceIcon: UIImage(named: "Lungs")!, serviceName: "SpO2")
         let skinTemperature: Service = Service(serviceIcon: UIImage(named: "Thermostat")!, serviceName: "Skin Temperature")
         
+        // Environment Services
+        let humidity: Service = Service(serviceIcon: UIImage(named: "WaterDrop")!, serviceName: "Humidity (%)")
+        let pressure: Service = Service(serviceIcon: UIImage(named: "Barometer")!, serviceName: "Pressure (mPa)")
+        let temperature: Service = Service(serviceIcon: UIImage(named: "Thermometer")!, serviceName: "Temperature (°F)")
+        let altitude: Service = Service(serviceIcon: UIImage(named: "Altitude")!, serviceName: "Altitude (mts)")
+        
         let allEyewearServices: [Service] = [batteryLevel, autoMode, manualMode]
         let allFitnessServices: [Service] = [steps, calories, distance]
         let allHealthServices: [Service] = [heartRate, oxygenLevel, skinTemperature]
+        let allEnvironmentServices: [Service] = [humidity, pressure, temperature, altitude]
         
         allServices[.Eyewear] = allEyewearServices
         allServices[.Fitness] = allFitnessServices
         allServices[.Health] = allHealthServices
+        allServices[.Environment] = allEnvironmentServices
     }
     
     func getAllServices(under serviceType: ServiceType)-> [Service]

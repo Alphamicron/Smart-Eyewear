@@ -74,7 +74,7 @@ extension FitnessTVC: UITableViewDataSource
         
         cell.serviceIcon.image = fitnessServices[indexPath.row].serviceIcon
         cell.serviceName.text = fitnessServices[indexPath.row].serviceName
-        cell.serviceData.text = String(randomNumber(from: &first, to: &second))
+        cell.serviceData.text = String(FitnessTVC.randomNumber(from: &first, to: &second))
         
         cell.selectionStyle = .None
         cell.contentView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
@@ -82,7 +82,7 @@ extension FitnessTVC: UITableViewDataSource
         return cell
     }
     
-    func randomNumber(inout from start: Int, inout to end: Int)-> Int
+    static func randomNumber(inout from start: Int, inout to end: Int)-> Int
     {
         if start > end
         {
