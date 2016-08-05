@@ -18,6 +18,8 @@ class MainPageVC: UIPageViewController
     {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.whiteColor()
+        
         let attributes: [String : AnyObject] = [NSFontAttributeName: Constants.defaultFont]
         rightBarButtonItem.setTitleTextAttributes(attributes, forState: .Normal)
         
