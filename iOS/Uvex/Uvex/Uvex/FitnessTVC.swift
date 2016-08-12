@@ -13,6 +13,7 @@ class FitnessTVCell: UITableViewCell
     @IBOutlet weak var serviceIcon: UIImageView!
     @IBOutlet weak var serviceName: UILabel!
     @IBOutlet weak var serviceData: UILabel!
+    @IBOutlet weak var serviceView: UIView!
 }
 
 class FitnessTVC: UIViewController
@@ -77,7 +78,7 @@ extension FitnessTVC: UITableViewDataSource
         cell.serviceData.text = String(FitnessTVC.randomNumber(from: &first, to: &second))
         
         cell.selectionStyle = .None
-        cell.contentView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
+        cell.serviceView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
         
         return cell
     }

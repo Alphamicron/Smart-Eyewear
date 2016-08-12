@@ -1,0 +1,6 @@
+framework module Pods_Uvex {
+  umbrella header "Pods-Uvex-umbrella.h"
+
+  export *
+  module * { export * }
+}

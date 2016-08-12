@@ -60,5 +60,4 @@ class HealthTVC: UITableViewController
         
         return cell
     }
-    
 }

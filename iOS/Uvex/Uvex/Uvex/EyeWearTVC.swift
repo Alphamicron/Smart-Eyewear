@@ -59,4 +59,19 @@ class EyeWearTVC: UITableViewController
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        switch indexPath.row
+        {
+        case 0:
+            performSegueWithIdentifier("segueToBatteryVC", sender: nil)
+            
+        case 1:
+            performSegueWithIdentifier("segueToAutomaticVC", sender: nil)
+            
+        case 2:
+            performSegueWithIdentifier("segueToManualVC", sender: nil)
+        }
+    }
 }
