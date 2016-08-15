@@ -20,6 +20,9 @@ class MainPageVC: UIPageViewController
     {
         super.viewDidLoad()
         
+        //        self.delegate = self
+        //        self.dataSource = self
+        
         view.backgroundColor = UIColor.whiteColor()
         
         let attributes: [String : AnyObject] = [NSFontAttributeName: Constants.defaultFont]
@@ -44,8 +47,6 @@ class MainPageVC: UIPageViewController
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-        
-        print("MPVC VWA called")
         
         MainPageVC.activateScroll(true)
     }
@@ -76,11 +77,27 @@ class MainPageVC: UIPageViewController
         {
             pageVC.delegate = pageVC
             pageVC.dataSource = pageVC
+            
+            for view in pageVC.view.subviews
+            {
+                if view.isKindOfClass(UIScrollView)
+                {
+                    view.userInteractionEnabled = true
+                }
+            }
         }
         else
         {
             pageVC.delegate = nil
             pageVC.dataSource = nil
+            
+            for view in pageVC.view.subviews
+            {
+                if view.isKindOfClass(UIScrollView)
+                {
+                    view.userInteractionEnabled = false
+                }
+            }
         }
     }
 }
