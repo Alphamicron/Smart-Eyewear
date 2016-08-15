@@ -46,7 +46,7 @@ class ConnectionVC: UIViewController
         super.viewDidAppear(animated)
         
         setupUI(basedOnConnection: ConnectionVC.currentlySelectedDevice.state)
-        self.metawearStateLabel.text = ConnectionVC.currentlySelectedDevice.state.getState().lowercaseString
+        self.metawearStateLabel.text = ConnectionVC.currentlySelectedDevice.state.getState().lowercaseString        
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -61,6 +61,7 @@ class ConnectionVC: UIViewController
         }
         
         MBLMetaWearManager.sharedManager().stopScanForMetaWears()
+        self.view.layer.removeAllAnimations()
     }
     
     override func didReceiveMemoryWarning()
@@ -97,12 +98,35 @@ class ConnectionVC: UIViewController
         }
     }
     
+    // POST: animates only during the connection establishment phase
+    func animateStateLabel()
+    {
+        if Constants.isDeviceConnected()
+        {
+            self.view.layer.removeAllAnimations()
+        }
+        else
+        {
+            UIView.animateWithDuration(1.0, animations: {
+                self.bluetoothImageView.alpha = 0
+            }) { (completed: Bool) in
+                UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations: {
+                    self.bluetoothImageView.alpha = 1.0
+                    }, completion: { (completed: Bool) in
+                        
+                        self.animateStateLabel()
+                })
+            }
+        }
+    }
+    
     func connectToMetaWear()
     {
         self.connectionBtn.userInteractionEnabled = false
         // get the discovered metawear
         if let selectedDevice = foundDevices?[0]
         {
+            self.animateStateLabel()
             self.metawearStateLabel.text = "connecting..."
             
             ConnectionVC.currentlySelectedDevice = selectedDevice
@@ -114,6 +138,7 @@ class ConnectionVC: UIViewController
                 if error != nil
                 {
                     print("Connection Timeout")
+                    self.view.layer.removeAllAnimations()
                     self.connectionBtn.userInteractionEnabled = true
                     //TODO: Alert the user of the timeout
                     //                    self.noDeviceDetectedLabel.hidden = false
