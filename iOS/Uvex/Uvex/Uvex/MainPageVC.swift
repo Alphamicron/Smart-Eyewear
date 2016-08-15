@@ -10,8 +10,10 @@ import UIKit
 
 class MainPageVC: UIPageViewController
 {
+    static var currentViewIndex: Int = 0
     var totalPages: [UIViewController] = [UIViewController]()
     
+    @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad()
@@ -22,9 +24,6 @@ class MainPageVC: UIPageViewController
         
         let attributes: [String : AnyObject] = [NSFontAttributeName: Constants.defaultFont]
         rightBarButtonItem.setTitleTextAttributes(attributes, forState: .Normal)
-        
-        self.delegate = self
-        self.dataSource = self
         
         let eyeWearVC = storyboard!.instantiateViewControllerWithIdentifier("eyeWear") as! EyeWearVC
         let fitnessVC = storyboard!.instantiateViewControllerWithIdentifier("fitness") as! FitnessVC
@@ -37,6 +36,18 @@ class MainPageVC: UIPageViewController
         totalPages.append(environmentVC)
         
         setViewControllers([eyeWearVC], direction: .Forward, animated: true, completion: nil)
+        
+        leftBarButtonItem.target = self.revealViewController()
+        leftBarButtonItem.action = #selector(SWRevealViewController.revealToggle(_:))
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        print("MPVC VWA called")
+        
+        MainPageVC.activateScroll(true)
     }
     
     override func didReceiveMemoryWarning()
@@ -52,6 +63,25 @@ class MainPageVC: UIPageViewController
         }
         
         return totalPages[index]
+    }
+    
+    static func activateScroll(enable: Bool)
+    {
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let swRevealVC = appDelegate.window?.rootViewController as! SWRevealViewController
+        let navController = swRevealVC.frontViewController as! UINavigationController
+        let pageVC = navController.topViewController as! MainPageVC
+        
+        if enable
+        {
+            pageVC.delegate = pageVC
+            pageVC.dataSource = pageVC
+        }
+        else
+        {
+            pageVC.delegate = nil
+            pageVC.dataSource = nil
+        }
     }
 }
 

@@ -5,3 +5,4 @@
 #import <MetaWear/MetaWear.h>
 #import <PNChart/PNChart.h>
 #import "ISColorWheel.h"
+#import "SWRevealViewController.h"

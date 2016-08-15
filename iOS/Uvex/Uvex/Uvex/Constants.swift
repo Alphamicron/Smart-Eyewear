@@ -80,59 +80,61 @@ struct Constants
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delayTime * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
     }
     
-    static func isDeviceConnected()->Bool
-    {
-        if ConnectionVC.currentlySelectedDevice.state != .Connected
-        {
-            return false
-        }
-        return true
-    }
+    //MARK: Uncomment these methods
     
-    static func turnOffMetaWearLED()
-    {
-        ConnectionVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
-    }
-    
-    static func disconnectDevice()
-    {
-        ConnectionVC.currentlySelectedDevice.disconnectWithHandler(nil)
-    }
-    
-    static func displayBackgroundImageOnError(currentView: UIView, typeOfError: ErrorState)
-    {
-        let errorImageView: UIImageView = UIImageView(frame: CGRect(x: currentView.frame.origin.x, y: currentView.frame.origin.y, width: currentView.frame.width, height: currentView.frame.height))
-        errorImageView.backgroundColor = UIColor.whiteColor()
-        errorImageView.center = CGPointMake(currentView.bounds.size.width/2, currentView.bounds.size.height/2)
-        errorImageView.contentMode = .ScaleAspectFit
-        
-        switch typeOfError
-        {
-        case .NoMetaWear:
-            errorImageView.image = UIImage(named: "NoDevice")
-            
-        case .NoBLEConnection:
-            errorImageView.image = UIImage(named: "Bluetooth")
-        }
-        
-        errorImageView.backgroundColor = UIColor.whiteColor()
-        
-        currentView.addSubview(errorImageView)
-    }
-    
-    static func eraseAllSwitchCommands()
-    {
-        if let deviceHasButtonPrograms = ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands()
-        {
-            print(deviceHasButtonPrograms)
-            
-            if deviceHasButtonPrograms
-            {
-                ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
-            }
-            print(ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
-        }
-    }
+    //    static func isDeviceConnected()->Bool
+    //    {
+    //        if ConnectionVC.currentlySelectedDevice.state != .Connected
+    //        {
+    //            return false
+    //        }
+    //        return true
+    //    }
+    //    
+    //    static func turnOffMetaWearLED()
+    //    {
+    //        ConnectionVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+    //    }
+    //    
+    //    static func disconnectDevice()
+    //    {
+    //        ConnectionVC.currentlySelectedDevice.disconnectWithHandler(nil)
+    //    }
+    //    
+    //    static func displayBackgroundImageOnError(currentView: UIView, typeOfError: ErrorState)
+    //    {
+    //        let errorImageView: UIImageView = UIImageView(frame: CGRect(x: currentView.frame.origin.x, y: currentView.frame.origin.y, width: currentView.frame.width, height: currentView.frame.height))
+    //        errorImageView.backgroundColor = UIColor.whiteColor()
+    //        errorImageView.center = CGPointMake(currentView.bounds.size.width/2, currentView.bounds.size.height/2)
+    //        errorImageView.contentMode = .ScaleAspectFit
+    //        
+    //        switch typeOfError
+    //        {
+    //        case .NoMetaWear:
+    //            errorImageView.image = UIImage(named: "NoDevice")
+    //            
+    //        case .NoBLEConnection:
+    //            errorImageView.image = UIImage(named: "Bluetooth")
+    //        }
+    //        
+    //        errorImageView.backgroundColor = UIColor.whiteColor()
+    //        
+    //        currentView.addSubview(errorImageView)
+    //    }
+    //    
+    //    static func eraseAllSwitchCommands()
+    //    {
+    //        if let deviceHasButtonPrograms = ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands()
+    //        {
+    //            print(deviceHasButtonPrograms)
+    //            
+    //            if deviceHasButtonPrograms
+    //            {
+    //                ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
+    //            }
+    //            print(ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
+    //        }
+    //    }
     
     static func repeatThis(task requiredTask: Selector, forDuration taskDuration: NSTimeInterval, onTarget taskTarget: AnyObject)
     {

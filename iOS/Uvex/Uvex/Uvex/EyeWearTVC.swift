@@ -72,6 +72,9 @@ class EyeWearTVC: UITableViewController
             
         case 2:
             performSegueWithIdentifier("segueToManualVC", sender: nil)
+            
+        default:
+            return
         }
     }
 }
