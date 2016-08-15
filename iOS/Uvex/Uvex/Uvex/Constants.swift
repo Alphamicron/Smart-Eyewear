@@ -34,6 +34,7 @@ struct Constants
     static let maximumPinVoltage: Float = 3.0 // maximum voltage supplied by Pin 6 as of https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
     //    static let defaultFont: UIFont = UIFont(name: "AvenirNext-Regular", size: 20)!
     static let themeRedColour: UIColor = UIColor(red: 0.925, green: 0.114, blue: 0.141, alpha: 1.00)
+    static let themeBlueColour: UIColor = UIColor(red: 0.000, green: 0.639, blue: 0.855, alpha: 1.00)
     static let themeGreenColour: UIColor = UIColor(red: 0.290, green: 0.839, blue: 0.388, alpha: 1.00)
     static let themeYellowColour: UIColor = UIColor(red: 0.941, green: 0.843, blue: 0.020, alpha: 1.00)
     static let themeInactiveStateColour: UIColor = UIColor(red: 0.208, green: 0.169, blue: 0.137, alpha: 1.00)
