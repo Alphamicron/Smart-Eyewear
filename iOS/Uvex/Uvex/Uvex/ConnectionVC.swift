@@ -46,7 +46,7 @@ class ConnectionVC: UIViewController
         super.viewDidAppear(animated)
         
         setupUI(basedOnConnection: ConnectionVC.currentlySelectedDevice.state)
-        self.metawearStateLabel.text = ConnectionVC.currentlySelectedDevice.state.getState().lowercaseString        
+        self.metawearStateLabel.text = ConnectionVC.currentlySelectedDevice.state.getState().lowercaseString
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -99,7 +99,7 @@ class ConnectionVC: UIViewController
     }
     
     // POST: animates only during the connection establishment phase
-    func animateStateLabel()
+    func animateConnectionLogo()
     {
         if Constants.isDeviceConnected()
         {
@@ -114,7 +114,7 @@ class ConnectionVC: UIViewController
                     self.bluetoothImageView.alpha = 1.0
                     }, completion: { (completed: Bool) in
                         
-                        self.animateStateLabel()
+                        self.animateConnectionLogo()
                 })
             }
         }
@@ -126,7 +126,7 @@ class ConnectionVC: UIViewController
         // get the discovered metawear
         if let selectedDevice = foundDevices?[0]
         {
-            self.animateStateLabel()
+            self.animateConnectionLogo()
             self.metawearStateLabel.text = "connecting..."
             
             ConnectionVC.currentlySelectedDevice = selectedDevice
@@ -140,11 +140,8 @@ class ConnectionVC: UIViewController
                     print("Connection Timeout")
                     self.view.layer.removeAllAnimations()
                     self.connectionBtn.userInteractionEnabled = true
-                    //TODO: Alert the user of the timeout
-                    //                    self.noDeviceDetectedLabel.hidden = false
-                    //                    self.noDeviceDetectedLabel.text = "connection error"
-                    //                    self.neutralLabel.hidden = false
-                    //                    self.neutralLabel.text = "try again"
+                    
+                    Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Connection timed out.", errorPriority: AlertPriority.High)
                 }
                 else
                 {
@@ -164,26 +161,29 @@ class ConnectionVC: UIViewController
     
     func disconnectFromMetaWear()
     {
-        let disconnectConfirmationAlert: UIAlertController = UIAlertController(title: "Confirm", message: "Are you sure you want to disconnect the eyewear?", preferredStyle: .Alert)
+        print("user wants to disconnect device")
         
-        disconnectConfirmationAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
-        
-        disconnectConfirmationAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction) in
-            print("user wants to disconnect device")
-            
-            Constants.disconnectDevice()
-            self.setupUI(basedOnConnection: MBLConnectionState.Disconnected)
-            self.viewWillAppear(true)
-        }))
-        
-        presentViewController(disconnectConfirmationAlert, animated: true, completion: nil)
+        Constants.disconnectDevice()
+        self.setupUI(basedOnConnection: MBLConnectionState.Disconnected)
+        self.viewWillAppear(true)
     }
     
     @IBAction func connectionAction(sender: UIButton)
     {
         if Constants.isDeviceConnected()
         {
-            disconnectFromMetaWear()
+            let userAlert = JSSAlertView().show(
+                self,
+                title: "Confirm",
+                text: "Are you sure you want to disconnect the eyewear?",
+                buttonText: "Yep",
+                cancelButtonText: "Nope"
+            )
+            
+            userAlert.setTitleFont("AvenirNext-Regular")
+            userAlert.setTextFont("AvenirNext-Regular")
+            userAlert.setButtonFont("AvenirNext-Regular")
+            userAlert.addAction(disconnectFromMetaWear)
         }
         else
         {

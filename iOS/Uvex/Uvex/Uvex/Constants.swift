@@ -49,7 +49,13 @@ struct Constants
         {
         case .High:
             
-            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "dismiss", color: Constants.themeRedColour, iconImage: UIImage(named: "AlertEagle"))
+            let userAlert = JSSAlertView().show(
+                origin,
+                title: errorTitle,
+                text: errorMessage,
+                buttonText: "dismiss",
+                color: Constants.themeRedColour
+            )
             
             userAlert.setTextTheme(.Light)
             userAlert.setTitleFont("AvenirNext-Regular")
@@ -58,7 +64,13 @@ struct Constants
             
         case .Medium:
             
-            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "okay", color: Constants.themeYellowColour, iconImage: UIImage(named: "AlertEagleYellow"))
+            let userAlert = JSSAlertView().show(
+                origin,
+                title: errorTitle,
+                text: errorMessage,
+                buttonText: "okay",
+                color: Constants.themeYellowColour
+            )
             
             userAlert.setTextTheme(.Dark)
             userAlert.setTitleFont("AvenirNext-Regular")
@@ -67,7 +79,13 @@ struct Constants
             
         case .Low:
             
-            let userAlert = JSSAlertView().show(origin, title: errorTitle, text: errorMessage, buttonText: "okay", color: Constants.themeGreenColour, iconImage: UIImage(named: "AlertEagleGreen"))
+            let userAlert = JSSAlertView().show(
+                origin,
+                title: errorTitle,
+                text: errorMessage,
+                buttonText: "okay",
+                color: Constants.themeGreenColour
+            )
             
             userAlert.setTextTheme(.Light)
             userAlert.setTitleFont("AvenirNext-Regular")
