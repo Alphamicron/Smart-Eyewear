@@ -37,6 +37,7 @@ struct Constants
     static let themeBlueColour: UIColor = UIColor(red: 0.000, green: 0.639, blue: 0.855, alpha: 1.00)
     static let themeGreenColour: UIColor = UIColor(red: 0.290, green: 0.839, blue: 0.388, alpha: 1.00)
     static let themeYellowColour: UIColor = UIColor(red: 0.941, green: 0.843, blue: 0.020, alpha: 1.00)
+    static let themeOrangeColour: UIColor = UIColor(red: 0.918, green: 0.467, blue: 0.192, alpha: 1.00)
     static let themeInactiveStateColour: UIColor = UIColor(red: 0.208, green: 0.169, blue: 0.137, alpha: 1.00)
     static let themeTextColour: UIColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
     static let metaWearName: String = "MetaWear"
@@ -81,61 +82,59 @@ struct Constants
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delayTime * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
     }
     
-    //MARK: Uncomment these methods
+    static func isDeviceConnected()->Bool
+    {
+        if ConnectionVC.currentlySelectedDevice.state != .Connected
+        {
+            return false
+        }
+        return true
+    }
     
-    //    static func isDeviceConnected()->Bool
-    //    {
-    //        if ConnectionVC.currentlySelectedDevice.state != .Connected
-    //        {
-    //            return false
-    //        }
-    //        return true
-    //    }
-    //    
-    //    static func turnOffMetaWearLED()
-    //    {
-    //        ConnectionVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
-    //    }
-    //    
-    //    static func disconnectDevice()
-    //    {
-    //        ConnectionVC.currentlySelectedDevice.disconnectWithHandler(nil)
-    //    }
-    //    
-    //    static func displayBackgroundImageOnError(currentView: UIView, typeOfError: ErrorState)
-    //    {
-    //        let errorImageView: UIImageView = UIImageView(frame: CGRect(x: currentView.frame.origin.x, y: currentView.frame.origin.y, width: currentView.frame.width, height: currentView.frame.height))
-    //        errorImageView.backgroundColor = UIColor.whiteColor()
-    //        errorImageView.center = CGPointMake(currentView.bounds.size.width/2, currentView.bounds.size.height/2)
-    //        errorImageView.contentMode = .ScaleAspectFit
-    //        
-    //        switch typeOfError
-    //        {
-    //        case .NoMetaWear:
-    //            errorImageView.image = UIImage(named: "NoDevice")
-    //            
-    //        case .NoBLEConnection:
-    //            errorImageView.image = UIImage(named: "Bluetooth")
-    //        }
-    //        
-    //        errorImageView.backgroundColor = UIColor.whiteColor()
-    //        
-    //        currentView.addSubview(errorImageView)
-    //    }
-    //    
-    //    static func eraseAllSwitchCommands()
-    //    {
-    //        if let deviceHasButtonPrograms = ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands()
-    //        {
-    //            print(deviceHasButtonPrograms)
-    //            
-    //            if deviceHasButtonPrograms
-    //            {
-    //                ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
-    //            }
-    //            print(ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
-    //        }
-    //    }
+    static func turnOffMetaWearLED()
+    {
+        ConnectionVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
+    }
+    
+    static func disconnectDevice()
+    {
+        ConnectionVC.currentlySelectedDevice.disconnectWithHandler(nil)
+    }
+    
+    static func displayBackgroundImageOnError(currentView: UIView, typeOfError: ErrorState)
+    {
+        let errorImageView: UIImageView = UIImageView(frame: CGRect(x: currentView.frame.origin.x, y: currentView.frame.origin.y, width: currentView.frame.width, height: currentView.frame.height))
+        errorImageView.backgroundColor = UIColor.whiteColor()
+        errorImageView.center = CGPointMake(currentView.bounds.size.width/2, currentView.bounds.size.height/2)
+        errorImageView.contentMode = .ScaleAspectFit
+        
+        switch typeOfError
+        {
+        case .NoMetaWear:
+            errorImageView.image = UIImage(named: "NoDevice")
+            
+        case .NoBLEConnection:
+            errorImageView.image = UIImage(named: "Bluetooth")
+        }
+        
+        errorImageView.backgroundColor = UIColor.whiteColor()
+        
+        currentView.addSubview(errorImageView)
+    }
+    
+    static func eraseAllSwitchCommands()
+    {
+        if let deviceHasButtonPrograms = ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands()
+        {
+            print(deviceHasButtonPrograms)
+            
+            if deviceHasButtonPrograms
+            {
+                ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.eraseCommandsToRunOnEventAsync()
+            }
+            print(ConnectionVC.currentlySelectedDevice.mechanicalSwitch?.switchUpdateEvent.hasCommands())
+        }
+    }
     
     static func repeatThis(task requiredTask: Selector, forDuration taskDuration: NSTimeInterval, onTarget taskTarget: AnyObject)
     {
