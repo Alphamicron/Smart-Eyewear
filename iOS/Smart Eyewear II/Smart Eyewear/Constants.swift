@@ -167,7 +167,7 @@ enum ErrorState
     case NoBLEConnection
 }
 
-enum LEDState
+enum SwitchState
 {
     case On
     case Off

@@ -51,14 +51,16 @@ class ActivationVC: UIViewController
         self.navigationController?.navigationBar.barTintColor = Constants.themeRedColour
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "NavGogglesWhite"))
         
-        ActivationVC.turnLED(LEDState.Off)
+        ActivationVC.turnPhotoSensor(SwitchState.Off)
     }
     
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
         
-        ActivationVC.turnLED(LEDState.Off)
+        ActivationVC.turnPhotoSensor(SwitchState.Off)
+        
+        Constants.defaultTimer.invalidate()
     }
     
     override func didReceiveMemoryWarning()
@@ -71,11 +73,11 @@ class ActivationVC: UIViewController
     {
         if sender.value > userThresholdSlider.value
         {
-            ActivationVC.turnLED(LEDState.On)
+            ActivationVC.turnPhotoSensor(SwitchState.On)
         }
         else
         {
-            ActivationVC.turnLED(LEDState.Off)
+            ActivationVC.turnPhotoSensor(SwitchState.Off)
         }
     }
     
@@ -84,11 +86,11 @@ class ActivationVC: UIViewController
     {
         if sender.value < metaWearValueSlider.value
         {
-            ActivationVC.turnLED(LEDState.On)
+            ActivationVC.turnPhotoSensor(SwitchState.On)
         }
         else
         {
-            ActivationVC.turnLED(LEDState.Off)
+            ActivationVC.turnPhotoSensor(SwitchState.Off)
         }
     }
     
@@ -109,7 +111,7 @@ class ActivationVC: UIViewController
             manualBtn.backgroundColor = Constants.themeInactiveStateColour
             manualBtn.userInteractionEnabled = false
             
-            ActivationVC.turnLED(LEDState.Off)
+            ActivationVC.turnPhotoSensor(SwitchState.Off)
         }
     }
     
@@ -120,7 +122,7 @@ class ActivationVC: UIViewController
             manualSwitch.setOn(false, animated: true)
             manualSwitch.sendActionsForControlEvents(.ValueChanged)
             
-            setImagesForState(LEDState.On)
+            setImagesForState(SwitchState.On)
             
             metaWearValueSlider.thumbTintColor = Constants.themeRedColour
             userThresholdSlider.thumbTintColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
@@ -152,9 +154,9 @@ class ActivationVC: UIViewController
             userThresholdSlider.setValue(Float(), animated: true)
             metaWearValueSlider.setValue(Float(), animated: true)
             
-            setImagesForState(LEDState.Off)
+            setImagesForState(SwitchState.Off)
             
-            ActivationVC.turnLED(LEDState.Off)
+            ActivationVC.turnPhotoSensor(SwitchState.Off)
         }
     }
     
@@ -164,7 +166,7 @@ class ActivationVC: UIViewController
         
         if sender.selected // button has already been pressed before
         {
-            ActivationVC.turnLED(LEDState.Off)
+            ActivationVC.turnPhotoSensor(SwitchState.Off)
             sender.setTitle("OFF", forState: .Selected)
             sender.backgroundColor = Constants.themeRedColour
             
@@ -172,7 +174,7 @@ class ActivationVC: UIViewController
         else // not pressed before
         {
             sender.setTitle("ON", forState: .Normal)
-            ActivationVC.turnLED(LEDState.On)
+            ActivationVC.turnPhotoSensor(SwitchState.On)
             sender.backgroundColor = Constants.themeGreenColour
         }
     }
@@ -189,9 +191,9 @@ class ActivationVC: UIViewController
         }
     }
     
-    func setImagesForState(ledState: LEDState)
+    func setImagesForState(switchState: SwitchState)
     {
-        switch ledState
+        switch switchState
         {
         case .On:
             cloudyImageView.image = UIImage(named: "Clouds")
@@ -225,7 +227,7 @@ class ActivationVC: UIViewController
         helpBtn.hidden = true
         helpTextLabel.hidden = true
         
-        setImagesForState(LEDState.Off)
+        setImagesForState(SwitchState.Off)
         
         manualBtn.setTitle("OFF", forState: .Normal)
     }
@@ -273,13 +275,13 @@ class ActivationVC: UIViewController
         Constants.defaultTimer = NSTimer.scheduledTimerWithTimeInterval(taskDuration, target: self, selector: requiredTask, userInfo: nil, repeats: true)
     }
     
-    static func turnLED(ledState: LEDState)
+    static func turnPhotoSensor(switchState: SwitchState)
     {
         if let metaWearGPIO = ConnectionVC.currentlySelectedDevice.gpio
         {
             let LEDPin = metaWearGPIO.pins[PinAssignments.pinOne] as! MBLGPIOPin
             
-            switch ledState
+            switch switchState
             {
             case .On:
                 LEDPin.setToDigitalValueAsync(true)

@@ -173,7 +173,7 @@ class ConnectionVC: UIViewController
                         // erase all non-volatile memory data and results into a disconnection
                         //                        ConnectionVC.currentlySelectedDevice.setConfiguration(nil, handler: nil)
                         
-                        ActivationVC.turnLED(LEDState.Off)
+                        ActivationVC.turnPhotoSensor(SwitchState.Off)
                         
                         self.tapToConnectLabel.hidden = true
                         self.neutralLabel.hidden = false
