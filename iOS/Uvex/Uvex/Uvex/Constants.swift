@@ -21,26 +21,28 @@ import JSSAlertView
 
 struct Constants
 {
-    static let defaultFont: UIFont = UIFont(name: "AvenirNext-Bold", size: 40)!
-    static let themeRed: UIColor = UIColor(red: 0.871, green: 0.294, blue: 0.165, alpha: 1.00)
-    
+    // Metawear
+    static let maximumPinVoltage: Float = 3.0 // maximum voltage supplied by Pin 6 as of https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
+    static let metaWearName: String = "MetaWear"
     static let deviceFullChargeValue: NSNumber = 100
+    static let userThresholdMaximumValue: Float = 1024 // photo sensor max threshold
+    static let userThresholdMinimumValue: Float = Float() // photo sensor threshold min threshold
+    
+    // Timers
+    static var defaultTimer: NSTimer = NSTimer()
     static let defaultTimeOut: NSTimeInterval = 15 // max waiting time for a device to be connected
     static let defaultDelayTime: NSTimeInterval = 1.0
-    static let defaultLEDIntensity: CGFloat = 1.0
-    static var defaultTimer: NSTimer = NSTimer()
-    static let userThresholdMinimumValue: Float = Float() // min value for a valid photo sensor threshold
-    static let userThresholdMaximumValue: Float = 1024 // max value for a valid photo sensor threshold
-    static let maximumPinVoltage: Float = 3.0 // maximum voltage supplied by Pin 6 as of https://mbientlab.com/docs/MetaWearCPSv0.5.pdf
-    //    static let defaultFont: UIFont = UIFont(name: "AvenirNext-Regular", size: 20)!
+    
+    // UI
+    static let defaultHeadingFont: UIFont = UIFont(name: "AvenirNext-Bold", size: 40)!
+    static let defaultNormalFont: UIFont = UIFont(name: "AvenirNext-Regular", size: 20)!
     static let themeRedColour: UIColor = UIColor(red: 0.925, green: 0.114, blue: 0.141, alpha: 1.00)
+    static let themeGreyColour: UIColor = UIColor(red: 0.706, green: 0.710, blue: 0.706, alpha: 1.00)
     static let themeBlueColour: UIColor = UIColor(red: 0.000, green: 0.639, blue: 0.855, alpha: 1.00)
+    static let themeTextColour: UIColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
     static let themeGreenColour: UIColor = UIColor(red: 0.290, green: 0.839, blue: 0.388, alpha: 1.00)
     static let themeYellowColour: UIColor = UIColor(red: 0.941, green: 0.843, blue: 0.020, alpha: 1.00)
     static let themeOrangeColour: UIColor = UIColor(red: 0.918, green: 0.467, blue: 0.192, alpha: 1.00)
-    static let themeInactiveStateColour: UIColor = UIColor(red: 0.208, green: 0.169, blue: 0.137, alpha: 1.00)
-    static let themeTextColour: UIColor = UIColor(red: 0.502, green: 0.506, blue: 0.518, alpha: 1.00)
-    static let metaWearName: String = "MetaWear"
     
     static func defaultErrorAlert(origin: UIViewController, errorTitle: String, errorMessage: String, errorPriority: AlertPriority)
     {

@@ -25,7 +25,7 @@ class MainPageVC: UIPageViewController
         
         view.backgroundColor = UIColor.whiteColor()
         
-        let attributes: [String : AnyObject] = [NSFontAttributeName: Constants.defaultFont]
+        let attributes: [String : AnyObject] = [NSFontAttributeName: Constants.defaultHeadingFont]
         rightBarButtonItem.setTitleTextAttributes(attributes, forState: .Normal)
         
         let eyeWearVC = storyboard!.instantiateViewControllerWithIdentifier("eyeWear") as! EyeWearVC

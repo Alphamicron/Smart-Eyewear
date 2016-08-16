@@ -58,11 +58,10 @@ class BatteryLevelVC: UIViewController
     {
         let circleFrame: CGRect = CGRect(x: self.view.bounds.size.width/2.02, y: self.view.bounds.size.height/4, width: self.view.bounds.size.width/65, height: self.view.bounds.size.height/2)
         
-        let circleChart = PNCircleChart(frame: circleFrame, total: Constants.deviceFullChargeValue, current: currentDeviceCharge, clockwise: true, shadow: true, shadowColor: Constants.themeInactiveStateColour)
+        let circleChart = PNCircleChart(frame: circleFrame, total: Constants.deviceFullChargeValue, current: currentDeviceCharge, clockwise: true, shadow: true, shadowColor: Constants.themeGreyColour)
         
         circleChart.displayCountingLabel = true
-        circleChart.countingLabel.font = Constants.defaultFont
-        circleChart.countingLabel.font = circleChart.countingLabel.font.fontWithSize(40.0)
+        circleChart.countingLabel.font = Constants.defaultNormalFont.fontWithSize(40)
         circleChart.countingLabel.kerning = 1.0 // increase character spacing
         circleChart.lineWidth = 28
         circleChart.strokeColor = getColourForCharge(currentDeviceCharge)
