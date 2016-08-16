@@ -279,14 +279,14 @@ class ActivationVC: UIViewController
     {
         if let metaWearGPIO = ConnectionVC.currentlySelectedDevice.gpio
         {
-            let LEDPin = metaWearGPIO.pins[PinAssignments.pinOne] as! MBLGPIOPin
+            let photoSensorPin = metaWearGPIO.pins[PinAssignments.pinOne] as! MBLGPIOPin
             
             switch switchState
             {
             case .On:
-                LEDPin.setToDigitalValueAsync(true)
+                photoSensorPin.setToDigitalValueAsync(true)
             case .Off:
-                LEDPin.setToDigitalValueAsync(false)
+                photoSensorPin.setToDigitalValueAsync(false)
             }
         }
     }
