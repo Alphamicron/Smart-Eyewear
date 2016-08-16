@@ -93,7 +93,7 @@ class EnvironmentTVC: UITableViewController
             
             if let pressureError = error
             {
-                Constants.defaultErrorAlert(self, errorTitle: "Sensor Error", errorMessage: pressureError.localizedDescription, errorPriority: AlertPriority.Medium)
+                Constants.defaultErrorAlert(self, errorTitle: "Sensor Error", errorMessage: pressureError.localizedDescription, buttonText: "dismiss")
             }
             
             let currentPressure: MBLNumericData = result as! MBLNumericData
@@ -116,7 +116,7 @@ class EnvironmentTVC: UITableViewController
             
             if let altitudeError = error
             {
-                Constants.defaultErrorAlert(self, errorTitle: "Sensor Error", errorMessage: altitudeError.localizedDescription, errorPriority: AlertPriority.Medium)
+                Constants.defaultErrorAlert(self, errorTitle: "Sensor Error", errorMessage: altitudeError.localizedDescription, buttonText: "dismiss")
             }
             
             let currentAltitude: MBLNumericData = result as! MBLNumericData

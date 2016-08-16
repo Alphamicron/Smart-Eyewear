@@ -141,8 +141,9 @@ class ConnectionVC: UIViewController
                     
                     self.timeOutErrorHappened = true
                     
-                    Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: connectionError.localizedDescription, errorPriority: AlertPriority.High)
-                    
+                    Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: connectionError.localizedDescription, buttonText: "dismiss")
+                    self.centralManager.stopScan()
+                    self.viewWillAppear(true)
                     self.setupUI(basedOnConnection: MBLConnectionState.Disconnected)
                 }
                 else
@@ -207,10 +208,10 @@ extension ConnectionVC: CBCentralManagerDelegate
         case .PoweredOff:
             print("BLE OFF")
             
-            Constants.defaultErrorAlert(self, errorTitle: "Bluetooth Error", errorMessage: "Please turn on your bluetooth to connect to the CTRL Eyewear", errorPriority: AlertPriority.High)
+            Constants.defaultErrorAlert(self, errorTitle: "Bluetooth Error", errorMessage: "Please turn on your bluetooth to connect to the Uvex Eyewear.", buttonText: "dismiss")
             
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
-            Constants.displayBackgroundImageOnError(self.view, typeOfError: ErrorState.NoBLEConnection)
+            //            Constants.displayBackgroundImageOnError(self.view, typeOfError: ErrorState.NoBLEConnection)
             break
             
         case .Resetting:
@@ -220,7 +221,7 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .Unauthorized:
             print("BLE Unauthorized")
-            Constants.defaultErrorAlert(self, errorTitle: "Authorisation Error", errorMessage: "Smart Eyewear requires access to Bluetooth", errorPriority: AlertPriority.High)
+            Constants.defaultErrorAlert(self, errorTitle: "Authorization Error", errorMessage: "Uvex Eyewear requires access to Bluetooth.", buttonText: "dismiss")
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
             
@@ -231,7 +232,7 @@ extension ConnectionVC: CBCentralManagerDelegate
             
         case .Unsupported:
             print("BLE Unsupported")
-            Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Device does not support Bluetooth Low Energy technology", errorPriority: AlertPriority.High)
+            Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Device does not support Bluetooth Low Energy technology.", buttonText: "dismiss")
             MBLMetaWearManager.sharedManager().stopScanForMetaWears()
             break
         }
@@ -239,7 +240,7 @@ extension ConnectionVC: CBCentralManagerDelegate
     
     func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?)
     {
-        Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: (error?.localizedDescription)!, errorPriority: AlertPriority.High)
+        Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: (error?.localizedDescription)!, buttonText: "dismiss")
     }
     
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber)

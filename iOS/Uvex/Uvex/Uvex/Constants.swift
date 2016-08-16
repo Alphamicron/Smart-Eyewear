@@ -44,55 +44,19 @@ struct Constants
     static let themeYellowColour: UIColor = UIColor(red: 0.941, green: 0.843, blue: 0.020, alpha: 1.00)
     static let themeOrangeColour: UIColor = UIColor(red: 0.918, green: 0.467, blue: 0.192, alpha: 1.00)
     
-    static func defaultErrorAlert(origin: UIViewController, errorTitle: String, errorMessage: String, errorPriority: AlertPriority)
+    static func defaultErrorAlert(origin: UIViewController, errorTitle: String, errorMessage: String, buttonText: String)
     {
-        switch errorPriority
-        {
-        case .High:
-            
-            let userAlert = JSSAlertView().show(
-                origin,
-                title: errorTitle,
-                text: errorMessage,
-                buttonText: "dismiss",
-                color: Constants.themeRedColour
-            )
-            
-            userAlert.setTextTheme(.Light)
-            userAlert.setTitleFont("AvenirNext-Regular")
-            userAlert.setTextFont("AvenirNext-Regular")
-            userAlert.setButtonFont("AvenirNext-Regular")
-            
-        case .Medium:
-            
-            let userAlert = JSSAlertView().show(
-                origin,
-                title: errorTitle,
-                text: errorMessage,
-                buttonText: "okay",
-                color: Constants.themeYellowColour
-            )
-            
-            userAlert.setTextTheme(.Dark)
-            userAlert.setTitleFont("AvenirNext-Regular")
-            userAlert.setTextFont("AvenirNext-Regular")
-            userAlert.setButtonFont("AvenirNext-Regular")
-            
-        case .Low:
-            
-            let userAlert = JSSAlertView().show(
-                origin,
-                title: errorTitle,
-                text: errorMessage,
-                buttonText: "okay",
-                color: Constants.themeGreenColour
-            )
-            
-            userAlert.setTextTheme(.Light)
-            userAlert.setTitleFont("AvenirNext-Regular")
-            userAlert.setTextFont("AvenirNext-Regular")
-            userAlert.setButtonFont("AvenirNext-Regular")
-        }
+        let userAlert = JSSAlertView().show(
+            origin,
+            title: errorTitle,
+            text: errorMessage,
+            buttonText: buttonText
+        )
+        
+        userAlert.setTextTheme(.Dark)
+        userAlert.setTitleFont("AvenirNext-Regular")
+        userAlert.setTextFont("AvenirNext-Regular")
+        userAlert.setButtonFont("AvenirNext-Regular")
     }
     
     static func defaultNoDeviceAlert(On origin: UIViewController)
@@ -100,12 +64,11 @@ struct Constants
         let userAlert = JSSAlertView().show(
             origin,
             title: "Device Error",
-            text: "A CTRL Eyewear needs to be connected to access features.",
-            buttonText: "dismiss",
-            color: Constants.themeRedColour
+            text: "A Uvex Eyewear needs to be connected to access features.",
+            buttonText: "dismiss"
         )
         
-        userAlert.setTextTheme(.Light)
+        userAlert.setTextTheme(.Dark)
         userAlert.setTitleFont("AvenirNext-Regular")
         userAlert.setTextFont("AvenirNext-Regular")
         userAlert.setButtonFont("AvenirNext-Regular")
@@ -188,13 +151,6 @@ struct GraphPoints
     var yAxes: [Double] = [Double]()
     var zAxes: [Double] = [Double]()
     var rmsValues: [Double] = [Double]()
-}
-
-enum AlertPriority
-{
-    case Low
-    case Medium
-    case High
 }
 
 enum ErrorState
