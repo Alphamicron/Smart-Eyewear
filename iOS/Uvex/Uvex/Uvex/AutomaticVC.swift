@@ -7,29 +7,51 @@
 //
 
 import UIKit
+import JSSAlertView
 
-class AutomaticVC: UIViewController {
-
-    override func viewDidLoad() {
+class AutomaticVC: UIViewController
+{
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        if ManualVC.manualModeOn
+        {
+            let userAlert = JSSAlertView().show(
+                self,
+                title: "Confirm",
+                text: "Manual mode is still active. Do you wish to deactivate it?",
+                buttonText: "Yep",
+                cancelButtonText: "Nope"
+            )
+            
+            userAlert.setTitleFont("AvenirNext-Regular")
+            userAlert.setTextFont("AvenirNext-Regular")
+            userAlert.setButtonFont("AvenirNext-Regular")
+            userAlert.addAction(test)
+            userAlert.addCancelAction(exitView)
+        }
+        else
+        {
+            
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
     }
-    */
-
+    
+    func test()
+    {
+        print("user entered auto mode")
+        
+        ManualVC.manualModeOn = false
+        ManualVC.turnPhotoSensor(SwitchState.Off)
+    }
+    
+    func exitView()
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }

@@ -14,6 +14,9 @@ class ManualVC: UIViewController
     @IBOutlet weak var switchStateLabel: UILabel!
     
     var isPhotoSensorOn: Bool = Bool()
+    static var manualModeOn: Bool = Bool()
+    
+    //TODO: Account for the scenario when the user comes from Auto mode
     
     override func viewDidLoad()
     {
@@ -39,6 +42,20 @@ class ManualVC: UIViewController
         else
         {
             setupUI(forState: SwitchState.Off)
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        
+        if isPhotoSensorOn
+        {
+            ManualVC.manualModeOn = true
+        }
+        else
+        {
+            ManualVC.manualModeOn = false
         }
     }
     
