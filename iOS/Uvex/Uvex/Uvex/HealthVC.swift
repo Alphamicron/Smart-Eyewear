@@ -33,6 +33,13 @@ class HealthVC: UIViewController
     
     func userTappedView(sender: UITapGestureRecognizer)
     {
-        performSegueWithIdentifier("segueToHealthTVC", sender: nil)
+        if !Constants.isDeviceConnected()
+        {
+            Constants.defaultNoDeviceAlert(On: self)
+        }
+        else
+        {
+            performSegueWithIdentifier("segueToHealthTVC", sender: nil)
+        }
     }
 }

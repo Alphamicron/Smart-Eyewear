@@ -95,6 +95,22 @@ struct Constants
         }
     }
     
+    static func defaultNoDeviceAlert(On origin: UIViewController)
+    {
+        let userAlert = JSSAlertView().show(
+            origin,
+            title: "Device Error",
+            text: "A CTRL Eyewear needs to be connected to access features.",
+            buttonText: "dismiss",
+            color: Constants.themeRedColour
+        )
+        
+        userAlert.setTextTheme(.Light)
+        userAlert.setTitleFont("AvenirNext-Regular")
+        userAlert.setTextFont("AvenirNext-Regular")
+        userAlert.setButtonFont("AvenirNext-Regular")
+    }
+    
     // POST: Delays any operation for 'delayTime' duration. Time is in seconds.
     static func delayFor(delayTime: Double, closure:()->())
     {

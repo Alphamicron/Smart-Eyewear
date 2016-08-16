@@ -33,6 +33,13 @@ class EnvironmentVC: UIViewController
     
     func userTappedView(sender: UITapGestureRecognizer)
     {
-        performSegueWithIdentifier("segueToEnvironmentTVC", sender: nil)
+        if !Constants.isDeviceConnected()
+        {
+            Constants.defaultNoDeviceAlert(On: self)
+        }
+        else
+        {
+            performSegueWithIdentifier("segueToEnvironmentTVC", sender: nil)
+        }
     }
 }

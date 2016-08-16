@@ -34,7 +34,14 @@ class EyeWearVC: UIViewController
     
     func userTappedView(sender: UITapGestureRecognizer)
     {
-        performSegueWithIdentifier("segueToEyeWearTVC", sender: nil)
+        if !Constants.isDeviceConnected()
+        {
+            Constants.defaultNoDeviceAlert(On: self)
+        }
+        else
+        {
+            performSegueWithIdentifier("segueToEyeWearTVC", sender: nil)
+        }
     }
     
     //********* VIDEO PLAYER IMPLEMENTATION *********//

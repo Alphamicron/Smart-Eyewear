@@ -20,6 +20,8 @@ class EnvironmentTVC: UITableViewController
 {
     var environmentServices: [Service] = [Service]()
     
+    let BMP280Barometer: MBLBarometerBMP280 = ConnectionVC.currentlySelectedDevice.barometer as! MBLBarometerBMP280
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -29,6 +31,15 @@ class EnvironmentTVC: UITableViewController
         
         let tempObject: Services = Services.sharedInstance
         environmentServices = tempObject.getAllServices(under: ServiceType.Environment)
+        
+        readPressure()
+    }
+    
+    override func viewDidDisappear(animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        
+        BMP280Barometer.periodicPressure.stopNotificationsAsync()
     }
     
     override func didReceiveMemoryWarning()
@@ -67,5 +78,13 @@ class EnvironmentTVC: UITableViewController
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         print("Cell \(indexPath.row) selected")
+    }
+    
+    func readPressure()
+    {
+        BMP280Barometer.periodicPressure.startNotificationsWithHandlerAsync { (result: AnyObject?, error: NSError?) in
+            let currentPressure: MBLNumericData = result as! MBLNumericData
+            print(currentPressure.value.integerValue)
+        }
     }
 }

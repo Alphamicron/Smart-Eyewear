@@ -32,6 +32,13 @@ class FitnessVC: UIViewController
     
     func userTappedView(sender: UITapGestureRecognizer)
     {
-        performSegueWithIdentifier("segueToFitnessTVC", sender: nil)
+        if !Constants.isDeviceConnected()
+        {
+            Constants.defaultNoDeviceAlert(On: self)
+        }
+        else
+        {
+            performSegueWithIdentifier("segueToFitnessTVC", sender: nil)
+        }
     }
 }

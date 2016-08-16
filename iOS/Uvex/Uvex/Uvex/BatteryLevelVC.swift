@@ -16,36 +16,27 @@ class BatteryLevelVC: UIViewController
     {
         super.viewDidLoad()
         
-        if !Constants.isDeviceConnected()
-        {
-            Constants.defaultErrorAlert(self, errorTitle: "Connection Error", errorMessage: "A CTRL Eyewear needs to be connected to see its battery life", errorPriority: AlertPriority.High)
+        ConnectionVC.currentlySelectedDevice.readBatteryLifeWithHandler({ (deviceChargeValue: NSNumber?, error: NSError?) in
             
-            //            Constants.displayBackgroundImageOnError(self.view, typeOfError: ErrorState.NoMetaWear)
-        }
-        else
-        {
-            ConnectionVC.currentlySelectedDevice.readBatteryLifeWithHandler({ (deviceChargeValue: NSNumber?, error: NSError?) in
+            // Metawear error getting the current battery level
+            if let batteryCheckError = error
+            {
+                let userAlert = JSSAlertView().show(
+                    self,
+                    title: "Battery Error",
+                    text: batteryCheckError.localizedDescription,
+                    buttonText: "Try Again",
+                    cancelButtonText: "Dismiss"
+                )
                 
-                // Metawear error getting the current battery level
-                if let batteryCheckError = error
-                {
-                    let userAlert = JSSAlertView().show(
-                        self,
-                        title: "Battery Error",
-                        text: batteryCheckError.localizedDescription,
-                        buttonText: "Try Again",
-                        cancelButtonText: "Dismiss"
-                    )
-                    
-                    userAlert.setTitleFont("AvenirNext-Regular")
-                    userAlert.setTextFont("AvenirNext-Regular")
-                    userAlert.setButtonFont("AvenirNext-Regular")
-                    userAlert.addAction(self.viewDidLoad)
-                }
-                
-                self.drawCircleGraph(deviceChargeValue!)
-            })
-        }
+                userAlert.setTitleFont("AvenirNext-Regular")
+                userAlert.setTextFont("AvenirNext-Regular")
+                userAlert.setButtonFont("AvenirNext-Regular")
+                userAlert.addAction(self.viewDidLoad)
+            }
+            
+            self.drawCircleGraph(deviceChargeValue!)
+        })
     }
     
     override func didReceiveMemoryWarning()
