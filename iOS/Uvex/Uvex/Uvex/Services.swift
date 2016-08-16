@@ -52,9 +52,9 @@ class Services
         
         // Environment Services
         let humidity: Service = Service(serviceIcon: UIImage(named: "WaterDrop")!, serviceName: "Humidity (%)")
-        let pressure: Service = Service(serviceIcon: UIImage(named: "Barometer")!, serviceName: "Pressure (mPa)")
+        let pressure: Service = Service(serviceIcon: UIImage(named: "Barometer")!, serviceName: "Pressure (Pa)")
         let temperature: Service = Service(serviceIcon: UIImage(named: "Thermometer")!, serviceName: "Temperature (°F)")
-        let altitude: Service = Service(serviceIcon: UIImage(named: "Altitude")!, serviceName: "Altitude (mts)")
+        let altitude: Service = Service(serviceIcon: UIImage(named: "Altitude")!, serviceName: "Altitude (m)")
         
         let allEyewearServices: [Service] = [batteryLevel, autoMode, manualMode]
         let allFitnessServices: [Service] = [steps, calories, distance]

@@ -31,8 +31,6 @@ class EnvironmentTVC: UITableViewController
         
         let tempObject: Services = Services.sharedInstance
         environmentServices = tempObject.getAllServices(under: ServiceType.Environment)
-        
-        readPressure()
     }
     
     override func viewDidDisappear(animated: Bool)
@@ -40,6 +38,7 @@ class EnvironmentTVC: UITableViewController
         super.viewDidDisappear(animated)
         
         BMP280Barometer.periodicPressure.stopNotificationsAsync()
+        BMP280Barometer.periodicAltitude.stopNotificationsAsync()
     }
     
     override func didReceiveMemoryWarning()
@@ -61,13 +60,26 @@ class EnvironmentTVC: UITableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var start: Int = 0, end: Int = 500
+        var start: Int = 0, end: Int = 100
         
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! EnvironmentTVCell
         
         cell.serviceIcon.image = environmentServices[indexPath.row].serviceIcon
         cell.serviceName.text = environmentServices[indexPath.row].serviceName
-        cell.serviceData.text = String(FitnessTVC.randomNumber(from: &start, to: &end))
+        
+        switch indexPath.row
+        {
+        case 0: // Humidity
+            cell.serviceData.text = String(FitnessTVC.randomNumber(from: &start, to: &end))
+        case 1: // Pressure
+            readPressure(thenUpdateOn: cell.serviceData)
+        case 2: // Temperature
+            readTemperature(thenUpdateOn: cell.serviceData)
+        case 3: // Altitude
+            readAltitude(thenUpdateOn: cell.serviceData)
+        default:
+            break
+        }
         
         cell.selectionStyle = .None
         cell.serviceView.layer.borderColor = UIColor(red: 0.718, green: 0.722, blue: 0.702, alpha: 1.00).CGColor
@@ -75,16 +87,46 @@ class EnvironmentTVC: UITableViewController
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        print("Cell \(indexPath.row) selected")
-    }
-    
-    func readPressure()
+    func readPressure(thenUpdateOn dataLabel: UILabel)
     {
         BMP280Barometer.periodicPressure.startNotificationsWithHandlerAsync { (result: AnyObject?, error: NSError?) in
+            
+            if let pressureError = error
+            {
+                Constants.defaultErrorAlert(self, errorTitle: "Sensor Error", errorMessage: pressureError.localizedDescription, errorPriority: AlertPriority.Medium)
+            }
+            
             let currentPressure: MBLNumericData = result as! MBLNumericData
-            print(currentPressure.value.integerValue)
+            dataLabel.text = String(currentPressure.value.integerValue)
         }
+    }
+    
+    func readTemperature(thenUpdateOn dataLabel: UILabel)
+    {
+        ConnectionVC.currentlySelectedDevice.temperature?.onboardThermistor?.readAsync().success({ (result: AnyObject) in
+            
+            let currentTemperature: MBLNumericData = result as! MBLNumericData
+            dataLabel.text = String(Int(self.convertToFahrenheit(currentTemperature.value.floatValue)))
+        })
+    }
+    
+    func readAltitude(thenUpdateOn dataLabel: UILabel)
+    {
+        BMP280Barometer.periodicAltitude.startNotificationsWithHandlerAsync { (result: AnyObject?, error: NSError?) in
+            
+            if let altitudeError = error
+            {
+                Constants.defaultErrorAlert(self, errorTitle: "Sensor Error", errorMessage: altitudeError.localizedDescription, errorPriority: AlertPriority.Medium)
+            }
+            
+            let currentAltitude: MBLNumericData = result as! MBLNumericData
+            print(currentAltitude.value.floatValue)
+            dataLabel.text = String(currentAltitude.value.integerValue)
+        }
+    }
+    
+    func convertToFahrenheit(temperature: Float)->Float
+    {
+        return (1.8 * temperature) + 32.0
     }
 }
