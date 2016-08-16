@@ -16,10 +16,10 @@ class ConnectionVC: UIViewController
     @IBOutlet weak var metawearStateLabel: UILabel!
     @IBOutlet weak var connectionBtn: UIButton!
     
+    var timeOutErrorHappened: Bool = false
     var foundDevices: Array<MBLMetaWear>?
     var centralManager: CBCentralManager = CBCentralManager()
     static var currentlySelectedDevice: MBLMetaWear = MBLMetaWear()
-    var scanOptions = [CBCentralManagerScanOptionAllowDuplicatesKey : Int(false)]
     
     override func viewDidLoad()
     {
@@ -46,7 +46,6 @@ class ConnectionVC: UIViewController
         super.viewDidAppear(animated)
         
         setupUI(basedOnConnection: ConnectionVC.currentlySelectedDevice.state)
-        self.metawearStateLabel.text = ConnectionVC.currentlySelectedDevice.state.getState().lowercaseString
     }
     
     override func viewWillDisappear(animated: Bool)
@@ -89,19 +88,20 @@ class ConnectionVC: UIViewController
             self.connectionBtn.hidden = false
             self.bluetoothImageView.image = UIImage(named: "BT-Blue")
             self.metawearStateLabel.textColor = Constants.themeBlueColour
+            self.metawearStateLabel.text = connectionState.getState().lowercaseString
             
         default:
             self.connectionBtn.hidden = true
-            self.metawearStateLabel.text = "scanning..."
             self.bluetoothImageView.image = UIImage(named: "BT-Orange")
             self.metawearStateLabel.textColor = Constants.themeOrangeColour
+            self.metawearStateLabel.text = connectionState.getState().lowercaseString
         }
     }
     
     // POST: animates only during the connection establishment phase
     func animateConnectionLogo()
     {
-        if Constants.isDeviceConnected()
+        if Constants.isDeviceConnected() || timeOutErrorHappened
         {
             self.view.layer.removeAllAnimations()
         }
@@ -135,13 +135,15 @@ class ConnectionVC: UIViewController
             ConnectionVC.currentlySelectedDevice.connectWithTimeout(Constants.defaultTimeOut, handler: { (error: NSError?) in
                 
                 // a connection timeout error
-                if error != nil
+                if let connectionError = error
                 {
                     print("Connection Timeout")
-                    self.view.layer.removeAllAnimations()
-                    self.connectionBtn.userInteractionEnabled = true
                     
-                    Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: "Connection timed out.", errorPriority: AlertPriority.High)
+                    self.timeOutErrorHappened = true
+                    
+                    Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: connectionError.localizedDescription, errorPriority: AlertPriority.High)
+                    
+                    self.setupUI(basedOnConnection: MBLConnectionState.Disconnected)
                 }
                 else
                 {
@@ -151,7 +153,6 @@ class ConnectionVC: UIViewController
                     // erase all non-volatile memory data and results into a disconnection
                     //                        ConnectionVC.currentlySelectedDevice.setConfiguration(nil, handler: nil)
                     self.setupUI(basedOnConnection: MBLConnectionState.Connected)
-                    self.metawearStateLabel.text = selectedDevice.state.getState().lowercaseString
                     self.connectionBtn.setTitle("disconnect", forState: .Normal)
                     self.connectionBtn.userInteractionEnabled = true
                 }
@@ -163,7 +164,7 @@ class ConnectionVC: UIViewController
     {
         print("user wants to disconnect device")
         
-        Constants.disconnectDevice()
+        ConnectionVC.currentlySelectedDevice.disconnectWithHandler(nil)
         self.setupUI(basedOnConnection: MBLConnectionState.Disconnected)
         self.viewWillAppear(true)
     }

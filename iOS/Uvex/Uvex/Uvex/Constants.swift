@@ -44,7 +44,6 @@ struct Constants
     
     static func defaultErrorAlert(origin: UIViewController, errorTitle: String, errorMessage: String, errorPriority: AlertPriority)
     {
-        
         switch errorPriority
         {
         case .High:
@@ -112,11 +111,6 @@ struct Constants
     static func turnOffMetaWearLED()
     {
         ConnectionVC.currentlySelectedDevice.led?.setLEDOnAsync(false, withOptions: 1)
-    }
-    
-    static func disconnectDevice()
-    {
-        ConnectionVC.currentlySelectedDevice.disconnectWithHandler(nil)
     }
     
     static func displayBackgroundImageOnError(currentView: UIView, typeOfError: ErrorState)
