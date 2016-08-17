@@ -153,6 +153,25 @@ struct GraphPoints
     var rmsValues: [Double] = [Double]()
 }
 
+struct PhotoSensor
+{    
+    static func turn(state switchState: SwitchState)
+    {
+        if let metaWearGPIO = ConnectionVC.currentlySelectedDevice.gpio
+        {
+            let photoSensorPin = metaWearGPIO.pins[PinAssignments.pinOne] as! MBLGPIOPin
+            
+            switch switchState
+            {
+            case .On:
+                photoSensorPin.setToDigitalValueAsync(true)
+            case .Off:
+                photoSensorPin.setToDigitalValueAsync(false)
+            }
+        }
+    }
+}
+
 enum ErrorState
 {
     case NoMetaWear

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JSSAlertView
 
 class ManualVC: UIViewController
 {
@@ -21,6 +22,23 @@ class ManualVC: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        if AutomaticVC.automaticModeOn
+        {
+            let userAlert = JSSAlertView().show(
+                self,
+                title: "Confirm",
+                text: "Automatic mode is still active. Do you wish to deactivate it?",
+                buttonText: "Yep",
+                cancelButtonText: "Nope"
+            )
+            
+            userAlert.setTitleFont("AvenirNext-Regular")
+            userAlert.setTextFont("AvenirNext-Regular")
+            userAlert.setButtonFont("AvenirNext-Regular")
+            userAlert.addAction(dealWithAutomaticMode)
+            userAlert.addCancelAction(exitView)
+        }
         
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userTappedSwitch))
         switchImageView.addGestureRecognizer(tapGesture)
@@ -68,13 +86,13 @@ class ManualVC: UIViewController
     {
         if isPhotoSensorOn
         {
-            ManualVC.turnPhotoSensor(SwitchState.Off)
+            PhotoSensor.turn(state: SwitchState.Off)
             setupUI(forState: SwitchState.Off)
             isPhotoSensorOn = false
         }
         else
         {
-            ManualVC.turnPhotoSensor(SwitchState.On)
+            PhotoSensor.turn(state: SwitchState.On)
             setupUI(forState: SwitchState.On)
             isPhotoSensorOn = true
         }
@@ -94,23 +112,6 @@ class ManualVC: UIViewController
                 
                 print(sensorResult.value.boolValue)
             })
-            
-        }
-    }
-    
-    static func turnPhotoSensor(switchState: SwitchState)
-    {
-        if let metaWearGPIO = ConnectionVC.currentlySelectedDevice.gpio
-        {
-            let photoSensorPin = metaWearGPIO.pins[PinAssignments.pinOne] as! MBLGPIOPin
-            
-            switch switchState
-            {
-            case .On:
-                photoSensorPin.setToDigitalValueAsync(true)
-            case .Off:
-                photoSensorPin.setToDigitalValueAsync(false)
-            }
         }
     }
     
@@ -128,5 +129,19 @@ class ManualVC: UIViewController
             self.switchImageView.image = UIImage(named: "ButtonGrey")
             self.switchStateLabel.textColor = Constants.themeGreyColour
         }
+    }
+    
+    func dealWithAutomaticMode()
+    {
+        print("user entered manual mode")
+        
+        Constants.defaultTimer.invalidate()
+        PhotoSensor.turn(state: SwitchState.Off)
+        AutomaticVC.automaticModeOn = false
+    }
+    
+    func exitView()
+    {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
