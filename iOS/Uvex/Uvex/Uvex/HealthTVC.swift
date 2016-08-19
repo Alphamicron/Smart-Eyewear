@@ -59,4 +59,15 @@ class HealthTVC: UITableViewController
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        switch indexPath.row
+        {
+        case 0: performSegueWithIdentifier("segueToHeartRateVC", sender: nil)
+        case 1: performSegueWithIdentifier("segueToSpO2VC", sender: nil)
+        case 2: performSegueWithIdentifier("segueToSkinTemperatureVC", sender: nil)
+        default: break
+        }
+    }
 }
