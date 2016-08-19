@@ -205,10 +205,10 @@ class HeartRateVC: UIViewController
             // create a data set with our array
             dataSet = LineChartDataSet(yVals: dataEntries, label: "heart rate")
             dataSet.axisDependency = .Left // line will correlate with left axis values
-            dataSet.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // set colour & opacity
+            dataSet.setColor(Constants.themeRedColour) // set colour & opacity
             dataSet.lineWidth = 2.0
             dataSet.fillAlpha = 65 / 255.0
-            dataSet.fillColor = UIColor.redColor()
+            dataSet.fillColor = Constants.themeRedColour
             dataSet.highlightColor = Constants.themeGreyColour
             dataSet.mode = .CubicBezier // give it the cubic function graph style
             dataSet.drawValuesEnabled = false
