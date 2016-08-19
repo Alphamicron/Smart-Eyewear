@@ -58,7 +58,7 @@ class HeartRateVC: UIViewController
     {
         super.viewWillAppear(animated)
         
-        self.heartRateLabel.text = ""
+        //        self.heartRateLabel.text = ""
         lineChartView.noDataText = "No data to display"
         lineChartView.noDataTextDescription = "Heart rate readings needed for data to be displayed."
     }
