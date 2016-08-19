@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import EPShapes
 
 /*
  References:
@@ -33,6 +34,9 @@ class HeartRateVC: UIViewController
     var heartRateTimeStamps: [String] = [String]()
     var heartRateReadings: [Double] = [Double]()
     
+    var userDidExit: Bool = Bool()
+    
+    @IBOutlet weak var heartView: HeartView!
     @IBOutlet weak var heartRateLabel: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
     
@@ -67,6 +71,8 @@ class HeartRateVC: UIViewController
     {
         super.viewDidAppear(animated)
         
+        self.animateConnectionLogo()
+        
         Constants.repeatThis(task: #selector(getHeartRateData), forDuration: 0.05, onTarget: self)
     }
     
@@ -75,6 +81,8 @@ class HeartRateVC: UIViewController
         super.viewWillDisappear(animated)
         
         Constants.defaultTimer.invalidate()
+        
+        self.userDidExit = true
     }
     
     override func didReceiveMemoryWarning()
@@ -268,6 +276,28 @@ class HeartRateVC: UIViewController
         }
         
         return sensorReadingsResult[timeRange as! Range]
+    }
+    
+    // POST: animates only during the connection establishment phase
+    func animateConnectionLogo()
+    {
+        if userDidExit
+        {
+            self.view.layer.removeAllAnimations()
+        }
+        else
+        {
+            UIView.animateWithDuration(1.0, animations: {
+                self.heartView.alpha = 0
+            }) { (completed: Bool) in
+                UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations: {
+                    self.heartView.alpha = 1.0
+                    }, completion: { (completed: Bool) in
+                        
+                        self.animateConnectionLogo()
+                })
+            }
+        }
     }
 }
 
