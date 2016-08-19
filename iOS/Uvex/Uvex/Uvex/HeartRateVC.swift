@@ -43,8 +43,22 @@ class HeartRateVC: UIViewController
         heartRate = NSMutableArray(capacity: arrayCapacity)
         
         lineChartView.delegate = self
-        lineChartView.descriptionTextColor = UIColor.whiteColor()
-        lineChartView.gridBackgroundColor = UIColor.darkGrayColor()
+        
+        // GUI stuff
+        lineChartView.xAxis.enabled = false
+        lineChartView.leftAxis.enabled = false
+        lineChartView.rightAxis.enabled = false
+        lineChartView.userInteractionEnabled = false
+        lineChartView.drawGridBackgroundEnabled = false
+        //        lineChartView.descriptionTextColor = UIColor.whiteColor()
+        //        lineChartView.gridBackgroundColor = UIColor.darkGrayColor()
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.heartRateLabel.text = ""
         lineChartView.noDataText = "No data to display"
         lineChartView.noDataTextDescription = "Heart rate readings needed for data to be displayed."
     }
@@ -205,8 +219,8 @@ class HeartRateVC: UIViewController
             // create a data set with our array
             dataSet = LineChartDataSet(yVals: dataEntries, label: "heart rate")
             dataSet.axisDependency = .Left // line will correlate with left axis values
-            dataSet.setColor(Constants.themeRedColour) // set colour & opacity
-            dataSet.lineWidth = 2.0
+            dataSet.setColor(Constants.themeRedColour) // set colour
+            dataSet.lineWidth = 3.0
             dataSet.fillAlpha = 65 / 255.0
             dataSet.fillColor = Constants.themeRedColour
             dataSet.highlightColor = Constants.themeGreyColour
@@ -222,9 +236,9 @@ class HeartRateVC: UIViewController
             let data: LineChartData = LineChartData(xVals: dataPoints, dataSets: dataSets)
             data.setValueTextColor(UIColor(red: 0.925, green: 0.494, blue: 0.114, alpha: 1.00))
             
-            // GUI stuff
-            lineChartView.xAxis.labelPosition = .Bottom
-            lineChartView.animate(xAxisDuration: 3.0)
+            
+            //            lineChartView.xAxis.labelPosition = .Bottom
+            //            lineChartView.animate(xAxisDuration: 3.0)
             
             self.lineChartView.data = data
         }
