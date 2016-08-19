@@ -3,6 +3,7 @@ PODS:
   - Charts (2.2.5):
     - Charts/Core (= 2.2.5)
   - Charts/Core (2.2.5)
+  - EPShapes (1.0.0)
   - FastCoding (3.2.1)
   - JSSAlertView (1.1.5)
   - Metawear-iOSAPI (2.5.1):
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+  - EPShapes
   - JSSAlertView
   - Metawear-iOSAPI
   - PNChart
@@ -21,12 +23,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
+  EPShapes: 981666a2fe8bcee8464fec729e8729b0bf1b751a
   FastCoding: ed46c83ba23d048aafa0251972a1e1fc1cfc58ed
   JSSAlertView: 1ff5d4dcb28b00a38c0293c4c555231c02590be1
   Metawear-iOSAPI: 580147c1f82afd1bbb8fedad7fd49c9180baa94e
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: abcaed5e00d6b2ccd6b79ebbdee74f89360e6b46
+PODFILE CHECKSUM: 031cabf704cf2c95ee782f0b916ab8330363d10c
 
 COCOAPODS: 1.0.1
