@@ -34,8 +34,6 @@ class HeartRateVC: UIViewController
     var heartRateTimeStamps: [String] = [String]()
     var heartRateReadings: [Double] = [Double]()
     
-    var userDidExit: Bool = Bool()
-    
     @IBOutlet weak var heartView: HeartView!
     @IBOutlet weak var heartRateLabel: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
@@ -50,12 +48,11 @@ class HeartRateVC: UIViewController
         
         // GUI stuff
         lineChartView.xAxis.enabled = false
+        lineChartView.legend.enabled = false
         lineChartView.leftAxis.enabled = false
         lineChartView.rightAxis.enabled = false
         lineChartView.userInteractionEnabled = false
         lineChartView.drawGridBackgroundEnabled = false
-        //        lineChartView.descriptionTextColor = UIColor.whiteColor()
-        //        lineChartView.gridBackgroundColor = UIColor.darkGrayColor()
     }
     
     override func viewWillAppear(animated: Bool)
@@ -79,8 +76,6 @@ class HeartRateVC: UIViewController
         super.viewWillDisappear(animated)
         
         Constants.defaultTimer.invalidate()
-        
-        self.userDidExit = true
     }
     
     override func didReceiveMemoryWarning()
