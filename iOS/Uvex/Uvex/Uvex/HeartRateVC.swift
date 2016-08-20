@@ -62,7 +62,7 @@ class HeartRateVC: UIViewController
     {
         super.viewWillAppear(animated)
         
-        //        self.heartRateLabel.text = ""
+        self.heartBeatAnimation()
         lineChartView.noDataText = "No data to display"
         lineChartView.noDataTextDescription = "Heart rate readings needed for data to be displayed."
     }
@@ -70,8 +70,6 @@ class HeartRateVC: UIViewController
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-        
-        self.animateConnectionLogo()
         
         Constants.repeatThis(task: #selector(getHeartRateData), forDuration: 0.05, onTarget: self)
     }
@@ -278,26 +276,17 @@ class HeartRateVC: UIViewController
         return sensorReadingsResult[timeRange as! Range]
     }
     
-    // POST: animates only during the connection establishment phase
-    func animateConnectionLogo()
+    // Reference: http://stackoverflow.com/questions/25829638/how-can-i-simulate-a-beating-heart
+    func heartBeatAnimation()
     {
-        if userDidExit
-        {
-            self.view.layer.removeAllAnimations()
-        }
-        else
-        {
-            UIView.animateWithDuration(1.0, animations: {
-                self.heartView.alpha = 0
-            }) { (completed: Bool) in
-                UIView.animateWithDuration(1.0, delay: 0, options: [.CurveLinear, .AllowUserInteraction], animations: {
-                    self.heartView.alpha = 1.0
-                    }, completion: { (completed: Bool) in
-                        
-                        self.animateConnectionLogo()
-                })
-            }
-        }
+        let heartBeatAnim: CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+        heartBeatAnim.duration = 0.7
+        heartBeatAnim.repeatCount = FLT_MAX
+        heartBeatAnim.autoreverses = true
+        heartBeatAnim.fromValue = NSNumber(float: 1.0)
+        heartBeatAnim.toValue = NSNumber(float: 0.7)
+        heartBeatAnim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        self.heartView.layer.addAnimation(heartBeatAnim, forKey: "animationOpacity")
     }
 }
 
