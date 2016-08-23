@@ -38,22 +38,13 @@ class FitnessTVC: UIViewController
     {
         super.viewWillAppear(animated)
         
-        todaysDateLabel.text = todaysDate()
+        todaysDateLabel.text = NSDate().todaysDate
     }
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
     }
-    
-    func todaysDate()-> String
-    {
-        let dateFormatter: NSDateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        
-        return dateFormatter.stringFromDate(NSDate())
-    }
-    
 }
 
 extension FitnessTVC: UITableViewDataSource
@@ -99,5 +90,7 @@ extension FitnessTVC: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         print("Cell \(indexPath.row) selected")
+        
+        self.performSegueWithIdentifier("segueToSteps", sender: nil)
     }
 }

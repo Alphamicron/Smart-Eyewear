@@ -154,3 +154,14 @@ extension UIImageView
         self.center = circleCenter
     }
 }
+
+extension NSDate
+{
+    var todaysDate:String
+    {
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        
+        return dateFormatter.stringFromDate(self)
+    }
+}
