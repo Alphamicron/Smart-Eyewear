@@ -89,8 +89,12 @@ extension FitnessTVC: UITableViewDelegate
 {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        print("Cell \(indexPath.row) selected")
-        
-        self.performSegueWithIdentifier("segueToSteps", sender: nil)
+        switch indexPath.row
+        {
+        case 0: self.performSegueWithIdentifier("segueToStepsVC", sender: nil)
+        case 1: self.performSegueWithIdentifier("segueToCaloriesVC", sender: nil)
+        case 2: self.performSegueWithIdentifier("segueToDistanceVC", sender: nil)
+        default: break
+        }
     }
 }
