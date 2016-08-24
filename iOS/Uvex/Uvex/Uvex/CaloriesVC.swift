@@ -13,7 +13,7 @@ class CaloriesVC: UIViewController
 {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
-    @IBOutlet weak var barChart: BarChartView!
+    @IBOutlet weak var barChartView: BarChartView!
     
     override func viewDidLoad()
     {

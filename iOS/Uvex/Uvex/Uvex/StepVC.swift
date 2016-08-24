@@ -13,9 +13,13 @@ class StepVC: UIViewController
 {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var stepsLabel: UILabel!
-    @IBOutlet weak var barChart: BarChartView!
+    @IBOutlet weak var barChartView: BarChartView!
     
-    var months: [String] = []
+    var unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
+    
+    var months: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    var daysOfTheWeek: [String] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    var monthlyWeeks: [String] = ["Week I", "Week II", "Week III", "Week IV"]
     
     override func viewDidLoad()
     {
@@ -23,14 +27,17 @@ class StepVC: UIViewController
         
         dateLabel.text = NSDate().todaysDate
         
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
+        barChartView.delegate = self
         
-        barChart.userInteractionEnabled = false
-        barChart.xAxis.labelPosition = .Bottom
-        barChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .EaseInBounce)
+        // GUI Stuff
+        barChartView.descriptionText = ""
+        barChartView.legend.enabled = false
+        barChartView.rightAxis.enabled = false
+        barChartView.xAxis.labelPosition = .Bottom
+        barChartView.drawGridBackgroundEnabled = false
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .EaseInBounce)
         
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        setChart(months, values: unitsSold)
+        drawChart(xAxisValues: &months, yAxisValues: &unitsSold)
     }
     
     override func didReceiveMemoryWarning()
@@ -43,28 +50,86 @@ class StepVC: UIViewController
     {
         switch sender.selectedSegmentIndex
         {
-        case 0: print("Day is ON")
-        case 1: print("Week is ON")
-        case 2: print("Month is ON")
+        case 0: prepDataForTheDay()
+        case 1: prepDataForTheWeek()
+        case 2: prepDataForTheMonth()
         default: break
         }
     }
     
-    func setChart(dataPoints: [String], values: [Double])
+    func drawChart(inout xAxisValues dataPoints: [String], inout yAxisValues values: [Double])
     {
-        var dataEntries: [BarChartDataEntry] = []
+        var dataEntries: [BarChartDataEntry] = [BarChartDataEntry]()
         
         for i in 0..<dataPoints.count
         {
-            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
-            dataEntries.append(dataEntry)
+            dataEntries.append(BarChartDataEntry(value: values[i], xIndex: i))
         }
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Units Sold")
-        let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        var dataSet: BarChartDataSet = BarChartDataSet()
         
-        chartDataSet.colors = [UIColor(red: 0.918, green: 0.471, blue: 0.196, alpha: 1.00)]
+        if barChartView.data?.dataSetCount > 0
+        {
+            dataSet = barChartView.data?.dataSets[0] as! BarChartDataSet
+            dataSet.yVals = dataEntries
+            barChartView.data?.xValsObjc = dataPoints
+            barChartView.data?.notifyDataChanged()
+            barChartView.notifyDataSetChanged()
+        }
+        else
+        {
+            dataSet = BarChartDataSet(yVals: dataEntries, label: "Units Sold")
+            let chartData = BarChartData(xVals: months, dataSet: dataSet)
+            
+            dataSet.drawValuesEnabled = false
+            dataSet.colors = [UIColor(red: 0.918, green: 0.471, blue: 0.196, alpha: 1.00)]
+            
+            barChartView.data = chartData
+        }
+    }
+    
+    func prepDataForTheDay()
+    {
+        drawChart(xAxisValues: &self.months, yAxisValues: &self.unitsSold)
+    }
+    
+    func prepDataForTheWeek()
+    {
+        var daysOfTheWeek: Int = 7
+        var first: Int = 10, second: Int = 10000
+        var numberOfSteps: [Double] = [Double]()
         
-        barChart.data = chartData
+        while daysOfTheWeek != 0
+        {
+            numberOfSteps.append(Double(FitnessTVC.randomNumber(from: &first, to: &second)))
+            
+            daysOfTheWeek -= 1
+        }
+        
+        drawChart(xAxisValues: &self.daysOfTheWeek, yAxisValues: &numberOfSteps)
+    }
+    
+    func prepDataForTheMonth()
+    {
+        var weeksOfTheMonth: Int = 4
+        var first: Int = 200, second: Int = 100000
+        var numberOfSteps: [Double] = [Double]()
+        
+        while weeksOfTheMonth != 0
+        {
+            numberOfSteps.append(Double(FitnessTVC.randomNumber(from: &first, to: &second)))
+            
+            weeksOfTheMonth -= 1
+        }
+        
+        drawChart(xAxisValues: &self.monthlyWeeks, yAxisValues: &numberOfSteps)
+    }
+}
+
+extension StepVC: ChartViewDelegate
+{
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
+    {
+        stepsLabel.text = String(Int(entry.value))
     }
 }

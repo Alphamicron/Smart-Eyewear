@@ -47,6 +47,7 @@ class HeartRateVC: UIViewController
         lineChartView.delegate = self
         
         // GUI stuff
+        lineChartView.descriptionText = ""
         lineChartView.xAxis.enabled = false
         lineChartView.legend.enabled = false
         lineChartView.leftAxis.enabled = false
