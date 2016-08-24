@@ -90,11 +90,13 @@ class StepVC: UIViewController
     
     func prepDataForTheDay()
     {
+        stepsLabel.text = ""
         drawChart(xAxisValues: &self.months, yAxisValues: &self.unitsSold)
     }
     
     func prepDataForTheWeek()
     {
+        stepsLabel.text = ""
         var daysOfTheWeek: Int = 7
         var first: Int = 10, second: Int = 10000
         var numberOfSteps: [Double] = [Double]()
@@ -111,6 +113,7 @@ class StepVC: UIViewController
     
     func prepDataForTheMonth()
     {
+        stepsLabel.text = ""
         var weeksOfTheMonth: Int = 4
         var first: Int = 200, second: Int = 100000
         var numberOfSteps: [Double] = [Double]()
@@ -131,5 +134,6 @@ extension StepVC: ChartViewDelegate
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight)
     {
         stepsLabel.text = String(Int(entry.value))
+        print("User tapped on \(entry.value)")
     }
 }
