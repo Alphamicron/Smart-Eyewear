@@ -11,6 +11,8 @@ import JSSAlertView
 
 class AutomaticVC: UIViewController
 {
+    @IBOutlet weak var setBtn: UIButton!
+    @IBOutlet weak var activateBtn: UIButton!
     @IBOutlet weak var userThresholdSlider: UISlider!
     @IBOutlet weak var metaWearValueSlider: UISlider!
     
@@ -38,15 +40,14 @@ class AutomaticVC: UIViewController
         }
         else
         {
+            checkIfPhotoSensorIsOn()
             Constants.repeatThis(task: #selector(readPhotoSensorValue), forDuration: Constants.defaultDelayTime, onTarget: self)
         }
     }
     
     override func viewDidAppear(animated: Bool)
     {
-        super.viewDidAppear(animated)
-        
-        print(checkIfPhotoSensorIsOn())
+        super.viewDidAppear(animated) 
     }
     
     override func didReceiveMemoryWarning()
@@ -59,32 +60,65 @@ class AutomaticVC: UIViewController
     {
         print("user slid")
         
-        if sender.value < metaWearValueSlider.value
+        //        if sender.value < metaWearValueSlider.value
+        //        {
+        //            PhotoSensor.turn(state: SwitchState.On)
+        //        }
+        //        else
+        //        {
+        //            PhotoSensor.turn(state: SwitchState.Off)
+        //        }
+    }
+    
+    @IBAction func activateBtnAction(sender: UIButton)
+    {
+        sender.selected = !sender.selected
+        
+        if sender.selected
         {
-            PhotoSensor.turn(state: SwitchState.On)
+            print("auto is ON")
+            
+            setBtn.hidden = false
+            
+            sender.setTitle("OFF", forState: .Normal)
         }
         else
         {
-            PhotoSensor.turn(state: SwitchState.Off)
+            print("auto is OFF")
+            
+            setBtn.hidden = true
+            AutomaticVC.automaticModeOn = false
+            sender.setTitle("ON", forState: .Normal)
         }
     }
     
     @IBAction func setBtnAction(sender: UIButton)
     {
         print("set button tapped")
+        
+        if userThresholdSlider.value < metaWearValueSlider.value
+        {
+            PhotoSensor.turn(state: SwitchState.On)
+            AutomaticVC.automaticModeOn = true
+        }
+        else
+        {
+            PhotoSensor.turn(state: SwitchState.Off)
+            AutomaticVC.automaticModeOn = false
+        }
     }
     
     // POST: Keeps track of the photo sensor's threshold changes
     func metawearThresholdChanged(sender: UISlider)
     {
-        if sender.value > userThresholdSlider.value
-        {
-            PhotoSensor.turn(state: SwitchState.On)
-        }
-        else
-        {
-            PhotoSensor.turn(state: SwitchState.Off)
-        }
+        //        if sender.value > userThresholdSlider.value
+        //        {
+        //            PhotoSensor.turn(state: SwitchState.On)
+        //        }
+        //        else
+        //        {
+        //            PhotoSensor.turn(state: SwitchState.Off)
+        //        }
     }
     
     // POST: Get voltage of photo sensor pin and reflects it onto the metaWearSlider
@@ -103,8 +137,7 @@ class AutomaticVC: UIViewController
                 // converts the voltage to a 0-1024 scale
                 photoSensorVoltage = self.convertValueToSliderScale(attainedValue.value.floatValue)
                 // displays the scaled up value onto the slider
-                self.reflectChangesToMetaWearSlider(photoSensorVoltage)
-                
+                self.metaWearValueSlider.setValue(photoSensorVoltage, animated: true)
             })
         }
     }
@@ -115,14 +148,13 @@ class AutomaticVC: UIViewController
         return (photoSensorVoltage / Constants.maximumPinVoltage) * Constants.userThresholdMaximumValue
     }
     
-    func reflectChangesToMetaWearSlider(newMetaWearValue: Float)
-    {
-        metaWearValueSlider.setValue(newMetaWearValue, animated: true)
-        //        metaWearLabel.text = String(Int(metaWearValueSlider.value))
-        
-        // check to see if the photo sensor value change requires the LED to be turned on
-        metawearThresholdChanged(metaWearValueSlider)
-    }
+    //    func reflectChangesToMetaWearSlider(newMetaWearValue: Float)
+    //    {
+    //        metaWearValueSlider.setValue(newMetaWearValue, animated: true)
+    //        
+    //        // check to see if the photo sensor value change requires the LED to be turned on
+    //        //        metawearThresholdChanged(metaWearValueSlider)
+    //    }
     
     func checkIfPhotoSensorIsOn()
     {        
@@ -133,16 +165,40 @@ class AutomaticVC: UIViewController
             photoSensorPin.digitalValue.readAsync().success({ (result: AnyObject) in
                 
                 let sensorResult: MBLNumericData = result as! MBLNumericData
+                let isSwitchOn: Bool = sensorResult.value.boolValue
                 
                 print("Photo sensor result \(sensorResult.value.boolValue)")
+                
+                if isSwitchOn
+                {
+                    self.setupView(forState: SwitchState.On)
+                }
+                else
+                {
+                    self.setupView(forState: SwitchState.Off)
+                }
             })
         }
     }
     
-    func dealWithManualMode()
+    func setupView(forState currentState: SwitchState)
     {
-        print("user entered auto mode")
-        
+        switch currentState
+        {
+        case .On:
+            setBtn.hidden = false
+            AutomaticVC.automaticModeOn = true
+            activateBtn.setTitle("OFF", forState: .Normal)
+            
+        case .Off:
+            setBtn.hidden = true
+            AutomaticVC.automaticModeOn = false
+            activateBtn.setTitle("ON", forState: .Normal)
+        }
+    }
+    
+    func dealWithManualMode()
+    {        
         PhotoSensor.turn(state: SwitchState.Off)
         ManualVC.manualModeOn = false
     }

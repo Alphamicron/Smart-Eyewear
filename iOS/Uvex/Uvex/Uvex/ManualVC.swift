@@ -132,9 +132,7 @@ class ManualVC: UIViewController
     }
     
     func dealWithAutomaticMode()
-    {
-        print("user entered manual mode")
-        
+    {        
         Constants.defaultTimer.invalidate()
         PhotoSensor.turn(state: SwitchState.Off)
         AutomaticVC.automaticModeOn = false
