@@ -45,6 +45,16 @@ class FitnessTVC: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
+    
+    static func randomNumber(inout from start: Int, inout to end: Int)-> Int
+    {
+        if start > end
+        {
+            swap(&start, &end)
+        }
+        
+        return Int(arc4random_uniform(UInt32(end - start + 1))) + start
+    }
 }
 
 extension FitnessTVC: UITableViewDataSource
@@ -72,16 +82,6 @@ extension FitnessTVC: UITableViewDataSource
         cell.serviceView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
         
         return cell
-    }
-    
-    static func randomNumber(inout from start: Int, inout to end: Int)-> Int
-    {
-        if start > end
-        {
-            swap(&start, &end)
-        }
-        
-        return Int(arc4random_uniform(UInt32(end - start + 1))) + start
     }
 }
 
