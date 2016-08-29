@@ -11,19 +11,10 @@
 
 import UIKit
 
-
-
 class Human: NSObject
 {
-    
-    
-    //MARK: - Canvas Drawings
-    
-    /// Page 1
-    
     class func drawSlice1(frame frame: CGRect = CGRect(x: 0, y: 0, width: 140, height: 335), resizing: ResizingBehavior = .AspectFill)
     {
-        /// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
         /// Background Color
@@ -138,11 +129,6 @@ class Human: NSObject
         CGContextRestoreGState(context)
     }
     
-    
-    //MARK: - Canvas Images
-    
-    /// Page 1
-    
     class func imageOfSlice1(size size: CGSize = CGSize(width: 140, height: 335), resizing: ResizingBehavior = .AspectFit) -> UIImage
     {
         var image: UIImage
@@ -154,9 +140,6 @@ class Human: NSObject
         
         return image
     }
-    
-    
-    //MARK: - Resizing Behavior
     
     enum ResizingBehavior
     {

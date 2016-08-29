@@ -18,6 +18,39 @@ import Foundation
  +------------------------------------------------------------+
  **************************************************************/
 
+struct GraphPoints
+{
+    var xAxes: [Double] = [Double]()
+    var yAxes: [Double] = [Double]()
+    var zAxes: [Double] = [Double]()
+    var rmsValues: [Double] = [Double]()
+}
+
+struct User
+{
+    private static let age: Double = 21
+    private static let feet: Double = 5.0
+    private static let inches: Double = 8.0
+    private static let weightInPounds: Double = 160.0
+    
+    private enum sex
+    {
+        case Male
+        case Female
+        // Shemale, Transgender etc coming soon... :)
+    }
+    
+    private static let heightInFeet: Double = ({
+        
+        return feet + (inches/12.0)
+        }())
+    
+    private static let heightInInches: Double = ({
+        
+        return (feet * 12) + inches
+        }())
+}
+
 class StepCounter
 {
     private var xAxes: [Double] = [Double]()
@@ -27,15 +60,8 @@ class StepCounter
     
     private var totalNumberOfSteps: Int = Int()
     private var speedTravelled: Double = Double()
+    private var totalCaloriesBurnt: Double = Double()
     private var totalDistanceTravelled: Double = Double()
-    
-    private let userHeight: Double = ({
-        
-        let feet: Double = 5.0
-        let inches: Double = 8.0
-        
-        return feet + (inches/12.0)
-        }())
     
     init(inout graphPoints: GraphPoints)
     {
@@ -45,7 +71,7 @@ class StepCounter
         rmsValues = graphPoints.rmsValues
     }
     
-    func numberOfSteps()-> (totalSteps: Int, distanceInFeet: Double)
+    func numberOfSteps()-> (totalSteps: Int, distanceInFeet: Double, caloriesBurnt: Double)
     {
         var pointMagnitudes: [Double] = rmsValues
         
@@ -55,7 +81,7 @@ class StepCounter
         
         // smoothes the points first before finding their peaks
         // the window is adviced to be an odd number
-        simpleMovingAverage(&pointMagnitudes, movingAverageWindow: 5)
+        simpleMovingAverage(&pointMagnitudes, movingAverageWindow: 9)
         
         let peaks = findPeaks(&pointMagnitudes)
         
@@ -70,7 +96,9 @@ class StepCounter
         // calculate the distance travelled
         distanceTravelled()
         
-        return (totalNumberOfSteps, totalDistanceTravelled)
+        caloriesBurnt(forA: User.sex.Male)
+        
+        return (totalNumberOfSteps, totalDistanceTravelled, totalCaloriesBurnt)
     }
     
     private func removeGravityEffectsFrom(inout magnitudesWithGravityEffect: [Double])
@@ -200,6 +228,21 @@ class StepCounter
         // assumed that a user's step is (0.4-0.5) their height
         let stepLengthFactor: Double = generateRandomNumber(from: 0.4, to: 0.5, decimalPoints: 4)
         
-        totalDistanceTravelled = Double(totalNumberOfSteps) * userHeight * stepLengthFactor
+        totalDistanceTravelled = Double(totalNumberOfSteps) * User.heightInFeet * stepLengthFactor
+    }
+    
+    // Using Harris Benedict's Method
+    // Ref: http://www.builtlean.com/2010/03/14/how-to-calculate-your-calorie-burn/
+    private func caloriesBurnt(forA sex: User.sex)
+    {
+        switch sex
+        {
+        case .Male:
+            let midCalculation: Double = 66 + (6.23 * User.weightInPounds)
+            totalCaloriesBurnt = midCalculation + (12.7 * User.heightInInches)-(6.8 * User.age)
+        case .Female:
+            let midCalculation: Double = 655 + (4.35 * User.weightInPounds)
+            totalCaloriesBurnt = midCalculation + (4.7 * User.heightInInches)-(4.7 * User.age)
+        }
     }
 }

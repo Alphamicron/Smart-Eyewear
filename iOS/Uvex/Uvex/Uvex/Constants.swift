@@ -145,14 +145,6 @@ struct PinAssignments
     static let pinFour: Int = 4 // DIO4
 }
 
-struct GraphPoints
-{
-    var xAxes: [Double] = [Double]()
-    var yAxes: [Double] = [Double]()
-    var zAxes: [Double] = [Double]()
-    var rmsValues: [Double] = [Double]()
-}
-
 struct PhotoSensor
 {    
     static func turn(state switchState: SwitchState)

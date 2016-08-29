@@ -20,9 +20,9 @@ class FitnessTVC: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
     
-    var totalCalories: Int = Int()
-    var totalDistance: Double = Double()
     var totalNumberOfSteps: Int = Int()
+    var totalCalories: Double = Double()
+    var totalDistance: Double = Double()
     var graphPoints: GraphPoints = GraphPoints()
     var fitnessServices: [Service] = [Service]()
     
@@ -70,8 +70,9 @@ class FitnessTVC: UIViewController
             
             self.totalNumberOfSteps = result.totalSteps
             self.totalDistance = result.distanceInFeet
-            tableView.reloadData()
+            self.totalCalories = result.caloriesBurnt
             
+            tableView.reloadData()
             
             print("calculated data: \(result)")
         }
@@ -136,7 +137,7 @@ extension FitnessTVC: UITableViewDataSource
         switch indexPath.row
         {
         case 0: cell.serviceData.text = String(self.totalNumberOfSteps)
-        case 1: cell.serviceData.text = String(FitnessTVC.randomNumber(from: &first, to: &second))
+        case 1: cell.serviceData.text = String(Int(self.totalCalories))
         case 2: cell.serviceData.text = String(Int(self.totalDistance))
         default: break
         }
