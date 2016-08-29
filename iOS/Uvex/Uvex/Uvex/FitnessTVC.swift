@@ -19,8 +19,11 @@ class FitnessTVCell: UITableViewCell
 class FitnessTVC: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var todaysDateLabel: UILabel! // Swift doesn't allow apostrophes so yeah :)
     
+    var totalCalories: Int = Int()
+    var totalDistance: Double = Double()
+    var totalNumberOfSteps: Int = Int()
+    var graphPoints: GraphPoints = GraphPoints()
     var fitnessServices: [Service] = [Service]()
     
     override func viewDidLoad()
@@ -34,16 +37,69 @@ class FitnessTVC: UIViewController
         fitnessServices = tempObject.getAllServices(under: ServiceType.Fitness)
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewDidDisappear(animated: Bool)
     {
-        super.viewWillAppear(animated)
+        super.viewDidDisappear(animated)
         
-        todaysDateLabel.text = NSDate().todaysDate
+        ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
     }
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func startBtnAction(sender: UIButton)
+    {
+        sender.selected = !sender.selected
+        
+        if sender.selected // user wants to start logging their workout
+        {
+            sender.setTitle("STOP", forState: .Selected)
+            
+            getAccelerometerReading()
+        }
+        else // user stopped logging hence graph their results
+        {
+            sender.setTitle("START", forState: .Normal)
+            
+            ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.stopNotificationsAsync()
+            
+            let stepCounterObject: StepCounter = StepCounter(graphPoints: &self.graphPoints)
+            let result = stepCounterObject.numberOfSteps()
+            
+            self.totalNumberOfSteps = result.totalSteps
+            self.totalDistance = result.distanceInFeet
+            tableView.reloadData()
+            
+            
+            print("calculated data: \(result)")
+        }
+    }
+    
+    func getAccelerometerReading()
+    {
+        ConnectionVC.currentlySelectedDevice.accelerometer?.dataReadyEvent.startNotificationsWithHandlerAsync({ (result: AnyObject?, error: NSError?) in
+            if error == nil
+            {
+                let accelData: MBLAccelerometerData = result as! MBLAccelerometerData
+                
+                self.graphPoints.xAxes.append(accelData.x)
+                self.graphPoints.yAxes.append(accelData.y)
+                self.graphPoints.zAxes.append(accelData.z)
+                self.graphPoints.rmsValues.append(accelData.RMS)
+                
+                print(accelData)
+            }
+            else
+            {
+                print("Error getting accelerometer data")
+                print(error?.localizedDescription)
+                
+                Constants.defaultErrorAlert(self, errorTitle: "Error", errorMessage: (error?.localizedDescription)!, buttonText: "Yap")
+                
+            }
+        })
     }
     
     static func randomNumber(inout from start: Int, inout to end: Int)-> Int
@@ -76,7 +132,16 @@ extension FitnessTVC: UITableViewDataSource
         
         cell.serviceIcon.image = fitnessServices[indexPath.row].serviceIcon
         cell.serviceName.text = fitnessServices[indexPath.row].serviceName
-        cell.serviceData.text = String(FitnessTVC.randomNumber(from: &first, to: &second))
+        
+        switch indexPath.row
+        {
+        case 0: cell.serviceData.text = String(self.totalNumberOfSteps)
+        case 1: cell.serviceData.text = String(FitnessTVC.randomNumber(from: &first, to: &second))
+        case 2: cell.serviceData.text = String(Int(self.totalDistance))
+        default: break
+        }
+        
+        //        cell.serviceData.text = String(FitnessTVC.randomNumber(from: &first, to: &second))
         
         cell.selectionStyle = .None
         cell.serviceView.layer.borderColor = UIColor(red: 0.796, green: 0.800, blue: 0.796, alpha: 1.00).CGColor
