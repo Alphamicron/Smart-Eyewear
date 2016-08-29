@@ -217,10 +217,10 @@ class SpO2VC: UIViewController
             // create a data set with our array
             dataSet = LineChartDataSet(yVals: dataEntries, label: "heart rate")
             dataSet.axisDependency = .Left // line will correlate with left axis values
-            dataSet.setColor(Constants.themeRedColour) // set colour
+            dataSet.setColor(UIColor(red: 0.000, green: 0.678, blue: 0.933, alpha: 1.00)) // set colour
             dataSet.lineWidth = 3.0
             dataSet.fillAlpha = 65 / 255.0
-            dataSet.fillColor = Constants.themeRedColour
+            dataSet.fillColor = UIColor(red: 0.000, green: 0.678, blue: 0.933, alpha: 1.00)
             dataSet.highlightColor = Constants.themeGreyColour
             dataSet.mode = .CubicBezier // give it the cubic function graph style
             dataSet.drawValuesEnabled = false
