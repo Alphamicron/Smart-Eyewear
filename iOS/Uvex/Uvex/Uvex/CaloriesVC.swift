@@ -79,7 +79,7 @@ class CaloriesVC: UIViewController
             let chartData = BarChartData(xVals: months, dataSet: dataSet)
             
             dataSet.drawValuesEnabled = false
-            dataSet.colors = [UIColor(red: 0.918, green: 0.471, blue: 0.196, alpha: 1.00)]
+            dataSet.colors = [UIColor(red: 0.612, green: 0.220, blue: 0.471, alpha: 1.00)]
             
             barChartView.data = chartData
         }
