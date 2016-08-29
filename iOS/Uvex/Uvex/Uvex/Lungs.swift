@@ -15,12 +15,6 @@ import UIKit
 
 class Lungs: NSObject
 {
-    
-    
-    //MARK: - Canvas Drawings
-    
-    /// Page 1
-    
     class func drawSlice1(frame frame: CGRect = CGRect(x: 0, y: 0, width: 220, height: 159), resizing: ResizingBehavior = .AspectFit)
     {
         /// General Declarations
@@ -38,7 +32,6 @@ class Lungs: NSObject
         CGContextScaleCTM(context, resizedScale.width, resizedScale.height)
         CGContextTranslateCTM(context, -207, 200)
         
-        /// Lungs_Icon
         let lungs_Icon = UIBezierPath()
         lungs_Icon.moveToPoint(CGPoint(x: 0, y: 95.33))
         lungs_Icon.addLineToPoint(CGPoint(x: 0, y: 125.05))
@@ -88,11 +81,6 @@ class Lungs: NSObject
         CGContextRestoreGState(context)
     }
     
-    
-    //MARK: - Canvas Images
-    
-    /// Page 1
-    
     class func imageOfSlice1(size size: CGSize = CGSize(width: 220, height: 159), resizing: ResizingBehavior = .AspectFit) -> UIImage
     {
         var image: UIImage
@@ -104,9 +92,6 @@ class Lungs: NSObject
         
         return image
     }
-    
-    
-    //MARK: - Resizing Behavior
     
     enum ResizingBehavior
     {
@@ -149,6 +134,4 @@ class Lungs: NSObject
             return result
         }
     }
-    
-    
 }
